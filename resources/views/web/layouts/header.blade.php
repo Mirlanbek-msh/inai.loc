@@ -132,9 +132,9 @@
                     </li>
                     <li class="nav-item social-item">
                         <ul class="nav-social">
-                            <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li>
-                            <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-                            <li><a href="#" target="_blank"><i class='bx bxl-youtube'></i></a></li>
+                            <li><a href="#" target="_blank" style="color:#3b5998"><i class='bx bxl-facebook'></i></a></li>
+                            <li><a href="#" target="_blank" style="color:#38A1F3"><i class='bx bxl-twitter'></i></a></li>
+                            <li><a href="#" target="_blank" style="color:#c4302b"><i class='bx bxl-youtube'></i></a></li>
                         </ul>
                     </li>
                 </ul>

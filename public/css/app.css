@@ -21799,7 +21799,7 @@ nav ol.breadcrumb .breadcrumb-item a:focus {
   }
 
   #main-nav .nav .contacts-item ul li {
-    margin: 5px 0;
+    margin: 7px 0;
   }
 
   #main-nav .nav .contacts-item ul li a {
@@ -21824,7 +21824,7 @@ nav ol.breadcrumb .breadcrumb-item a:focus {
     display: flex;
     flex-grow: 1;
     float: left;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 }
 
