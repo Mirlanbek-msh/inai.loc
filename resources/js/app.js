@@ -1,33 +1,96 @@
+$(document).ready(function () {
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+    var $window_width = $(window).width();
 
-require('./bootstrap');
+    //if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
+    var $L = 992,
+        $menu_navigation = $('#main-nav'),
+        $hamburger_icon = $('#hamburger-menu'),
+        $shadow_layer = $('#shadow-layer');
 
-window.Vue = require('vue');
+    //open lateral menu on mobile
+    $hamburger_icon.on('click', function(event){
+        event.preventDefault();
+        $(this).toggleClass("is-active");
+        toggle_panel_visibility($menu_navigation, $shadow_layer, $('body'));
+    });
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+    //close lateral cart or lateral menu
+    $shadow_layer.on('click', function(){
+        $shadow_layer.removeClass('is-visible');
+        $hamburger_icon.removeClass("is-active");
+        $menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+            $('body').removeClass('overflow-hidden');
+        });
+    });
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+    //move #main-navigation inside header on laptop
+    //insert #main-navigation after header on mobile
+    move_navigation($menu_navigation, $L);
+    blocks_arrange($window_width);
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+    $(window).on('resize', function(){
+        move_navigation( $menu_navigation, $L);
+        if( $(window).width() >= $L && $menu_navigation.hasClass('speed-in')) {
+            $menu_navigation.removeClass('speed-in');
+            $shadow_layer.removeClass('is-visible');
+            $('body').removeClass('overflow-hidden');
+        }
+        $window_width = $(window).width();
+        blocks_arrange($window_width);
+    });
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+    function blocks_arrange($window_width){
+        if($window_width > 992) {
+            $('.block').each(function(){
+                $(this).height($(this).width());
+            });
+            $('.block-half').each(function(){
+                $(this).height($(this).width()/2-5);
+            });
+            $('.block-quarter').each(function(){
+                $(this).height($(this).width()-5);
+            });
+        } else {
+            $('.block').each(function(){
+                $(this).height($(this).width());
+            });
+        }
+    }
 
-const app = new Vue({
-    el: '#app'
+    function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
+        if( $lateral_panel.hasClass('speed-in') ) {
+            // firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+            $lateral_panel.removeClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+                $body.removeClass('overflow-hidden');
+            });
+            $background_layer.removeClass('is-visible');
+
+        } else {
+            $lateral_panel.addClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+                $body.addClass('overflow-hidden');
+            });
+            $background_layer.addClass('is-visible');
+        }
+    }
+
+    function move_navigation( $navigation, $MQ) {
+        if ( $(window).width() >= $MQ ) {
+            $navigation.detach();
+            $navigation.appendTo('header .main-header');
+        } else {
+            $navigation.detach();
+            $navigation.insertAfter('header');
+        }
+    }
+
+    // Bootstrapp
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+
+
+    ScrollPosStyler.init({
+        scrollOffsetY: 40
+    });
 });

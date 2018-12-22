@@ -1,0 +1,258 @@
+
+html, body {
+    height: 100%;
+    max-height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+}
+
+* {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: .3s all ease;
+}
+
+.wrapper{
+    top: 0;
+}
+
+:hover, :active {
+    transition: all 0.25s linear 0s;
+}
+
+.main-img {
+    width: 100%;
+    max-height: 512px;
+}
+
+.btn {
+    border: none;
+    border-radius: 2px;
+    
+    &-primary {
+        color: #fff !important;
+
+        background-color: rgb(0, 162, 255);
+        
+        &:hover {
+            background-color: rgb(0, 195, 255);
+        }
+
+        &:active {
+            background-color: rgb(0, 132, 209);
+        }
+    }
+
+    &-outline-success {
+        color: #fff;
+        background-color: transparent;
+        background-image: none;
+
+        &:hover, &:focus{
+            color: rgb(0, 162, 255);
+            background-color: #fff;
+
+        }
+    }
+
+}
+
+
+
+
+
+p {
+
+    &.price {
+        font-weight: 700;
+    }
+
+    span {
+        // color: red;
+    }
+}
+
+a {
+
+}
+
+
+
+
+.text-muted {
+    color: #5c5c5c !important;
+}
+
+.align-middle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.align-center {
+    
+}
+
+// @media (max-width: 991.98px){
+
+
+//     .top-panel{
+//         padding: 0;
+//         position: relative;
+
+//         .container{
+//             // padding: 0;
+
+
+//             .float-right {
+//                 display: none;
+//             }
+            
+//             ul {
+//                 margin: 0 auto;
+//                 padding: 5px 0;
+//                 text-align: center;
+    
+//                 &.top-menu{
+//                     // padding: 0;
+//                     width: 100%;
+    
+    
+//                     li {
+//                         margin-left: 10px;
+//                         margin-right: 0;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+//     .navbar {
+//         .navbar-brand {
+//             margin-left: 20px;
+//         }
+//     }
+
+//     .product-item {
+//         max-height: 400px;
+//         img {
+//             width: 50%;
+//         }
+//     }
+
+//     .footer {
+//         height: 70px;
+//         padding: 0;
+        
+//         .container{
+//             padding: 0;
+            
+//             .float-left {
+//                 margin: 0 auto;
+//                 width: 100%;
+    
+//                 p{
+//                     margin: 0 auto;
+//                     text-align: center;
+
+//                     span {
+//                         display: block;
+//                     }
+//                 }
+//             }
+            
+//         }
+
+//         .float-right{
+//             display: none;
+//         }
+//     }
+// }
+
+
+.header {
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    .navbar {
+        padding: 0;
+        font-family: $font-open-sans;
+        &-top {
+            a {
+                color: #fff;
+                font-size: 11pt;
+            }
+        }
+        &-bottom {
+            a {
+                color: #fff;
+                padding: 0.5rem 0;
+            }
+        }
+        &-brand {
+            &-text {
+                max-width: 200px;
+                width: 100%;
+                white-space: normal;
+                font-size: 12pt;
+                vertical-align: middle;
+                line-height: 14pt;
+                font-family: $font-open-sans;
+                color: #fff;
+                position: relative;
+                &:hover {
+                    color: $blue;
+                }
+            }
+        }
+        &-social {
+            .nav {
+                &-link {
+                    padding: 0.5rem 10px;
+                    &:hover {
+                        color: #cecece;
+                    }
+                }
+            }
+        }
+        &-navs {
+            .nav {
+                &-link {
+                    &:hover {
+                        color: $blue;
+                    }
+                }
+                &-version {
+                    a {
+                        color: $green !important;
+                        background: #333;
+                        cursor: pointer;
+                    }
+                    &:hover {
+                        a {
+                            background: $green;
+                            color: #333 !important;
+                        }
+                    }
+                }
+            }
+        }
+        &-toggler {
+            outline: none;
+            &:link,
+            &:visited,
+            &:hover,
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    &-media {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 500px;
+    }
+}
