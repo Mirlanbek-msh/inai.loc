@@ -21834,3 +21834,7 @@ nav ol.breadcrumb .breadcrumb-item a:focus {
   }
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
