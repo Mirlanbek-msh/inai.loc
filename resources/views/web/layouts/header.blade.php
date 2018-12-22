@@ -18,12 +18,18 @@
                 <a href="" class="nav-link">
                     <span class="label label-default"><span class="flag-icon flag-icon-kg"></span> KG</span>
                 </a>
+            </li>
+            <li class="nav-item">
                 <a href="" class="nav-link">
                     <span class="label label-default"><span class="flag-icon flag-icon-ru"></span> RU</span>
                 </a>
+            </li>
+            <li class="nav-item">
                 <a href="" class="nav-link">
                     <span class="label label-default"><span class="flag-icon flag-icon-de"></span> DE</span>
                 </a>
+            </li>
+            <li class="nav-item">
                 <a href="" class="nav-link">
                     <span class="label label-default"><span class="flag-icon flag-icon-gb"></span> GB</span>
                 </a>
@@ -106,12 +112,30 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="nav navbar-navs locale d-sm-none d-block mt-3 float-left">
-                    <li class="nav-item nav-version">
-                        <a href="" class="nav-link switch">asdf</a>
+                <ul class="nav navbar-navs locale d-sm-none mt-3 float-left">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <span class="label label-default"><span class="flag-icon flag-icon-ru"></span> RU</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">ruasdf</a>
+                        <a href="" class="nav-link">
+                            <span class="label label-default"><span class="flag-icon flag-icon-gb"></span> GB</span>
+                        </a>
+                    </li>
+                    <li class="nav-item contacts-item">
+                        <ul class="nav-contacts">
+                            <li><a href=""> <i class="fa fa-envelope"></i> info@inai.kg</a></li>
+                            <li><a href=""> <i class="fa fa-phone"></i> +996 555 555 555</a></li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item social-item">
+                        <ul class="nav-social">
+                            <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                            <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                            <li><a href="#" target="_blank"><i class='bx bxl-youtube'></i></a></li>
+                        </ul>
                     </li>
                 </ul>
             </nav>

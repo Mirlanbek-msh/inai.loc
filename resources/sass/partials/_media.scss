@@ -53,35 +53,95 @@
 
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) {
+
+    .top-bar-menu{
+        height: 70px;
+        * {
+            display: none;
+        }
+    }
+
     #main-nav{
         position: fixed;
 
         .nav{
+            width: 100%;
+
+            .nav-item{
+
+            }
 
             .mega-dropdown{
 
                 .mega-dropdown-menu{
                     width: 100%;
-
+                    // padding: 3px 5px;
+                    background-color: $blue;
+                    
                     .container{
-                        padding: 0;
+                        padding: 3px 5px;
 
                         ul{
                             list-style-type: none;
                             padding: 0;
     
                             li{
-                                font-size: 0.9rem;
+                                margin: 5px 0;
+                                a{
+                                    font-size: 0.9rem;
+                                    color: $white-alpha;
+
+                                }
         
                                 &.dropdown-header{
                                     padding: 0;
                                     font-size: 0.9rem;
+                                    color: $white;
+                                    font-weight: bold;
+                                    margin: 3px 0;
                                 }
                             }
                         }
                     }
 
 
+                }
+            }
+
+            .contacts-item{
+                ul{
+                    padding: 5px 15px;
+                    list-style-type: none;
+                    
+                    li{
+                        margin: 5px 0;
+                        
+
+                        a{
+                            color: $blue;
+                            i{
+                                margin-right: 5px;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .social-item{
+                display: flex;
+                        
+                ul{
+                    list-style-type: none;
+                    display: flex;
+                    flex-grow: 1;
+
+                    li{
+                        display: flex;
+                        flex-grow: 1;
+                        float: left;
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
