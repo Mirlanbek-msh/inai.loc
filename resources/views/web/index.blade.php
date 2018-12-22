@@ -5,13 +5,10 @@
 @section('content')
 
 <section class="section">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -19,6 +16,9 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaquevelit?</h5>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
+
+                    <a href="" class="btn btn-primary">Learn more</a>
+                    <a href="" class="btn btn-outline-primary">Other</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -26,27 +26,8 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaquevelit?</h5>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('/uploads/banner/3.jpg') }}" alt="">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaquevelit?</h5>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('/uploads/banner/4.jpg') }}" alt="">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaquevelit?</h5>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('/uploads/banner/5.jpg') }}" alt="">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaquevelit?</h5>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
+                    <a href="" class="btn btn-primary">Learn more</a>
+                    {{-- <a href="" class="btn btn-outline-primary">Other</a> --}}
                 </div>
             </div>
         </div>
