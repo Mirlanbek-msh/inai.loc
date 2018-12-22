@@ -21314,24 +21314,24 @@ header #hamburger-menu .line {
     background-color: #3d5e8291;
   }
 
-  .sps--abv .main-header {
+  header.sps--abv .main-header {
     padding: 10px 0;
   }
 
-  .sps--abv .main-header .logo img {
+  header.sps--abv .main-header .logo img {
     height: 60px;
   }
 
-  .sps--blw {
+  header.sps--blw {
     position: fixed;
     top: 0;
   }
 
-  .sps--blw .main-header {
+  header.sps--blw .main-header {
     padding: 5px 0;
   }
 
-  .sps--blw .main-header .logo img {
+  header.sps--blw .main-header .logo img {
     height: 40px;
   }
 }
@@ -21825,6 +21825,12 @@ nav ol.breadcrumb .breadcrumb-item a:focus {
     flex-grow: 1;
     float: left;
     font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  nav.sps--blw {
+    height: 60px;
   }
 }
 
