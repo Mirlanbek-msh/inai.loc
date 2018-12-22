@@ -2,10 +2,10 @@
     <div class="container">
         <nav class="nav navbar-social">
             <a class="nav-link" href="tel:+996555555555">
-                <i class="bx bxs-phone"></i> +996 555 555 555
+                <i class="fa fa-phone"></i> +996 555 555 555
             </a>
             <a class="nav-link" href="mailto:mail@inai.kg">
-                <i class="bx bxs-envelope"></i> mail@inai.kg
+                <i class="fa fa-envelope"></i> mail@inai.kg
             </a>
         </nav>
         {{-- <ul class="nav justify-content-center nav-info">
