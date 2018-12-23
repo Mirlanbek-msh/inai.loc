@@ -190,15 +190,16 @@
         map = DG.map('map', {
             center: [42.84036863922435, 74.60068702697755],
             zoom: 16,
-            dragging:false,
             scrollWheelZoom: false,
 
         });
+        DG.marker([42.84036863922435, 74.60068702697755]).addTo(map);
 
-        DG.popup([42.84036863922435, 74.60068702697755])
-                    .setLatLng([42.84036863922435, 74.60068702697755])
-                    .setContent('Мы находимся здесь')
-                    .openOn(map);
+
+        // DG.popup([42.84036863922435, 74.60068702697755])
+        //             .setLatLng([42.84036863922435, 74.60068702697755])
+        //             .setContent('Мы находимся здесь')
+        //             .openOn(map);
     });
 </script>
 @endsection

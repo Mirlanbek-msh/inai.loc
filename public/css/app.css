@@ -20322,6 +20322,11 @@ nav ol.breadcrumb .breadcrumb-item a:focus {
   #main-nav .nav-link {
     letter-spacing: unset;
   }
+
+  .section .map {
+    height: 500px !important;
+    overflow: hidden;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
