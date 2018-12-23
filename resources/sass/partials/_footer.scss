@@ -107,8 +107,8 @@
                         font-size: 18px;
 
                         border: none;
-                        color: #888888;
-                        background: #e5e5e5;
+                        // color: #888888;
+                        // background: #e5e5e5;
 
                         border-radius: 50%;
                         text-align: center;
@@ -117,17 +117,33 @@
                             text-decoration: none;
                             color: $white;
                         }
+                        color: $white;
 
-                        &.fb:hover{
+                        &.fb{
                             background-color: $fb-color;
+
+                            &:hover{
+                                color: $fb-color;
+                                background-color: $white;
+                            }
                         }
                         
-                        &.twitter:hover{
+                        &.twitter{
                             background-color: $twitter-color;
+
+                            &:hover{
+                                color: $twitter-color;
+                                background-color: $white;
+                            }
                         }
                         
-                        &.youtube:hover{
+                        &.youtube{
                             background-color: $youtube-color;
+
+                            &:hover{
+                                color: $youtube-color;
+                                background-color: $white;
+                            }
                         }
 
                     }

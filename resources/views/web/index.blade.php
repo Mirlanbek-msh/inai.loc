@@ -31,14 +31,14 @@
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        {{-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only"><i class="fa fa-angle-left"></i></span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only"><i class="fa fa-angle-right"></i></span>
-        </a>
+        </a> --}}
     </div>
 </section>
 
@@ -117,7 +117,7 @@
                 <hr class="divider w-75">
             </div>
 
-            <div class="col-md-4 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="post">
                     <a href="" class="post-img">
                         <img src="{{ asset('/uploads/posts/image1.png') }}" alt="">
@@ -132,7 +132,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="post">
                     <a href="" class="post-img">
                         <img src="{{ asset('/uploads/posts/image2.jpg') }}" alt="">
@@ -147,7 +147,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="post">
                     <a href="" class="post-img">
                         <img src="{{ asset('/uploads/posts/image3.jpg') }}" alt="">

@@ -4,11 +4,14 @@
         color: $white;
         text-align: start;
         z-index: 1;
+        left: 10%;
+        right: 10%;
 
         h5{
             z-index: inherit;
             font-size: 50px;
             font-weight: 700;
+            font-family: $font-merriweather;
         }
 
         p{
@@ -22,9 +25,9 @@
         position: absolute;
         bottom: 25px;
         margin: 0;
-        left: 15%;
+        left: 10%;
         right: 0;
-        width: 100%;
+        // width: 100%;
         justify-content: flex-start;
 
         li, li.active{
@@ -142,7 +145,7 @@ nav {
         position: relative;
         width: 100%;
         display: block;
-        border-bottom: 0.5px solid rgba(11, 61, 145, 0.22);
+        border-bottom: 1px solid rgba(11, 61, 145, 0.22);
 
         &:before{
             content: "";

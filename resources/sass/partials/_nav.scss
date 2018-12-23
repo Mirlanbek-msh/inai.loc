@@ -61,7 +61,6 @@ header #hamburger-menu .line {
 
     .nav-link{
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
   }
   #hamburger-menu {
@@ -258,7 +257,7 @@ header #hamburger-menu .line {
                         > a {
                             display: flex;
                             align-items: center;
-                            justify-content: space-between;
+                            // justify-content: space-between;
                             padding: 3px 5px;
                             clear: both;
                             font-weight: normal;
@@ -269,6 +268,11 @@ header #hamburger-menu .line {
                                 text-decoration: none;
                                 color: $white;
                                 background-color: $hover-blue;
+
+                                &::before{
+                                  content: '\203A';
+                                  margin-right: 3px;
+                              }
                             }
                         }
                     }

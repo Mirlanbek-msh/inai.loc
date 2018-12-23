@@ -74,7 +74,7 @@
                         <ul class="dropdown-menu mega-dropdown-menu">
                             <div class="container">
                                 <div class="row">
-                                    <li class="col-sm-6">
+                                    <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
                                             <li class="dropdown-header">Бакалавриат информатики</li>
                                             <li><a href="#">Программные технологии</a></li>
@@ -83,7 +83,7 @@
                                             
                                         </ul>
                                     </li>
-                                    <li class="col-sm-6">
+                                    <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
                                             <li class="dropdown-header">Магистратура информатики</li>
                                             <li><a href="#">Инженерия системного программирования проектов</a></li>
@@ -91,7 +91,7 @@
     
                                         </ul>
                                     </li>
-                                    <li class="col-sm-6">
+                                    <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
                                             <li class="dropdown-header">Требования к поступлению</li>
                                             <li><a href="#">Поступление в бакалавриат</a></li>
@@ -99,7 +99,7 @@
                                             <li><a href="#">ДААД стипендии для Бишкека</a></li>
                                         </ul>
                                     </li>
-                                    <li class="col-sm-6">
+                                    <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
                                             <li class="dropdown-header">Международное сотрудничество</li>
                                             <li><a href="#">Ассоциативный партнер</a></li>
@@ -112,7 +112,7 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="nav navbar-navs locale d-sm-none mt-3 float-left">
+                <ul class="nav navbar-navs locale d-lg-none mt-3 float-left">
                     <li class="nav-item">
                         <a href="" class="nav-link">
                             <span class="label label-default"><span class="flag-icon flag-icon-ru"></span> RU</span>
