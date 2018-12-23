@@ -18,7 +18,7 @@
                     <ul>
                         <li><a href=""><i class="fa fa-phone"></i> +996 555 555 555</a></li>
                         <li><a href=""><i class="fa fa-envelope"></i> info@inai.kg</a></li>
-                        <li><a href=""><i class="fa fa-map"></i> info@inai.kg</a></li>
+                        <li><a href=""><i class="fa fa-map"></i>Малдыбыаева 34 Б<br>Бишкек 720000</a></li>
                     </ul>
 
                     <div class="social-links">
