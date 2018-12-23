@@ -14,19 +14,19 @@
             <div class="carousel-item active">
                 <img class="d-block w-100" src="{{ asset('/uploads/banner/1.jpg') }}" alt="">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaquevelit?</h5>
+                    <h5>Ярмарка карьеры и контактов 2018</h5>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
 
-                    <a href="" class="btn btn-primary">Learn more</a>
+                    <a href="" class="btn btn-primary">Подробнее</a>
                     {{-- <a href="" class="btn btn-outline-primary">Other</a> --}}
                 </div>
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="{{ asset('/uploads/banner/2.jpg') }}" alt="">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaquevelit?</h5>
+                    <h5>Тренинг по методологии SCRUM</h5>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
-                    <a href="" class="btn btn-primary">Learn more</a>
+                    <a href="" class="btn btn-primary">Подробнее</a>
                     {{-- <a href="" class="btn btn-outline-primary">Other</a> --}}
                 </div>
             </div>
@@ -50,8 +50,7 @@
                 <hr class="divider w-75">
             </div>
 
-            @for($i = 0; $i < 4; $i++)
-            <div class="col-md-6 col-sm-12 p-4 d-flex @if($i % 2 != 0) justify-content-start @else justify-content-end @endif">
+            <div class="col-md-6 col-sm-12 p-4 d-flex justify-content-center">
                 <div class="event">
                     <div class="event-img">
                         <img src="{{ asset('/uploads/banner/1.jpg') }}" alt="">
@@ -62,21 +61,45 @@
                     </div>
                     <div class="event-body">
                         <div class="meta-text text-center">
-                            <h3>31</h3>
-                            <p>September</p>
-                            <span>14:00</span>
+                            <h3>18</h3>
+                            <p>Октябрь</p>
+                            <span>10:00</span>
                         </div>
                         <div class="main-text">
-                            <h6><a href="">SCRUM Metodolgy</a></h6>
+                            <h6><a href="">Ярмарка карьеры и контактов, 2018, Бишкек</a></h6>
                             <ul>
-                                <li><i class="fa fa-user"></i> Sven Koble</li>
-                                <li><i class="fa fa-user"></i> David Hoffman</li>
+                                <li><i class="fa fa-user"></i> INAI.KG</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            @endfor
+
+            <div class="col-md-6 col-sm-12 p-4 d-flex justify-content-center">
+                <div class="event">
+                    <div class="event-img">
+                        <img src="{{ asset('/uploads/events/img2.jpg') }}" alt="">
+                        <div class="event-overlay">
+                            <a href="" class="btn btn-primary">Зарегистрироваться</a>
+                            <a href="" class="btn btn-outline-primary">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <div class="meta-text text-center">
+                            <h3>22</h3>
+                            <p>Сентябрь</p>
+                            <span>9:30</span>
+                        </div>
+                        <div class="main-text">
+                            <h6><a href="">Методология SCRUM</a></h6>
+                            <ul>
+                                <li><i class="fa fa-user"></i> Sven Koble</li>
+                                <li><i class="fa fa-user"></i> David Grossman</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="col-12 justify-content-center d-flex">
                 <a href="" class="btn btn-primary">Просмотреть все ивенты</a>
@@ -94,22 +117,35 @@
                 <hr class="divider w-75">
             </div>
 
-            @for($i = 0; $i < 6; $i++)
             <div class="col-md-4 col-sm-12">
                 <div class="post">
-                    <a href="">
-                        <img src="{{ asset('/uploads/banner/1.jpg') }}" alt="">
+                    <a href="" class="post-img">
+                        <img src="{{ asset('/uploads/posts/image1.png') }}" alt="">
                     </a>
                     <div class="post-body">
-                        <a href=""><h6>Title</h6></a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, consequatur tempora.</p>
+                        <a href=""><h6>Студенты INAI.kg разработали приложение ZWIK</h6></a>
+                        <p>Студенты старшего курса бакалавриата по информатике INAI.kg ...</p>
                         <div class="mt-3">
-                            <span class="meta-text"><i class="fa fa-calendar"></i> 2 days ago</span>
+                            <span class="meta-text"><i class="fa fa-calendar"></i> 2 дня назад</span>
                         </div>
                     </div>
                 </div>
             </div>
-            @endfor
+
+            <div class="col-md-4 col-sm-12">
+                <div class="post">
+                    <a href="" class="post-img">
+                        <img src="{{ asset('/uploads/posts/image2.jpg') }}" alt="">
+                    </a>
+                    <div class="post-body">
+                        <a href=""><h6>Более 300 студентов посетили ярмарку карьеры и контактов в Бишкеке</h6></a>
+                        <p>16 октября в отеле Дамас прошла пятая ежегодная ярмарка карьеры и контактов. ...</p>
+                        <div class="mt-3">
+                            <span class="meta-text"><i class="fa fa-calendar"></i> месяц назад</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="col-12 justify-content-center d-flex mb-3">
                 <a href="" class="btn btn-primary">Просмотреть все новости</a>
