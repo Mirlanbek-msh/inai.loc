@@ -170,15 +170,15 @@
     </div>
 </section>
 
-<section class="section bg-gray pt-5">
+{{-- <section class="section bg-gray pt-5">
     <div id="map" class="map">
     </div>
-</section>
+</section> --}}
 
 @endsection
                 
 @section('scripts')
-<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+{{-- <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script> --}}
 <script>
     $(document).ready(function(){
         console.log('loaded');
@@ -186,20 +186,20 @@
 
     var map;
 
-    DG.then(function () {
-        map = DG.map('map', {
-            center: [42.84036863922435, 74.60068702697755],
-            zoom: 16,
-            scrollWheelZoom: false,
+    // DG.then(function () {
+    //     map = DG.map('map', {
+    //         center: [42.84036863922435, 74.60068702697755],
+    //         zoom: 16,
+    //         scrollWheelZoom: false,
 
-        });
-        DG.marker([42.84036863922435, 74.60068702697755]).addTo(map);
+    //     });
+    //     DG.marker([42.84036863922435, 74.60068702697755]).addTo(map);
 
 
-        // DG.popup([42.84036863922435, 74.60068702697755])
-        //             .setLatLng([42.84036863922435, 74.60068702697755])
-        //             .setContent('Мы находимся здесь')
-        //             .openOn(map);
-    });
+    //     // DG.popup([42.84036863922435, 74.60068702697755])
+    //     //             .setLatLng([42.84036863922435, 74.60068702697755])
+    //     //             .setContent('Мы находимся здесь')
+    //     //             .openOn(map);
+    // });
 </script>
 @endsection
