@@ -27,7 +27,7 @@
                     <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaquevelit?</h5>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
                     <a href="" class="btn btn-primary">Learn more</a>
-                    <a href="" class="btn btn-outline-primary">Other</a>
+                    {{-- <a href="" class="btn btn-outline-primary">Other</a> --}}
                 </div>
             </div>
         </div>
