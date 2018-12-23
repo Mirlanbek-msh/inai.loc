@@ -31,13 +31,36 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
-                <div class="footer-title">Разделы</div>
+                <div class="footer-title">Ссылки</div>
                 <div class="footer-divider"></div>
                 <div class="footer-body">
                     <ul>
-                        <li><a href="">Главная</a></li>
-                        <li><a href="">Новости</a></li>
-                        <li><a href="">События</a></li>
+                        <li><i class="fa fa-mobile-alt"></i> Приложение для ярмарки карьеры</li>
+                    </ul>
+                    <a target="_blank" href="#" class="btn btn-sm btn-light text-left mb-2 btn-slinks">
+                        <span class="media align-items-center">
+                            <span class="btn-slinks-left d-flex mr-3">
+                                <i class="fab fa-apple"></i>
+                            </span>
+                            <span class="media-body">
+									<span class="btn-slinks-left-top d-block">Доступно в</span>
+									<span class="btn-slinks-left-name">App Store</span>									
+                            </span>
+                        </span>
+                    </a>
+                    <a target="_blank" href="#" class="btn btn-sm btn-light text-left mb-2 btn-slinks">
+                        <span class="media align-items-center">
+                            <span class="btn-slinks-left d-flex mr-3">
+                                <i class="fab fa-google-play"></i>
+                            </span>
+                            <span class="media-body">
+									<span class="btn-slinks-left-top d-block">Загрузить на</span>
+									<span class="btn-slinks-left-name">GOOGLE PLAY</span>							
+                            </span>
+                        </span>
+                    </a>
+                    <ul>
+                        <li><a href=""><i class="fa fa-envelope"></i> Вход на почту</a></li>
                     </ul>
                 </div>
 

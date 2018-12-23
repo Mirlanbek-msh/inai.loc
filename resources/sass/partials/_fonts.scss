@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700&subset=cyrillic');
+
+
+@font-face {
+    font-family: 'roboto_light';
+    src: url('https://fonts.googleapis.com/css?family=Roboto:300&subset=cyrillic');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto_regular';
+    src: url('https://fonts.googleapis.com/css?family=Roboto:400&subset=cyrillic');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto_medium';
+    src: url('https://fonts.googleapis.com/css?family=Roboto:500&subset=cyrillic');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto_bold';
+    src: url('https://fonts.googleapis.com/css?family=Roboto:700&subset=cyrillic');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+// Typography
+$font-open-sans: 'Open Sans', sans-serif;
+$font-merriweather: 'Merriweather', serif;
+$roboto-light: 'roboto_light', sans-serif;
+$roboto-medium: 'roboto_medium', sans-serif;
+
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;

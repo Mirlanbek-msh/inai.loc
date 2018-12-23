@@ -18894,6 +18894,34 @@ a.text-dark:focus {
   fill: #F5F7FA;
 }
 
+@font-face {
+  font-family: "roboto_light";
+  src: url("https://fonts.googleapis.com/css?family=Roboto:300&subset=cyrillic");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto_regular";
+  src: url("https://fonts.googleapis.com/css?family=Roboto:400&subset=cyrillic");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto_medium";
+  src: url("https://fonts.googleapis.com/css?family=Roboto:500&subset=cyrillic");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto_bold";
+  src: url("https://fonts.googleapis.com/css?family=Roboto:700&subset=cyrillic");
+  font-weight: bold;
+  font-style: normal;
+}
+
 html,
 body {
   height: 100%;
@@ -18902,7 +18930,7 @@ body {
   background-color: #fff;
 }
 
-* {
+body * {
   transition: 0.3s all ease;
 }
 
@@ -19577,6 +19605,8 @@ nav ol.breadcrumb .breadcrumb-item a:focus {
 .event .btn {
   margin: 10px auto;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .event-img {
@@ -19787,7 +19817,8 @@ nav ol.breadcrumb .breadcrumb-item a:focus {
 }
 
 .footer {
-  padding: 40px 0;
+  padding: 40px 0 0 0;
+  box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.18);
   background-color: #fff;
   color: #1F214A;
 }
@@ -20382,5 +20413,60 @@ nav ol.breadcrumb .breadcrumb-item a:focus {
 
 .btn-outline-primary:hover {
   color: #0087ab !important;
+}
+
+.btn-slinks {
+  padding: 10px 15px 10px 10px;
+  width: 200px;
+  background: #1F214A;
+  border-radius: 0.2rem;
+  color: #fff;
+}
+
+.btn-slinks:hover i,
+.btn-slinks:hover span {
+  color: #1F214A !important;
+}
+
+.btn-slinks-left {
+  width: 25px;
+}
+
+.btn-slinks-left-top {
+  font-family: "roboto_light", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.btn-slinks-left-name {
+  font-family: "roboto_medium", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.btn-slinks i {
+  font-size: 20px;
+  color: #fff;
+  padding-left: 5px;
+}
+
+.btn-slinks .media-body {
+  padding: 0 30px 0 15px;
+  border-left: 1px solid #d6dfe8;
+}
+
+.btn-slinks .media-body span {
+  color: #fff;
+  transition: 0.1s all linear;
+  line-height: 14px;
+}
+
+.btn-slinks:hover {
+  background: #fff;
+}
+
+.btn-slinks:focus,
+.btn-slinks:visited {
+  box-shadow: none !important;
 }
 
