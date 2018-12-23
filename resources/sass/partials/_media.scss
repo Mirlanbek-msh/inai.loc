@@ -208,6 +208,13 @@
         margin: 0 0 15px 0 !important;
     }
 
+    .section{
+        .map{
+            height: 300px !important;
+            overflow: hidden;
+        }
+    }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

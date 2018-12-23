@@ -170,12 +170,43 @@
     </div>
 </section>
 
+<section class="section bg-gray pt-5">
+    <div id="map" class="map">
+        <a class="dg-widget-link" href="http://2gis.kg/bishkek/firm/70000001019349127/center/74.60068702697755,42.84036863922435/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Бишкека</a>
+        <div class="dg-widget-link">
+            <a href="http://2gis.kg/bishkek/firm/70000001019349127/photos/70000001019349127/center/74.60068702697755,42.84036863922435/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a>
+        </div>
+        <div class="dg-widget-link">
+            <a href="http://2gis.kg/bishkek/center/74.600685,42.840065/zoom/16/routeTab/rsType/bus/to/74.600685,42.840065╎Кыргызский государственный университет строительства, транспорта и архитектуры им. Н. Исанова?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Кыргызский государственный университет строительства, транспорта и архитектуры им. Н. Исанова</a>
+        </div>
+        <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
+        <script charset="utf-8">new DGWidgetLoader({"width":'100%',"height":500,"borderColor":"#a3a3a3","pos":{"lat":42.84036863922435,"lon":74.60068702697755,"zoom":16},"opt":{"city":"bishkek"},"org":[{"id":"70000001019349127"}]});</script>
+        <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+    </div>
+</section>
+
 @endsection
                 
 @section('scripts')
+<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
 <script>
     $(document).ready(function(){
         console.log('loaded');
+    });
+
+    var map;
+
+    DG.then(function () {
+        map = DG.map('map', {
+            center: [42.84036863922435, 74.60068702697755],
+            zoom: 16,
+
+        });
+
+        DG.popup([42.84036863922435, 74.60068702697755])
+                    .setLatLng([42.84036863922435, 74.60068702697755])
+                    .setContent('Мы находимся здесь')
+                    .openOn(map);
     });
 </script>
 @endsection
