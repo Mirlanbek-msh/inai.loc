@@ -1,6 +1,6 @@
 @extends('web.layouts.base')
 
-@section('title', 'INAI.KG')
+@section('title', 'Kyrgyz-German Institute of Applied Informatics')
 
 @section('content')
 
