@@ -31,7 +31,7 @@
             </li>
             <li class="nav-item">
                 <a href="" class="nav-link">
-                    <span class="label label-default"><span class="flag-icon flag-icon-gb"></span> GB</span>
+                    <span class="label label-default"><span class="flag-icon flag-icon-gb"></span> EN</span>
                 </a>
             </li>
         </ul>
@@ -120,7 +120,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link">
-                            <span class="label label-default"><span class="flag-icon flag-icon-gb"></span> GB</span>
+                            <span class="label label-default"><span class="flag-icon flag-icon-gb"></span> EN</span>
                         </a>
                     </li>
                     <li class="nav-item contacts-item">

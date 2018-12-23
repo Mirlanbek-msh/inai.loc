@@ -4,15 +4,31 @@
     #main-nav{
         overflow: scroll;
 
-        .dropdown-menu{
-            position: unset;
+        .nav{
+            .mega-dropdown{
 
-            .container{
-                .row{
-                    margin: 0;
-
-                    .col-sm-6{
-                        padding: 0;
+                &-menu{
+                    position: unset;
+                    background-color: $white !important;
+                    border-radius: 0;
+                    border-top-width: 0;
+        
+                    .dropdown-header{
+                        color: $blue !important;
+                    }
+        
+                    a{
+                        color: $blue !important;
+                    }
+        
+                    .container{
+                        .row{
+                            margin: 0;
+        
+                            .col-sm-6{
+                                padding: 0;
+                            }
+                        }
                     }
                 }
             }
@@ -119,6 +135,79 @@
             }
         }
     }
+
+    .footer{
+        padding: 20px 0;
+    }
+
+    .section{
+
+        &-title{
+            font-size: 32px;
+            text-align: center;
+            
+        }
+    }
+
+    .event{
+        width: 100%;
+        
+        &-overlay{
+            padding: 5%;
+        }
+    
+        &-body{
+            flex-direction: column;
+    
+            .meta-text{
+                flex-direction: row;
+                padding: 5px 9px;
+                justify-content: center;
+    
+                h3{
+                    font-weight: 700;
+                    font-size: 20px;
+                }
+    
+                p{
+                    margin-left: 5px;
+                }
+    
+                span{
+                    margin-left: 5px;
+                }
+                
+            }
+    
+            .main-text{
+                display: flex;
+                flex-grow: 3;
+                flex-direction: column;
+                padding: 20px 0 0 20px;
+    
+    
+                h6{
+                    
+                }
+    
+                ul{
+                    padding: 0;
+                    list-style-type: none;
+    
+                    li{
+                        float: left;
+                    }
+                }
+            }
+        }
+    
+        
+    }
+    
+    .btn{
+        margin: 0 0 15px 0 !important;
+    }
+
 }
 
 // Small devices (landscape phones, 576px and up)

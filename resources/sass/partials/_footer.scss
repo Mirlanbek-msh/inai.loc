@@ -1,78 +1,149 @@
 .footer {
-    margin-top: 10px;
-    padding: 20px 0;
-    background-color: $blue-light;
+    // margin-top: 10px;
+    padding: 40px 0;
+    background-color: $white;
+    // border-top: 1px solid $blue;
 
-    color: #fff;
+    color: $blue;
 
-    ul {
-        list-style: none;
-        padding: 10px 0;
-
-        li {
-            font-size: 15px;
-            margin-bottom: 5px;
-
-            h4 {
-                font-size: 15px;
-                font-weight: bold;
-            }
-        }
-    }
-
-    li {
-        a {
-            color: #fff;
-            text-decoration: none;
-            padding: 3px 3px;
-            width: 100%;
-            
-            
-            
-            &:hover, &:focus {
-                // color: $hover_blue;
-                background-color: $hover_bg;
-            }
-        }
-        
-        > a {
-            display: flex;
-        }
-
-    } 
-
-    h3 {
+    &-title{
+        font-weight: 700;
         font-size: 18px;
-        font-weight: bold;
-        padding-bottom: 15px;
-        border-bottom: 1px solid $dark_blue;
+        line-height: 1.22222;
+        margin-bottom: 11px;
+        
     }
 
-    &-bottom {
-        height: 50px;
-        display: flex;
-        background-color: $dark_blue;
-        align-items: center;
-        color: #fff;
-        padding: 5px;
+    &-divider{
         position: relative;
-    
-    
-        p {
-            margin: 0;
+        height: 1px;
+        padding: 0;
+        background: #e5e5e5;
+        border: none;
+
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 1px;
+            width: 50px;
+            background: #0087ab;
         }
+    }
+
+    &-body{
+        margin-top: 15px;
+
+
+        .logo{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+
+            .logo-img{
+                display: flex;
+                flex-grow: 1;
+                justify-content: center;
+                align-content: center;
+
+                img{
+                    width: 70px;
+                    height: 70px;
+                }
+                margin-bottom: 3px;
+            }
+
+            .logo-text{
+                color: $blue;
+                font-size: 2.5rem;
+                text-align: center;
+                margin-top: 15px;
+            }
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
     
-        a {
-            color: #fff;
-            font-size: 20px;
-            margin-left: 10px;
-            line-height: auto;
-    
-            &:hover {
-                color: #6bd1fa;
+            li {
+                font-size: 15px;
+                margin-top: 15px;
+
+                a{
+                    color: $blue;
+
+                    &:hover{
+                        text-decoration: none;
+                        color: $blue-light;
+                    }
+                }
+
+                i{
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .social-links{
+            display: block;
+            height: auto;
+            overflow: auto;
+
+            ul{
+                padding: 0;
+                margin: 0;
+                overflow: auto;
+
+                li{
+                    padding: 0 3px 0 0;
+                    float: left;
+                    margin: 0 15px 0 0;
+                    a{
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        font-size: 18px;
+
+                        border: none;
+                        color: #888888;
+                        background: #e5e5e5;
+
+                        border-radius: 50%;
+                        text-align: center;
+
+                        &:hover, &:focus{
+                            text-decoration: none;
+                            color: $white;
+                        }
+
+                        &.fb:hover{
+                            background-color: $fb-color;
+                        }
+                        
+                        &.twitter:hover{
+                            background-color: $twitter-color;
+                        }
+                        
+                        &.youtube:hover{
+                            background-color: $youtube-color;
+                        }
+
+                    }
+                }
             }
         }
     }
 
 }
 
+.bottom-panel{
+    background-color: $blue;
+    padding: 10px 30px;
+
+    p{
+        color: $white;
+        margin: 0;
+    }
+}
