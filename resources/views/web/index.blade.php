@@ -147,6 +147,21 @@
                 </div>
             </div>
 
+            <div class="col-md-4 col-sm-12">
+                <div class="post">
+                    <a href="" class="post-img">
+                        <img src="{{ asset('/uploads/posts/image3.jpg') }}" alt="">
+                    </a>
+                    <div class="post-body">
+                        <a href=""><h6>Прошел хакатон среди студентов</h6></a>
+                        <p>28 ноября в институте прошел первый большой хакатон. ...</p>
+                        <div class="mt-3">
+                            <span class="meta-text"><i class="fa fa-calendar"></i> неделю назад</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-12 justify-content-center d-flex mb-3">
                 <a href="" class="btn btn-primary">Просмотреть все новости</a>
             </div>
