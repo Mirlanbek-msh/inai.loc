@@ -889,11 +889,11 @@ class LaravelLocalization
                 }
             }
         } else {
-            if (!$this->router->current()) {
+            if (!$app['router']->current()) {
                 return [];
             }
 
-            $attributes = $this->normalizeAttributes($this->router->current()->parameters());
+            $attributes = $this->normalizeAttributes($this->app['router']->current()->parameters());
             $response = event('routes.translation', [$locale, $attributes]);
 
             if (!empty($response)) {
