@@ -16,16 +16,17 @@
                 <div class="footer-divider"></div>
                 <div class="footer-body">
                     <ul>
-                        <li><a href=""><i class="fa fa-phone"></i> +996 555 555 555</a></li>
-                        <li><a href=""><i class="fa fa-envelope"></i> info@inai.kg</a></li>
-                        <li><a href=""><i class="fa fa-map"></i>Малдыбыаева 34 Б<br>Бишкек 720000</a></li>
+                        <li><a href="tel:+996557312711"><i class="fa fa-phone"></i> +996 557 312 711</a></li>
+                        <li><a href="tel:+996312549238"><i class="fa fa-phone"></i> +996 312 549 238</a></li>
+                        <li><a href="mailto:info@inai.kg"><i class="fa fa-envelope"></i> info@inai.kg</a></li>
+                        <li><a href="geo:42.84036863922435,74.60068702697755"><i class="fa fa-map"></i>Малдыбыаева 34 Б<br>Бишкек 720000</a></li>
                     </ul>
 
                     <div class="social-links">
                         <ul>
-                            <li><a class="fab fa-facebook-f fb" href=""></a></li>
-                            <li><a class="fab fa-youtube youtube" href=""></a></li>
-                            <li><a class="fab fa-twitter twitter" href=""></a></li>
+                            <li><a class="fab fa-facebook-f fb" href="//www.facebook.com/kgiaibishkek" target="_blank"></a></li>
+                            <li><a class="fab fa-youtube youtube" href="#" target="_blank"></a></li>
+                            <li><a class="fab fa-twitter twitter" href="#" target="_blank"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -60,7 +61,7 @@
                         </span>
                     </a>
                     <ul>
-                        <li><a href=""><i class="fa fa-envelope"></i> Вход на почту</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> Вход на почту</a></li>
                     </ul>
                 </div>
 

@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expanded-lg navbar-top top-bar-menu sps sps--abv">
+<nav class="navbar navbar-expanded-lg navbar-top top-bar-menu">
     <div class="container">
         <nav class="nav navbar-social">
-            <a class="nav-link" href="tel:+996555555555">
-                <i class="fa fa-phone"></i> +996 555 555 555
+            <a class="nav-link" href="tel:+996557312711">
+                <i class="fa fa-phone"></i> +996 557 312 711
             </a>
-            <a class="nav-link" href="mailto:mail@inai.kg">
-                <i class="fa fa-envelope"></i> mail@inai.kg
+            <a class="nav-link" href="mailto:info@inai.kg">
+                <i class="fa fa-envelope"></i> info@inai.kg
             </a>
         </nav>
         {{-- <ul class="nav justify-content-center nav-info">
@@ -14,26 +14,32 @@
             </li>
         </ul> --}}
         <ul class="nav navbar-navs locale">
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="" class="nav-link">
                     <span class="label label-default"><span class="flag-icon flag-icon-kg"></span> KG</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
-                <a href="" class="nav-link">
+                @if(app()->getLocale() != 'ru')
+                <a href="/ru" class="nav-link">
                     <span class="label label-default"><span class="flag-icon flag-icon-ru"></span> RU</span>
                 </a>
             </li>
+            @endif
             <li class="nav-item">
-                <a href="" class="nav-link">
-                    <span class="label label-default"><span class="flag-icon flag-icon-de"></span> DE</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">
+                @if(app()->getLocale() != 'en')
+                <a href="/en" class="nav-link">
                     <span class="label label-default"><span class="flag-icon flag-icon-gb"></span> EN</span>
                 </a>
             </li>
+            @endif
+            <li class="nav-item">
+                @if(app()->getLocale() != 'de')
+                <a href="/de" class="nav-link">
+                    <span class="label label-default"><span class="flag-icon flag-icon-de"></span> DE</span>
+                </a>
+            </li>
+            @endif
         </ul>
     </div>
 </nav>
@@ -46,26 +52,26 @@
                 <span class="line"></span>
             </div>
             <div class="logo">
-                <a href="" class="navbar-brand">
+                <a href="{{ route('web.home') }}" class="navbar-brand">
                     <img src="{{ asset('/images/logo.png') }}" alt="">
                 </a>
             </div>
             <nav id="main-nav">
                 <ul class="nav float-right">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Главная</a>
+                        <a class="nav-link" href="{{ route('web.home') }}">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">События</a>
+                        <a class="nav-link" href="{{ route('web.event.index') }}">События</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Галерея</a>
+                        <a class="nav-link" href="{{ route('web.gallery') }}">Галерея</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">О нас</a>
+                        <a class="nav-link" href="{{ route('web.about') }}">О нас</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Контакты</a>
+                        <a class="nav-link" href="{{ route('web.contact') }}">Контакты</a>
                     </li>
                     <li class="nav-item dropdown mega-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
@@ -113,29 +119,42 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-navs locale d-lg-none mt-3 float-left">
+                    @if(app()->getLocale() != 'ru')
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="/ru" class="nav-link">
                             <span class="label label-default"><span class="flag-icon flag-icon-ru"></span> RU</span>
                         </a>
                     </li>
+                    @endif
+                    @if(app()->getLocale() != 'en')
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="/en" class="nav-link">
                             <span class="label label-default"><span class="flag-icon flag-icon-gb"></span> EN</span>
                         </a>
                     </li>
+                    @endif
+                    @if(app()->getLocale() != 'de')
+                    <li class="nav-item">
+                        <a href="/de" class="nav-link">
+                            <span class="label label-default"><span class="flag-icon flag-icon-de"></span> DE</span>
+                        </a>
+                    </li>
+                    @endif
                     <li class="nav-item contacts-item">
                         <ul class="nav-contacts">
-                            <li><a href=""> <i class="fa fa-envelope"></i> info@inai.kg</a></li>
-                            <li><a href=""> <i class="fa fa-phone"></i> +996 555 555 555</a></li>
+                            <li><a href="mailto:info@inai.kg"> <i class="fa fa-envelope"></i> info@inai.kg</a></li>
+                            <li><a href="tel:+996557312711"> <i class="fa fa-phone"></i> +996 557 312 711</a></li>
                         </ul>
 
                     </li>
                     <li class="nav-item social-item">
-                        <ul class="nav-social">
-                            <li><a href="#" target="_blank" style="color:#3b5998"><i class='bx bxl-facebook'></i></a></li>
-                            <li><a href="#" target="_blank" style="color:#38A1F3"><i class='bx bxl-twitter'></i></a></li>
-                            <li><a href="#" target="_blank" style="color:#c4302b"><i class='bx bxl-youtube'></i></a></li>
-                        </ul>
+                        <div class="ml-3 mt-1 social-links">
+                            <ul>
+                                <li><a class="fab fa-facebook-f fb" href="//www.facebook.com/kgiaibishkek" target="_blank"></a></li>
+                                <li><a class="fab fa-youtube youtube" href="#" target="_blank"></a></li>
+                                <li><a class="fab fa-twitter twitter" href="#" target="_blank"></a></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </nav>

@@ -11,6 +11,56 @@
 |
 */
 
-Route::get('/', function () {
-    return view('web.index');
+Route::group(['prefix' => LaravelLocalization::setLocale(), 
+            'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function(){
+                
+    Route::group(['as' => 'web.'], function(){
+
+        Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/about', 'HomeController@about')->name('about');
+        Route::get('/contact', 'HomeController@contact')->name('contact');
+        Route::get('/gallery', 'HomeController@gallery')->name('gallery');
+        Route::get('/application', 'HomeController@application')->name('application');
+        Route::get('/tag/{slug}', 'PostController@tag')->name('tag');
+        // Search
+        Route::post('/search', 'SearchController@search')->name('search');
+
+        // Post
+        Route::group(['prefix' => 'post', 'as' => 'post.'], function(){
+            Route::get('/', 'PostController@index')->name('index');
+            Route::get('/{slug}', 'PostController@show')->name('show');
+            Route::post('/{id}/comment', 'PostController@comment')->name('comment');
+        });
+
+        // Event
+        Route::group(['prefix' => 'event', 'as' => 'event.'], function(){
+            Route::get('/', 'EventController@index')->name('index');
+            Route::get('/apply', 'EventController@apply')->name('apply');
+            Route::get('/{slug}', 'EventController@show')->name('show');
+            Route::post('/{id}/comment', 'EventController@comment')->name('comment');
+        });
+
+        Route::group(['as' => 'auth.'], function(){
+            Route::get('/login', 'Auth\LoginController@showLoginForm')->name('loginForm');
+            Route::post('/login', 'Auth\LoginController@login')->name('login');
+
+            Route::get('/login/google/redirect', 'Auth\LoginController@loginGoogleRedirect')->name('google_redirect');
+            Route::get('/login/google/callback', 'Auth\LoginController@loginGoogleCallback');
+            
+            Route::get('/login/fb/redirect', 'Auth\LoginController@loginFbRedirect')->name('fb_redirect');
+            Route::get('/login/fb/callback', 'Auth\LoginController@loginFbCallback');
+
+            Route::get('/login/vk/redirect', 'Auth\LoginController@loginVkRedirect')->name('vk_redirect');
+            Route::get('/login/vk/callback', 'Auth\LoginController@loginVkCallback');
+
+            Route::get('/login/twitter/redirect', 'Auth\LoginController@loginTwitterRedirect')->name('twitter_redirect');
+            Route::get('/login/twitter/callback', 'Auth\LoginController@loginTwitterCallback');
+
+            Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+            Route::get('/register', 'Auth\LoginController@showRegisterForm')->name('registerForm');
+            Route::post('/register', 'Auth\LoginController@register')->name('register');
+        });
+
+    });
 });
+

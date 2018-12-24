@@ -1,3 +1,229 @@
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (max-width: 992px) {
+
+    .header{
+        padding: 10px;
+
+
+        &.sps {
+            top: 0;
+            position: fixed;
+    
+            .main-header{
+    
+                .logo {
+                    img {
+                        height: 40px;
+                    }
+                }
+            }
+            
+        }
+    }
+    
+
+    .top-bar-menu{
+        height: 70px;
+        * {
+            display: none;
+        }
+    }
+
+    #main-nav{
+        overflow: scroll;
+        position: fixed;
+
+        .nav{
+            width: 100%;
+
+            .nav-item{
+
+            }
+
+            .mega-dropdown{
+
+                &-menu{
+                    position: unset;
+                    background-color: $white !important;
+                    border-radius: 0;
+                    border-top-width: 0;
+                    width: 100%;
+
+
+                    .dropdown-header{
+                        color: $blue !important;
+                    }
+        
+                    a{
+                        color: $blue !important;
+                    }
+        
+                    .container{
+                        .row{
+                            margin: 0;
+        
+                            &>*{
+                                padding: 0;
+                            }
+                        }
+
+                        padding: 3px 10px;
+
+                        ul{
+                            list-style-type: none;
+                            padding: 0;
+    
+                            li{
+                                margin: 5px 0;
+
+                                ul {
+                                    padding-left: 5px;
+                                }
+                                a{
+                                    font-size: 0.9rem;
+                                    color: $white-alpha;
+
+                                    &::before{
+                                        content: '\203A';
+                                        margin-right: 3px;
+                                    }
+
+                                    &:hover, &:active{
+                                        color: $white;
+                                    }
+                                }
+        
+                                &.dropdown-header{
+                                    padding: 0;
+                                    font-size: 0.85rem;
+                                    color: $white;
+                                    font-weight: bold;
+                                    margin: 3px 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .contacts-item{
+                ul{
+                    padding: 5px 15px;
+                    list-style-type: none;
+                    
+                    li{
+                        margin: 7px 0;
+                        
+
+                        a{
+                            color: $blue;
+                            i{
+                                margin-right: 5px;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .social-item{
+                display: flex;
+                        
+                ul{
+                    list-style-type: none;
+                    display: flex;
+                    flex-grow: 1;
+
+                    li{
+                        display: flex;
+                        flex-grow: 1;
+                        float: left;
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .carousel{
+
+        &-indicators{
+            justify-content: center;
+            left: unset;
+            width: 100%;
+    
+            li, li.active{
+                width: 0.5rem;
+                height: 0.5rem;
+            }
+            li{
+                border: 1px solid #fff;
+            }
+        }
+
+        &-inner{
+            // height: 800px;
+
+            .carousel-caption{
+                h5{
+                    font-size: 40px;
+                }
+            }
+    
+            img{
+                object-fit: cover;
+                object-position: 100% 0;
+            }
+        }
+    }
+
+    .event{
+        width: 100%;
+
+        .btn{
+            width: 100%;
+            margin: 10px auto !important;
+        }
+
+        &-img{
+
+
+            .event-overlay{
+                padding: 10%;
+            }
+        }
+
+        &-body{
+
+            .meta-text{
+
+                * {
+                    flex-grow: 1;
+                }
+
+            }
+
+            .main-text{
+                padding: 10px 0 0 10px;
+
+                ul{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .section{
+        .map{
+            height: 500px !important;
+            overflow: hidden;
+        }
+    }
+}
+
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575px) {
 
@@ -215,224 +441,27 @@
         }
     }
 
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media (min-width: 576px) {
-    
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media (max-width: 768px) {
-
-    header.sps {
-        top: 0;
-        position: fixed;
-
-        .main-header{
-
-            .logo {
-                img {
-                    height: 40px;
-                }
-            }
-        }
-        
-    }
-
-    .top-bar-menu{
-        height: 40px;
-        * {
-            display: none;
+    .post-full{
+        .meta-text{
+            flex-direction: column;
         }
     }
 
-    #main-nav{
-        overflow: scroll;
-        position: fixed;
-
-        .nav{
-            width: 100%;
-
-            .nav-item{
-
-            }
-
-            .mega-dropdown{
-
-                &-menu{
-                    position: unset;
-                    background-color: $white !important;
-                    border-radius: 0;
-                    border-top-width: 0;
-                    width: 100%;
-
-
-                    .dropdown-header{
-                        color: $blue !important;
-                    }
-        
-                    a{
-                        color: $blue !important;
-                    }
-        
-                    .container{
-                        .row{
-                            margin: 0;
-        
-                            &>*{
-                                padding: 0;
-                            }
-                        }
-
-                        padding: 3px 10px;
-
-                        ul{
-                            list-style-type: none;
-                            padding: 0;
-    
-                            li{
-                                margin: 5px 0;
-
-                                ul {
-                                    padding-left: 5px;
-                                }
-                                a{
-                                    font-size: 0.9rem;
-                                    color: $white-alpha;
-
-                                    &::before{
-                                        content: '\203A';
-                                        margin-right: 3px;
-                                    }
-
-                                    &:hover, &:active{
-                                        color: $white;
-                                    }
-                                }
-        
-                                &.dropdown-header{
-                                    padding: 0;
-                                    font-size: 0.85rem;
-                                    color: $white;
-                                    font-weight: bold;
-                                    margin: 3px 0;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            .contacts-item{
-                ul{
-                    padding: 5px 15px;
-                    list-style-type: none;
-                    
-                    li{
-                        margin: 7px 0;
-                        
-
-                        a{
-                            color: $blue;
-                            i{
-                                margin-right: 5px;
-                            }
-
-                        }
-                    }
-                }
-            }
-
-            .social-item{
-                display: flex;
-                        
-                ul{
-                    list-style-type: none;
-                    display: flex;
-                    flex-grow: 1;
-
-                    li{
-                        display: flex;
-                        flex-grow: 1;
-                        float: left;
-                        font-size: 1.7rem;
-                    }
-                }
-            }
-        }
-    }
-
-    .carousel{
-
-        &-indicators{
-            justify-content: center;
-            left: unset;
-            width: 100%;
-    
-            li, li.active{
-                width: 0.5rem;
-                height: 0.5rem;
-            }
-            li{
-                border: 1px solid #fff;
-            }
-        }
-
-        &-inner{
-            // height: 800px;
-    
-            img{
-                object-fit: cover;
-                object-position: 100% 0;
-            }
-        }
-    }
-
-    
-
-    .event{
-        width: 100%;
-
-        .btn{
-            width: 100%;
-            margin: 10px auto !important;
-        }
-
-        &-img{
-
-
-            .event-overlay{
-                padding: 10%;
-            }
-        }
-
-        &-body{
-
-            .meta-text{
-
-                * {
-                    flex-grow: 1;
-                }
-
-            }
-
-            .main-text{
-                padding: 10px 0 0 10px;
-
-                ul{
-                    margin-bottom: 10px;
-                }
-            }
-        }
-    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media (min-width: 992px){
-    nav.sps--blw{
-        height: 100px;
+
+    .section{
+        &.sps{
+            transition: $short-transition;
+            &--blw{
+                padding-top: 70px !important;
+            }
+
+        }
     }
+
 
     .carousel{
 

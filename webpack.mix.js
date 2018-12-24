@@ -19,6 +19,7 @@ mix.scripts([
    'resources/js/classie.js',
    'resources/js/selectFx.js',
    'resources/js/libs/scrollPosStyler.js',
+   'resources/js/libs/jquery.bcSwipe.min.js',
    'resources/js/app.js'
 ], 'public/js/app.js').version();
 

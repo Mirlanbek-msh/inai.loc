@@ -90,4 +90,6 @@ $(document).ready(function () {
     ScrollPosStyler.init({
         scrollOffsetY: 40
     });
+
+    $('.carousel').bcSwipe({ threshold: 50 });
 });
