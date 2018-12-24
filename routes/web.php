@@ -12,7 +12,7 @@
 */
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 
-            'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function(){
+            'middleware' => [ 'localeSessionRedirect', 'localizationRedirect' ]], function(){
                 
     Route::group(['as' => 'web.'], function(){
 
