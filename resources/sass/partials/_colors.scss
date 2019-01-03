@@ -2,11 +2,15 @@ $blue: #1F214A;
 $light-blue-alpha: #3E91A675;
 $hover-blue: #3d5e8291;
 $blue-light: #3E91A6;
-$dark_blue: #1d64af;
+$blue-alpha: rgba(0, 123, 255, 0.25);
+$blue-border: #80bdff;
+$blue-dark: #1d64af;
+$blue-flat: #3686dd;
 $x_dark_blue: #00346b;
 $hover: #17a2b8;
 $hover_bg: #00a2ff71;
 $gray: #6c757d;
+$gray-border: #ced4da;
 
 $white-alpha: #ffffffbb;
 
@@ -28,9 +32,6 @@ $border-color: rgba(0, 0, 0, 0.1);
     color: black !important;
 }
 
-.blue {
-    color: $dark_blue !important;
-}
 
 .gray {
     color: gray;

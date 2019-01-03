@@ -14,32 +14,15 @@
             </li>
         </ul> --}}
         <ul class="nav navbar-navs locale">
-            {{-- <li class="nav-item">
-                <a href="" class="nav-link">
-                    <span class="label label-default"><span class="flag-icon flag-icon-kg"></span> KG</span>
-                </a>
-            </li> --}}
-            <li class="nav-item">
-                @if(app()->getLocale() != 'ru')
-                <a href="/ru" class="nav-link">
-                    <span class="label label-default"><span class="flag-icon flag-icon-ru"></span> RU</span>
-                </a>
-            </li>
-            @endif
-            <li class="nav-item">
-                @if(app()->getLocale() != 'en')
-                <a href="/en" class="nav-link">
-                    <span class="label label-default"><span class="flag-icon flag-icon-gb"></span> EN</span>
-                </a>
-            </li>
-            @endif
-            <li class="nav-item">
-                @if(app()->getLocale() != 'de')
-                <a href="/de" class="nav-link">
-                    <span class="label label-default"><span class="flag-icon flag-icon-de"></span> DE</span>
-                </a>
-            </li>
-            @endif
+            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                @if(app()->getLocale() != $localeCode)
+                <li class="nav-item">
+                    <a class="nav-link" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                        <span class="label label-default"><span class="flag-icon flag-icon-{{$localeCode}}"></span> {{ strtoupper($localeCode) }}</span>
+                    </a>
+                </li>
+                @endif
+            @endforeach
         </ul>
     </div>
 </nav>
@@ -119,27 +102,15 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-navs locale d-lg-none mt-3 float-left">
-                    @if(app()->getLocale() != 'ru')
-                    <li class="nav-item">
-                        <a href="/ru" class="nav-link">
-                            <span class="label label-default"><span class="flag-icon flag-icon-ru"></span> RU</span>
-                        </a>
-                    </li>
-                    @endif
-                    @if(app()->getLocale() != 'en')
-                    <li class="nav-item">
-                        <a href="/en" class="nav-link">
-                            <span class="label label-default"><span class="flag-icon flag-icon-gb"></span> EN</span>
-                        </a>
-                    </li>
-                    @endif
-                    @if(app()->getLocale() != 'de')
-                    <li class="nav-item">
-                        <a href="/de" class="nav-link">
-                            <span class="label label-default"><span class="flag-icon flag-icon-de"></span> DE</span>
-                        </a>
-                    </li>
-                    @endif
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        @if(app()->getLocale() != $localeCode)
+                        <li class="nav-item">
+                            <a class="nav-link" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                <span class="label label-default"><span class="flag-icon flag-icon-{{$localeCode}}"></span> {{ strtoupper($localeCode) }}</span>
+                            </a>
+                        </li>
+                        @endif
+                    @endforeach
                     <li class="nav-item contacts-item">
                         <ul class="nav-contacts">
                             <li><a href="mailto:info@inai.kg"> <i class="fa fa-envelope"></i> info@inai.kg</a></li>

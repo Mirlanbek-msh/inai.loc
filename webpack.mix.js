@@ -18,6 +18,9 @@ mix.scripts([
    'node_modules/goodshare.js/goodshare.min.js',
    'resources/js/classie.js',
    'resources/js/selectFx.js',
+   'resources/js/libs/select2.full.min.js',
+   'resources/js/libs/icheck.min.js',
+   'resources/js/libs/jasny-bootstrap.min.js',
    'resources/js/libs/scrollPosStyler.js',
    'resources/js/libs/jquery.bcSwipe.min.js',
    'resources/js/app.js'

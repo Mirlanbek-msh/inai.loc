@@ -13,7 +13,7 @@
                 <li class="breadcrumb-item active">Название</li>
             </ol>
         </nav>
-        <div class="post-full">
+        <div class="post-full content">
             <div class="row">
                 <div class="col-12 mb-3 text-center mt-3">
                     <h2 class="text-bold section-title mb-3">Студенты INAI.kg разработали приложение ZWIK</h2>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-12 mt-3">
-                    <ul class="post-tags list-unstyled">
+                    <ul class="tags list-unstyled">
                         <li class="float-left"><a href="">#Hackathon</a></li>
                         <li class="float-left"><a href="">#Hackathon</a></li>
                         <li class="float-left"><a href="">#Hackathon</a></li>

@@ -9,40 +9,83 @@
         <nav class="mt-md-4 mt-sm-1">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('web.home') }}">Главная</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('web.post.index') }}">Новости</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('web.post.index') }}">События</a></li>
                 <li class="breadcrumb-item active">Название</li>
             </ol>
         </nav>
-        <div class="event-full">
+        <div class="event-full content">
             <div class="row">
                 <div class="col-12 mb-3 text-center mt-3">
-                    <h2 class="text-bold section-title mb-3">Студенты INAI.kg разработали приложение ZWIK</h2>
-                    <hr class="divider w-75">
+                    <h2 class="text-bold section-title mb-3">Масштабный хакатон</h2>
+                    <hr class="hr-1 w-75">
                 </div>
-                <div class="col-12">
+                <div class="col-12 mb-3">
                     <div class="meta-text">
                         <span><i class="fa fa-calendar"></i> 2 меяца назад</span>
-                        <span><i class="fa fa-user"></i> Марио Нойгебауер</span>
                         <span><i class="fa fa-eye"></i> 7</span>
+                        <span><i class="fa fa-user-friends"></i> Зарегистрировались: 7</span>
                     </div>
                 </div>
-    
-                <div class="col-12 mt-3">
-                    <div class="post-img">
+                <div class="col-md-6 col-12">
+                    <div class="event-img">
                         <img src="{{ asset('/uploads/posts/image2.jpg') }}" alt="" class="w-100">
                     </div>
-                </div>
-                <div class="col-12 mt-3">
-                    <div class="post-body">
-                        <p>Студенты старшего курса бакалавриата по информатике INAI.kg, Эркебек Абдрахман уулу, Адилет Кутманов, Эрлан Артыкбаев и Булат Хамидуллин разработали приложение Android для ярмарки ZWIK. Это было задание, которое они получили от профессора Райнера Вазингера из Университета прикладных наук Цвиккау, для того, чтобы сдать экзамен по модулю «Программирование на Android». Это приложение было разработано студентами для студентов и доступно в App Store.
-
-                                Приложение разработано для того, чтобы помочь студентам лучше организовать их посещение на ярмарке. В ходе подготовки к участию в ярмарке студенты могут найти список компаний, которые выставлены, и добавить заинтересованных в свой собственный график. Студенты также могут добавлять интересные презентации и специальные мероприятия к их расписанию. Так что посещение ярмарки доставит много удовольствия.
-                                
-                                Ярмарка ZWIK Zwickau — это ярмарка контактов с карьерой и компанией для студентов и выпускников. В общей сложности 120 компаний в ZWIK Messe Zwickau предоставляют специалистам и выпускникам информацию о планировании карьеры, о карьере и программах стажеров. Студенты и студенты получают информацию из первых рук о стажировках, тезисах, работе студентов, образовании и студенческих работах от корпоративных сотрудников по персоналу. Многочисленные презентации и лекции компании, бесплатное профессиональное приложение и проверка CV, бесплатные фотографии приложений, бесплатный трансфер из окружающих университетов, а также рабочая стена с бесчисленными вакансиями дополняют диапазон ZWIK.</p>
+                    <div class="mt-3">
+                        <h3>По всем вопросам:</h3>
+                        <hr>
+                        <div class="author">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 col-sm-3 col-4">
+                                    <div class="event-img">
+                                        <img src="{{ asset('/uploads/posts/image2.jpg') }}" alt="" class="w-100">
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-sm-9 col-8">
+                                    <h3 class="mt-0 mt-xl-3">Sven Koble</h3>
+                                    <span class="mt-3"><a href=""><i class="fa fa-phone"></i> +999 555 666 777</a></span>
+                                    <span><a href=""><i class="fa fa-envelope"></i> sven.koble@gmail.com</a></span>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora soluta aperiam nisi. Quisquam repellat velit commodi magnam minus accusantium recusandae libero voluptates officia soluta ut nulla placeat, vel atque animi!</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="col-md-6 col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="event-body">
+                                <h3>О хакатоне</h3>
+                                <hr>
+                                <p>Студенты старшего курса бакалавриата по информамах стажеров. Студенты и студенты получают информацию из первых рук о стажировках, тезисах, работе студентов, образовании и студенческих работах от корпоративных сотрудников по персоналу. Многочисленные презентации и лекции компании, бесплатное профессиональное приложение и проверка CV, бесплатные фотографии приложений, бесплатный трансфер из окружающих университетов, а также рабочая стена с бесчисленными вакансиями дополняют диапазон ZWIK.</p>
+                                <p>Студенты старшего курса бакалавриата по информамах стажеров. Студенты и студенты получают информацию из первых рук о стажировках, тезисах, работе студентов, образовании и студенческих работах от корпоративных сотрудников по персоналу. Многочисленные презентации и лекции компании, бесплатное профессиональное приложение и проверка CV, бесплатные фотографии приложений, бесплатный трансфер из окружающих университетов, а также рабочая стена с бесчисленными вакансиями дополняют диапазон ZWIK.</p>
+        
+                                <h3>Где и когда?</h3>
+                                <hr>
+                                <p>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem ipsa animi quisquam reprehenderit veritatis, enim a aliquid error nemo, tempora harum asperiores eaque iure id, provident aliquam esse cupiditate doloremque.
+                                </p>
+                                <p><span>Дата:</span> Понедельник 25 января</p>
+                                <p><span>Время:</span> Понедельник 25 января</p>
+                                <p><span>Место проведения:</span> Отель Дамас</p>
+                                <p><span>Вход:</span> Свободный</p>
+
+                                <h3>Что еще надо знать?</h3>
+                                <hr>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem vel illum qui, velit alias in debitis non a officia doloribus expedita adipisci vero.</p>
+
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3 d-md-block d-flex justify-content-center">
+                            <a href="{{ route('web.event.apply') }}" class="btn btn-primary">Зарегистрироваться</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
                 <div class="col-12 mt-3">
-                    <ul class="post-tags list-unstyled">
+                    <ul class="tags list-unstyled">
                         <li class="float-left"><a href="">#Hackathon</a></li>
                         <li class="float-left"><a href="">#Hackathon</a></li>
                         <li class="float-left"><a href="">#Hackathon</a></li>

@@ -7,6 +7,13 @@
 
     color: $blue;
 
+    a{
+        color: $blue;
+        &:hover{
+            color: $blue-light;
+        }
+    }
+
     &-title{
         font-weight: 700;
         font-size: 18px;
@@ -71,19 +78,6 @@
             li {
                 font-size: 15px;
                 margin-top: 15px;
-
-                a{
-                    color: $blue;
-
-                    &:hover{
-                        text-decoration: none;
-                        color: $blue-light;
-                    }
-                }
-
-                i{
-                    margin-right: 5px;
-                }
             }
         }
 

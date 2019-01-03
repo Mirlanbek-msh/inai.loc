@@ -15,9 +15,9 @@
 
 
     a{
-        color: inherit;
+        color: $blue-light;
         &:hover{
-            color: $blue-light;
+            color: $blue;
         }
     }
 
