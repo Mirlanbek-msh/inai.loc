@@ -40,6 +40,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             Route::post('/{id}/comment', 'EventController@comment')->name('comment');
         });
 
+        // Application
+        Route::group(['prefix' => 'application', 'as' => 'application.'], function(){
+            Route::get('/', 'ApplicationController@index')->name('index');
+            Route::get('/bachelor', 'ApplicationController@bachelor')->name('bachelor');
+            Route::get('/master', 'ApplicationController@master')->name('master');
+            Route::get('/requirements', 'ApplicationController@requirements')->name('requirements');
+            Route::get('/partnership', 'ApplicationController@partnership')->name('partnership');
+        });
+
         Route::group(['as' => 'auth.'], function(){
             Route::get('/login', 'Auth\LoginController@showLoginForm')->name('loginForm');
             Route::post('/login', 'Auth\LoginController@login')->name('login');

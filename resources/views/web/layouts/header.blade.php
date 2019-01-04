@@ -66,34 +66,34 @@
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
                                             <li class="dropdown-header">Бакалавриат информатики</li>
-                                            <li><a href="#">Программные технологии</a></li>
-                                            <li><a href="#">Медицинская информатика</a></li>
-                                            <li><a href="#">Веб-информатика</a></li>
+                                            <li><a href="{{ route('web.application.bachelor') }}">Программные технологии</a></li>
+                                            <li><a href="{{ route('web.application.bachelor') }}">Медицинская информатика</a></li>
+                                            <li><a href="{{ route('web.application.bachelor') }}">Веб-информатика</a></li>
                                             
                                         </ul>
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
                                             <li class="dropdown-header">Магистратура информатики</li>
-                                            <li><a href="#">Инженерия системного программирования проектов</a></li>
-                                            <li><a href="#">Предпринимательство в сфере информационных технологий</a></li>
+                                            <li><a href="{{ route('web.application.master') }}">Инженерия системного программирования проектов</a></li>
+                                            <li><a href="{{ route('web.application.master') }}">Предпринимательство в сфере информационных технологий</a></li>
     
                                         </ul>
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
                                             <li class="dropdown-header">Требования к поступлению</li>
-                                            <li><a href="#">Поступление в бакалавриат</a></li>
-                                            <li><a href="#">Поступление в магистратуру</a></li>
-                                            <li><a href="#">ДААД стипендии для Бишкека</a></li>
+                                            <li><a href="{{ route('web.application.requirements') }}">Поступление в бакалавриат</a></li>
+                                            <li><a href="{{ route('web.application.requirements') }}">Поступление в магистратуру</a></li>
+                                            <li><a href="{{ route('web.application.requirements') }}">ДААД стипендии для Бишкека</a></li>
                                         </ul>
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
                                             <li class="dropdown-header">Международное сотрудничество</li>
-                                            <li><a href="#">Ассоциативный партнер</a></li>
-                                            <li><a href="#">Практика</a></li>
-                                            <li><a href="#">ДААД стипендии для Цвикау</a></li>
+                                            <li><a href="{{ route('web.application.partnership') }}">Ассоциативный партнер</a></li>
+                                            <li><a href="{{ route('web.application.partnership') }}">Практика</a></li>
+                                            <li><a href="{{ route('web.application.partnership') }}">ДААД стипендии для Цвикау</a></li>
                                         </ul>
                                     </li>
                                 </div>

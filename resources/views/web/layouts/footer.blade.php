@@ -38,27 +38,13 @@
                     <ul>
                         <li><i class="fa fa-mobile-alt"></i> Приложение для ярмарки карьеры</li>
                     </ul>
-                    <a target="_blank" href="#" class="btn btn-sm btn-light text-left mb-2 btn-slinks">
-                        <span class="media align-items-center">
-                            <span class="btn-slinks-left d-flex mr-3">
-                                <i class="fab fa-apple"></i>
-                            </span>
-                            <span class="media-body">
-									<span class="btn-slinks-left-top d-block">Доступно в</span>
-									<span class="btn-slinks-left-name">App Store</span>									
-                            </span>
-                        </span>
+                    <a target="_blank" href="#" class="btn mb-2 btn-slink">
+                        <img class="hover-no" src="{{ asset('/images/apple-app-store-white.svg') }}" alt="">                        
+                        <img class="hover-on" src="{{ asset('/images/apple-app-store.svg') }}" alt="">                        
                     </a>
-                    <a target="_blank" href="#" class="btn btn-sm btn-light text-left mb-2 btn-slinks">
-                        <span class="media align-items-center">
-                            <span class="btn-slinks-left d-flex mr-3">
-                                <i class="fab fa-google-play"></i>
-                            </span>
-                            <span class="media-body">
-									<span class="btn-slinks-left-top d-block">Загрузить на</span>
-									<span class="btn-slinks-left-name">GOOGLE PLAY</span>							
-                            </span>
-                        </span>
+                    <a target="_blank" href="#" class="btn mb-2 btn-slink">
+                        <img class="hover-no" src="{{ asset('/images/google-app-store-white.svg') }}" alt="">
+                        <img class="hover-on" src="{{ asset('/images/google-app-store.svg') }}" alt="">
                     </a>
                     <ul>
                         <li><a href="#"><i class="fa fa-envelope"></i> Вход на почту</a></li>

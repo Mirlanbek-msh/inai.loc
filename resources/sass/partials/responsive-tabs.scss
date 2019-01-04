@@ -1,0 +1,119 @@
+.responsive-tabs{
+    .nav-tabs{
+        border: none;
+        text-align: right;
+
+        .nav-item{
+            font-size: 20px;
+            font-family: $font-open-sans;
+            font-weight: 400;
+
+            .nav-link{
+                color: $title-black-color;
+                border: none;
+                border-radius: 0;
+                border-right: 1px solid $gray-light;
+                position: relative;
+
+
+                &:after{
+                    transition: .35s all ease-in;
+                    position: absolute;
+                    width: 1px;
+                    left: 100%;
+                    top: 50%;
+                    height: 1px;
+                    content: '';
+                    background: $gray-light;
+                }
+
+    
+                &:hover{
+                    color: $blue-light;
+
+                    &:after{
+                        height: 100%;
+                        top: 0;
+                        background: $blue-light;
+                    }
+                }
+    
+                &.active{
+                    color: $blue-light;
+                    
+                    &:after{
+                        height: 100%;
+                        top: 0;
+                        background: $blue-light;
+                    }
+
+                }
+            }
+        }
+
+    }
+
+    .card-soup{
+        .card{
+            border: none;
+            border-top: 1px solid $gray-light;
+
+
+            &:last-child{
+                border-bottom: 1px solid $gray-light;
+            }
+
+            .card-header{
+                background: none;
+                border: none;
+
+                .card-title{
+                    a{
+                        i{
+                            float: right;
+                            &:before{
+                                content: '\F068';
+                            }
+                        }
+
+                        &.collapsed{
+                            i:before{
+                                content: '\F067';
+                            }
+                        }
+                    }
+                    
+                }
+            }
+
+            .card-body{
+                padding: 0;
+            }
+        }
+    }
+}
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (max-width: 992px) {
+
+}
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px){
+    .responsive-tabs{
+        .nav-tabs{
+
+        }
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
