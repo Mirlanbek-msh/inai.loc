@@ -23139,6 +23139,15 @@ nav .breadcrumb .breadcrumb-item + ::before {
     height: 500px !important;
     overflow: hidden;
   }
+
+  nav .breadcrumb {
+    font-size: 10pt;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+  }
 }
 
 @media (max-width: 575px) {

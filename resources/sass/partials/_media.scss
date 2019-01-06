@@ -222,6 +222,15 @@
             overflow: hidden;
         }
     }
+
+    nav .breadcrumb {
+        font-size: 10pt;
+        white-space: nowrap;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 10px 0;
+    }
 }
 
 // Extra small devices (portrait phones, less than 576px)
