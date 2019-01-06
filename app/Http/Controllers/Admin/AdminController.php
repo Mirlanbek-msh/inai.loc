@@ -9,7 +9,6 @@ class AdminController extends Controller
 {
     public function index()
     {
-        dd(auth()->user()->getRoleNames());
         return view('admin.index');
     }
 }

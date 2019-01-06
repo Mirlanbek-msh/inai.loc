@@ -1,0 +1,19 @@
+body#tinymce.mce-content-body figure img{
+    width: 98%;
+    height: auto;
+}
+body#tinymce.mce-content-body img{
+    width: 100%;
+    height: auto;
+}
+body#tinymce.mce-content-body p.iframe-wrapper{
+    width: 100%;
+    height: auto;
+}
+body#tinymce.mce-content-body iframe{
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

@@ -17,11 +17,10 @@ Route::group(
         'middleware' => [ 
             'localeSessionRedirect', 'localizationRedirect', 'localeViewPath',
         ],
-        'as' => 'auth.'
     ], function(){
     Route::get('/login', 'AuthController@loginForm')->name('login');
     Route::post('/login', 'AuthController@login')->name('loginPost');
-    Route::get('/logout', 'AuthController@logout')->name('logout');
+    Route::post('/logout', 'AuthController@logout')->name('logout');
 });
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 

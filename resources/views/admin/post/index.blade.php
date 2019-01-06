@@ -1,14 +1,14 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Все посты')
+@section('title', trans('t.all_posts'))
 
 @section('content')
 
     <div class="element-actions">
-        <a class="btn btn-primary btn-sm" href="{{ route('admin.post.create') }}"><i class="os-icon os-icon-ui-22"></i><span>Новый пост</span></a>
+        <a class="btn btn-primary btn-sm" href="{{ route('admin.post.create') }}"><i class="os-icon os-icon-ui-22"></i><span>{{trans('t.create_post')}}</span></a>
     </div>
     <h6 class="element-header">
-        Все посты
+        {{trans('t.all_posts')}}
     </h6>
     <div class="element-box">
         <div class="table-responsive">
@@ -16,12 +16,11 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Заголовок</th>
-                    <th>Категория</th>
-                    <th>Автор</th>
-                    <th>Статус</th>
+                    <th>{{trans('t.title')}}</th>
+                    <th>{{trans('t.category')}}</th>
+                    <th>{{trans('t.status')}}</th>
                     <th class="text-center"><i class="fa fa-eye" aria-hidden="true"></i></th>
-                    <th width="150px" class="text-center">Действия</th>
+                    <th width="150px" class="text-center">{{trans('t.actions')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -29,10 +28,9 @@
                     <tr>
                         <td>{{ $row->id }}</td>
                         <td>{{ $row->title }}</td>
-                        <td>{{ $row->getCategoryName() }}</td>
-                        <td>@isset($row->user){{ $row->user->name }}@endisset</td>
+                        <td>{{ $row->category->title }}</td>
                         <td class="text-center">
-                            {!! $row->getStatus() !!}
+                            @status($row->status)
                         </td>
                         <td class="text-center">
                             {{$row->views}}
@@ -58,15 +56,40 @@
 @section('scripts')
     <script src="https://use.fontawesome.com/691852923e.js"></script>
     <script>
+
         $(document).ready(function() {
             var table = $('#datatables').DataTable({
                 "order": [],
                 pageLength: 50,
                 paging: false,
+                @if(app()->getLocale() == 'ru')
+                language: {
+                    "processing": "Подождите...",
+                    "search": "Поиск:",
+                    "lengthMenu": "Показать _MENU_ записей",
+                    "info": "Записи с _START_ до _END_ из _TOTAL_ записей",
+                    "infoEmpty": "Записи с 0 до 0 из 0 записей",
+                    "infoFiltered": "(отфильтровано из _MAX_ записей)",
+                    "infoPostFix": "",
+                    "loadingRecords": "Загрузка записей...",
+                    "zeroRecords": "Записи отсутствуют.",
+                    "emptyTable": "В таблице отсутствуют данные",
+                    "paginate": {
+                        "first": "Первая",
+                        "previous": "Предыдущая",
+                        "next": "Следующая",
+                        "last": "Последняя"
+                    },
+                    "aria": {
+                        "sortAscending": ": активировать для сортировки столбца по возрастанию",
+                        "sortDescending": ": активировать для сортировки столбца по убыванию"
+                    }
+                }
+                @endif
             });
 
-            $('#datatables tbody').on( 'click', 'tr', function () {
-
+            $('#datatables tbody').on( 'click', 'tr', function (el) {
+                if($(el.target).hasClass('icon-feather-trash-2')) return;
                 if ( $(this).hasClass('selected') ) {
                     $(this).removeClass('selected');
                 }

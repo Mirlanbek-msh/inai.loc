@@ -1,63 +1,84 @@
 <ul class="main-menu">
     <li class="sub-header">
-        <span>Главные</span>
+        <span>{{trans('t.main_items')}}</span>
     </li>
-    @hasanyrole('Super Administrator|Administrator|Editor')
-    <li class="@if($current_three == 'post') current @endif">
-        <a href="{{ route('admin.post.index') }}">
+    @hasanyrole('Super Administrator|Administrator')
+    <li class="has-sub-menu @if($current_three == 'category') current @endif">
+        <a href="#">
             <div class="icon-w">
                 <div class="os-icon os-icon-edit-3"></div>
             </div>
-            <span>Новости</span>
+            <span>{{ trans('t.news') }}</span>
         </a>
+        <ul class="sub-menu">
+            <li>
+                <a href="{{ route('admin.post.index') }}">{{ trans('t.news') }}</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.category.index') }}">{{ trans('t.categories') }}</a>
+            </li>
+        </ul>
     </li>
-    @endhasanyrole
-    @hasanyrole('Super Administrator|Administrator')
     <li class="has-sub-menu @if($current_three == 'category') current @endif">
         <a href="#">
             <div class="icon-w">
                 <div class="os-icon os-icon-hierarchy-structure-2"></div>
             </div>
-            <span>Категории</span>
+            <span>{{ trans('t.events') }}</span>
         </a>
         <ul class="sub-menu">
             <li>
-                <a href="{{ route('admin.category.index') }}">Все категории</a>
+                <a href="{{ route('admin.category.index') }}">{{ trans('t.events') }}</a>
             </li>
             <li>
-                <a href="{{ route('admin.country.index') }}">Страны</a>
+                <a href="{{ route('admin.category.index') }}">{{trans('t.categories')}}</a>
             </li>
         </ul>
     </li>
     @endhasanyrole
     @hasanyrole('Super Administrator|Administrator')
     <li class="sub-header">
-        <span>Пользователи</span>
+        <span>{{trans('t.special_pages')}}</span>
+    </li>
+    <li class="has-sub-menu @if($current_three == 'category') current @endif">
+        <a href="#">
+            <div class="icon-w">
+                <div class="os-icon os-icon-hierarchy-structure-2"></div>
+            </div>
+            <span>{{ trans('t.for_graduates') }}</span>
+        </a>
+        <ul class="sub-menu">
+            <li>
+                <a href="{{ route('admin.category.index') }}">{{ trans('t.events') }}</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.category.index') }}">{{trans('t.categories')}}</a>
+            </li>
+        </ul>
     </li>
     <li>
-        @hasanyrole('Super Administrator|Administrator')
         <a href="{{ route('admin.user.index') }}" class="@if($current_three == 'user') current @endif">
             <div class="icon-w">
                 <div class="os-icon os-icon-users"></div>
             </div>
-            <span>Все пользователи</span>
+            <span>{{ trans('t.gallery') }}</span>
         </a>
-        @endhasanyrole
-
-        @hasanyrole('Super Administrator')
-        <a href="{{ route('admin.role.index') }}" class="@if($current_three == 'role') current @endif">
+    </li>
+    <li>
+        <a href="{{ route('admin.user.index') }}" class="@if($current_three == 'user') current @endif">
             <div class="icon-w">
-                <div class="os-icon os-icon-tasks-checked"></div>
+                <div class="os-icon os-icon-users"></div>
             </div>
-            <span>Роли</span>
+            <span>{{trans('t.about')}}</span>
         </a>
-        <a href="{{ route('admin.permission.index') }}" class="@if($current_three == 'permission') current @endif">
+    </li>
+    <li>
+        <a href="{{ route('admin.user.index') }}" class="@if($current_three == 'user') current @endif">
             <div class="icon-w">
-                <div class="os-icon os-icon-tasks-checked"></div>
+                <div class="os-icon os-icon-users"></div>
             </div>
-            <span>Права</span>
+            <span>{{trans('t.contacts')}}</span>
         </a>
-        @endhasanyrole
     </li>
     @endhasanyrole
 </ul>

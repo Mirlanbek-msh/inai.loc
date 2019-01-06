@@ -1,4 +1,4 @@
-<script src='{{ asset("assets/tinymce/tinymce.min.js") }}'></script>
+<script src='{{ asset("admin/tinymce/tinymce.min.js") }}'></script>
 {{-- <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script> --}}
 
 
@@ -6,7 +6,7 @@
 
     $(function() {
         tinymce.init({
-            language: 'ru',
+            language: '{{ app()->getLocale() }}',
             selector: '#editor',
             plugins: 'advlist link image imagetools colorpicker textcolor lists preview autolink fullscreen table hr media autolink',
             toolbar: 'undo redo | formatselect bold italic underline strikethrough subscript superscript | hr blockquote bullist numlist outdent indent | alignleft aligncenter alignright alignjustify | link image media table | removeformat preview fullscreen',
@@ -16,7 +16,7 @@
             plugin_preview_width: 800,
             image_caption: true,
             image_description: false,
-            content_css : "/assets/tinymce/skins/lightgray/content.min.css,/assets/tinymce/custom_content.css",
+            content_css : "/admin/tinymce/skins/lightgray/content.min.css,/admin/tinymce/custom_content.css",
             valid_styles: {
                 
             }

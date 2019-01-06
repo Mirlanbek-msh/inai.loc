@@ -71,4 +71,20 @@ return [
     'error_500'   => 'Server error',
     'error_419'   => 'Session expired, refresh page',
     'error_401'   => 'Not authorized',
+
+    /**Auth */
+    'login' => 'Login',
+    'logout' => 'Logout',
+    'authorization' => 'Authorization',
+    'password' => 'Password',
+    'remember' => 'Remember',
+
+    /**Admin */
+    'control_panel' => 'Control panel',
+    'to_site' => 'Go to site',
+    
+    'main_items' => 'Main',
+    'special_pages' => 'Pages',
+
+    'categories' => 'Categories',
 ];

@@ -1,0 +1,127 @@
+/* 
+TABLE OF CONTENTS
+
+
+1. Theme Variables
+	1a. User Override Variables
+2. Theme Mixins
+3. Bootstrap Override Styles
+  3a. Override default includes of bootstrap
+  3b. Override bootstrap table styles
+  3c. Override bootstrap form styles
+  3d. Override bootstrap navigation styles
+  3e. Override bootstrap button styles
+  3f. Override bootstrap breadcrumbs styles
+  3g. Override bootstrap typography styles
+  3h. Override bootstrap modal styles
+  3i. Override bootstrap alerts styles
+4. Overrides for various plugins that are included with this template
+5. Handy Animations 
+6. User Profiles
+7. Layout styles
+8. Menu styles
+9. Styles for all element blocks
+10. Helpful Misc Styles
+11. Icon Fonts
+12. Chat
+13. App - Email
+14. App - Projects
+15. App - Full Chat
+16. Pricing Plans
+17. Pipelines
+18. OS Dropdowns
+19. App - TODO
+20. Fancy Selector
+21. App - Rentals
+22. App - Support
+23. Onboarding
+24. Top Bar styles
+25. Search
+26. Customizer
+##. Dark Color Scheme
+##. Responsive Styles
+
+*/
+/* 1. Theme Variables */
+@import "components/theme-variables";
+/* 1a. User Override Variables */
+@import "user-override/user-variables";
+/* 2. Theme Mixins */
+@import "components/theme-mixins";
+/* 3. Bootstrap Override Styles */
+/* 3a. Override default includes of bootstrap */
+@import "bootstrap-override/bootstrap";
+/* 3b. Override bootstrap table styles */
+@import "bootstrap-override/tables";
+/* 3c. Override bootstrap form styles */
+@import "bootstrap-override/forms";
+/* 3d. Override bootstrap navigation styles */
+@import "bootstrap-override/nav";
+/* 3e. Override bootstrap button styles */
+@import "bootstrap-override/buttons";
+/* 3f. Override bootstrap breadcrumbs styles */
+@import "bootstrap-override/breadcrumb";
+/* 3g. Override bootstrap typography styles */
+@import "bootstrap-override/type";
+/* 3h. Override bootstrap modal styles */
+@import "bootstrap-override/modal";
+/* 3h. Override bootstrap popover styles */
+@import "bootstrap-override/popover";
+/* 3i. Override bootstrap alerts styles */
+@import "bootstrap-override/alert";
+/* 3i. Override bootstrap badges styles */
+@import "bootstrap-override/badge";
+/* 4. Overrides for various plugins that are included with this template */
+@import "components/plugin-overrides";
+/* 5. Handy Animations  */
+@import "components/animations";
+/* 6. User Profile  */
+@import "components/user_profile";
+/* 7. Layout styles */
+@import "components/layout";
+/* 8. Menu styles */
+@import "components/menu";
+/* 9. Styles for all element blocks */
+@import "components/elements";
+/* 10. Helpful little styles */
+@import "components/utilities";
+/* 11. Icon Fonts */
+@import "components/osfont";
+/* 12. Chat */
+@import "components/chat";
+/* 13. App - Email */
+@import "components/app_email";
+/* 14. App - Projects */
+@import "components/projects";
+/* 15. App - Full Chat */
+@import "components/full_chat";
+/* 16. Pricing Plans */
+@import "components/pricing_plans";
+/* 17. Pipelines */
+@import "components/pipelines";
+/* 18. Dropdowns */
+@import "components/os_dropdowns";
+/* 19. App - TODO */
+@import "components/todo";
+/* 20. Fancy Selector */
+@import "components/fancy_selector";
+/* 21. App - Rentals */
+@import "components/rentals";
+/* 22. App - Support */
+@import "components/support";
+/* 23. Onboarding */
+@import "components/onboarding";
+/* 24. Top Bar styles */
+@import "components/top_bar";
+/* 25. Search */
+@import "components/search";
+/* 26. Customizer */
+@import "components/customizer";
+/* ##. Dark Color Scheme */
+@import "components/scheme_dark";
+/* ##. Responsive Styles */
+@import "components/responsive";
+/* ##. User Override Styles */
+@import "user-override/user-styles";
+
+@import "../libs/flag-icon";

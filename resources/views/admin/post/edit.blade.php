@@ -82,11 +82,11 @@
             maxFiles: 40,
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
             addRemoveLinks: true,
-            dictCancelUpload: 'Отменить',
-            dictCancelUploadConfirmation: 'Удалить',
-            dictRemoveFile : 'Удалить файл',
-            dictDefaultMessage: 'Выберите картинки',
-            dictFileTooBig: 'Размер файла больше чем 16 мб',
+            dictCancelUpload: '{{ trans("t.cancel") }}',
+            dictCancelUploadConfirmation: '{{ trans("t.remove_confirm") }}',
+            dictRemoveFile : '{{ trans("t.remove") }}',
+            dictDefaultMessage: '{{ trans("t.select_images") }}',
+            dictFileTooBig: '{{ trans("t.file_size_bigger_than") }} 16',
             init: function(){
 
                 var imageUpload = this;
@@ -127,6 +127,7 @@
                 });
 
                 this.on("removedfile", function(file) {
+                    if(!file.key) return;
                     $.ajax({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

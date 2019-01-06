@@ -986,9 +986,3 @@ $(function () {
     return false;
   });
 });
-
-
-function confirmDelete() {
-  var result = confirm('Өчүрүүгө макулсузбу?');
-  return result;
-}

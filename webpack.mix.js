@@ -33,6 +33,9 @@ mix.scripts([
 //  Front css
 mix.sass('resources/sass/app.scss', 'public/css').version();
 
+//  Admin css
+mix.sass('resources/sass/admin/main.scss', 'public/admin/css/app.css').version();
+
 // Admin side
 // mix.sass('public/bash/scss/main.scss', 'public/bash/css/app.css');
 // mix.sass('public/bash/scss/library.scss', 'public/bash/css/library.css');

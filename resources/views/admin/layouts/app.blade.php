@@ -44,7 +44,7 @@
         <script src="{{ asset('/admin/bower_components/jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ asset('/admin/bower_components/popper.js/dist/umd/popper.min.js') }}"></script>
         <script src="{{ asset('/admin/bower_components/moment/moment.js') }}"></script>
-        <script src="{{ asset('/assets/js/ru.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('/admin/js/ru.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('/admin/bower_components/chart.js/dist/Chart.min.js') }}"></script>
         <script src="{{ asset('/admin/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
         <script src="{{ asset('/admin/bower_components/jquery-bar-rating/dist/jquery.barrating.min.js') }}"></script>
@@ -73,10 +73,14 @@
         <script src="{{ asset('/admin/js/demo_customizer.js') }}"></script>
         <script src="{{ asset('/admin/js/main.js') }}"></script>
 
-        <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+        {{-- <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script> --}}
         @include('sweetalert::alert')
         @yield('scripts')
         <script>
+            function confirmDelete() {
+                var result = confirm('{{trans('t.remove_confirm')}}');
+                return result;
+            }
         </script>
     </body>
 </html>

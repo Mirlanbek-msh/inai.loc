@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +17,82 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191); //Solved by increasing StringLength
+        $this->loadHelperVariables();
+        $this->loadActiveDirective();
+        $this->loadStatusDirective();
+        // $this->redirectHttps();
+    }
+
+    // public function redirectHttps()
+    // {
+    //     if(env('REDIRECT_HTTPS'))
+    //     {
+    //         \URL::forceScheme('https');
+    //     }
+    // }
+
+    public function loadActiveDirective()
+    {
+        Blade::directive('active', function($expression){
+            // dd($expression);
+            list($routeName, $routeNumber) = explode(', ', $expression);
+            return "<?php echo {$routeName} == Request::capture()->segment(intval($routeNumber)) ? 'active' : ''; ?>";
+        });
+    }
+
+    public function loadStatusDirective()
+    {
+        Blade::directive('status', function($expression){
+            // dd($expression);
+            list($value) = explode(', ', $expression);
+            return "<?php echo '<i class=\"status status'; echo {$value} == '1' ? '-active' : '-inactive'; echo '\"></i>'; ?>";
+        });
+    }
+
+
+    public function loadHelperVariables()
+    {
+        view()->composer('*', function($view){
+            $view->with('current_three', Request::capture()->segment(3));
+            $view->with('lang', app()->getLocale());
+            $view->with('current_date', $this->loadLocalizedDate());
+        });
+    }
+
+    public function loadLocalizedDate()
+    {
+        $months = [
+            1 => 'Января', 
+            2 => 'Февраля', 
+            3 => 'Марта', 
+            4 => 'Апреля', 
+            5 => 'Мая', 
+            6 => 'Июня', 
+            7 => 'Июля', 
+            8 => 'Августа', 
+            9 => 'Сентября', 
+            10 => 'Октября', 
+            11 => 'Ноября', 
+            12 => 'Декабря'
+        ];
+        
+        $weekDays = [
+            1 => 'Понедельник', 
+            2 => 'Вторник', 
+            3 => 'Среда', 
+            4 => 'Четверг', 
+            5 => 'Пятница', 
+            6 => 'Суббота', 
+            7 => 'Воскресенье'
+        ];
+        $monthNumber = date('n');
+        $weekDayNumber = date('N');
+        $day = date('j');
+        $year = date('Y');
+        $current_date = "$weekDays[$weekDayNumber], $day $months[$monthNumber] $year";
+        // dd($current_date);
+        return $current_date;
     }
 
     /**

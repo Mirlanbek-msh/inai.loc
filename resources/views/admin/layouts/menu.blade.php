@@ -10,7 +10,7 @@
     <div class="menu-and-user">
         <div class="logged-user-w">
             <div class="avatar-w">
-                <img alt="" src="{{ asset('assets/img/no_avatar.png') }}">
+                <img alt="" src="{{ asset('admin/img/no_avatar.png') }}">
             </div>
             <div class="logged-user-info-w">
                 <div class="logged-user-name">
@@ -32,14 +32,14 @@
                 <img src="{{asset('/admin/img/logo.png')}}" class="img-fluid">
             </div>            
             <div class="logo-label">
-                Панель управления
+                {{trans('t.control_panel')}}
             </div>
         </a>
     </div>
     <div class="logged-user-w">
         <div class="logged-user-i">
             <div class="avatar-w">
-                <img alt="" src="{{ asset('assets/img/no_avatar.png') }}">
+                <img alt="" src="{{ asset('admin/img/no_avatar.png') }}">
             </div>
             <div class="logged-user-info-w">
                 <div class="logged-user-name">
@@ -55,7 +55,7 @@
             <div class="logged-user-menu color-style-bright">
                 <div class="logged-user-avatar-info">
                     <div class="avatar-w">
-                        <img alt="" src="{{ asset('assets/img/no_avatar.png') }}">
+                        <img alt="" src="{{ asset('admin/img/no_avatar.png') }}">
                     </div>
                     <div class="logged-user-info-w">
                         <div class="logged-user-name">
@@ -71,13 +71,19 @@
                 </div>
                 <ul>
                     <li>
-                        <a href="{{ route('web.home') }}"><i class="os-icon os-icon-link-3"></i><span>На сайт</span></a>
+                        <a href="{{ route('web.home') }}"><i class="os-icon os-icon-link-3"></i><span>{{trans('t.to_site')}}</span></a>
                     </li>
                     <li>
-                        <a href="#"><i class="os-icon os-icon-user-male-circle2"></i><span>Профиль</span></a>
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            @if(app()->getLocale() != $localeCode)
+                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                <i class="flag-icon flag-icon-{{$localeCode}}"></i> <span>{{ strtoupper($localeCode) }}</span>
+                            </a>
+                            @endif
+                        @endforeach
                     </li>
                     <li>
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="os-icon os-icon-signs-11"></i><span>Выход</span></a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="os-icon os-icon-signs-11"></i><span>{{trans('t.logout')}}</span></a>
                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>

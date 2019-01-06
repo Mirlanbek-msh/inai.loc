@@ -25,6 +25,8 @@ Route::group(
 
             Route::group(['middleware' => ['role:Developer|Super Administrator|Administrator|Editor']], function(){
                 Route::resource('post', 'PostController');
+                Route::get('gallery/{id}', 'PostController@imagesGet');
+                Route::post('gallery/{id}/delete/{file}', 'PostController@imageDestroy');
                 Route::resource('category', 'PostCategoryController');
                 Route::resource('user','UserController');           
             });

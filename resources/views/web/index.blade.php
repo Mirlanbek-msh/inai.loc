@@ -1,6 +1,29 @@
 @extends('web.layouts.base')
 
-@section('title', 'Kyrgyz-German Institute of Applied Informatics')
+@section('title', trans('t.kgiai'))
+
+@section('social_meta')
+    <!-- Twitter Meta -->
+    <meta name="twitter:site" content="@centraltoday">
+    <meta name="twitter:creator" content="@centraltoday">
+    <meta name="twitter:card" content="{{ trans('t.kgiai') }}">
+    <meta name="twitter:title" content="{{ trans('t.kgiai') }}">
+    <meta name="twitter:description" content="{{ trans('t.kgiai') }}">
+    <meta name="twitter:image" content={{ asset('images/favicon.ico') }}">
+
+    <!-- Facebook Meta -->
+    <meta property="og:description" content="{{ trans('t.kgiai') }}">
+    <meta property="og:title" content="{{ trans('t.kgiai') }}">
+
+    <meta property="og:site_name" content="inai.kg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inai.kg">
+    <meta property="og:site_name" content="inai.kg">
+    <meta property="og:image" content="{{ asset('images/favicon.ico') }}">
+    <meta property="og:image:secure_url" content="{{ asset('images/favicon.ico', true) }}">
+    <meta property="og:image:width" content="64">
+    <meta property="og:image:height" content="64">
+@endsection
 
 @section('content')
 
@@ -117,50 +140,22 @@
                 <hr class="divider w-75">
             </div>
 
+            @foreach($rows as $row)
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="post">
-                    <a href="{{ route('web.post.index') }}" class="post-img">
-                        <img src="{{ asset('/uploads/posts/image1.png') }}" alt="">
+                    <a href="{{ route('web.post.show', $row->slug) }}" class="post-img">
+                        <img src="{{ asset($row->thumb) }}" alt="">
                     </a>
                     <div class="post-body">
-                        <a href="{{ route('web.post.index') }}"><h6>Студенты INAI.kg разработали приложение ZWIK</h6></a>
-                        <p>Студенты старшего курса бакалавриата по информатике INAI.kg ...</p>
+                        <a href="{{ route('web.post.show', $row->slug) }}"><h6>{{ $row->title }}</h6></a>
+                        <p>{{ $row->description }}</p>
                         <div class="mt-3">
-                            <span class="meta-text"><i class="fa fa-calendar"></i> 2 дня назад</span>
+                            <span class="meta-text"><i class="fa fa-calendar"></i> {{ $row->created_at->diffForHumans() }}</span>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="post">
-                    <a href="{{ route('web.post.index') }}" class="post-img">
-                        <img src="{{ asset('/uploads/posts/image2.jpg') }}" alt="">
-                    </a>
-                    <div class="post-body">
-                        <a href="{{ route('web.post.index') }}"><h6>Более 300 студентов посетили ярмарку карьеры и контактов в Бишкеке</h6></a>
-                        <p>16 октября в отеле Дамас прошла пятая ежегодная ярмарка карьеры и контактов. ...</p>
-                        <div class="mt-3">
-                            <span class="meta-text"><i class="fa fa-calendar"></i> месяц назад</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="post">
-                    <a href="{{ route('web.post.index') }}" class="post-img">
-                        <img src="{{ asset('/uploads/posts/image3.jpg') }}" alt="">
-                    </a>
-                    <div class="post-body">
-                        <a href="{{ route('web.post.index') }}"><h6>Прошел хакатон среди студентов</h6></a>
-                        <p>28 ноября в институте прошел первый большой хакатон. ...</p>
-                        <div class="mt-3">
-                            <span class="meta-text"><i class="fa fa-calendar"></i> неделю назад</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
 
             <div class="col-12 justify-content-center d-flex mb-3">
                 <a href="{{ route('web.post.index') }}" class="btn btn-primary">{{ trans('t.show_more') }}</a>
