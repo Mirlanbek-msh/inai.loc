@@ -11,6 +11,19 @@
 |
 */
 
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale() . '/auth', 
+        'middleware' => [ 
+            'localeSessionRedirect', 'localizationRedirect', 'localeViewPath',
+        ],
+        'as' => 'auth.'
+    ], function(){
+    Route::get('/login', 'AuthController@loginForm')->name('login');
+    Route::post('/login', 'AuthController@login')->name('loginPost');
+    Route::get('/logout', 'AuthController@logout')->name('logout');
+});
+
 Route::group(['prefix' => LaravelLocalization::setLocale(), 
             'middleware' => [ 'localeSessionRedirect', 'localizationRedirect' ]], function(){
                 
@@ -36,6 +49,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         Route::group(['prefix' => 'event', 'as' => 'event.'], function(){
             Route::get('/', 'EventController@index')->name('index');
             Route::get('/apply', 'EventController@apply')->name('apply');
+            Route::post('/apply', 'EventController@applyPost')->name('applyPost');
             Route::get('/{slug}', 'EventController@show')->name('show');
             Route::post('/{id}/comment', 'EventController@comment')->name('comment');
         });

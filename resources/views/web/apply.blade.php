@@ -8,15 +8,15 @@
     <div class="container">
         <nav class="mt-md-4 mt-sm-1">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('web.home') }}">Главная</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('web.post.index') }}">События</a></li>
-                <li class="breadcrumb-item active">Название</li>
+                <li class="breadcrumb-item"><a href="{{ route('web.home') }}">{{ trans('t.home') }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('web.event.index') }}">{{ trans('t.events') }}</a></li>
+                <li class="breadcrumb-item active">{{ trans('t.signing_up') }}</li>
             </ol>
         </nav>
         <div class="event-full content">
             <div class="row">
                 <div class="col-12 mb-3 text-center mt-3">
-                    <h2 class="text-bold section-title mb-3">Регистрация</h2>
+                    <h2 class="text-bold section-title mb-3">{{ trans('t.signing_up') }}</h2>
                     <hr class="hr-1 w-75">
                 </div>
                 <div class="col-12">
@@ -29,13 +29,13 @@
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem ipsa animi quisquam reprehenderit veritatis, enim a aliquid error nemo, tempora harum asperiores eaque iure id, provident aliquam esse cupiditate doloremque.
                                 </p>
 
-                                <form action="#" class="form">
+                                <form class="form" method="POST">
                                     <div class="form-group">
-                                        <label for="">Имя и фамилия:</label>
+                                        <label for="">{{ trans('t.full_name') }}:</label>
                                         <input class="form-control" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Телефонный номер:</label>
+                                        <label for="">{{ trans('t.phone_number') }}:</label>
                                         <input class="form-control" type="text">
                                     </div>
                                     <div class="form-group">
@@ -58,12 +58,12 @@
                                             <span class="fileinput-filename"></span>
                                         </div>
                                         <span class="input-group-addon btn btn-default btn-file">
-                                            <span class="fileinput-new">Выберите файл</span>
-                                            <span class="fileinput-exists">Изменить</span>
+                                            <span class="fileinput-new">{{ trans('t.select_file') }}</span>
+                                            <span class="fileinput-exists">{{ trans('t.change') }}</span>
                                             <input type="file" name="file">
                                         </span>
                                         <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">
-                                            Удалить
+                                            {{ trans('t.remove') }}
                                         </a>
                                     </div>
                                     <div class="form-group">
@@ -78,7 +78,7 @@
                                         <label for="ch1">Запомнить</label>
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-success">Отправить</button>
+                                        <button class="btn btn-success">{{ trans('t.send') }}</button>
                                     </div>
                                 </form>
 
@@ -101,7 +101,7 @@
         $('.select2').select2({
             minimumResultsForSearch: -1,
             containerCssClass: 'select2-container-custom',
-            placeholder: "Выберите",
+            placeholder: "{{ trans('t.select') }}",
             dropdownCssClass: 'select2-dropdown',
             language: '{{ app()->getLocale() }}',
             // theme: "bootstrap",

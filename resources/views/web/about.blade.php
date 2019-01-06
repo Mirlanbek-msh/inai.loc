@@ -8,14 +8,14 @@
     <div class="container">
         <nav class="mt-md-4 mt-sm-1">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('web.home') }}">Главная</a></li>
-                <li class="breadcrumb-item active">О нас</li>
+                <li class="breadcrumb-item"><a href="{{ route('web.home') }}">{{ trans('t.home') }}</a></li>
+                <li class="breadcrumb-item active">{{ trans('t.about') }}</li>
             </ol>
         </nav>
         <div class="post-full">
             <div class="row">
                 <div class="col-12 mb-3 text-center mt-3">
-                    <h2 class="text-bold section-title mb-3">О нас</h2>
+                    <h2 class="text-bold section-title mb-3">{{ trans('t.about') }}</h2>
                     <hr class="divider w-75">
                 </div>
     

@@ -1,19 +1,6 @@
 @extends('web.layouts.base') 
 @section('title', 'Kyrgyz-German Institute of Applied Informatics') 
-@section('styles')
-<style>
-    h4.card-title {
-        margin: 0;
-        font-family: "Open Sans";
-        font-size: 1rem;
-    }
 
-    .card-header {
-        padding: 0;
-    }
-</style>
-@endsection
- 
 @section('content')
 
 <section class="section pt-4 sps sps--abv sps-pt-80">

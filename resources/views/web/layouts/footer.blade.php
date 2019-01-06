@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-12 mb-5">
-                <div class="footer-title">Контакты</div>
+                <div class="footer-title">{{ trans('t.contacts') }}</div>
                 <div class="footer-divider"></div>
                 <div class="footer-body">
                     <ul>
@@ -32,11 +32,11 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
-                <div class="footer-title">Ссылки</div>
+                <div class="footer-title">{{ trans('t.links') }}</div>
                 <div class="footer-divider"></div>
                 <div class="footer-body">
                     <ul>
-                        <li><i class="fa fa-mobile-alt"></i> Приложение для ярмарки карьеры</li>
+                        <li><i class="fa fa-mobile-alt"></i> {{ trans('t.career_fair_app') }}</li>
                     </ul>
                     <a target="_blank" href="#" class="btn mb-2 btn-slink">
                         <img class="hover-no" src="{{ asset('/images/apple-app-store-white.svg') }}" alt="">                        
@@ -47,7 +47,7 @@
                         <img class="hover-on" src="{{ asset('/images/google-app-store.svg') }}" alt="">
                     </a>
                     <ul>
-                        <li><a href="#"><i class="fa fa-envelope"></i> Вход на почту</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> {{ trans('t.login_to_email') }}</a></li>
                     </ul>
                 </div>
 
@@ -57,6 +57,6 @@
 </footer>
 <div class="bottom-panel">
     <div class="text-center">
-        <p>2018 Все права защищены</p>
+        <p>{{ date('Y') }} {{ trans('t.all_rights_reserved') }}</p>
     </div>
 </div>

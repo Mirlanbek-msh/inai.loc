@@ -42,30 +42,30 @@
             <nav id="main-nav">
                 <ul class="nav float-right">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('web.home') }}">Главная</a>
+                        <a class="nav-link" href="{{ route('web.home') }}">{{ trans('t.home') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('web.event.index') }}">События</a>
+                        <a class="nav-link" href="{{ route('web.event.index') }}">{{ trans('t.events') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('web.gallery') }}">Галерея</a>
+                        <a class="nav-link" href="{{ route('web.gallery') }}">{{ trans('t.gallery') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('web.about') }}">О нас</a>
+                        <a class="nav-link" href="{{ route('web.about') }}">{{ trans('t.about') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('web.contact') }}">Контакты</a>
+                        <a class="nav-link" href="{{ route('web.contact') }}">{{ trans('t.contacts') }}</a>
                     </li>
                     <li class="nav-item dropdown mega-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
-                        <i class="fa fa-graduation-cap"></i> Для абитуриентов 
+                        <i class="fa fa-graduation-cap"></i> {{ trans('t.for_graduates') }}
                         </a>
                         <ul class="dropdown-menu mega-dropdown-menu">
                             <div class="container">
                                 <div class="row">
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
-                                            <li class="dropdown-header">Бакалавриат информатики</li>
+                                            <li class="dropdown-header">{{ trans('t.bachelor_informatics') }}</li>
                                             <li><a href="{{ route('web.application.bachelor') }}">Программные технологии</a></li>
                                             <li><a href="{{ route('web.application.bachelor') }}">Медицинская информатика</a></li>
                                             <li><a href="{{ route('web.application.bachelor') }}">Веб-информатика</a></li>
@@ -74,7 +74,7 @@
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
-                                            <li class="dropdown-header">Магистратура информатики</li>
+                                            <li class="dropdown-header">{{ trans('t.master_informatics') }}</li>
                                             <li><a href="{{ route('web.application.master') }}">Инженерия системного программирования проектов</a></li>
                                             <li><a href="{{ route('web.application.master') }}">Предпринимательство в сфере информационных технологий</a></li>
     
@@ -82,7 +82,7 @@
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
-                                            <li class="dropdown-header">Требования к поступлению</li>
+                                            <li class="dropdown-header">{{ trans('t.admission_requirements') }}</li>
                                             <li><a href="{{ route('web.application.requirements') }}">Поступление в бакалавриат</a></li>
                                             <li><a href="{{ route('web.application.requirements') }}">Поступление в магистратуру</a></li>
                                             <li><a href="{{ route('web.application.requirements') }}">ДААД стипендии для Бишкека</a></li>
@@ -90,7 +90,7 @@
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
-                                            <li class="dropdown-header">Международное сотрудничество</li>
+                                            <li class="dropdown-header">{{ trans('t.internationalization') }}</li>
                                             <li><a href="{{ route('web.application.partnership') }}">Ассоциативный партнер</a></li>
                                             <li><a href="{{ route('web.application.partnership') }}">Практика</a></li>
                                             <li><a href="{{ route('web.application.partnership') }}">ДААД стипендии для Цвикау</a></li>

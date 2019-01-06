@@ -17,7 +17,7 @@
                     <h5>Ярмарка карьеры и контактов 2018</h5>
                     <p class="d-sm-none d-md-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
 
-                    <a href="" class="btn btn-primary">Подробнее</a>
+                    <a href="" class="btn btn-primary">{{ trans('t.learn_more') }}</a>
                     {{-- <a href="" class="btn btn-outline-primary">Other</a> --}}
                 </div>
             </div>
@@ -26,7 +26,7 @@
                 <div class="carousel-caption d-md-block">
                     <h5>Тренинг по методологии SCRUM</h5>
                     <p class="d-sm-none d-md-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
-                    <a href="" class="btn btn-primary">Подробнее</a>
+                    <a href="" class="btn btn-primary">{{ trans('t.learn_more') }}</a>
                     {{-- <a href="" class="btn btn-outline-primary">Other</a> --}}
                 </div>
             </div>
@@ -46,7 +46,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mb-3 text-center">
-                <h2 class="text-bold section-title mb-3">Ивенты</h2>
+                <h2 class="text-bold section-title mb-3">{{ trans('t.events') }}</h2>
                 <hr class="divider w-75">
             </div>
 
@@ -55,8 +55,8 @@
                     <div class="event-img">
                         <img src="{{ asset('/uploads/banner/1.jpg') }}" alt="">
                         <div class="event-overlay">
-                            <a href="{{ route('web.event.apply') }}" class="btn btn-primary">Зарегистрироваться</a>
-                            <a href="{{ route('web.event.index') }}" class="btn btn-outline-primary">Подробнее</a>
+                            <a href="{{ route('web.event.apply') }}" class="btn btn-primary">{{ trans('t.sign_up') }}</a>
+                            <a href="{{ route('web.event.index') }}" class="btn btn-outline-primary">{{ trans('t.learn_more') }}</a>
                         </div>
                     </div>
                     <div class="event-body">
@@ -80,8 +80,8 @@
                     <div class="event-img">
                         <img src="{{ asset('/uploads/events/img2.jpg') }}" alt="">
                         <div class="event-overlay">
-                            <a href="{{ route('web.event.apply') }}" class="btn btn-primary">Зарегистрироваться</a>
-                            <a href="{{ route('web.event.index') }}" class="btn btn-outline-primary">Подробнее</a>
+                            <a href="{{ route('web.event.apply') }}" class="btn btn-primary">{{ trans('t.sign_up') }}</a>
+                            <a href="{{ route('web.event.index') }}" class="btn btn-outline-primary">{{ trans('t.learn_more') }}</a>
                         </div>
                     </div>
                     <div class="event-body">
@@ -102,7 +102,7 @@
             </div>
 
             <div class="col-12 justify-content-center d-flex">
-                <a href="{{ route('web.event.index') }}" class="btn btn-primary">Просмотреть все ивенты</a>
+                <a href="{{ route('web.event.index') }}" class="btn btn-primary">{{ trans('t.show_more') }}</a>
             </div>
 
         </div>
@@ -113,7 +113,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mb-3 text-center">
-                <h2 class="text-bold section-title mb-3">Последние новости</h2>
+                <h2 class="text-bold section-title mb-3">{{ trans('t.recent_news') }}</h2>
                 <hr class="divider w-75">
             </div>
 
@@ -163,7 +163,7 @@
             </div>
 
             <div class="col-12 justify-content-center d-flex mb-3">
-                <a href="{{ route('web.post.index') }}" class="btn btn-primary">Просмотреть все новости</a>
+                <a href="{{ route('web.post.index') }}" class="btn btn-primary">{{ trans('t.show_more') }}</a>
             </div>
 
         </div>

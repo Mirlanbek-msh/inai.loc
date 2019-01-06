@@ -8,8 +8,8 @@
     <div class="container">
         <nav class="mt-md-4 mt-sm-1">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('web.home') }}">Главная</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('web.post.index') }}">События</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('web.home') }}">{{ trans('t.home') }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('web.event.index') }}">{{ trans('t.events') }}</a></li>
                 <li class="breadcrumb-item active">Название</li>
             </ol>
         </nav>
@@ -23,7 +23,7 @@
                     <div class="meta-text">
                         <span><i class="fa fa-calendar"></i> 2 меяца назад</span>
                         <span><i class="fa fa-eye"></i> 7</span>
-                        <span><i class="fa fa-user-friends"></i> Зарегистрировались: 7</span>
+                        <span><i class="fa fa-user-friends"></i> {{ trans('t.signed_up') }}: 7</span>
                     </div>
                 </div>
                 <div class="col-md-6 col-12">
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <div class="col-12 mt-3 d-md-block d-flex justify-content-center">
-                            <a href="{{ route('web.event.apply') }}" class="btn btn-primary">Зарегистрироваться</a>
+                            <a href="{{ route('web.event.apply') }}" class="btn btn-primary">{{ trans('t.sign_up') }}</a>
                         </div>
                     </div>
                     
@@ -93,7 +93,7 @@
                 </div>
     
                 <div class="col-12 my-3">
-                    <p>Поделиться:</p>
+                    <p>{{ trans('t.share') }}:</p>
                     <ul class="share my-3 clearfix">
                         <li class="share-link">
                             <a href="#" data-social="facebook" data-image="https://centr.asia/uploads/posts/299/15456319395c2078c399e69_image.jpeg" class="share-link-in fb"><i class="fab fa-facebook-f"></i></a>

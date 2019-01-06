@@ -8,8 +8,8 @@
     <div class="container">
         <nav class="mt-md-4 mt-sm-1">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('web.home') }}">Главная</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('web.post.index') }}">Новости</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('web.home') }}">{{ trans('t.home') }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('web.post.index') }}">{{ trans('t.news') }}</a></li>
                 <li class="breadcrumb-item active">Название</li>
             </ol>
         </nav>
@@ -50,7 +50,7 @@
                 </div>
     
                 <div class="col-12 my-3">
-                    <p>Поделиться:</p>
+                    <p>{{ trans('t.share') }}:</p>
                     <ul class="share my-3 clearfix">
                         <li class="share-link">
                             <a href="#" data-social="facebook" data-image="https://centr.asia/uploads/posts/299/15456319395c2078c399e69_image.jpeg" class="share-link-in fb"><i class="fab fa-facebook-f"></i></a>

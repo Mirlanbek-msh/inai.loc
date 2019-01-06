@@ -22855,6 +22855,12 @@ nav .breadcrumb .breadcrumb-item + ::before {
   color: #6c757d !important;
 }
 
+.error-template h1 {
+  color: #e3342f;
+  font-size: 80px;
+  font-weight: 700;
+}
+
 .footer {
   padding: 40px 0 0 0;
   box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.18);
@@ -23678,6 +23684,16 @@ nav .breadcrumb .breadcrumb-item + ::before {
 .iradio_flat-blue,
 .icheckbox_flat-blue {
   transition: none;
+}
+
+h4.card-title {
+  margin: 0;
+  font-family: "Open Sans";
+  font-size: 1rem;
+}
+
+.card-header {
+  padding: 0;
 }
 
 .responsive-tabs .nav-tabs {

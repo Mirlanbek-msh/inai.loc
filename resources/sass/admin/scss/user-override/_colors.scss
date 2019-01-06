@@ -1,0 +1,26 @@
+$blue: #047bf8;
+
+$blue-alterntaive: #3965ae;
+$blue-light: #3471f1;
+
+$red: #fb5f68;
+$red-light: #ff2631;
+
+$gray: #dedede;
+$green: #43d084;
+$violet: #5c64e3;
+
+$bg-select: #f2f6fa;
+$bg-hover: #e3ecf5;
+$bg-icon: #7388a0;
+
+$blue-alpha: rgba($color: $blue, $alpha: 0.18);
+$blue-alpha-3: rgba($color: $blue, $alpha: 0.30);
+
+.bg {
+    background: $bg-select;
+}
+
+.red-color {
+    color: $red !important;
+}
