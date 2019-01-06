@@ -16,6 +16,7 @@ class PostController extends Controller
     public function show($slug)
     {
         $row = Post::where('slug', $slug)->firstOrFail();
+        $row->increment('views');
         return view('web.post.show', compact('row'));
     }
 }

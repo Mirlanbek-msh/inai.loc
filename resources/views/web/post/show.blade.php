@@ -53,7 +53,7 @@
                 <div class="col-12">
                     <div class="meta-text">
                         <span><i class="fa fa-calendar"></i> {{ $row->created_at->diffForHumans() }}</span>
-                        <span><i class="fa fa-user"></i> {{ $row->author ? $row->author : $row->user->name }}</span>
+                        <span><i class="fa fa-user"></i> {{ $row->author }}</span>
                         <span><i class="fa fa-eye"></i> {{ $row->views }}</span>
                     </div>
                 </div>

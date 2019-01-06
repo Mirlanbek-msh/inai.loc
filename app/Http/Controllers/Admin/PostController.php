@@ -175,16 +175,16 @@ class PostController extends Controller
         $row->user_id = auth()->user()->id;
         $row->save();
 
-        $message = trans('t.saved_successully');
+        $message = trans('t.saved_successfully');
 
         if($row){
             // if($request->get('to_facebook')){
             //     $row->notify(new PostPublished);
             // }
+            toast($message,'success','top-right');
             if($files){
                 return response('success', 200);
             }
-            toast($message,'success','top-right');
             return redirect()->route('admin.post.index');
         }
     }
@@ -356,6 +356,7 @@ class PostController extends Controller
         $message = trans('t.updated_successfully');
 
         if($row){
+            toast($message,'success','top-right');
             if($files){
                 return response('success', 200);
             }
@@ -363,7 +364,6 @@ class PostController extends Controller
             // if($request->get('to_facebook')){
             //     $row->notify(new PostPublished);
             // }
-            toast($message,'success','top-right');
             return redirect()->route('admin.post.show', $row);
         }
     }
@@ -377,7 +377,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         Post::findOrFail($id)->remove();
-        toast('Объект успешно удален', 'info', 'top-right');
+        toast(trans('t.removed_successfully'), 'info', 'top-right');
         return redirect()->route('admin.post.index');
     }
 

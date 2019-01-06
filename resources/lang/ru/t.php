@@ -111,9 +111,11 @@ return [
     'author' => 'Автор',
     'status' => 'Статус',
     'actions' => 'Действия',
+    'views' => 'Просмотров',
 
     'saved_successfully' => 'Успешно сохранен',
     'updated_successfully' => 'Успешно обновлен',
+    'removed_successfully' => 'Успешно удален',
     'create' => 'Создать',
     'edit' => 'Редактировать',
     'remove_confirm' => 'Вы уверены что хотите удалить?',
