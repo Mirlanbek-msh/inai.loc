@@ -31,12 +31,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->getRoleNames()->first() == 'Editor')
-        {
-            $data = $this->getPostsByPermission();
-        }else{
-            $data = Post::all();
-        }
+        $data = Post::where('lang', app()->getLocale())->get();
         $data = $data->sortByDesc('created_at');
         $data = $this->paginate($data, 30);
         return view('admin.post.index', compact('data'));
@@ -64,7 +59,6 @@ class PostController extends Controller
         $row = new Post;
         $categories = PostCategory::where('status', 1)->get();
         $categories = $categories->pluck('title', 'id');
-
         return view('admin.post.create', compact('row', 'categories'));
     }
 

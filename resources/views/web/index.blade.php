@@ -34,25 +34,31 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('/uploads/banner/1.jpg') }}" alt="">
+            @foreach($banner_events as $row)
+            <div class="carousel-item @if($loop->first) active @endif">
+                <img class="d-block w-100" src="{{ asset($row->image) }}" alt="">
                 <div class="carousel-caption d-md-block">
-                    <h5>Ярмарка карьеры и контактов 2018</h5>
-                    <p class="d-sm-none d-md-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
+                    <h5>{{ $row->title }}</h5>
+                    <p class="d-sm-none d-md-block">{{ $row->description }}</p>
 
-                    <a href="" class="btn btn-primary">{{ trans('t.learn_more') }}</a>
-                    {{-- <a href="" class="btn btn-outline-primary">Other</a> --}}
+                    <a href="{{ route('web.event.show', $row->slug) }}" class="btn btn-primary">{{ trans('t.learn_more') }}</a>
+                    <a href="{{ route('web.event.apply', $row->slug) }}" class="btn btn-outline-primary">{{ trans('t.sign_up') }}</a>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('/uploads/banner/2.jpg') }}" alt="">
+            @endforeach
+
+            @foreach($banner_posts as $row)
+            <div class="carousel-item @if($loop->first) active @endif">
+                <img class="d-block w-100" src="{{ asset($row->image) }}" alt="">
                 <div class="carousel-caption d-md-block">
-                    <h5>Тренинг по методологии SCRUM</h5>
-                    <p class="d-sm-none d-md-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis soluta ex, facilis cum rerum tenetur illo magni culpa sit animi voluptatibus ipsum maiores odio fugit itaque! Obcaecati, porro iusto.</p>
-                    <a href="" class="btn btn-primary">{{ trans('t.learn_more') }}</a>
+                    <h5>{{ $row->title }}</h5>
+                    <p class="d-sm-none d-md-block">{{ $row->description }}</p>
+
+                    <a href="{{ route('web.post.show', $row->slug) }}" class="btn btn-primary">{{ trans('t.learn_more') }}</a>
                     {{-- <a href="" class="btn btn-outline-primary">Other</a> --}}
                 </div>
             </div>
+            @endforeach
         </div>
         <a class="carousel-control-prev d-lg-flex d-none" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -140,7 +146,7 @@
                 <hr class="divider w-75">
             </div>
 
-            @foreach($rows as $row)
+            @foreach($posts as $row)
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="post">
                     <a href="{{ route('web.post.show', $row->slug) }}" class="post-img">

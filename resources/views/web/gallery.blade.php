@@ -44,7 +44,11 @@
 
 $(document).ready(function(){
     $('#lightgallery').lightGallery({
-        thumbnail: true
+        thumbnail: true,
+        download:false,
+        share: false,
+        actualSize: false,
+        autoplayControls:false,
     });
 });
 
