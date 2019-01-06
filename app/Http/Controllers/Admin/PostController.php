@@ -46,17 +46,11 @@ class PostController extends Controller
     {
         $countries = auth()->user()->countries;
         $categories = auth()->user()->categories;
-        $countryPosts = collect();
         $categoryPosts = collect();
-        foreach($countries as $country)
-        {
-            $countryPosts = $countryPosts->merge($country->posts);
-        }
         foreach($categories as $category)
         {
             $categoryPosts = $categoryPosts->merge($category->posts);
         }
-        $data = $countryPosts->intersect($categoryPosts);
         return $data;
     }
 
@@ -152,7 +146,11 @@ class PostController extends Controller
                 $full = $btw.uniqid().'.'.$file->getClientOriginalExtension();
                 
                 Image::make($file)->fit(180, 180)->save($dir.$thumb);
-                Image::make($file)->fill(1280, 720)->save($dir.$full);
+                Image::make($file)->resize(1280, 720, function($constraint)
+                {
+                    $constraint->aspectRatio();
+                })->resizeCanvas(1280, 720, 'center', false, '000000')->save($dir.$full);
+
     
                 $thumbs = array(
                     'title' => "File $i",
@@ -270,17 +268,17 @@ class PostController extends Controller
             }
             $btw = time();
 
-            $thumb_name = $btw.uniqid().'_image.'.$file->getClientOriginalExtension();
-            $image_name = $btw.uniqid().'_image_big.'.$file->getClientOriginalExtension();
+            $thumb_name = $btw.uniqid().'_thumb.'.$file->getClientOriginalExtension();
+            $image_name = $btw.uniqid().'_image.'.$file->getClientOriginalExtension();
 
             $thumb_path = $dir.$thumb_name;
             $image_path = $dir.$image_name;
             
-            $image = Image::make($file)->fit(640, 360)->save($thumb_path);
-            $image_big = Image::make($file)->fit(1280, 720)->save($image_path);
+            $thumb = Image::make($file)->fit(510, 287)->save($thumb_path);
+            $image = Image::make($file)->fit(1280, 720)->save($image_path);
 
-            $row->image = $thumb_path;
-            $row->image_big = $image_path;
+            $row->thumb = $thumb_path;
+            $row->image = $image_path;
             $row->save();
         }
 
@@ -312,7 +310,7 @@ class PostController extends Controller
                 Image::make($file)->resize(1280, 720, function($constraint)
                 {
                     $constraint->aspectRatio();
-                })->resizeCanvas(1280, 720, 'center')->save($dir.$full);
+                })->resizeCanvas(1280, 720, 'center', false, '000000')->save($dir.$full);
     
                 $thumbs = array(
                     'title' => "File $i",

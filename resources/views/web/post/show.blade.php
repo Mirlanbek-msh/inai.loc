@@ -66,6 +66,20 @@
                 <div class="col-12 mt-3">
                     <div class="post-body">
                         {!! $row->content !!}
+                        @isset($row->video)
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $row->video }}?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                            </div>
+                        @endisset
+                        @isset($row->gallery)
+                        <ul id="imageGallery">
+                            @foreach ($row->gallery['fulls'] as $full)
+                                <li data-thumb="{{ asset($full['file']) }}" data-src="{{ asset($full['file'])  }}">
+                                    <img class="resizegallery img-fluid" src="{{ asset($full['file'])  }}" />
+                                </li>
+                            @endforeach
+                        </ul>
+                        @endisset
                     </div>
                 </div>
                 <div class="col-12 mt-3">
@@ -107,7 +121,24 @@
                 
 @section('scripts')
 <script>
-
+        $(document).ready(function() {
+            $('#imageGallery').lightSlider({
+                gallery:true,
+                item:1 ,
+                loop:true,
+                thumbItem:5,
+                enableDrag: true,
+                onSliderLoad: function(el) {
+                    el.lightGallery({
+                        selector: '#imageGallery .lslide',
+                        download:false,
+                        share: false,
+                        actualSize: false,
+                        autoplayControls:false,
+                    });
+                }
+            });
+        });
 
 </script>
 @endsection
