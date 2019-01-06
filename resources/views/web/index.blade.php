@@ -30,8 +30,9 @@
 <section class="section sps sps--abv sps-pt-60">
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            @foreach($banner_events as $row)
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" @if($loop->first) class="active" @endif></li>
+            @endforeach
         </ol>
         <div class="carousel-inner">
             @foreach($banner_events as $row)
