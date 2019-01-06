@@ -39,7 +39,7 @@ class PostController extends Controller
         }
         $data = $data->sortByDesc('created_at');
         $data = $this->paginate($data, 30);
-        return view('admin.post.index',compact('data', 'categories'));
+        return view('admin.post.index', compact('data'));
     }
 
     public function getPostsByPermission()
