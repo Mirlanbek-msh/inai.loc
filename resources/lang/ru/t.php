@@ -47,7 +47,7 @@ return [
     'share'   => 'Поделиться',
 
     /** Events */
-    'signed_up'   => 'Зарегистрировалиь',
+    'signed_up'   => 'Зарегистрировались',
     'signing_up'   => 'Регистрация',
     'full_name'   => 'Имя и фамилия',
     'phone_number'   => 'Номер телефона',
@@ -91,7 +91,7 @@ return [
     'categories' => 'Категории',
 
     'title' => 'Заголовок',
-    'description' => 'Описание',
+    'description' => 'Короткое описание',
     'content' => 'Содержание',
     'tags' => 'Теги',
     'image' => 'Изображение',
@@ -100,7 +100,7 @@ return [
     'too_big_file' => 'Файл слишком большой',
     'file_size_bigger_than' => 'Размер файла больше чем',
     'files_loading' => 'Загружаются файлы',
-    'date_time' => 'Время и дата',
+    'date_time' => 'Время и дата публикации',
     'publish_on' => 'Опубликовать на',
     'publish' => 'Опубликовать',
     'to_banner' => 'На баннер',
@@ -116,6 +116,7 @@ return [
     'saved_successfully' => 'Успешно сохранен',
     'updated_successfully' => 'Успешно обновлен',
     'removed_successfully' => 'Успешно удален',
+    'status_updated' => 'Статус обновлен',
     'create' => 'Создать',
     'edit' => 'Редактировать',
     'remove_confirm' => 'Вы уверены что хотите удалить?',
@@ -126,5 +127,46 @@ return [
     'create_event' => 'Добавить ивент',
     'all_events' => 'Все ивенты',
     
+    /**Forms */
+    'in_russian' => 'На русском',
+    'russian' => 'Русский',
+    'in_english' => 'На английском',
+    'english' => 'Английский',
+    'main_info' => 'Основные данные',
+    'other_info' => 'Другие',
+
+    'title_example' => 'Ночь программирования, Ярмарка карьеры и контактов',
+    'description_example' => 'Ночь программирования это бла бла бла...',
+
+    'has_signing_up_form' => 'Нужна форма для регистрации',
+
+    /**Event form */
+    'event_time_place' => 'Место проведения события',
+    'event_place' => 'Место провдения события',
+    'event_place_example' => 'г. Бишкек, отель Дамас',
+    'event_entrance' => 'Вход',
+    'event_entrance_example' => 'Свободный, 500 сом',
+    'event_about_author' => 'Организатор события',
+    'author_name' => 'Имя организатора',
+    'author_name_example' => 'Баланчаев Баланча, Sven Koble, INAI.KG',
+    'author_desc' => 'Об организаторе',
+    'author_desc_example' => 'Баланчаев Баланча является ведущим тренером SCRUM, бла бла бла ...',
+    'signing_up_form' => 'Форма регистрации',
+    'following_data_required_to_sign_up' => 'Следующие данные важны для регистрации',
+    'need_org_name' => 'Имя организации',
+    'need_full_name' => 'Имя лица',
+    'need_phone' => 'Телефонный номер',
+    'need_email' => 'Email',
+    'need_file' => 'Нужно прикрепить файл',
+    'author_image' => 'Фото организатора',
+    'author_contact_data' => 'Контактные данные организатора',
+    'author_phone' => 'Номер организатора',
+    'author_phone_example' => '+996 555 555 555',
+    'author_email' => 'Email организатора',
+    'author_email_example' => 'balanchaev@mail.com',
+    'event_date' => 'Дата проведения события',
+    'has_end_date' => 'Есть дата окончания',
+    'event_date_time' => 'Дата и время',
+
 
 ];

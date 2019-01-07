@@ -30,8 +30,10 @@
         @endif
         {!! Form::model(
             $row,['id' => 'createForm',
+            'class' => 'form-validate',
             'route' => 'admin.post.store',
-            'enctype' => 'multipart/form-data']) !!}
+            'enctype' => 'multipart/form-data'
+            ]) !!}
             @include('admin.post.form', $row)
         {!! Form::close() !!}
     </div>
@@ -48,7 +50,7 @@
 
             var tagsInput = document.querySelector('input[name=tags]'),
                 tags = new Tagify(tagsInput, {
-                    whitelist : []
+                    whitelist : {!! $tagsStr !!}
                 })
             tags.on('remove', onRemoveTag);
 
@@ -104,7 +106,6 @@
                         if(el.name == 'content'){
                             value = tinyMCE.get('editor').getContent();
                         }
-                        console.log(el.name, value);
                         formData.append(el.name, value);
                     });
                     formData.append("image", $("input[name=image]")[0].files[0]);

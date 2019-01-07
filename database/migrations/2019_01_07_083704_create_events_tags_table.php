@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class EventsTags extends Migration
+class CreateEventsTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,8 @@ class EventsTags extends Migration
     public function up()
     {
         Schema::create('events_tags', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('event_id')->unsigned();
-            $table->integer('tag_id')->unsigned();
-            $table->timestamps();
+            $table->unsignedInteger('event_id')->primary();
+            $table->unsignedInteger('tag_id')->primary();
         });
     }
 

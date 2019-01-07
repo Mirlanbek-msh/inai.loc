@@ -1,57 +1,50 @@
-@extends('admin.layouts.app')
-
-@section('title', $row->title)
-
+@extends('admin.layouts.app') 
+@section('title', $row->title) 
 @section('content')
 
-    <div class="element-actions">
-        <a class="mr-2 mb-2 btn btn-success" href="{{ route('admin.post.index') }}">
+<div class="element-actions">
+    <a class="mr-2 mb-2 btn btn-success" href="{{ route('admin.post.index') }}">
             <i class="os-icon os-icon-user-male-circle"></i>{{ trans('t.all_posts') }}</a>
-    </div>
-    <h6 class="element-header">
-        {{$row->title}}
-    </h6>
-    <div class="element-box timeline">
-        
-        <fieldset>
-                <div class="entry">
-                    <div class="title">
-                        <h3>{{ trans('t.title') }}</h3>
-                    </div>
-                    <div class="body">
-                        <p>{{$row->title}}</p>
-                    </div>
-                </div>
-                <div class="entry">
-                    <div class="title">
-                        <h3>{{ trans('t.description') }}</h3>
-                    </div>
-                    <div class="body">
-                        <p>{{ $row->description }}</p>
-                    </div>
-                </div>
-                <div class="entry">
-                    <div class="title">
-                        <h3>{{ trans('t.content') }}</h3>
-                    </div>
-                    <div class="body">
-                        <p>{!! $row->content !!}</p>
-                    </div>
-                </div>
-                 <div class="entry">
-                    <div class="title">
-                        <h3>{{ trans('t.tags') }}</h3>
-                    </div>
-                    <div class="body">
-                        @foreach($row->tags()->get() as $tag)
-                            @if($tag != '')
-                                <button class="mr-2 mb-2 btn btn-outline-primary" type="button"> {{ $tag->title }}</button>
-                            @endif
-                        @endforeach
-                    </div>
-                </div>
-            </fieldset>
+</div>
+<h6 class="element-header">
+    {{$row->title}}
+</h6>
+<div class="element-box timeline">
+
     <fieldset>
+        <div class="entry">
+            <div class="title">
+                <h3>{{ trans('t.title') }}</h3>
+            </div>
+            <div class="body">
+                <p>{{$row->title}}</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="title">
+                <h3>{{ trans('t.description') }}</h3>
+            </div>
+            <div class="body">
+                <p>{{ $row->description }}</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="title">
+                <h3>{{ trans('t.content') }}</h3>
+            </div>
+            <div class="body">
+                <p>{!! $row->content !!}</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="title">
+                <h3>{{ trans('t.tags') }}</h3>
+            </div>
+            <div class="body">
+                @foreach($row->tags()->get() as $tag) @if($tag != '')
+                <button class="mr-2 mb-2 btn btn-outline-primary" type="button"> {{ $tag->title }}</button> @endif @endforeach
+            </div>
+        </div>
         <div class="entry">
             <div class="title">
                 <h3>{{ trans('t.image') }}</h3>
@@ -66,15 +59,15 @@
                 <h3>{{ trans('t.gallery') }} ({{count($row->gallery['thumbs'])}})</h3>
             </div>
             <div class="body">
-                <div class="row">   
+                <div class="row">
                     @foreach ($row->gallery['thumbs'] as $item)
-                        <div class="col-md-2 col-sm-3 mb-3">
-                            <img class="img-fluid rounded" src="{{asset($item['file'])}}" alt="">
-                        </div>
+                    <div class="col-md-2 col-sm-3 mb-3">
+                        <img class="img-fluid rounded" src="{{asset($item['file'])}}" alt="">
+                    </div>
                     @endforeach
                 </div>
             </div>
-        </div>                
+        </div>
         @endisset
         <div class="entry">
             <div class="title">
@@ -113,20 +106,18 @@
             </div>
         </div>
     </fieldset>
-        <fieldset>
-            <div class="buttons-w">
-                <a class="btn btn-success" href="{{route('admin.post.index')}}">{{ trans('t.all_posts') }}</a>
-                <a class="btn btn-primary" href="{{ route('admin.post.edit', $row) }}">{{ trans('t.edit') }}</a>
-                {!! Form::open(['method' => 'DELETE','route' => ['admin.post.destroy', $row],'style'=>'display:inline', 'onsubmit' => 'return confirmDelete()']) !!}
-                <input type="hidden" value="Delete">
-                <button class="btn btn-danger float-right" type="submit"><i class="icon-feather-trash-2"></i>{{ trans('t.remove') }}</button>
-                {!! Form::close() !!}
-            </div>
-        </fieldset>
-    </div>
-
+    <fieldset>
+        <div class="buttons-w">
+            <a class="btn btn-success" href="{{route('admin.post.index')}}">{{ trans('t.all_posts') }}</a>
+            <a class="btn btn-primary" href="{{ route('admin.post.edit', $row) }}">{{ trans('t.edit') }}</a> {!! Form::open(['method'
+            => 'DELETE','route' => ['admin.post.destroy', $row],'style'=>'display:inline', 'onsubmit' => 'return confirmDelete()'])
+            !!}
+            <input type="hidden" value="Delete">
+            <button class="btn btn-danger float-right" type="submit"><i class="icon-feather-trash-2"></i>{{ trans('t.remove') }}</button>            {!! Form::close() !!}
+        </div>
+    </fieldset>
+</div>
 @endsection
-
+ 
 @section('scripts')
-
 @endsection

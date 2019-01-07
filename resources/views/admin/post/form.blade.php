@@ -1,8 +1,9 @@
 <fieldset class="form-group">
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.title')}}</label>
+        <label class="col-sm-2 col-form-label">{{trans('t.title')}} *</label>
         <div class="col-sm-10">
-            {!! Form::text('title', null, ['class' => 'form-control']) !!}
+            {!! Form::text('title', null, ['class' => 'form-control', 'required' => 'required', 'data-error' => trans('validation.required',['attribute' => ''])]) !!}
+            <div class="help-block with-errors text-danger"></div>
         </div>
     </div>
     <div class="form-group row">
@@ -13,9 +14,10 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.content')}}</label>
+        <label class="col-sm-2 col-form-label">{{trans('t.content')}} *</label>
         <div class="col-sm-10">
-            {!! Form::textarea('content', null, ["class" => "form-control", 'id' => 'editor', 'rows' => 25]) !!}
+            {!! Form::textarea('content', null, ["class" => "form-control editor", 'rows' => 25]) !!}
+            <div class="help-block with-errors text-danger"></div>
             <div class="mb-2"></div>
         </div>
     </div>
@@ -41,7 +43,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.image')}}</label>
+        <label class="col-sm-2 col-form-label">{{trans('t.image')}} *</label>
         <div class="col-sm-10">
             <div class="d-block">
                 <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -55,7 +57,7 @@
                         <span class="btn btn-primary btn-file">
                             <span class="fileinput-new">{{trans('t.select')}}</span>
                             <span class="fileinput-exists">{{trans('t.change')}}</span>
-                            {!! Form::file('image', null) !!}
+                            {!! Form::file('image', ['accept' => 'image/*']) !!}
                         </span>
                         <a href="#" class="btn btn-primary fileinput-exists" data-dismiss="fileinput">{{trans('t.remove')}}</a>
                     </div>

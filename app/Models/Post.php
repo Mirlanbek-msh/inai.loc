@@ -104,12 +104,6 @@ class Post extends Model
         }
     }
 
-    public function remove()
-    {
-        $this->removeOldImages();
-        $this->delete();
-    }
-
     public static function boot()
     {
         parent::boot();
@@ -133,20 +127,14 @@ class Post extends Model
         });
 
         self::deleting(function($model){
-            // ... code here
+            $model->removeOldImages();
         });
-
+        
         self::deleted(function($model){
             // ... code here
         });
     }
 
-    /**
-     * Get the user's date of birth for forms.
-     *
-     * @param  string  $value
-     * @return string
-     */
     public function getTagsAttribute($value)
     {
         return implode(',', $this->tags()->get()->pluck('title')->toArray());

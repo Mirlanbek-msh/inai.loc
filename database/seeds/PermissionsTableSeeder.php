@@ -27,6 +27,11 @@ class PermissionsTableSeeder extends Seeder
             'post-create',
             'post-edit',
             'post-delete',
+
+            'event-list',
+            'event-create',
+            'event-edit',
+            'event-delete',
             
             'category-list',
             'category-create',
@@ -117,6 +122,22 @@ class PermissionsTableSeeder extends Seeder
         ]);
         DB::table('role_has_permissions')->insert([
             'permission_id' => '16',
+            'role_id' => '1'
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => '17',
+            'role_id' => '1'
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => '18',
+            'role_id' => '1'
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => '19',
+            'role_id' => '1'
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => '20',
             'role_id' => '1'
         ]);
 

@@ -59,7 +59,9 @@ class PostController extends Controller
         $row = new Post;
         $categories = PostCategory::where('status', 1)->get();
         $categories = $categories->pluck('title', 'id');
-        return view('admin.post.create', compact('row', 'categories'));
+        $tags = Tag::where('status', 1)->where('lang', app()->getLocale())->get();
+        $tagsStr = json_encode($tags->pluck('title')->toArray());
+        return view('admin.post.create', compact('row', 'categories', 'tagsStr'));
     }
 
     /**
@@ -209,7 +211,9 @@ class PostController extends Controller
         $row = Post::findOrFail($id);
         $categories = PostCategory::where('status', 1)->get();
         $categories = $categories->pluck('title', 'id');
-        return view('admin.post.edit', compact('row', 'categories'));
+        $tags = Tag::where('status', 1)->where('lang', app()->getLocale())->get();
+        $tagsStr = json_encode($tags->pluck('title')->toArray());
+        return view('admin.post.edit', compact('row', 'categories', 'tagsStr'));
     }
 
     /**
@@ -349,13 +353,13 @@ class PostController extends Controller
 
         if($row){
             toast($message,'success','top-right');
+            // dd($request->get('to_facebook'));
+            // if($request->get('to_facebook')){
+                //     $row->notify(new PostPublished);
+            // }
             if($files){
                 return response('success', 200);
             }
-            // dd($request->get('to_facebook'));
-            // if($request->get('to_facebook')){
-            //     $row->notify(new PostPublished);
-            // }
             return redirect()->route('admin.post.show', $row);
         }
     }
@@ -368,7 +372,7 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        Post::findOrFail($id)->remove();
+        Post::findOrFail($id)->delete();
         toast(trans('t.removed_successfully'), 'info', 'top-right');
         return redirect()->route('admin.post.index');
     }
@@ -424,7 +428,7 @@ class PostController extends Controller
     public function toggle($id)
     {
         Post::findOrFail($id)->toggleStatus();
-        toast('Статус обновлен', 'info', 'top-right');
+        toast(trans('t.status_updated'), 'info', 'top-right');
         return redirect()->back();
     }
 

@@ -30,6 +30,7 @@
         @endif
         {!! Form::model($row,
             [	'id' => 'editForm',
+                'class' => 'form-validate',
                 'route' => ['admin.post.update', $row],
                 'method' => 'PUT',
                 'enctype' => 'multipart/form-data'
@@ -52,7 +53,7 @@
             
             var tagsInput = document.querySelector('input[name=tags]'),
                 tags = new Tagify(tagsInput, {
-                    whitelist : []
+                    whitelist : {!! $tagsStr !!}
                 })
             tags.on('remove', onRemoveTag);
 
@@ -115,7 +116,11 @@
                     var data = $('#editForm').serializeArray();
                     
                     $.each(data, function(key, el) {
-                        formData.append(el.name, el.value);
+                        var value = el.value;
+                        if(el.name == 'content'){
+                            value = tinyMCE.get('editor').getContent();
+                        }
+                        formData.append(el.name, value);
                     });
                     formData.append("image", $("input[name=image]")[0].files[0]);
                 });

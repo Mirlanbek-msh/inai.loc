@@ -156,7 +156,7 @@ $(function () {
   }
 
   // #4. DATE RANGE PICKER
-  moment.locale('ru');
+  moment.locale(document.documentElement.lang);
   $('input.daterange').daterangepicker({ 
     singleDatePicker: true,
     showDropdowns: true,
@@ -172,19 +172,29 @@ $(function () {
       showDropdowns: true,
       timePicker: true,
       timePicker24Hour: true,
-      timePickerIncrement: 10,
+      timePickerIncrement: 5,
       autoUpdateInput: true,
       autoApply: true,
+      startDate: moment().startOf('hour'),
       locale: {
           format: 'YYYY-MM-DD HH:mm:ss'
       }
   });
-  $('input.multi-daterange').daterangepicker({ "startDate": "03/28/2017", "endDate": "04/06/2017" });
+  $('input.multi-daterange').daterangepicker({
+    timePicker: true,
+    timePicker24Hour: true,
+    timePickerIncrement: 5,
+    startDate: moment().startOf('hour'),
+    endDate: moment().startOf('hour'),
+    locale: {
+      format: 'HH:mm DD.MM.YYYY'
+    }
+  });
 
   // #5. DATATABLES
 
-  if ($('#formValidate').length) {
-    $('#formValidate').validator();
+  if ($('.form-validate').length) {
+    $('.form-validate').validator();
   }
   if ($('#dataTable1').length) {
     $('#dataTable1').DataTable({ buttons: ['copy', 'excel', 'pdf'] });

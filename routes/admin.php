@@ -28,6 +28,7 @@ Route::group(
                 Route::get('gallery/{id}', 'PostController@imagesGet');
                 Route::post('gallery/{id}/delete/{file}', 'PostController@imageDestroy');
                 Route::resource('category', 'PostCategoryController');
+                Route::resource('event', 'EventController');
                 Route::resource('user','UserController');           
             });
 

@@ -7,10 +7,11 @@
     $(function() {
         tinymce.init({
             language: '{{ app()->getLocale() }}',
-            selector: '#editor',
+            selector: '.editor',
             plugins: 'advlist link image imagetools colorpicker textcolor lists preview autolink fullscreen table hr media autolink',
             toolbar: 'undo redo | formatselect bold italic underline strikethrough subscript superscript | hr blockquote bullist numlist outdent indent | alignleft aligncenter alignright alignjustify | link image media table | removeformat preview fullscreen',
             menubar: false,
+            block_formats: 'Paragraph=p;{{trans('t.title')}}=h3;',
             images_upload_url: '/tinymce/postAcceptor.php',
             images_upload_base_path: '/',
             plugin_preview_width: 800,
