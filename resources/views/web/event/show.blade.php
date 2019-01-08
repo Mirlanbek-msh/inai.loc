@@ -15,7 +15,7 @@
     <!-- Facebook Meta -->
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="inai.kg">
-    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:type" content="image/{{substr($row->image, -3)}}">
     <meta property="og:image:width" content="720">
     <meta property="og:image:height" content="720">
     <meta property="og:url" content="{{ route('web.post.show', $row->slug) }}">
