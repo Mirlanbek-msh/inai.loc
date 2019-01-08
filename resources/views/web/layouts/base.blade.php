@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Новости Центральной Азии: Казахстан, Кыргызстан, Таджикистан,Туркменистан, Узбекистан, Афганистан">
-	<meta name="keywords" content="центральная азия, новости кыргызстана,  новости узбекистана, новости таджикистана, обзоры, комментарии, казахстан, кыргызстан, киргизская республика, таджикистан, туркменистан, узбекистан, астана, алма-ата, бишкек, душанбе, ашхабат, ташкент, ферганская долина, казахи, кыргызы, таджики, туркмены, узбеки, бакиев, каримов, назарбаев, бердымухамедов">
+    <meta name="description" content="{{trans('t.kgiai')}}">
+	<meta name="keywords" content="{{trans('t.kgiai')}}">
 
     <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
 

@@ -16,7 +16,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">{{trans('t.content')}} *</label>
         <div class="col-sm-10">
-            {!! Form::textarea('content', null, ["class" => "form-control editor", 'rows' => 25]) !!}
+            {!! Form::textarea('content', null, ["class" => "form-control editor", 'id' => 'editor', 'rows' => 25]) !!}
             <div class="help-block with-errors text-danger"></div>
             <div class="mb-2"></div>
         </div>

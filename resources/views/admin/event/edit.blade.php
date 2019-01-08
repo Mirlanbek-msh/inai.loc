@@ -99,7 +99,20 @@
 
 
     <script type="text/javascript">
-
+        @if($row->has_end_date)
+        $('input.multi-daterange').daterangepicker({
+            timePicker: true,
+            timePicker24Hour: true,
+            timePickerIncrement: 5,
+            autoUpdateInput: true,
+            autoApply: true,
+            startDate: moment('{{$row->event_start_date->format('Y-m-d H:i:s')}}', 'YYYY-MM-DD HH:mm:ss'),
+            endDate: moment('{{$row->event_end_date->format('Y-m-d H:i:s')}}', 'YYYY-MM-DD HH:mm:ss'),
+            locale: {
+                format: 'HH:mm DD.MM.YYYY'
+            }
+        });
+        @endif
     </script>
 
 @endsection

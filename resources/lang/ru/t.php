@@ -49,7 +49,8 @@ return [
     /** Events */
     'signed_up'   => 'Зарегистрировались',
     'signing_up'   => 'Регистрация',
-    'full_name'   => 'Имя и фамилия',
+    'full_name'   => 'ФИО',
+    'org_name'   => 'Имя организации',
     'phone_number'   => 'Номер телефона',
     'select'   => 'Выберите',
     'select_file'   => 'Выберите файл',
@@ -89,6 +90,9 @@ return [
     'special_pages' => 'Специальные страницы',
 
     'categories' => 'Категории',
+
+    'pages' => 'Страницы',
+    'all_pages' => 'Все страницы',
 
     'title' => 'Заголовок',
     'description' => 'Короткое описание',
@@ -137,12 +141,21 @@ return [
 
     'title_example' => 'Ночь программирования, Ярмарка карьеры и контактов',
     'description_example' => 'Ночь программирования это бла бла бла...',
-
+    
     'has_signing_up_form' => 'Нужна форма для регистрации',
-
+    'event_speaker' => 'Спикеры',
+    'for_questions' => 'По всем вопросам',
+    'about_event' => 'О событии',
+    'time' => 'Время',
+    'where_and_when' => 'Где и когда?',
+    'start_date' => 'Дата окончания',
+    'end_date' => 'Дата начала',
+    'date' => 'Дата',
+    'file' => 'Файл',
+    
     /**Event form */
-    'event_time_place' => 'Место проведения события',
-    'event_place' => 'Место провдения события',
+    'event_time_place' => 'Место события',
+    'event_place' => 'Место события',
     'event_place_example' => 'г. Бишкек, отель Дамас',
     'event_entrance' => 'Вход',
     'event_entrance_example' => 'Свободный, 500 сом',
@@ -153,10 +166,10 @@ return [
     'author_desc_example' => 'Баланчаев Баланча является ведущим тренером SCRUM, бла бла бла ...',
     'signing_up_form' => 'Форма регистрации',
     'following_data_required_to_sign_up' => 'Следующие данные важны для регистрации',
-    'need_org_name' => 'Имя организации',
-    'need_full_name' => 'Имя лица',
-    'need_phone' => 'Телефонный номер',
-    'need_email' => 'Email',
+    'need_org_name' => 'Нужна имя организации',
+    'need_full_name' => 'Нужен ФИО',
+    'need_phone' => 'Нужен телефонный номер',
+    'need_email' => 'Нужен Email',
     'need_file' => 'Нужно прикрепить файл',
     'author_image' => 'Фото организатора',
     'author_contact_data' => 'Контактные данные организатора',

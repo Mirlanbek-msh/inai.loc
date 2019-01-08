@@ -29,6 +29,9 @@ Route::group(
                 Route::post('gallery/{id}/delete/{file}', 'PostController@imageDestroy');
                 Route::resource('category', 'PostCategoryController');
                 Route::resource('event', 'EventController');
+                Route::get('page/about', 'PageController@about')->name('page.about');
+                Route::resource('page', 'PageController');
+                Route::resource('pagecategory', 'PageCategoryController');
                 Route::resource('user','UserController');           
             });
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\PostCategory;
 
 class PostCategoryController extends Controller
 {
@@ -14,7 +15,8 @@ class PostCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data = PostCategory::where('lang', app()->getLocale())->get();
+        return view('admin.category.index', compact('data'));
     }
 
     /**
@@ -24,7 +26,8 @@ class PostCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $row = new PostCategory;
+        return view('admin.category.create', compact('row'));
     }
 
     /**

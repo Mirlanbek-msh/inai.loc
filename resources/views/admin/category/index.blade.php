@@ -16,7 +16,6 @@
                     <tr>
                         <th>ID</th>
                         <th>Название</th>
-                        <th>Страна</th>
                         <th>Кол-во постов</th>
                         <th>Статус</th>
                         <th width="150px" class="text-center">Действия</th>
@@ -27,7 +26,6 @@
                 <tr>
                     <td>{{ $row->id }}</td>
                     <td>{{ $row->title }}</td>
-                    <td>{{ $row->getCountryName() }}</td>
                     <td>{{ $row->posts->count() }}</td>
                     <td><a href="{{ route('admin.category.toggle', $row->id) }}">{!! $row->getStatus() !!}</a></td>
                     <td class="text-center">
@@ -52,7 +50,35 @@
 
     <script>
         $(document).ready(function() {
-            var table = $('#datatables').DataTable();
+            var table = $('#datatables').DataTable({
+                "order": [],
+                pageLength: 50,
+                paging: false,
+                @if(app()->getLocale() == 'ru')
+                language: {
+                    "processing": "Подождите...",
+                    "search": "Поиск:",
+                    "lengthMenu": "Показать _MENU_ записей",
+                    "info": "Записи с _START_ до _END_ из _TOTAL_ записей",
+                    "infoEmpty": "Записи с 0 до 0 из 0 записей",
+                    "infoFiltered": "(отфильтровано из _MAX_ записей)",
+                    "infoPostFix": "",
+                    "loadingRecords": "Загрузка записей...",
+                    "zeroRecords": "Записи отсутствуют.",
+                    "emptyTable": "В таблице отсутствуют данные",
+                    "paginate": {
+                        "first": "Первая",
+                        "previous": "Предыдущая",
+                        "next": "Следующая",
+                        "last": "Последняя"
+                    },
+                    "aria": {
+                        "sortAscending": ": активировать для сортировки столбца по возрастанию",
+                        "sortDescending": ": активировать для сортировки столбца по убыванию"
+                    }
+                }
+                @endif
+            });
 
             // $('#datatables tbody').on( 'click', 'tr', function () {
 

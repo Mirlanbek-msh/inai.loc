@@ -100,7 +100,7 @@ class PostController extends Controller
                     $tags[$key] = $tag->id;
                 }
             }
-            $row->tags()->attach($tags);
+            $row->tags()->sync($tags);
         }
 
         if($request->hasFile('image')){

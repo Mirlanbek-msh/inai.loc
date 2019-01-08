@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Blade;
+use App\Models\PageCategory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -56,8 +57,32 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function($view){
             $view->with('current_three', Request::capture()->segment(3));
             $view->with('lang', app()->getLocale());
-            $view->with('current_date', $this->loadLocalizedDate());
+            // $view->with('current_date', $this->loadLocalizedDate());
+            $view->with('bachelor', $this->loadBachelor());
+            $view->with('master', $this->loadMaster());
+            $view->with('admission', $this->loadAdmission());
+            $view->with('internationalization', $this->loadInternationalization());
         });
+    }
+
+    public function loadBachelor()
+    {
+        return PageCategory::where('slug', 'bachelor')->firstOrFail();
+    }
+
+    public function loadMaster()
+    {
+        return PageCategory::where('slug', 'master')->firstOrFail();
+    }
+
+    public function loadAdmission()
+    {
+        return PageCategory::where('slug', 'admission')->firstOrFail();
+    }
+
+    public function loadInternationalization()
+    {
+        return PageCategory::where('slug', 'internationalization')->firstOrFail();
     }
 
     public function loadLocalizedDate()

@@ -10,7 +10,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('web.post');
+        $posts = Post::where('status', 1)->where('lang', app()->getLocale())->orderBy('created_at', 'DESC')->paginate(6);
+        return view('web.post.index', compact('posts'));
     }
 
     public function show($slug)

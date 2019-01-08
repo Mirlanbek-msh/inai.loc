@@ -39,17 +39,19 @@
             <div class="carousel-item @if($loop->first) active @endif">
                 <img class="d-block w-100" src="{{ asset($row->image) }}" alt="">
                 <div class="carousel-caption d-md-block">
-                    <h5>{{ $row->title }}</h5>
-                    <p class="d-sm-none d-md-block">{{ $row->description }}</p>
+                    <h5>{{ $row->title_lang }}</h5>
+                    <p class="d-sm-none d-md-block">{{ $row->description_lang }}</p>
 
                     <a href="{{ route('web.event.show', $row->slug) }}" class="btn btn-primary">{{ trans('t.learn_more') }}</a>
+                    @if($row->has_signing_up_form)
                     <a href="{{ route('web.event.apply', $row->slug) }}" class="btn btn-outline-primary">{{ trans('t.sign_up') }}</a>
+                    @endif
                 </div>
             </div>
             @endforeach
 
             @foreach($banner_posts as $row)
-            <div class="carousel-item @if($loop->first) active @endif">
+            <div class="carousel-item @if($loop->first && !$banner_events->count()) active @endif">
                 <img class="d-block w-100" src="{{ asset($row->image) }}" alt="">
                 <div class="carousel-caption d-md-block">
                     <h5>{{ $row->title }}</h5>
@@ -80,56 +82,34 @@
                 <hr class="divider w-75">
             </div>
 
+            @foreach($events as $row)
             <div class="col-md-6 col-sm-12 p-4 d-flex justify-content-center">
                 <div class="event">
                     <div class="event-img">
-                        <img src="{{ asset('/uploads/banner/1.jpg') }}" alt="">
+                        <img src="{{ asset($row->image) }}" alt="">
                         <div class="event-overlay">
-                            <a href="{{ route('web.event.apply') }}" class="btn btn-primary">{{ trans('t.sign_up') }}</a>
-                            <a href="{{ route('web.event.index') }}" class="btn btn-outline-primary">{{ trans('t.learn_more') }}</a>
+                            @if($row->has_signing_up_form)
+                            <a href="{{ route('web.event.apply', $row->slug) }}" class="btn btn-primary">{{ trans('t.sign_up') }}</a>
+                            @endif
+                            <a href="{{ route('web.event.show', $row->slug) }}" class="btn btn-outline-primary">{{ trans('t.learn_more') }}</a>
                         </div>
                     </div>
                     <div class="event-body">
                         <div class="meta-text text-center">
-                            <h3>18</h3>
-                            <p>Октябрь</p>
-                            <span>10:00</span>
+                            <h3>{{$row->event_start_date->format('d')}}</h3>
+                            <p>{{trans("months_decl.".$row->event_start_date->format('m'))}}</p>
+                            <span>{{$row->event_start_date->format('H:i')}}</span>
                         </div>
                         <div class="main-text">
-                            <h6><a href="">Ярмарка карьеры и контактов, 2018, Бишкек</a></h6>
+                            <h6><a href="{{ route('web.event.show', $row->slug) }}">{{$row->title_lang}}</a></h6>
                             <ul>
-                                <li><i class="fa fa-user"></i> INAI.KG</li>
+                                <li><i class="fa fa-user"></i> {{$row->author_name_lang}}</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-6 col-sm-12 p-4 d-flex justify-content-center">
-                <div class="event">
-                    <div class="event-img">
-                        <img src="{{ asset('/uploads/events/img2.jpg') }}" alt="">
-                        <div class="event-overlay">
-                            <a href="{{ route('web.event.apply') }}" class="btn btn-primary">{{ trans('t.sign_up') }}</a>
-                            <a href="{{ route('web.event.index') }}" class="btn btn-outline-primary">{{ trans('t.learn_more') }}</a>
-                        </div>
-                    </div>
-                    <div class="event-body">
-                        <div class="meta-text text-center">
-                            <h3>22</h3>
-                            <p>Сентябрь</p>
-                            <span>9:30</span>
-                        </div>
-                        <div class="main-text">
-                            <h6><a href="">Методология SCRUM</a></h6>
-                            <ul>
-                                <li><i class="fa fa-user"></i> Sven Koble</li>
-                                <li><i class="fa fa-user"></i> David Grossman</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
 
             <div class="col-12 justify-content-center d-flex">
                 <a href="{{ route('web.event.index') }}" class="btn btn-primary">{{ trans('t.show_more') }}</a>

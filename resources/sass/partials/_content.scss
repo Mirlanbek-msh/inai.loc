@@ -385,28 +385,73 @@ nav {
             margin-top: 2rem;
             font-size: 25px;
             text-align: left;
+            position: relative;
             font-weight: 700;
             font-family: $font-merriweather;
             color: $title-black-color;
-        }
+            padding-bottom: 10px;
+            margin-bottom: 15px;
 
-        hr{
-            position: relative;
-            height: 1px;
-            padding: 0;
-            background: #e5e5e5;
-            border: none;
+            &::before{
+                position: absolute;
+                content: '';
+                height: 1px;
+                width: 100%;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                padding: 0;
+                background: #e5e5e5;
+                border: none;
+            }
 
             &::after{
                 content: '';
                 position: absolute;
-                top: 0;
+                bottom: 0;
                 left: 0;
                 height: 1px;
                 width: 50px;
                 background: #0087ab;
             }
+
+            &.no-underline{
+                padding-bottom: unset;
+                margin-bottom: unset;
+                &::before{
+                    display: none;
+                }
+                &::after{
+                    display: none;
+                }
+            }
         }
+
+        h4{
+            font-size: 18px;
+            text-align: left;
+            font-weight: 700;
+            font-family: $font-merriweather;
+            color: $title-black-color;
+        }
+
+        // hr{
+        //     position: relative;
+        //     height: 1px;
+        //     padding: 0;
+        //     background: #e5e5e5;
+        //     border: none;
+
+        //     &::after{
+        //         content: '';
+        //         position: absolute;
+        //         top: 0;
+        //         left: 0;
+        //         height: 1px;
+        //         width: 50px;
+        //         background: #0087ab;
+        //     }
+        // }
     }
 
     .tags{
@@ -572,7 +617,7 @@ nav {
             display: block;
         }
         p{
-            span{
+            span.meta{
                 color: $title-black-color;
                 font-weight: 600;
             }

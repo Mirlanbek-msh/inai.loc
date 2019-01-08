@@ -32,7 +32,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         Route::get('/about', 'HomeController@about')->name('about');
         Route::get('/contact', 'HomeController@contact')->name('contact');
         Route::get('/gallery', 'HomeController@gallery')->name('gallery');
-        Route::get('/application', 'HomeController@application')->name('application');
         Route::get('/tag/{slug}', 'PostController@tag')->name('tag');
         // Search
         Route::post('/search', 'SearchController@search')->name('search');
@@ -47,8 +46,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         // Event
         Route::group(['prefix' => 'event', 'as' => 'event.'], function(){
             Route::get('/', 'EventController@index')->name('index');
-            Route::get('/apply', 'EventController@apply')->name('apply');
-            Route::post('/apply', 'EventController@applyPost')->name('applyPost');
+            Route::get('/apply/{slug}', 'EventController@apply')->name('apply');
+            Route::post('/apply/{slug}', 'EventController@applyPost')->name('applyPost');
             Route::get('/{slug}', 'EventController@show')->name('show');
             Route::post('/{id}/comment', 'EventController@comment')->name('comment');
         });
@@ -56,10 +55,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         // Application
         Route::group(['prefix' => 'application', 'as' => 'application.'], function(){
             Route::get('/', 'ApplicationController@index')->name('index');
-            Route::get('/bachelor', 'ApplicationController@bachelor')->name('bachelor');
-            Route::get('/master', 'ApplicationController@master')->name('master');
-            Route::get('/requirements', 'ApplicationController@requirements')->name('requirements');
-            Route::get('/partnership', 'ApplicationController@partnership')->name('partnership');
+            Route::get('/{slug}', 'ApplicationController@show')->name('show');
         });
 
         Route::group(['as' => 'auth.'], function(){

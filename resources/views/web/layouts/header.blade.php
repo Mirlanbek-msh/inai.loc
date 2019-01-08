@@ -65,35 +65,34 @@
                                 <div class="row">
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
-                                            <li class="dropdown-header">{{ trans('t.bachelor_informatics') }}</li>
-                                            <li><a href="{{ route('web.application.bachelor') }}">Программные технологии</a></li>
-                                            <li><a href="{{ route('web.application.bachelor') }}">Медицинская информатика</a></li>
-                                            <li><a href="{{ route('web.application.bachelor') }}">Веб-информатика</a></li>
-                                            
+                                            <li class="dropdown-header">{{ $bachelor->title_lang }}</li>
+                                            @foreach($bachelor->pages as $row)
+                                            <li><a href="{{ route('web.application.show', $bachelor->slug) }}">{{$row->title_lang}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
-                                            <li class="dropdown-header">{{ trans('t.master_informatics') }}</li>
-                                            <li><a href="{{ route('web.application.master') }}">Инженерия системного программирования проектов</a></li>
-                                            <li><a href="{{ route('web.application.master') }}">Предпринимательство в сфере информационных технологий</a></li>
-    
+                                            <li class="dropdown-header">{{ $master->title_lang }}</li>
+                                            @foreach($master->pages as $row)
+                                            <li><a href="{{ route('web.application.show', $master->slug) }}">{{$row->title_lang}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
-                                            <li class="dropdown-header">{{ trans('t.admission_requirements') }}</li>
-                                            <li><a href="{{ route('web.application.requirements') }}">Поступление в бакалавриат</a></li>
-                                            <li><a href="{{ route('web.application.requirements') }}">Поступление в магистратуру</a></li>
-                                            <li><a href="{{ route('web.application.requirements') }}">ДААД стипендии для Бишкека</a></li>
+                                            <li class="dropdown-header">{{ $admission->title_lang }}</li>
+                                            @foreach($admission->pages as $row)
+                                            <li><a href="{{ route('web.application.show', $admission->slug) }}">{{$row->title_lang}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
-                                            <li class="dropdown-header">{{ trans('t.internationalization') }}</li>
-                                            <li><a href="{{ route('web.application.partnership') }}">Ассоциативный партнер</a></li>
-                                            <li><a href="{{ route('web.application.partnership') }}">Практика</a></li>
-                                            <li><a href="{{ route('web.application.partnership') }}">ДААД стипендии для Цвикау</a></li>
+                                            <li class="dropdown-header">{{ $internationalization->title_lang }}</li>
+                                            @foreach($internationalization->pages as $row)
+                                            <li><a href="{{ route('web.application.show', $internationalization->slug) }}">{{$row->title_lang}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                 </div>

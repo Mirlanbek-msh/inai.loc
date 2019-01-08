@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\PageCategory;
 
 class ApplicationController extends Controller
 {
@@ -12,23 +13,9 @@ class ApplicationController extends Controller
         return view('web.application.index');
     }
 
-    public function bachelor()
+    public function show($slug)
     {
-        return view('web.application.bachelor');
-    }
-
-    public function master()
-    {
-        return view('web.application.master');
-    }
-
-    public function requirements()
-    {
-        return view('web.application.requirements');
-    }
-
-    public function partnership()
-    {
-        return view('web.application.partnership');
+        $category = PageCategory::where('slug', $slug)->firstOrFail();
+        return view('web.application.show', compact('category'));
     }
 }

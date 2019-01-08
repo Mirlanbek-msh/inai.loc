@@ -41,15 +41,15 @@
         </a>
         <ul class="sub-menu">
             <li>
-                <a href="{{ route('admin.category.index') }}">{{ trans('t.events') }}</a>
+                <a href="{{ route('admin.page.index') }}">{{ trans('t.pages') }}</a>
             </li>
             <li>
-                <a href="{{ route('admin.category.index') }}">{{trans('t.categories')}}</a>
+                <a href="{{ route('admin.pagecategory.index') }}">{{trans('t.categories')}}</a>
             </li>
         </ul>
     </li>
     <li>
-        <a href="{{ route('admin.user.index') }}" class="@if($current_three == 'user') current @endif">
+        <a href="#" class="@if($current_three == 'gallery') current @endif">
             <div class="icon-w">
                 <div class="os-icon os-icon-users"></div>
             </div>
@@ -57,7 +57,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ route('admin.user.index') }}" class="@if($current_three == 'user') current @endif">
+        <a href="{{ route('admin.page.about') }}" class="@if($current_three == 'user') current @endif">
             <div class="icon-w">
                 <div class="os-icon os-icon-users"></div>
             </div>
@@ -65,7 +65,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ route('admin.user.index') }}" class="@if($current_three == 'user') current @endif">
+        <a href="#" class="@if($current_three == 'user') current @endif">
             <div class="icon-w">
                 <div class="os-icon os-icon-users"></div>
             </div>

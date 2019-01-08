@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Model\EventReply;
+use Illuminate\Support\Carbon;
 
 class Event extends Model
 {
@@ -110,8 +111,8 @@ class Event extends Model
         parent::boot();
 
         self::creating(function($model){
-            $model->lang = app()->getLocale();
-            $model->save();
+            // $model->lang = app()->getLocale();
+            // $model->save();
         });
 
         self::created(function($model){
@@ -144,6 +145,51 @@ class Event extends Model
                 'source' => 'title_lang'
             ]
         ];
+    }
+
+    public function getEventStartDateAttribute()
+    {
+        if($this->has_end_date){
+            $dates = explode(" - ", $this->event_date);
+            return Carbon::createFromFormat('H:i d.m.Y', $dates[0], 'Asia/Bishkek');
+        }
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->event_date, 'Asia/Bishkek');
+    }
+
+    public function getEventStartDateFullAttribute()
+    {
+        if($this->has_end_date){
+            $dates = explode(" - ", $this->event_date);
+            $start_date = Carbon::createFromFormat('H:i d.m.Y', $dates[0], 'Asia/Bishkek');
+        }else{
+            $start_date = Carbon::createFromFormat('Y-m-d H:i:s', $this->event_date, 'Asia/Bishkek');
+        }
+        return trans('week.'.$start_date->format('w'))
+                ." ".$start_date->format('j')." "
+                .trans('months_decl.'.$start_date->format('m'))
+                .", ".$start_date->format('Y');
+    }
+
+    public function getEventEndDateAttribute()
+    {
+        if($this->has_end_date){
+            $dates = explode(" - ", $this->event_date);
+            return Carbon::createFromFormat('H:i d.m.Y', $dates[1], 'Asia/Bishkek');
+        }
+        return null;
+    }
+
+    public function getEventEndDateFullAttribute()
+    {
+        if($this->has_end_date){
+            $dates = explode(" - ", $this->event_date);
+            $start_date = Carbon::createFromFormat('H:i d.m.Y', $dates[1], 'Asia/Bishkek');
+            return trans('week.'.$start_date->format('w'))
+                    ." ".$start_date->format('j')." "
+                    .trans('months_decl.'.$start_date->format('m'))
+                    .", ".$start_date->format('Y');
+        }
+        return '';
     }
 
     public function getTagsAttribute()

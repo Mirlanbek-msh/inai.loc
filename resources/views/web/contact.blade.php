@@ -12,8 +12,8 @@
                 <li class="breadcrumb-item active">{{ trans('t.contacts') }}</li>
             </ol>
         </nav>
-        <div class="contact">
-            <div class="row">
+        <div class="contact content">
+            <div class="row content-body">
                 <div class="col-12 mb-3 text-center mt-3">
                     <h2 class="text-bold section-title mb-3">{{ trans('t.contacts') }}</h2>
                     <hr class="hr-1 w-50">
@@ -21,7 +21,6 @@
 
                 <div class="col-md-6 col-12 mt-3">
                     <h3 class="text-bold section-title">{{ trans('t.phone_numbers') }}</h3>
-                    <hr class="divider w-100">
                     <ul class="list-unstyled">
                         <li><a href="tel:+996557312711"><i class="fa fa-phone"></i> +996 557 312 711</a></li>
                         <li><a href="tel:+996312549238"><i class="fa fa-phone"></i> +996 312 549 238</a></li>
@@ -30,7 +29,6 @@
 
                 <div class="col-md-6 col-12 mt-3">
                     <h3 class="text-bold section-title">E-Mail</h3>
-                    <hr class="divider w-100">
                     <ul class="list-unstyled">
                         <li><a href="mailto:info@inai.kg"><i class="fa fa-envelope"></i> info@inai.kg</a></li>
                     </ul>
@@ -38,7 +36,6 @@
 
                 <div class="col-md-6 col-12 mt-3">
                     <h3 class="text-bold section-title">{{ trans('t.address') }}</h3>
-                    <hr class="divider w-100">
                     <ul class="list-unstyled">
                         <li><a href="geo:42.84036863922435,74.60068702697755"><i class="fa fa-map"></i> Малдыбыаева 34 Б<br>Бишкек 720000</a></li>
                     </ul>
@@ -46,7 +43,6 @@
 
                 <div class="col-md-6 col-12 mt-3">
                     <h3 class="text-bold section-title">{{ trans('t.reception') }}</h3>
-                    <hr class="divider w-100">
                     <ul class="list-unstyled">
                         <li>{{ trans('t.project_office') }}</li>
                         <li><i class="fa fa-calendar"></i> Пн-Пт с 9:00 - 17:00</li>
@@ -55,7 +51,6 @@
 
                 <div class="col-12 my-3">
                     <h3 class="text-bold section-title">{{ trans('t.social_networks') }}</h3>
-                    <hr>
                     <div class="social-links">
                         <ul>
                             <li><a class="fab fa-facebook-f fb" href="//www.facebook.com/kgiaibishkek" target="_blank"></a></li>

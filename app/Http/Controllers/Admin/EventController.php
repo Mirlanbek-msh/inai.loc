@@ -67,8 +67,10 @@ class EventController extends Controller
         $row = Event::create($request->all());
         if($request->get('has_end_date')){
             $row->event_date = $request->get('event_date_multi');
+        }else{
+            $row->has_end_date = 0;
         }
-
+        
         $description = $row->description;
         if(!$description['ru'] && $row->content['ru']){
             $description['ru'] = mb_substr(strip_tags(html_entity_decode($row->content['ru'])), 0, 152).'...';
@@ -88,7 +90,8 @@ class EventController extends Controller
             {
                 if(!is_numeric($title) && !empty($title))
                 {
-                    $tag = Tag::firstOrNew(['title' => $title]);
+                    $tag = Tag::firstOrNew(['title' => $title, 'lang' => 'ru']);
+                    $tag->save();
                     $tag->title = $title;
                     $tag->lang = 'ru';
                     $tag->save();
@@ -105,14 +108,14 @@ class EventController extends Controller
             {
                 if(!is_numeric($title) && !empty($title))
                 {
-                    $tag = Tag::firstOrNew(['title' => $title]);
+                    $tag = Tag::firstOrNew(['title' => $title, 'lang' => 'en']);
                     $tag->title = $title;
                     $tag->lang = 'en';
                     $tag->save();
                     $tags[$key] = $tag->id;
                 }
             }
-            $row->tags()->sync($tags);
+            $row->tags()->syncWithoutDetaching($tags);
         }
 
         if($request->hasFile('image')){
@@ -214,6 +217,8 @@ class EventController extends Controller
 
         if($request->get('has_end_date')){
             $row->event_date = $request->get('event_date_multi');
+        }else{
+            $row->has_end_date = 0;
         }
         
         $description = $row->description;
@@ -235,7 +240,8 @@ class EventController extends Controller
             {
                 if(!is_numeric($title) && !empty($title))
                 {
-                    $tag = Tag::firstOrNew(['title' => $title]);
+                    $tag = Tag::firstOrNew(['title' => $title, 'lang' => 'ru']);
+                    $tag->save();
                     $tag->title = $title;
                     $tag->lang = 'ru';
                     $tag->save();
@@ -252,14 +258,14 @@ class EventController extends Controller
             {
                 if(!is_numeric($title) && !empty($title))
                 {
-                    $tag = Tag::firstOrNew(['title' => $title]);
+                    $tag = Tag::firstOrNew(['title' => $title, 'lang' => 'en']);
                     $tag->title = $title;
                     $tag->lang = 'en';
                     $tag->save();
                     $tags[$key] = $tag->id;
                 }
             }
-            $row->tags()->sync($tags);
+            $row->tags()->syncWithoutDetaching($tags);
         }
 
         if($request->hasFile('image')){

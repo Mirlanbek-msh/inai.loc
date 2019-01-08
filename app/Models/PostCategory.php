@@ -35,4 +35,9 @@ class PostCategory extends Model
             // ... code here
         });
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'category_id');
+    }
 }

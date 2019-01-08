@@ -11,7 +11,7 @@
             plugins: 'advlist link image imagetools colorpicker textcolor lists preview autolink fullscreen table hr media autolink',
             toolbar: 'undo redo | formatselect bold italic underline strikethrough subscript superscript | hr blockquote bullist numlist outdent indent | alignleft aligncenter alignright alignjustify | link image media table | removeformat preview fullscreen',
             menubar: false,
-            block_formats: 'Paragraph=p;{{trans('t.title')}}=h3;',
+            block_formats: 'Paragraph=p;Header 3=h3;Header 4=h4;',
             images_upload_url: '/tinymce/postAcceptor.php',
             images_upload_base_path: '/',
             plugin_preview_width: 800,
@@ -20,7 +20,10 @@
             content_css : "/admin/tinymce/skins/lightgray/content.min.css,/admin/tinymce/custom_content.css",
             valid_styles: {
                 
-            }
+            },
+            extended_valid_elements: [
+                'table[class=table table-bordered|width=100%]'
+            ]
             // image_dimensions: false
         });
 

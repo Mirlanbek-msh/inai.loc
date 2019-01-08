@@ -175,22 +175,11 @@ $(function () {
       timePickerIncrement: 5,
       autoUpdateInput: true,
       autoApply: true,
-      startDate: moment().startOf('hour'),
+      // startDate: moment().startOf('hour'),
       locale: {
           format: 'YYYY-MM-DD HH:mm:ss'
       }
   });
-  $('input.multi-daterange').daterangepicker({
-    timePicker: true,
-    timePicker24Hour: true,
-    timePickerIncrement: 5,
-    startDate: moment().startOf('hour'),
-    endDate: moment().startOf('hour'),
-    locale: {
-      format: 'HH:mm DD.MM.YYYY'
-    }
-  });
-
   // #5. DATATABLES
 
   if ($('.form-validate').length) {

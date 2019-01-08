@@ -1,6 +1,6 @@
 @extends('web.layouts.base')
 
-@section('title', 'Kyrgyz-German Institute of Applied Informatics')
+@section('title', trans('t.signing_up')." на ".$row->title_lang . " | INAI.KG")
 
 @section('content')
 
@@ -10,7 +10,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('web.home') }}">{{ trans('t.home') }}</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('web.event.index') }}">{{ trans('t.events') }}</a></li>
-                <li class="breadcrumb-item active">{{ trans('t.signing_up') }}</li>
+                <li class="breadcrumb-item active">{{$row->title_lang}} - {{ trans('t.signing_up') }}</li>
             </ol>
         </nav>
         <div class="event-full content">
@@ -23,26 +23,39 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="content-body">
-                                <h3>Здесь можно написать еще что-то</h3>
-                                <hr>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem ipsa animi quisquam reprehenderit veritatis, enim a aliquid error nemo, tempora harum asperiores eaque iure id, provident aliquam esse cupiditate doloremque.
-                                </p>
+                                <h3>{{$row->title_lang}}</h3>
 
-                                <form class="form" method="POST">
+                                <form class="form form-validate" method="POST">
+                                    @csrf
+                                    @if($row->need_org_name)
+                                    <div class="form-group">
+                                        <label for="">{{ trans('t.org_name') }}:</label>
+                                        <input name="org_name" data-error="{{trans('validation.required',['attribute' => ''])}}" class="form-control" type="text" required>
+                                        <div class="help-block with-errors text-danger"></div>
+                                    </div>
+                                    @endif
+                                    @if($row->need_full_name)
                                     <div class="form-group">
                                         <label for="">{{ trans('t.full_name') }}:</label>
-                                        <input class="form-control" type="text">
+                                        <input name="full_name" data-error="{{trans('validation.required',['attribute' => ''])}}" class="form-control" type="text" required>
+                                        <div class="help-block with-errors text-danger"></div>
                                     </div>
+                                    @endif
+                                    @if($row->need_phone)
                                     <div class="form-group">
                                         <label for="">{{ trans('t.phone_number') }}:</label>
-                                        <input class="form-control" type="text">
+                                        <input required name="phone" placeholder="+996 555 555 555" data-error="{{trans('validation.regex',['attribute' => ''])}} (+996 555 555 555)" class="form-control" type="tel" pattern="([+]996|0) [0-9]{3} [0-9]{3} [0-9]{3}">
+                                        <div class="help-block with-errors text-danger"></div>
                                     </div>
+                                    @endif
+                                    @if($row->need_email)
                                     <div class="form-group">
                                         <label for="">Email:</label>
-                                        <input class="form-control" type="text">
+                                        <input required name="email" placeholder="balanchaev@mail.com" data-error="{{trans('validation.email',['attribute' => ''])}}" class="form-control" type="email">
+                                        <div class="help-block with-errors text-danger"></div>
                                     </div>
-                                    <div class="form-group">
+                                    @endif
+                                    {{-- <div class="form-group">
                                         <label for="">Отдел:</label>
                                         <select class="form-control select2">
                                             <option></option>
@@ -51,8 +64,11 @@
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
+                                    @if($row->need_file)
+                                    <label for="">{{trans('t.file')}}:</label>
                                     <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+
                                         <div class="form-control" data-trigger="fileinput">
                                             <i class="glyphicon glyphicon-file fileinput-exists"></i>
                                             <span class="fileinput-filename"></span>
@@ -60,13 +76,14 @@
                                         <span class="input-group-addon btn btn-default btn-file">
                                             <span class="fileinput-new">{{ trans('t.select_file') }}</span>
                                             <span class="fileinput-exists">{{ trans('t.change') }}</span>
-                                            <input type="file" name="file">
+                                            <input accept='image/*' type="file" name="file">
                                         </span>
                                         <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">
                                             {{ trans('t.remove') }}
                                         </a>
                                     </div>
-                                    <div class="form-group">
+                                    @endif
+                                    {{-- <div class="form-group">
                                         <label for="">Выберите ваш пол:</label><br>
                                         <input type="radio" id="r1" value="male" name="gender">
                                         <label for="r1">Мужчина</label>
@@ -76,8 +93,8 @@
                                     <div class="form-group">
                                         <input type="checkbox" id="ch1">
                                         <label for="ch1">Запомнить</label>
-                                    </div>
-                                    <div class="form-group">
+                                    </div> --}}
+                                    <div class="form-group mt-4">
                                         <button class="btn btn-success">{{ trans('t.send') }}</button>
                                     </div>
                                 </form>
@@ -96,6 +113,7 @@
 @endsection
                 
 @section('scripts')
+<script src="{{ asset('/admin/bower_components/bootstrap-validator/dist/validator.min.js') }}"></script>
 <script>
     $(document).ready(function(){
         $('.select2').select2({
@@ -112,6 +130,10 @@
             checkboxClass: 'icheckbox_flat-blue',
             radioClass: 'iradio_flat-blue'
         });
+
+        if ($('.form-validate').length) {
+            $('.form-validate').validator();
+        }
     });
 </script>
 @endsection
