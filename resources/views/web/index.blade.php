@@ -12,17 +12,18 @@
     <meta name="twitter:image" content={{ asset('/images/icon-sq.png') }}">
 
     <!-- Facebook Meta -->
+    <meta property="og:title" content="INAI.KG">
     <meta property="og:description" content="{{ trans('t.kgiai') }}">
-    <meta property="og:title" content="{{ trans('t.kgiai') }}">
 
     <meta property="og:site_name" content="inai.kg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://inai.kg">
     <meta property="og:site_name" content="inai.kg">
-    <meta property="og:image" content="{{ asset('/images/icon-sq.png') }}">
-    <meta property="og:image:secure_url" content="{{ asset('/images/icon-sq.png', true) }}">
-    <meta property="og:image:width" content="180">
-    <meta property="og:image:height" content="180">
+
+    <meta property="og:image" content="/images/og-image.jpg">
+    <meta property="og:image:width" content="1239">
+    <meta property="og:image:height" content="649">
+    <meta property="og:url" content="http://inai.kg">
 @endsection
 
 @section('content')
