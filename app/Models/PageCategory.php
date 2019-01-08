@@ -19,7 +19,7 @@ class PageCategory extends Model
 
     public function pages()
     {
-        return $this->hasMany(Page::class, 'category_id');
+        return $this->hasMany(Page::class, 'category_id')->orderBy('id');
     }
 
     public function getTitleLangAttribute()

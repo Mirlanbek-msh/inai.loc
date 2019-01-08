@@ -97,19 +97,6 @@ class PagesTagleSeeder extends Seeder
         ]);
         Page::create([
             'title' => [
-                'ru' => 'Инженерия системного программирования проектов',
-                'en' => 'International Software System Engineering (MA)',
-            ],
-            'slug' => 'software-system-engineering',
-            'content' => [
-                'ru' => 'Программные технологии',
-                'en' => 'Software Technologies (BA)',
-            ],
-            'category_id' => 2,
-            'status' => 1,
-        ]);
-        Page::create([
-            'title' => [
                 'ru' => 'Предпринимательство в сфере информационных технологий',
                 'en' => 'Software Enterpreneurship (MA)',
             ],

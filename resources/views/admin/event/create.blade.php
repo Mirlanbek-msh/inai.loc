@@ -97,7 +97,18 @@
     @include('admin.partials._texteditor')
 
     <script type="text/javascript">
-
+        $('input.multi-daterange').daterangepicker({
+            timePicker: true,
+            timePicker24Hour: true,
+            timePickerIncrement: 5,
+            autoUpdateInput: true,
+            autoApply: true,
+            startDate: moment().startOf('hour'),
+            endDate: moment().startOf('hour'),
+            locale: {
+                format: 'HH:mm DD.MM.YYYY'
+            }
+        });
     </script>
 @endsection
 
