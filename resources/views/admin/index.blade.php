@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Панель управления')
+@section('title', trans('t.control_panel')." | INAI.KG")
 
 @section('styles')
 @endsection

@@ -2,6 +2,30 @@
 
 @section('title', trans('t.contacts') . " | INAI.KG")
 
+@section('social_meta')
+    <!-- Twitter Meta -->
+    {{-- <meta name="twitter:site" content="@centraltoday"> --}}
+    {{-- <meta name="twitter:creator" content="@centraltoday"> --}}
+    <meta name="twitter:card" content="{{trans('t.contacts')}} | INAI.KG">
+    <meta name="twitter:title" content="{{trans('t.contacts')}} | INAI.KG">
+    <meta name="twitter:description" content="{{ trans('t.kgiai') }}">
+    <meta name="twitter:image" content={{ asset('/images/icon-sq.png') }}">
+
+    <!-- Facebook Meta -->
+    <meta property="og:title" content="{{trans('t.contacts')}} | INAI.KG">
+    <meta property="og:description" content="{{ trans('t.kgiai') }}">
+
+    <meta property="og:site_name" content="inai.kg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inai.kg">
+    <meta property="og:site_name" content="inai.kg">
+
+    <meta property="og:image" content="/images/og-image.jpg">
+    <meta property="og:image:width" content="1239">
+    <meta property="og:image:height" content="649">
+    <meta property="og:url" content="http://inai.kg">
+@endsection
+
 @section('content')
 
 <section class="section pt-4 sps sps--abv sps-pt-80">
