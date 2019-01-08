@@ -4,8 +4,8 @@
 
 @section('social_meta')
     <!-- Twitter Meta -->
-    <meta name="twitter:site" content="@centraltoday">
-    <meta name="twitter:creator" content="@centraltoday">
+    {{-- <meta name="twitter:site" content="@centraltoday"> --}}
+    {{-- <meta name="twitter:creator" content="@centraltoday"> --}}
     <meta name="twitter:card" content="{{ trans('t.kgiai') }}">
     <meta name="twitter:title" content="{{ trans('t.kgiai') }}">
     <meta name="twitter:description" content="{{ trans('t.kgiai') }}">
@@ -13,7 +13,7 @@
 
     <!-- Facebook Meta -->
     <meta property="og:description" content="{{ trans('t.kgiai') }}">
-    <meta property="og:title" content="{{ trans('t.kgiai') }}">
+    <meta property="og:title" content="{{ trans('t.news') }} | INAI.KG">
 
     <meta property="og:site_name" content="inai.kg">
     <meta property="og:type" content="website">

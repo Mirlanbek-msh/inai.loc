@@ -52,7 +52,7 @@
                     <p>Поделиться:</p>
                     <ul class="share my-3 clearfix">
                         <li class="share-link">
-                            <a href="#" data-social="facebook" data-image="https://centr.asia/uploads/posts/299/15456319395c2078c399e69_image.jpeg" class="share-link-in fb"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" data-social="facebook" class="share-link-in fb"><i class="fab fa-facebook-f"></i></a>
                         </li>
 
                         <li class="share-link">

@@ -23,7 +23,7 @@
     <meta property="og:image" content="{{ asset($row->image) }}">
     <meta property="og:image:secure_url" content="{{ asset($row->image, true) }}">
     <meta property="og:description" content="{{ $row->description }}">
-    <meta property="og:title" content="Central Today: {{ $row->title }}">
+    <meta property="og:title" content="{{ $row->title }} | INAI.KG">
     <meta property="article:published_time" content="{{ $row->created_at }}">
     <meta property="article:author" content="{{ $row->author ? $row->author :$row->user->name }}">
 
