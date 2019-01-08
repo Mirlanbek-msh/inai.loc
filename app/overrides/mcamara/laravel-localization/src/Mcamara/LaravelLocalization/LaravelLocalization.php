@@ -142,7 +142,7 @@ class LaravelLocalization
         if (empty($locale) || !\is_string($locale)) {
             // If the locale has not been passed through the function
             // it tries to get it from the first segment of the url
-            $locale = $this->request->segment(1);
+            $locale = app()['request']->segment(1);
 
             // If the locale is determined by env, use that
             // Note that this is how per-locale route caching is performed.

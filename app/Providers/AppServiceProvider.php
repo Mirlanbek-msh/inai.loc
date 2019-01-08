@@ -55,8 +55,8 @@ class AppServiceProvider extends ServiceProvider
     public function loadHelperVariables()
     {
         view()->composer('*', function($view){
-            // $view->with('current_three', Request::capture()->segment(3));
-            $view->with('current_three', 'index');
+            $view->with('current_three', Request::capture()->segment(3));
+            // $view->with('current_three', 'index');
             $view->with('lang', app()->getLocale());
             // $view->with('current_date', $this->loadLocalizedDate());
             $view->with('bachelor', $this->loadBachelor());
