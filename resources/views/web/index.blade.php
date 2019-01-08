@@ -19,8 +19,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://inai.kg">
     <meta property="og:site_name" content="inai.kg">
-    <meta property="og:image" content="{{ asset('images/favicon.ico') }}">
-    <meta property="og:image:secure_url" content="{{ asset('images/favicon.ico', true) }}">
+    <meta property="og:image" content="{{ asset('logo-sq.jpg') }}">
+    <meta property="og:image:secure_url" content="{{ asset('logo-sq.jpg', true) }}">
     <meta property="og:image:width" content="64">
     <meta property="og:image:height" content="64">
 @endsection
