@@ -216,5 +216,18 @@ class PagesTagleSeeder extends Seeder
             'category_id' => 4,
             'status' => 1,
         ]);
+        /**About page */
+        Page::create([
+            'title' => [
+                'ru' => 'О нас',
+                'en' => 'About us',
+            ],
+            'slug' => 'about',
+            'content' => [
+                'ru' => 'Программные технологии',
+                'en' => 'Software Technologies (BA)',
+            ],
+            'status' => 1,
+        ]);
     }
 }
