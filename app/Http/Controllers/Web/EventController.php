@@ -17,6 +17,7 @@ class EventController extends Controller
     public function show($slug)
     {
         $row = Event::where('slug', $slug)->firstOrFail();
+        $row->increment('views');
         return view('web.event.show', compact('row'));
     }
 
