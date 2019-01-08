@@ -9,7 +9,7 @@
     <meta name="twitter:card" content="{{ trans('t.kgiai') }}">
     <meta name="twitter:title" content="{{ trans('t.kgiai') }}">
     <meta name="twitter:description" content="{{ trans('t.kgiai') }}">
-    <meta name="twitter:image" content={{ asset('images/favicon.ico') }}">
+    <meta name="twitter:image" content={{ asset('/images/icon-sq.png') }}">
 
     <!-- Facebook Meta -->
     <meta property="og:description" content="{{ trans('t.kgiai') }}">
@@ -19,10 +19,10 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://inai.kg">
     <meta property="og:site_name" content="inai.kg">
-    <meta property="og:image" content="{{ asset('logo-sq.jpg') }}">
-    <meta property="og:image:secure_url" content="{{ asset('logo-sq.jpg', true) }}">
-    <meta property="og:image:width" content="64">
-    <meta property="og:image:height" content="64">
+    <meta property="og:image" content="{{ asset('/images/icon-sq.png') }}">
+    <meta property="og:image:secure_url" content="{{ asset('/images/icon-sq.png', true) }}">
+    <meta property="og:image:width" content="180">
+    <meta property="og:image:height" content="180">
 @endsection
 
 @section('content')
