@@ -14,8 +14,8 @@ class CreateEventsTagsTable extends Migration
     public function up()
     {
         Schema::create('events_tags', function (Blueprint $table) {
-            $table->unsignedInteger('event_id')->primary();
-            $table->unsignedInteger('tag_id')->primary();
+            $table->unsignedInteger('event_id');
+            $table->unsignedInteger('tag_id');
         });
     }
 
