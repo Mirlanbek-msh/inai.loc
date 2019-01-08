@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Event;
+use App\Models\Page;
 
 class HomeController extends Controller
 {
@@ -20,7 +21,8 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('web.about');
+        $row = Page::where('slug', 'about')->firstOrFail();
+        return view('web.about', compact('row'));
     }
 
     public function contact()

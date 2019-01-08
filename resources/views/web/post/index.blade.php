@@ -1,6 +1,6 @@
 @extends('web.layouts.base')
 
-@section('title', trans('t.kgiai'))
+@section('title', trans('t.news') . " | INAI.KG")
 
 @section('social_meta')
     <!-- Twitter Meta -->

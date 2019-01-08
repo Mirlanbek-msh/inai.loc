@@ -1,6 +1,6 @@
 @extends('web.layouts.base')
 
-@section('title', 'Kyrgyz-German Institute of Applied Informatics')
+@section('title', trans('t.gallery') . " | INAI.KG")
 
 @section('content')
 
