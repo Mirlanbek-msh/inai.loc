@@ -111,14 +111,14 @@ class PostController extends Controller
             }
             $btw = time();
 
-            $thumb_name = $btw.uniqid().'_thumb.'.$file->getClientOriginalExtension();
-            $image_name = $btw.uniqid().'_image.'.$file->getClientOriginalExtension();
+            $thumb_name = $btw.uniqid().'_thumb.jpg';
+            $image_name = $btw.uniqid().'_image.jpg';
 
             $thumb_path = $dir.$thumb_name;
             $image_path = $dir.$image_name;
             
-            $thumb = Image::make($file)->fit(510, 287)->save($thumb_path);
-            $image = Image::make($file)->fit(1280, 720)->save($image_path);
+            $thumb = Image::make($file)->fit(510, 287)->encode('jpg')->save($thumb_path);
+            $image = Image::make($file)->fit(1280, 720)->encode('jpg')->save($image_path);
 
             $row->thumb = $thumb_path;
             $row->image = $image_path;
@@ -138,14 +138,14 @@ class PostController extends Controller
                 }
     
                 $btw = time();
-                $thumb = $btw.uniqid().'_thumb.'.$file->getClientOriginalExtension();
-                $full = $btw.uniqid().'.'.$file->getClientOriginalExtension();
+                $thumb = $btw.uniqid().'_thumb.jpg';
+                $full = $btw.uniqid().'.jpg';
                 
-                Image::make($file)->fit(180, 180)->save($dir.$thumb);
+                Image::make($file)->fit(180, 180)->encode('jpg')->save($dir.$thumb);
                 Image::make($file)->resize(1280, 720, function($constraint)
                 {
                     $constraint->aspectRatio();
-                })->resizeCanvas(1280, 720, 'center', false, '000000')->save($dir.$full);
+                })->resizeCanvas(1280, 720, 'center', false, '000000')->encode('jpg')->save($dir.$full);
 
     
                 $thumbs = array(
@@ -266,14 +266,14 @@ class PostController extends Controller
             }
             $btw = time();
 
-            $thumb_name = $btw.uniqid().'_thumb.'.$file->getClientOriginalExtension();
-            $image_name = $btw.uniqid().'_image.'.$file->getClientOriginalExtension();
+            $thumb_name = $btw.uniqid().'_thumb.jpg';
+            $image_name = $btw.uniqid().'_image.jpg';
 
             $thumb_path = $dir.$thumb_name;
             $image_path = $dir.$image_name;
             
-            $thumb = Image::make($file)->fit(510, 287)->save($thumb_path);
-            $image = Image::make($file)->fit(1280, 720)->save($image_path);
+            $thumb = Image::make($file)->fit(510, 287)->encode('jpg')->save($thumb_path);
+            $image = Image::make($file)->fit(1280, 720)->encode('jpg')->save($image_path);
 
             $row->thumb = $thumb_path;
             $row->image = $image_path;
@@ -300,15 +300,15 @@ class PostController extends Controller
                 }
     
                 $btw = time();
-                $thumb = $btw.uniqid().'_thumb.'.$file->getClientOriginalExtension();
-                $full = $btw.uniqid().'.'.$file->getClientOriginalExtension();
+                $thumb = $btw.uniqid().'_thumb.jpg';
+                $full = $btw.uniqid().'.jpg';
                 
-                Image::make($file)->fit(180, 180)->save($dir.$thumb);
+                Image::make($file)->fit(180, 180)->encode('jpg')->save($dir.$thumb);
 
                 Image::make($file)->resize(1280, 720, function($constraint)
                 {
                     $constraint->aspectRatio();
-                })->resizeCanvas(1280, 720, 'center', false, '000000')->save($dir.$full);
+                })->resizeCanvas(1280, 720, 'center', false, '000000')->encode('jpg')->save($dir.$full);
     
                 $thumbs = array(
                     'title' => "File $i",

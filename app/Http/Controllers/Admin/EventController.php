@@ -126,14 +126,14 @@ class EventController extends Controller
             }
             $btw = time();
 
-            $thumb_name = $btw.uniqid().'_thumb.'.$file->getClientOriginalExtension();
-            $image_name = $btw.uniqid().'_image.'.$file->getClientOriginalExtension();
+            $thumb_name = $btw.uniqid().'_thumb.jpg';
+            $image_name = $btw.uniqid().'_image.jpg';
 
             $thumb_path = $dir.$thumb_name;
             $image_path = $dir.$image_name;
             
-            $thumb = Image::make($file)->fit(510, 510)->save($thumb_path);
-            $image = Image::make($file)->fit(720, 720)->save($image_path);
+            $thumb = Image::make($file)->fit(510, 510)->encode('jpg')->save($thumb_path);
+            $image = Image::make($file)->fit(720, 720)->encode('jpg')->save($image_path);
 
             $row->thumb = $thumb_path;
             $row->image = $image_path;
@@ -146,11 +146,11 @@ class EventController extends Controller
             if (!file_exists($dir)) {
                 mkdir($dir, 0777, true);
             }
-            $image_name = 'author_image.'.$file->getClientOriginalExtension();
+            $image_name = 'author_image.jpg';
 
             $image_path = $dir.$image_name;
             
-            $image = Image::make($file)->fit(150, 150)->save($image_path);
+            $image = Image::make($file)->fit(150, 150)->encode('jpg')->save($image_path);
 
             $row->author_img = $image_path;
             $row->save();
@@ -276,14 +276,14 @@ class EventController extends Controller
             }
             $btw = time();
 
-            $thumb_name = $btw.uniqid().'_thumb.'.$file->getClientOriginalExtension();
-            $image_name = $btw.uniqid().'_image.'.$file->getClientOriginalExtension();
+            $thumb_name = $btw.uniqid().'_thumb.jpg';
+            $image_name = $btw.uniqid().'_image.jpg';
 
             $thumb_path = $dir.$thumb_name;
             $image_path = $dir.$image_name;
             
-            $thumb = Image::make($file)->fit(510, 510)->save($thumb_path);
-            $image = Image::make($file)->fit(720, 720)->save($image_path);
+            $thumb = Image::make($file)->fit(510, 510)->encode('jpg')->save($thumb_path);
+            $image = Image::make($file)->fit(720, 720)->encode('jpg')->save($image_path);
 
             $row->thumb = $thumb_path;
             $row->image = $image_path;
@@ -296,11 +296,11 @@ class EventController extends Controller
             if (!file_exists($dir)) {
                 mkdir($dir, 0777, true);
             }
-            $image_name = 'author_image.'.$file->getClientOriginalExtension();
+            $image_name = 'author_image.jpg';
 
             $image_path = $dir.$image_name;
             
-            $image = Image::make($file)->fit(150, 150)->save($image_path);
+            $image = Image::make($file)->fit(150, 150)->encode('jpg')->save($image_path);
 
             $row->author_img = $image_path;
             $row->save();
