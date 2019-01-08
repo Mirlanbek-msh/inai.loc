@@ -259,7 +259,7 @@ class LaravelLocalization
                 return $this->getURLFromRouteNameTranslated($locale, $this->routeName, $attributes, $forceDefaultLocation);
             }
 
-            $url = $this->request->fullUrl();
+            $url = app()['request']->fullUrl();
         } else {
             $url = $this->url->to($url);
             $url = preg_replace('/'. preg_quote($urlQuery, '/') . '$/', '', $url);
@@ -269,7 +269,7 @@ class LaravelLocalization
             return $this->getURLFromRouteNameTranslated($locale, $translatedRoute, $attributes, $forceDefaultLocation).$urlQuery;
         }
 
-        $base_path = $this->request->getBaseUrl();
+        $base_path = app()['request']->getBaseUrl();
         $parsed_url = parse_url($url);
         $url_locale = $this->getDefaultLocale();
 
@@ -509,7 +509,7 @@ class LaravelLocalization
         }
 
         if ($this->useAcceptLanguageHeader() && !$this->app->runningInConsole()) {
-            $negotiator = new LanguageNegotiator($this->defaultLocale, $this->getSupportedLocales(), $this->request);
+            $negotiator = new LanguageNegotiator($this->defaultLocale, $this->getSupportedLocales(), app()['request']);
 
             return $negotiator->negotiateLanguage();
         }
