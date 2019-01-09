@@ -21,26 +21,10 @@
     <meta name="twitter:image" content={{ asset('/images/icon-sq.png') }}">
 
     <!-- Facebook Meta -->
-    <meta property="og:title" content="{{trans('t.login')}} | {{trans('t.control_panel')}}">
-    <meta property="og:description" content="{{ trans('t.kgiai') }}">
+    @include('partials.ogdata')
+    @include('partials.favicon')
 
-    <meta property="og:site_name" content="inai.kg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://inai.kg">
-    <meta property="og:site_name" content="inai.kg">
-
-    <meta property="og:image" content="/images/og-image.jpg">
-    <meta property="og:image:width" content="1239">
-    <meta property="og:image:height" content="649">
-    <meta property="og:url" content="http://inai.kg">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
-    <link rel="manifest" href="/images/icons/site.webmanifest">
-    <link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    
 
 </head>
 <body class="auth-wrapper">

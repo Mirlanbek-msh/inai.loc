@@ -178,6 +178,8 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
+        Vrkansagara\LaraOutPress\ServiceProvider::class,
+
     ],
 
     /*
