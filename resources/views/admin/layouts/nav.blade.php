@@ -22,7 +22,7 @@
     <li @if($current_three == 'category') current @endif">
         <a href="{{ route('admin.event.index') }}">
             <div class="icon-w">
-                <div class="os-icon os-icon-hierarchy-structure-2"></div>
+                <div class="os-icon os-icon-tasks-checked"></div>
             </div>
             <span>{{ trans('t.events') }}</span>
         </a>
@@ -49,9 +49,9 @@
         </ul>
     </li>
     <li>
-        <a href="#" class="@if($current_three == 'gallery') current @endif">
+        <a href="{{route('admin.gallery.index')}}" class="@if($current_three == 'gallery') current @endif">
             <div class="icon-w">
-                <div class="os-icon os-icon-users"></div>
+                <div class="os-icon os-icon-documents-07"></div>
             </div>
             <span>{{ trans('t.gallery') }}</span>
         </a>
@@ -59,15 +59,15 @@
     <li>
         <a href="{{ route('admin.page.about') }}" class="@if($current_three == 'user') current @endif">
             <div class="icon-w">
-                <div class="os-icon os-icon-users"></div>
+                <div class="os-icon os-icon-mail-07"></div>
             </div>
             <span>{{trans('t.about')}}</span>
         </a>
     </li>
     <li>
-        <a href="#" class="@if($current_three == 'user') current @endif">
+        <a href="{{route('admin.contact.index')}}" class="@if($current_three == 'user') current @endif">
             <div class="icon-w">
-                <div class="os-icon os-icon-users"></div>
+                <div class="os-icon os-icon-link-3"></div>
             </div>
             <span>{{trans('t.contacts')}}</span>
         </a>

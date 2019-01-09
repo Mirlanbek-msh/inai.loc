@@ -71,7 +71,7 @@
                 </div>
                 <ul>
                     <li>
-                        <a href="{{ route('web.home') }}"><i class="os-icon os-icon-link-3"></i><span>{{trans('t.to_site')}}</span></a>
+                        <a href="{{ route('web.home') }}"><i class="os-icon os-icon-mail-18"></i><span>{{trans('t.to_site')}}</span></a>
                     </li>
                     <li>
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)

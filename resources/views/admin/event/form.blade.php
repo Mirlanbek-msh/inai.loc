@@ -230,7 +230,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">{{trans('t.author_email')}} *</label>
         <div class="col-sm-10">
-            {!! Form::email('author_email', null, ['class' => 'form-control', 'placeholder'=> trans('t.author_email_example'), 'required' => 'required', 'data-error' => trans('validation.email',['attribute' => ''])]) !!}
+            {!! Form::email('author_email', null, ['class' => 'form-control', 'placeholder'=> trans('t.author_email_example'), 'required' => 'required', 'data-error' =>    )]) !!}
             <div class="help-block with-errors text-danger"></div>
         </div>
     </div>

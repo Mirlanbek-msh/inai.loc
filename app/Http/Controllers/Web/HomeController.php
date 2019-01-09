@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Event;
 use App\Models\Page;
+use App\Models\Gallery;
 
 class HomeController extends Controller
 {
@@ -32,6 +33,7 @@ class HomeController extends Controller
 
     public function gallery()
     {
-        return view('web.gallery');
+        $data = Gallery::where('status', 1)->orderBy('created_at', 'desc')->get();
+        return view('web.gallery', compact('data'));
     }
 }

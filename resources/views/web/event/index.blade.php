@@ -15,14 +15,8 @@
     <meta property="og:description" content="{{ trans('t.kgiai') }}">
     <meta property="og:title" content="{{ trans('t.events') }} | INAI.KG">
 
-    <meta property="og:site_name" content="inai.kg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://inai.kg">
-    <meta property="og:site_name" content="inai.kg">
-    <meta property="og:image" content="{{ asset('images/favicon.ico') }}">
-    <meta property="og:image:secure_url" content="{{ asset('images/favicon.ico', true) }}">
-    <meta property="og:image:width" content="64">
-    <meta property="og:image:height" content="64">
+    @include('partials.ogdata')
+
 @endsection
 
 @section('content')

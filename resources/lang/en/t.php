@@ -180,5 +180,32 @@ return [
     'event_date_time' => 'Date and time',
 
     /**========================== */
-    'view' => 'See'
+    'view' => 'See',
+    'seen' => 'Seen',
+    'full_name_example' => 'Jon Doe',
+    'you_are_robot' => 'Are you robot?!',
+    'form_error' => 'Incorrect data.',
+    'registered_successfully' => 'You registered successfully',
+    'others' => 'Others',
+
+    'create_category' => 'New category',
+    'all_categories' => 'All categories',
+
+    'all_galleries' => 'All photos',
+    'create_gallery' => 'New photo',
+    'not_specified' => 'Not specified',
+    'name' => 'Name',
+    'value' => 'Value',
+    
+    /**Contacts */
+    'phone_1' => 'Phone number 1',
+    'phone_2' => 'Phone number 2',
+    'email' => 'Email',
+    'reception_hours' => 'Reception hours',
+    'fb' => 'FaceBook link',
+    'tw' => 'Twitter link',
+    'yt' => 'YouTube link',
+    'instagram' => 'Instagram link',
+    'wa' => 'WhatsApp number',
+    'example' => 'Example',
 ];

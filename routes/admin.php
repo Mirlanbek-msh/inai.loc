@@ -26,8 +26,11 @@ Route::group(
             Route::group(['middleware' => ['role:Developer|Super Administrator|Administrator|Editor']], function(){
                 /**Posts */
                 Route::resource('post', 'PostController');
-                Route::get('gallery/{id}', 'PostController@imagesGet');
-                Route::post('gallery/{id}/delete/{file}', 'PostController@imageDestroy');
+                Route::get('post/gallery/{id}', 'PostController@imagesGet');
+                Route::post('post/gallery/{id}/delete/{file}', 'PostController@imageDestroy');
+                Route::resource('gallery', 'GalleryController');
+                Route::get('gallery/{id}/toggle', 'GalleryController@toggle')->name('gallery.toggle');
+                Route::resource('contact', 'ContactController');
                 Route::resource('category', 'PostCategoryController');
                 
                 /**Events */

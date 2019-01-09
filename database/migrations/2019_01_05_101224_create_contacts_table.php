@@ -18,6 +18,9 @@ class CreateContactsTable extends Migration
             $table->string('name');
             $table->text('value');
             $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('important')->default(0);
+            $table->string('pattern')->nullable();
+            $table->string('placeholder')->nullable();
             $table->timestamps();
         });
     }

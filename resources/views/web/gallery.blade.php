@@ -2,6 +2,10 @@
 
 @section('title', trans('t.gallery') . " | INAI.KG")
 
+@include('partials.ogdata')
+<meta property="og:title" content="{{trans('t.gallery') . " | INAI.KG"}}">
+<meta property="og:description" content="{{trans('t.kgiai')}}">
+
 @section('content')
 
 <section class="section pt-4 sps sps--abv sps-pt-80">
@@ -21,14 +25,14 @@
 
                 <div class="col-12 mt-3 mb-3">
                     <div id="lightgallery" class="row">
-                        @for($i = 1; $i < 23; $i++)
-                        <a class="col-lg-4 col-md-6 col-12 img-cont" href="{{ asset("/images/gallery/origs/$i.jpg") }}">
-                            <img class="img-responsive" src="{{ asset("/images/gallery/thumbs/$i.jpg") }}" />
+                        @foreach($data as $row)
+                        <a class="col-lg-4 col-md-6 col-12 img-cont" href="{{ asset($row->image) }}">
+                            <img class="img-responsive" src="{{ asset($row->thumb) }}" />
                             <div class="overlay">
                                 <i class="fa fa-search-plus"></i>
                             </div>
                         </a>
-                        @endfor
+                        @endforeach
                     </div>
                 </div>
             </div>

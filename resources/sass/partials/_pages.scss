@@ -88,6 +88,26 @@
                     }
                 }
 
+                &.whatsapp{
+                    background-color: $whatsapp-color;
+
+                    &:hover{
+                        color: $whatsapp-color;
+                        background-color: $white;
+                        // border: 1px solid $youtube-color;
+                    }
+                }
+
+                &.instagram{
+                    background-color: $instagram-color;
+
+                    &:hover{
+                        color: $instagram-color;
+                        background-color: $white;
+                        // border: 1px solid $youtube-color;
+                    }
+                }
+
             }
         }
     }

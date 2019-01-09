@@ -9,21 +9,13 @@
     <meta name="twitter:card" content="{{$row->title_lang}} | INAI.KG">
     <meta name="twitter:title" content="{{$row->title_lang}} | INAI.KG">
     <meta name="twitter:description" content="{{ trans('t.kgiai') }}">
-    <meta name="twitter:image" content={{ asset('/images/icon-sq.png') }}">
+    <meta name="twitter:image" content="{{ asset('/ogassets/og-image.jpg') }}">
 
     <!-- Facebook Meta -->
     <meta property="og:title" content="{{$row->title_lang}} | INAI.KG">
     <meta property="og:description" content="{{ trans('t.kgiai') }}">
 
-    <meta property="og:site_name" content="inai.kg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://inai.kg">
-    <meta property="og:site_name" content="inai.kg">
-
-    <meta property="og:image" content="/images/og-image.jpg">
-    <meta property="og:image:width" content="1239">
-    <meta property="og:image:height" content="649">
-    <meta property="og:url" content="http://inai.kg">
+    @include('partials.ogdata')
 @endsection
 
 @section('content')

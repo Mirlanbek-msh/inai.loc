@@ -22,6 +22,8 @@
 
     <!-- Facebook Meta -->
     @include('partials.ogdata')
+    <meta property="og:description" content="{{ trans('t.kgiai') }}">
+    <meta property="og:title" content="{{trans('t.login')}} | {{trans('t.control_panel')}}">
     @include('partials.favicon')
 
     

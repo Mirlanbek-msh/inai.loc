@@ -190,5 +190,27 @@ return [
     'registered_successfully' => 'Вы успешно зарегистрировались',
     'others' => 'Другие',
 
+    'create_category' => 'Новая категория',
+    'all_categories' => 'Все категории',
+
+    'all_galleries' => 'Все фотографии',
+    'create_gallery' => 'Новое фото',
+    'not_specified' => 'Не задан',
+    'name' => 'Название',
+    'value' => 'Значение',
+    
+    /**Contacts */
+    'phone_1' => 'Телефонный номер 1',
+    'phone_2' => 'Телефонный номер 2',
+    'email' => 'Email',
+    'reception_hours' => 'Время приемной',
+    'fb' => 'Ссылка на FaceBook',
+    'tw' => 'Ссылка на Twitter',
+    'yt' => 'Ссылка на YouTube',
+    'instagram' => 'Ссылка на Instagram',
+    'wa' => 'Номер WhatsApp',
+    'example' => 'Пример',
+
+
 
 ];

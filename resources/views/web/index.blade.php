@@ -13,6 +13,8 @@
 
     <!-- Facebook Meta -->
     @include('partials.ogdata')
+    <meta property="og:title" content="INAI.KG">
+    <meta property="og:description" content="{{trans('t.kgiai')}}">
 @endsection
 
 @section('content')

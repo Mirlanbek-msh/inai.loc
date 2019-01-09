@@ -9,21 +9,13 @@
     <meta name="twitter:card" content="{{trans('t.contacts')}} | INAI.KG">
     <meta name="twitter:title" content="{{trans('t.contacts')}} | INAI.KG">
     <meta name="twitter:description" content="{{ trans('t.kgiai') }}">
-    <meta name="twitter:image" content={{ asset('/images/icon-sq.png') }}">
+    <meta name="twitter:image" content="{{ asset('/ogassets/og-image.jpg') }}">
 
     <!-- Facebook Meta -->
     <meta property="og:title" content="{{trans('t.contacts')}} | INAI.KG">
     <meta property="og:description" content="{{ trans('t.kgiai') }}">
 
-    <meta property="og:site_name" content="inai.kg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://inai.kg">
-    <meta property="og:site_name" content="inai.kg">
-
-    <meta property="og:image" content="/images/og-image.jpg">
-    <meta property="og:image:width" content="1239">
-    <meta property="og:image:height" content="649">
-    <meta property="og:url" content="http://inai.kg">
+    @include('partials.ogdata')
 @endsection
 
 @section('content')
@@ -46,22 +38,38 @@
                 <div class="col-md-6 col-12 mt-3">
                     <h3 class="text-bold section-title">{{ trans('t.phone_numbers') }}</h3>
                     <ul class="list-unstyled">
-                        <li><a href="tel:+996557312711"><i class="fa fa-phone"></i> +996 557 312 711</a></li>
-                        <li><a href="tel:+996312549238"><i class="fa fa-phone"></i> +996 312 549 238</a></li>
+                        @isset($contact_data['phone_1'])
+                        <li>
+                            <a href="tel:{{preg_replace("/\s+/","", $contact_data['phone_1'])}}">
+                                <i class="fa fa-phone"></i> {{$contact_data['phone_1']}}
+                            </a>
+                        </li>
+                        @endif
+                        @isset($contact_data['phone_2'])
+                        <li>
+                            <a href="tel:{{preg_replace("/\s+/","", $contact_data['phone_2'])}}">
+                                <i class="fa fa-phone"></i> {{$contact_data['phone_2']}}
+                            </a>
+                        </li>
+                        @endif
                     </ul>
                 </div>
 
                 <div class="col-md-6 col-12 mt-3">
                     <h3 class="text-bold section-title">E-Mail</h3>
                     <ul class="list-unstyled">
-                        <li><a href="mailto:info@inai.kg"><i class="fa fa-envelope"></i> info@inai.kg</a></li>
+                        @isset($contact_data['email'])
+                        <li><a href="mailto:{{$contact_data['email']}}"><i class="fa fa-envelope"></i> {{$contact_data['email']}}</a></li>
+                        @endif
                     </ul>
                 </div>
 
                 <div class="col-md-6 col-12 mt-3">
                     <h3 class="text-bold section-title">{{ trans('t.address') }}</h3>
                     <ul class="list-unstyled">
-                        <li><a href="geo:42.84036863922435,74.60068702697755"><i class="fa fa-map"></i> Малдыбыаева 34 Б<br>Бишкек 720000</a></li>
+                        @isset($contact_data['address'])
+                        <li><a href="geo:42.84036863922435,74.60068702697755"><i class="fa fa-map"></i>{{$contact_data['address']}}</a></li>
+                        @endif
                     </ul>
                 </div>
 
@@ -69,7 +77,9 @@
                     <h3 class="text-bold section-title">{{ trans('t.reception') }}</h3>
                     <ul class="list-unstyled">
                         <li>{{ trans('t.project_office') }}</li>
-                        <li><i class="fa fa-calendar"></i> Пн-Пт с 9:00 - 17:00</li>
+                        @isset($contact_data['reception_hours'])
+                        <li><i class="fa fa-calendar"></i> {{$contact_data['reception_hours']}}</li>
+                        @endif
                     </ul>
                 </div>
 
@@ -77,9 +87,21 @@
                     <h3 class="text-bold section-title">{{ trans('t.social_networks') }}</h3>
                     <div class="social-links">
                         <ul>
-                            <li><a class="fab fa-facebook-f fb" href="//www.facebook.com/kgiaibishkek" target="_blank"></a></li>
-                            <li><a class="fab fa-youtube youtube" href="#" target="_blank"></a></li>
-                            <li><a class="fab fa-twitter twitter" href="#" target="_blank"></a></li>
+                            @isset($contact_data['fb'])
+                            <li><a class="fab fa-facebook-f fb" href="{{$contact_data['fb']}}" target="_blank"></a></li>
+                            @endif
+                            @isset($contact_data['tw'])
+                            <li><a class="fab fa-twitter twitter" href="{{$contact_data['tw']}}" target="_blank"></a></li>
+                            @endif
+                            @isset($contact_data['yt'])
+                            <li><a class="fab fa-youtube youtube" href="{{$contact_data['yt']}}" target="_blank"></a></li>
+                            @endif
+                            @isset($contact_data['wa'])
+                            <li><a class="fab fa-whatsapp whatsapp" href="https://wa.me/{{preg_replace("/\s+|[+]/","", $contact_data['wa'])}}" target="_blank"></a></li>
+                            @endif
+                            @isset($contact_data['instagram'])
+                            <li><a class="fab fa-instagram instagram" href="{{$contact_data['instagram']}}" target="_blank"></a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>

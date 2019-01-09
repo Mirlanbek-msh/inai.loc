@@ -8,6 +8,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Blade;
 use App\Models\PageCategory;
+use App\Models\Contact;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -62,8 +63,14 @@ class AppServiceProvider extends ServiceProvider
             $view->with('bachelor', $this->loadBachelor());
             $view->with('master', $this->loadMaster());
             $view->with('admission', $this->loadAdmission());
+            $view->with('contact_data', $this->loadContactData());
             $view->with('internationalization', $this->loadInternationalization());
         });
+    }
+
+    public function loadContactData()
+    {
+        return Contact::where('status', 1)->get()->pluck('value_lang', 'name');
     }
 
     public function loadBachelor()

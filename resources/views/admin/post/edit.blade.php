@@ -101,7 +101,7 @@
                     }
                 });
 
-                $.get('/admin/gallery/{{$row->id}}', function(data) {
+                $.get('/admin/post/gallery/{{$row->id}}', function(data) {
                     $.each(data.images, function (key, value) {
                         var file = {name: value.original, size: value.size, key: value.key};
                         imageUpload.options.addedfile.call(imageUpload, file);
@@ -138,7 +138,7 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         method: 'POST',
-                        url: '/{{$lang}}/admin/gallery/{{$row->id}}/delete/'+file.key,
+                        url: '/{{$lang}}/admin/post/gallery/{{$row->id}}/delete/'+file.key,
                         data: {
                             key: file.key
                         },

@@ -1,12 +1,16 @@
 <nav class="navbar navbar-expanded-lg navbar-top top-bar-menu">
     <div class="container">
         <nav class="nav navbar-social">
-            <a class="nav-link" href="tel:+996557312711">
-                <i class="fa fa-phone"></i> +996 557 312 711
+            @isset($contact_data['phone_1'])
+            <a class="nav-link" href="tel:{{preg_replace("/\s+/","", $contact_data['phone_1'])}}">
+                <i class="fa fa-phone"></i> {{$contact_data['phone_1']}}
             </a>
-            <a class="nav-link" href="mailto:info@inai.kg">
-                <i class="fa fa-envelope"></i> info@inai.kg
+            @endif
+            @isset($contact_data['email'])
+            <a class="nav-link" href="mailto:{{$contact_data['email']}}">
+                <i class="fa fa-envelope"></i> {{$contact_data['email']}}
             </a>
+            @endif
         </nav>
         {{-- <ul class="nav justify-content-center nav-info">
             <li class="nav-item">
@@ -112,17 +116,27 @@
                     @endforeach
                     <li class="nav-item contacts-item">
                         <ul class="nav-contacts">
-                            <li><a href="mailto:info@inai.kg"> <i class="fa fa-envelope"></i> info@inai.kg</a></li>
-                            <li><a href="tel:+996557312711"> <i class="fa fa-phone"></i> +996 557 312 711</a></li>
+                            @isset($contact_data['email'])
+                            <li><a href="mailto:{{$contact_data['email']}}"> <i class="fa fa-envelope"></i> {{$contact_data['email']}}</a></li>
+                            @endif
+                            @isset($contact_data['phone_1'])
+                            <li><a href="tel:{{preg_replace("/\s+/","", $contact_data['phone_1'])}}"> <i class="fa fa-phone"></i> {{$contact_data['phone_1']}}</a></li>
+                            @endif
                         </ul>
 
                     </li>
                     <li class="nav-item social-item">
                         <div class="ml-3 mt-1 social-links">
                             <ul>
-                                <li><a class="fab fa-facebook-f fb" href="//www.facebook.com/kgiaibishkek" target="_blank"></a></li>
-                                <li><a class="fab fa-youtube youtube" href="#" target="_blank"></a></li>
-                                <li><a class="fab fa-twitter twitter" href="#" target="_blank"></a></li>
+                                @isset($contact_data['fb'])
+                                <li><a class="fab fa-facebook-f fb" href="{{$contact_data['fb']}}" target="_blank"></a></li>
+                                @endif
+                                @isset($contact_data['tw'])
+                                <li><a class="fab fa-twitter twitter" href="{{$contact_data['tw']}}" target="_blank"></a></li>
+                                @endif
+                                @isset($contact_data['yt'])
+                                <li><a class="fab fa-youtube youtube" href="{{$contact_data['yt']}}" target="_blank"></a></li>
+                                @endif
                             </ul>
                         </div>
                     </li>

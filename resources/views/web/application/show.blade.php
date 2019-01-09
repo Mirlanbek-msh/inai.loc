@@ -1,5 +1,8 @@
 @extends('web.layouts.base') 
 @section('title', $category->title_lang." | INAI.KG") 
+@include('partials.ogdata')
+<meta property="og:description" content="{{ trans('t.kgiai') }}">
+<meta property="og:title" content="{{ $category->title_lang }} | INAI.KG">
 
 @section('content')
 
