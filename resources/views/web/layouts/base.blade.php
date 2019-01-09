@@ -14,6 +14,7 @@
     @yield('social_meta')
     @include('partials.favicon')
     @yield('styles')
+    @yield('head_extra')
 </head>
 
 <body>
@@ -21,6 +22,7 @@
     @yield('content')
     @include('web.layouts.footer')
     <script src="{{ mix('js/app.js') }}"></script>
+    @include('sweetalert::alert') 
     @yield('scripts')
 </body>
 

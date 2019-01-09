@@ -8,7 +8,7 @@
         <nav class="mt-md-4 mt-sm-1">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('web.home') }}">{{trans('t.home')}}</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('web.post.index') }}">{{trans('t.for_graduates')}}</a></li>
+                <li class="breadcrumb-item"><span>{{trans('t.for_graduates')}}</span></li>
                 <li class="breadcrumb-item active">{{$category->title_lang}}</li>
             </ol>
         </nav>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="col-12 my-3">
-                    <p>Поделиться:</p>
+                    <p>{{trans('t.share')}}:</p>
                     <ul class="share my-3 clearfix">
                         <li class="share-link">
                             <a href="#" data-social="facebook" class="share-link-in fb"><i class="fab fa-facebook-f"></i></a>

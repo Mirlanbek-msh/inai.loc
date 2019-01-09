@@ -223,7 +223,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">{{trans('t.author_phone')}} *</label>
         <div class="col-sm-10">
-            {!! Form::tel('author_phone', null, ['class' => 'form-control', 'pattern' => "([+]996|0) [0-9]{3} [0-9]{3} [0-9]{3}", 'placeholder'=> trans('t.author_phone_example'), 'required' => 'required', 'data-error' => trans('validation.regex',['attribute' => '']).' (+996 555 555 555)']) !!}
+            {!! Form::tel('author_phone', null, ['class' => 'form-control', 'pattern' => "(0|[+][0-9]{1,3})[ ]?[0-9]{3}[ ]?[0-9]{3}[ ]?[0-9]{3,6}", 'placeholder'=> trans('t.author_phone_example'), 'required' => 'required', 'data-error' => trans('validation.regex',['attribute' => '']).' (+996 555 555 555)']) !!}
             <div class="help-block with-errors text-danger"></div>
         </div>
     </div>

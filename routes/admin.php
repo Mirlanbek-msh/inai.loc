@@ -24,14 +24,23 @@ Route::group(
             Route::get('/', 'AdminController@index')->name('home');
 
             Route::group(['middleware' => ['role:Developer|Super Administrator|Administrator|Editor']], function(){
+                /**Posts */
                 Route::resource('post', 'PostController');
                 Route::get('gallery/{id}', 'PostController@imagesGet');
                 Route::post('gallery/{id}/delete/{file}', 'PostController@imageDestroy');
                 Route::resource('category', 'PostCategoryController');
+                
+                /**Events */
+                Route::get('event/{id}/reply', 'EventReplyController@index')->name('event.reply');
+                Route::get('event/{event_id}/reply/{id}', 'EventReplyController@show')->name('event.reply.show');
+                Route::delete('event/{event_id}/reply/{id}/destroy', 'EventReplyController@destroy')->name('event.reply.destroy');
                 Route::resource('event', 'EventController');
+
+                /**Pages */
                 Route::get('page/about', 'PageController@about')->name('page.about');
                 Route::resource('page', 'PageController');
                 Route::resource('pagecategory', 'PageCategoryController');
+                
                 Route::resource('user','UserController');           
             });
 

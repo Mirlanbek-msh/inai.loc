@@ -23658,6 +23658,26 @@ nav .breadcrumb .breadcrumb-item + ::before {
   box-shadow: none;
 }
 
+.form-control::-webkit-input-placeholder {
+  opacity: 0.6;
+}
+
+.form-control:-ms-input-placeholder {
+  opacity: 0.6;
+}
+
+.form-control::-ms-input-placeholder {
+  opacity: 0.6;
+}
+
+.form-control::placeholder {
+  opacity: 0.6;
+}
+
+.form .has-danger .form-control {
+  border-color: #fb5f68;
+}
+
 .form .select2-selection__arrow {
   height: 99% !important;
   right: 5px !important;

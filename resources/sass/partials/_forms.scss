@@ -8,6 +8,14 @@
             box-shadow: none;
         }
 
+        &::placeholder{
+            opacity: 0.6;
+        }
+
+    }
+
+    .has-danger .form-control {
+        border-color: #fb5f68;
     }
 
     .select2{

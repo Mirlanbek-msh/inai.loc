@@ -76,6 +76,8 @@ class PostController extends Controller
             'title' => 'required',
             // 'description' => '',
             'content' => 'required',
+            'image' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
+            'file.*' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
         ]);
 
         $row = Post::create($request->all());
@@ -229,6 +231,8 @@ class PostController extends Controller
             'title' => 'required',
             // 'description' => '',
             'content' => 'required',
+            'image' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
+            'file.*' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
         ]);
         $row = Post::findOrFail($id);
         $row->update($request->all());

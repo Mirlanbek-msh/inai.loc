@@ -99,7 +99,7 @@
                                 <p><span class="meta">{{trans('t.event_entrance')}}:</span> {{$row->event_entrance_lang}}</p>
                             </div>
                         </div>
-                        @if($row->has_signing_up_form)
+                        @if($row->has_signing_up_form && $row->event_start_date->isFuture())
                         <div class="col-12 mt-3 d-md-block d-flex justify-content-center">
                             <a href="{{ route('web.event.apply', $row->slug) }}" class="btn btn-primary">{{ trans('t.sign_up') }}</a>
                         </div>

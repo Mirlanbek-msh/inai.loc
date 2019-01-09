@@ -63,6 +63,8 @@ class EventController extends Controller
             'title' => 'required',
             // 'description' => '',
             'content' => 'required',
+            'image' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
+            'author_img' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
         ]);
         $row = Event::create($request->all());
         if($request->get('has_end_date')){
@@ -120,7 +122,7 @@ class EventController extends Controller
 
         if($request->hasFile('image')){
             $file = $request->file('image');
-            $dir  = 'uploads/event/'.$row->id.'/';
+            $dir  = 'uploads/events/'.$row->id.'/';
             if (!file_exists($dir)) {
                 mkdir($dir, 0777, true);
             }
@@ -142,7 +144,7 @@ class EventController extends Controller
 
         if($request->hasFile('author_img')){
             $file = $request->file('author_img');
-            $dir  = 'uploads/event/'.$row->id.'/';
+            $dir  = 'uploads/events/'.$row->id.'/';
             if (!file_exists($dir)) {
                 mkdir($dir, 0777, true);
             }
@@ -207,10 +209,12 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
+        $request->validate([
             'title' => 'required',
             // 'description' => '',
             'content' => 'required',
+            'image' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
+            'author_img' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
         ]);
         $row = Event::findOrFail($id);
         $row->update($request->all());
@@ -270,7 +274,7 @@ class EventController extends Controller
 
         if($request->hasFile('image')){
             $file = $request->file('image');
-            $dir  = 'uploads/event/'.$row->id.'/';
+            $dir  = 'uploads/events/'.$row->id.'/';
             if (!file_exists($dir)) {
                 mkdir($dir, 0777, true);
             }
@@ -292,7 +296,7 @@ class EventController extends Controller
 
         if($request->hasFile('author_img')){
             $file = $request->file('author_img');
-            $dir  = 'uploads/event/'.$row->id.'/';
+            $dir  = 'uploads/events/'.$row->id.'/';
             if (!file_exists($dir)) {
                 mkdir($dir, 0777, true);
             }

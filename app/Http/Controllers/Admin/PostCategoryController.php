@@ -38,7 +38,20 @@ class PostCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+        ]);
+
+        $row = PostCategory::create($request->all());
+        
+        $row->save();
+
+        $message = trans('t.saved_successfully');
+
+        if($row){
+            toast($message,'success','top-right');
+            return redirect()->route('admin.category.index');
+        }
     }
 
     /**
@@ -49,7 +62,8 @@ class PostCategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $row = PostCategory::findOrFail($id);
+        return view('admin.category.show', compact('row'));
     }
 
     /**
@@ -60,7 +74,8 @@ class PostCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $row = PostCategory::findOrFail($id);
+        return view('admin.category.edit', compact('row'));
     }
 
     /**
@@ -72,7 +87,12 @@ class PostCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $row = PostCategory::findOrFail($id);
+        $row->fill($request->all());
+        $row->save();
+        $message = trans('t.updated_successfully');
+        toast($message, 'success', 'top-right');
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -83,6 +103,8 @@ class PostCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        PostCategory::findOrFail($id)->delete();
+        toast(trans('t.removed_successfully'), 'info', 'top-right');
+        return redirect()->route('admin.category.index');
     }
 }

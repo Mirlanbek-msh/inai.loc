@@ -27,7 +27,7 @@
                     <td>{{ $row->id }}</td>
                     <td>{{ $row->title }}</td>
                     <td>{{ $row->posts->count() }}</td>
-                    <td><a href="{{ route('admin.category.toggle', $row->id) }}">{!! $row->getStatus() !!}</a></td>
+                    <td>@status($row->status)</td>
                     <td class="text-center">
                         {{-- <a class="btn btn-table btn-table-show" href="{{ route('admin.category.show',$row->id) }}"><i class="icon-feather-book-open"></i></a> --}}
                         <a class="btn btn-table btn-table-edit" href="{{ route('admin.category.edit',$row->id) }}"><i class="icon-feather-edit"></i></a>

@@ -3,9 +3,20 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
+
 
 class PostCategory extends Model
 {
+    use Sluggable;
+
+
+    protected $fillable = [
+        'title',
+        'description',
+        'status'
+    ];
+
     public static function boot()
     {
         parent::boot();
@@ -39,5 +50,14 @@ class PostCategory extends Model
     public function posts()
     {
         return $this->hasMany(Post::class, 'category_id');
+    }
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 }

@@ -65,7 +65,7 @@ return [
     'social_networks'   => 'Social networks',
 
     /**Errors */
-    'oops_error'   => 'Opps error',
+    'oops_error'   => 'Opps error!',
     'to_home'   => 'Take me to home',
     'error_404'   => 'Page not found',
     'error_403'   => 'Forbidden',
@@ -179,5 +179,6 @@ return [
     'has_end_date' => 'Event has ending date',
     'event_date_time' => 'Date and time',
 
-
+    /**========================== */
+    'view' => 'See'
 ];

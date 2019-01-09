@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\File;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
-use App\Model\EventReply;
+use App\Models\EventReply;
 use Illuminate\Support\Carbon;
 
 class Event extends Model
@@ -100,7 +100,7 @@ class Event extends Model
 
     public function removeOldImages()
     {
-        if($this->image)
+        if($this->image || $this->thumb)
         {
             File::deleteDirectory("uploads/events/$this->id/");
         }

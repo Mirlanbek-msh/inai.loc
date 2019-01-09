@@ -2,6 +2,9 @@
 
 @section('title', trans('t.signing_up')." на ".$row->title_lang . " | INAI.KG")
 
+@section('head_extra')
+<script src='https://www.google.com/recaptcha/api.js'></script>
+@endsection
 @section('content')
 
 <section class="section pt-4 sps sps--abv sps-pt-80">
@@ -24,27 +27,37 @@
                         <div class="col-12">
                             <div class="content-body">
                                 <h3>{{$row->title_lang}}</h3>
+                                @if (count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        <strong>{{trans('t.oops_error')}}</strong> {{trans('t.form_error')}}<br><br>
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
 
-                                <form class="form form-validate" method="POST">
+                                <form class="form form-validate" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @if($row->need_org_name)
                                     <div class="form-group">
                                         <label for="">{{ trans('t.org_name') }}:</label>
-                                        <input name="org_name" data-error="{{trans('validation.required',['attribute' => ''])}}" class="form-control" type="text" required>
+                                        <input placeholder="INAI.KG" name="org_name" data-error="{{trans('validation.required',['attribute' => ''])}}" class="form-control" type="text" required>
                                         <div class="help-block with-errors text-danger"></div>
                                     </div>
                                     @endif
                                     @if($row->need_full_name)
                                     <div class="form-group">
                                         <label for="">{{ trans('t.full_name') }}:</label>
-                                        <input name="full_name" data-error="{{trans('validation.required',['attribute' => ''])}}" class="form-control" type="text" required>
+                                        <input placeholder="{{trans('t.full_name_example')}}" name="full_name" data-error="{{trans('validation.required',['attribute' => ''])}}" class="form-control" type="text" required>
                                         <div class="help-block with-errors text-danger"></div>
                                     </div>
                                     @endif
                                     @if($row->need_phone)
                                     <div class="form-group">
                                         <label for="">{{ trans('t.phone_number') }}:</label>
-                                        <input required name="phone" placeholder="+996 555 555 555" data-error="{{trans('validation.regex',['attribute' => ''])}} (+996 555 555 555)" class="form-control" type="tel" pattern="([+]996|0) [0-9]{3} [0-9]{3} [0-9]{3}">
+                                        <input required name="phone" placeholder="+996 555 555 555" data-error="{{trans('validation.regex',['attribute' => ''])}} (+996 555 555 555)" class="form-control" type="tel" pattern="(0|[+][0-9]{1,3})[ ]?[0-9]{3}[ ]?[0-9]{3}[ ]?[0-9]{3,6}">
                                         <div class="help-block with-errors text-danger"></div>
                                     </div>
                                     @endif
@@ -76,7 +89,7 @@
                                         <span class="input-group-addon btn btn-default btn-file">
                                             <span class="fileinput-new">{{ trans('t.select_file') }}</span>
                                             <span class="fileinput-exists">{{ trans('t.change') }}</span>
-                                            <input accept='image/*' type="file" name="file">
+                                            <input type="file" name="file">
                                         </span>
                                         <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">
                                             {{ trans('t.remove') }}
@@ -94,6 +107,10 @@
                                         <input type="checkbox" id="ch1">
                                         <label for="ch1">Запомнить</label>
                                     </div> --}}
+                                    <div class="form-group">
+                                        <div class="g-recaptcha" data-sitekey="6LcDPYgUAAAAACVPk7QZmavWfsFq1F7wLHbBx-id"></div>
+                                        <div class="help-block with-errors text-danger"></div>
+                                    </div>
                                     <div class="form-group mt-4">
                                         <button class="btn btn-success">{{ trans('t.send') }}</button>
                                     </div>

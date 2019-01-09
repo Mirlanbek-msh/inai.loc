@@ -30,7 +30,7 @@
 <body class="auth-wrapper">
       <div class="auth-box-w">
         <div class="logo-w">
-        <a href="index.html"><img alt="" src="{{ asset('/admin/img/logo.png') }}"></a>
+        <a href="index.html"><img alt="" src="{{ asset('/admin/img/logo-big.png') }}"></a>
         </div>
         <h4 class="auth-header">
                 {{trans('t.authorization')}}
