@@ -54,7 +54,6 @@
 @endsection
 
 @section('scripts')
-    <script src="https://use.fontawesome.com/691852923e.js"></script>
     <script>
 
         $(document).ready(function() {

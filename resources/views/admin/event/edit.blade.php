@@ -2,11 +2,6 @@
 
 @section('title', $row->title_lang )
 
-@section('styles')
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{asset('admin/css/library.css')}}">
-    <link rel="stylesheet" href="{{asset('admin/css/jasny-bootstrap.min.css')}}">
-@endsection
 @section('content')
 
     <div class="element-actions">
@@ -43,10 +38,6 @@
 
 @section('scripts')
 
-    <script src="https://use.fontawesome.com/691852923e.js"></script>
-    <script src="{{ asset('admin/js/library.js') }}"></script>
-    <script src="{{ asset('admin/js/fileinput.js') }}"></script>
-    <script src="{{ asset('admin/js/tagify.js')}}"></script>
     <script>
         $(document).ready(function() {
             var tagsRuInput = document.querySelector('input.tags-ru');

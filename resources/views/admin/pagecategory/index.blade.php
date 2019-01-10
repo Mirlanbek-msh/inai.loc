@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="element-actions">
-        <a class="btn btn-primary btn-sm" href="{{ route('admin.category.create') }}"><i class="os-icon os-icon-ui-22"></i><span>Новая категория</span></a>
+        {{-- <a class="btn btn-primary btn-sm" href="{{ route('admin.pagecategory.create') }}"><i class="os-icon os-icon-ui-22"></i><span>Новая категория</span></a> --}}
     </div>
     <h6 class="element-header">
         Все категории
@@ -28,11 +28,11 @@
                     <td>{{ $row->pages->count() }}</td>
                     <td class="text-center">
                         {{-- <a class="btn btn-table btn-table-show" href="{{ route('admin.category.show',$row->id) }}"><i class="icon-feather-book-open"></i></a> --}}
-                        <a class="btn btn-table btn-table-edit" href="{{ route('admin.category.edit',$row->id) }}"><i class="icon-feather-edit"></i></a>
-                        {!! Form::open(['method' => 'DELETE','route' => ['admin.category.destroy', $row->id],'style'=>'display:inline', 'onsubmit' => 'return confirmDelete()']) !!}
+                        <a class="btn btn-table btn-table-edit" href="{{ route('admin.pagecategory.edit',$row->id) }}"><i class="icon-feather-edit"></i></a>
+                        {{-- {!! Form::open(['method' => 'DELETE','route' => ['admin.pagecategory.destroy', $row->id],'style'=>'display:inline', 'onsubmit' => 'return confirmDelete()']) !!}
                             <input type="hidden" value="Delete">
                             <button class="btn btn-table btn-table-trash" type="submit"><i class="icon-feather-trash-2"></i></button>
-                        {!! Form::close() !!}
+                        {!! Form::close() !!} --}}
                     </td>
                 </tr>
                 @endforeach

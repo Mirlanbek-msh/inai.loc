@@ -2,10 +2,6 @@
 
 @section('title', trans('t.create_gallery'))
 
-@section('styles')
-    <link rel="stylesheet" href="{{asset('admin/css/jasny-bootstrap.min.css')}}">
-
-@endsection
 @section('content')
     <div class="element-actions">
         <a class="mr-2 mb-2 btn btn-success" href="{{ route('admin.gallery.index') }}">
@@ -36,5 +32,4 @@
 @endsection
 
 @section('scripts')
-<script src="{{ asset('admin/js/fileinput.js') }}"></script>
 @endsection

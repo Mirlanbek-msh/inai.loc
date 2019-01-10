@@ -59,7 +59,8 @@ class PageCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $row = PageCategory::findOrFail($id);
+        return view('admin.pagecategory.edit', compact('row'));
     }
 
     /**
@@ -71,7 +72,12 @@ class PageCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $row = PageCategory::findOrFail($id);
+        $row->fill($request->all());
+        $row->save();
+        $message = trans('t.updated_successfully');
+        toast($message, 'success', 'top-right');
+        return redirect()->route('admin.pagecategory.index');
     }
 
     /**

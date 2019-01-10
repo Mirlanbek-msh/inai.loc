@@ -29,20 +29,62 @@ mix.scripts([
    'resources/js/app.js'
 ], 'public/js/app.js').version();
 
-
 //  Front css
 mix.sass('resources/sass/app.scss', 'public/css').version();
 
 //  Admin css
-mix.sass('resources/sass/admin/main.scss', 'public/admin/css/app.css').version();
+mix.sass('resources/admin/main.scss', 'public/admin/css/app.css').version();
 
-// Admin side
-// mix.sass('public/bash/scss/main.scss', 'public/bash/css/app.css');
-// mix.sass('public/bash/scss/library.scss', 'public/bash/css/library.css');
+mix.styles([
+   'resources/admin/bower_components/select2/dist/css/select2.min.css',
+   'resources/admin/bower_components/bootstrap-daterangepicker/daterangepicker.css',
+   'resources/admin/bower_components/dropzone/dist/dropzone.css',
+   'resources/admin/css/dataTables.bootstrap4.min.css',
+   'resources/admin/bower_components/fullcalendar/dist/fullcalendar.min.css',
+   'resources/admin/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css',
+   'resources/admin/bower_components/slick-carousel/slick/slick.css',
+   'resources/admin/icon_fonts_assets/feather/style.css',
+   'resources/admin/css/tagify.css',
+   'resources/admin/css/library.css',
+   'resources/admin/css/jasny-bootstrap.min.css',
+], 'public/admin/css/dist.css').version();
 
 //  Admin js
-// mix.scripts([
-//        'node_modules/froala-editor/js/froala_editor.pkgd.min.js',
-//        'node_modules/froala-editor/js/file.min.js',
-//        'node_modules/froala-editor/js/languages/ru.js',
-//    ], 'public/bash/js/library.js');
+mix.scripts([
+   'resources/admin/bower_components/jquery/dist/jquery.min.js',
+   'resources/admin/bower_components/popper.js/dist/umd/popper.min.js',
+   'resources/admin/bower_components/moment/moment.js',
+   'resources/admin/js/ru.min.js',
+   'resources/admin/bower_components/chart.js/dist/Chart.min.js',
+   'resources/admin/bower_components/select2/dist/js/select2.full.min.js',
+   'resources/admin/bower_components/jquery-bar-rating/dist/jquery.barrating.min.js',
+   'resources/admin/bower_components/bootstrap-validator/dist/validator.min.js',
+   'resources/admin/bower_components/bootstrap-daterangepicker/daterangepicker.js',
+   'resources/admin/bower_components/ion.rangeSlider/js/ion.rangeSlider.min.js',
+   'resources/admin/bower_components/dropzone/dist/dropzone.js',
+   'resources/admin/bower_components/editable-table/mindmup-editabletable.js',
+   'resources/admin/bower_components/fullcalendar/dist/fullcalendar.min.js',
+   'resources/admin/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js',
+   'resources/admin/bower_components/tether/dist/js/tether.min.js',
+   'resources/admin/bower_components/slick-carousel/slick/slick.min.js',
+   'resources/admin/bower_components/bootstrap/js/dist/util.js',
+   'resources/admin/bower_components/bootstrap/js/dist/alert.js',
+   'resources/admin/bower_components/bootstrap/js/dist/button.js',
+   'resources/admin/bower_components/bootstrap/js/dist/carousel.js',
+   'resources/admin/bower_components/bootstrap/js/dist/collapse.js',
+   'resources/admin/bower_components/bootstrap/js/dist/dropdown.js',
+   'resources/admin/bower_components/bootstrap/js/dist/modal.js',
+   'resources/admin/bower_components/bootstrap/js/dist/tab.js',
+   'resources/admin/bower_components/bootstrap/js/dist/tooltip.js',
+   'resources/admin/bower_components/bootstrap/js/dist/popover.js',
+   'resources/admin/js/jquery.dataTables.min.js',
+   'resources/admin/js/dataTables.bootstrap4.min.js',
+   'resources/admin/js/demo_customizer.js',
+   'resources/admin/js/fontawesome.js',
+   'resources/admin/js/library.js',
+   'resources/admin/js/fileinput.js',
+   'resources/admin/js/tagify.js',
+   'resources/admin/js/main.js',
+   
+], 'public/admin/js/app.js').version();
+

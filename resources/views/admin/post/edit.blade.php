@@ -2,11 +2,6 @@
 
 @section('title', $row->title )
 
-@section('styles')
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{asset('admin/css/library.css')}}">
-    <link rel="stylesheet" href="{{asset('admin/css/jasny-bootstrap.min.css')}}">
-@endsection
 @section('content')
 
     <div class="element-actions">
@@ -42,11 +37,6 @@
 @endsection
 
 @section('scripts')
-
-    <script src="https://use.fontawesome.com/691852923e.js"></script>
-    <script src="{{ asset('admin/js/library.js') }}"></script>
-    <script src="{{ asset('admin/js/fileinput.js') }}"></script>
-    <script src="{{ asset('admin/js/tagify.js')}}"></script>
     <script>
         $(document).ready(function() {
             $('.directs').select2();
@@ -54,7 +44,7 @@
             var tagsInput = document.querySelector('input[name=tags]'),
                 tags = new Tagify(tagsInput, {
                     whitelist : {!! $tagsStr !!}
-                })
+                });
             tags.on('remove', onRemoveTag);
 
             function onRemoveTag(e){
