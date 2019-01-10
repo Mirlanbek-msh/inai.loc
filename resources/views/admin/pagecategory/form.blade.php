@@ -30,7 +30,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.title')}} *</label>
                 <div class="col-sm-10">
-                    {!! Form::text('title[en]', null, ['class' => 'form-control', 'placeholder' => trans('t.title_example')]) !!}
+                    {!! Form::text('title[en]', null, ['class' => 'form-control', 'placeholder' => trans('t.title_example'), 'required' => 'required', 'data-error' => trans('validation.required',['attribute' => ''])]) !!}
                     <div class="help-block with-errors text-danger"></div>
                 </div>
             </div>
