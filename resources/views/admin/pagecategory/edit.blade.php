@@ -24,7 +24,7 @@
         </div>
         @endif
         {!! Form::model($row, 
-            [	'id' => 'editForm',
+            [	'class' => 'form-validate',
                 'route' => ['admin.pagecategory.update', $row], 
                 'method' => 'PUT', 
                 'enctype' => 'multipart/form-data'

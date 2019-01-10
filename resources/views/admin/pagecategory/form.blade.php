@@ -45,67 +45,6 @@
     </div>
 </div>
 <fieldset>
-    <legend><span>{{trans('t.other_info')}}</span></legend>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.image')}} *</label>
-        <div class="col-sm-10">
-            <div class="d-block">
-                <div class="fileinput fileinput-new" data-provides="fileinput">
-                    @if($row->thumb)
-                    <div class="fileinput-new thumbnail" style="width: auto; height: 180px;">
-                        <img src="{{asset($row->image)}}" alt="...">
-                    </div>
-                    @endif
-                    <div class="fileinput-preview fileinput-exists thumbnail" style="width: 320px; height: 180px;"></div>
-                    <div>
-                        <span class="btn btn-primary btn-file">
-                            <span class="fileinput-new">{{trans('t.select')}}</span>
-                            <span class="fileinput-exists">{{trans('t.change')}}</span>
-                            {!! Form::file('image', ['accept' => 'image/*']) !!}
-                        </span>
-                        <a href="#" class="btn btn-primary fileinput-exists" data-dismiss="fileinput">{{trans('t.remove')}}</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Video URL</label>
-        <div class="col-sm-10">
-            {!! Form::text('video_id', null, ['class' => 'form-control', 'placeholder'=> '#']) !!}
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.date_time')}}</label>
-        <div class="col-sm-3">
-            <div class="date-input">
-                {!! Form::text('created_at', null, ['class' => 'form-control daterangetime']) !!}
-            </div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.to_banner')}}</label>
-        <div class="col-sm-10">
-            <div class="checkbox">
-                <label>
-                    {!! Form::checkbox('to_banner', 1, null) !!}
-                    <i></i>
-                </label>
-            </div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.publish_on')}} FaceBook</label>
-        <div class="col-sm-10">
-            <div class="checkbox">
-                <label>
-                    {!! Form::checkbox('to_facebook', 1, null) !!}
-                    <i></i>
-                </label>
-            </div>
-        </div>
-    </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">{{trans('t.publish')}}</label>
         <div class="col-sm-10">
