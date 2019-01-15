@@ -76,7 +76,7 @@
                             <p><span class="meta">{{trans('t.date')}}:</span> {{$row->event_start_date_full}}</p>
                         @endif
                         <p><span class="meta">{{trans('t.event_place')}}:</span> {{$row->event_place_lang}}</p>
-                        <p><span class="meta">{{trans('t.deadline_date')}}:</span> {{$row->deadline_date->format('d.m.Y')}}</p>
+                        <p><span class="meta">{{trans('t.deadline_date')}}:</span> {{$row->deadline_date_format}}</p>
                         <p><span class="meta">{{trans('t.event_entrance')}}:</span> {{$row->event_entrance_lang}}</p>
                         <h3>{{trans('t.for_questions')}}:</h3>
                         <div class="author">

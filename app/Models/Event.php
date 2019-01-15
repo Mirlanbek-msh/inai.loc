@@ -256,6 +256,12 @@ class Event extends Model
         return $this->signin_up_desc[app()->getLocale()];
     }
 
+    public function getDeadlineDateFormatAttribute()
+    {
+        return $this->deadline_date ? $this->deadline_date->format('d.m.Y') 
+            : $this->event_start_date->format('d.m.Y');
+    }
+
     public function canShowForm()
     {
         return $this->has_signing_up_form && (($this->deadline_date && $this->deadline_date->isFuture()) 
