@@ -148,8 +148,8 @@ return [
     'about_event' => 'О событии',
     'time' => 'Время',
     'where_and_when' => 'Где и когда?',
-    'start_date' => 'Дата окончания',
-    'end_date' => 'Дата начала',
+    'start_date' => 'Дата начала',
+    'end_date' => 'Дата окончания',
     'date' => 'Дата',
     'file' => 'Файл',
     
@@ -212,5 +212,9 @@ return [
     'example' => 'Пример',
 
 
+    /**Dealine */
+    'has_deadline_date' => 'Указать дедлайн',
+    'deadline_date' => 'Дедлайн для регистрации',
+    'deadline_past' => 'Дедлайн прошел',
 
 ];

@@ -71,7 +71,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ $bachelor->title_lang }}</li>
                                             @foreach($bachelor->pages as $row)
-                                            <li><a href="{{ route('web.application.show', $bachelor->slug) }}">{{$row->title_lang}}</a></li>
+                                            <li><a href="{{ route('web.application.show', $bachelor->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -79,7 +79,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ $master->title_lang }}</li>
                                             @foreach($master->pages as $row)
-                                            <li><a href="{{ route('web.application.show', $master->slug) }}">{{$row->title_lang}}</a></li>
+                                            <li><a href="{{ route('web.application.show', $master->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -87,7 +87,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ $admission->title_lang }}</li>
                                             @foreach($admission->pages as $row)
-                                            <li><a href="{{ route('web.application.show', $admission->slug) }}">{{$row->title_lang}}</a></li>
+                                            <li><a href="{{ route('web.application.show', $admission->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -95,7 +95,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ $internationalization->title_lang }}</li>
                                             @foreach($internationalization->pages as $row)
-                                            <li><a href="{{ route('web.application.show', $internationalization->slug) }}">{{$row->title_lang}}</a></li>
+                                            <li><a href="{{ route('web.application.show', $internationalization->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>

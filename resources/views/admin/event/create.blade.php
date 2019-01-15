@@ -33,56 +33,7 @@
 @endsection
 
 @section('scripts')
-    <script>
-        $(document).ready(function() {
-
-            var tagsRuInput = document.querySelector('input.tags-ru');
-            var tagsRu = new Tagify(tagsRuInput, {
-                whitelist : {!! $tagsRuStr !!}
-            });
-
-            var tagsEnInput = document.querySelector('input.tags-en');
-            var tagsEn = new Tagify(tagsEnInput, {
-                whitelist : {!! $tagsEnStr !!}
-            });
-
-            var hasEndDateCheckbox = document.querySelector('input[name=has_end_date]');
-            var eventDateInput = $('.event-date');
-            var eventDateMultiInput = $('.event-date-multi');
-           
-            function eventDatesCheck(){
-                if($(hasEndDateCheckbox).is(':checked')){
-                    eventDateInput.hide();
-                    eventDateMultiInput.show();
-                }else{
-                    eventDateMultiInput.hide();
-                    eventDateInput.show();
-                }
-            }
-
-            eventDatesCheck();
-            $(hasEndDateCheckbox).click(function(){
-                eventDatesCheck();
-            });
-
-
-            var hasSigingUpCheckbox = document.querySelector('input[name=has_signing_up_form]');
-            var signingUpForm = $('.signing-up-form');
-
-            function signingUpFormCheck(){
-                if($(hasSigingUpCheckbox).is(':checked')){
-                    signingUpForm.show();
-                }else{
-                    signingUpForm.hide();
-                }
-            }
-            signingUpFormCheck();
-            $(hasSigingUpCheckbox).click(function(){
-                signingUpFormCheck();
-            });
-
-        });
-    </script>
+    @include('admin.event.form_scripts')
     @include('admin.partials._texteditor')
 
     <script type="text/javascript">

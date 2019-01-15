@@ -72,7 +72,7 @@ class EventController extends Controller
         }else{
             $row->has_end_date = 0;
         }
-        
+
         $description = $row->description;
         if(!$description['ru'] && $row->content['ru']){
             $description['ru'] = mb_substr(strip_tags(html_entity_decode($row->content['ru'])), 0, 152).'...';
@@ -82,12 +82,37 @@ class EventController extends Controller
         }
         $row->description = $description;
         $row->save();
+
+        if(!$request->get('has_deadline'))
+        {
+            $row->deadline_date = $row->event_start_date->format('Y-m-d H:i:s');
+        }
         
-         // Tags
+        
+        $this->setTags($request, $row);
+        $this->setImages($request, $row);
+
+        $row->user_id = auth()->user()->id;
+        $row->save();
+
+        $message = trans('t.saved_successfully');
+
+        if($row){
+            // if($request->get('to_facebook')){
+            //     $row->notify(new PostPublished);
+            // }
+            toast($message,'success','top-right');
+            return redirect()->route('admin.event.index');
+        }
+    }
+
+    public function setTags($request, $row)
+    {
+        // Tags
         $tagsRu = $request->input('tags')['ru'];
         if($tagsRu){
             $tags = explode(',', $tagsRu);
-      
+
             foreach ($tags as $key => $title)
             {
                 if(!is_numeric($title) && !empty($title))
@@ -105,7 +130,7 @@ class EventController extends Controller
         $tagsEn = $request->input('tags')['en'];
         if($tagsEn){
             $tags = explode(',', $tagsEn);
-      
+
             foreach ($tags as $key => $title)
             {
                 if(!is_numeric($title) && !empty($title))
@@ -119,7 +144,10 @@ class EventController extends Controller
             }
             $row->tags()->syncWithoutDetaching($tags);
         }
+    }
 
+    public function setImages($request, $row)
+    {
         if($request->hasFile('image')){
             $file = $request->file('image');
             $dir  = 'uploads/events/'.$row->id.'/';
@@ -135,7 +163,7 @@ class EventController extends Controller
             $image_path = $dir.$image_name;
             
             $thumb = Image::make($file)->fit(510, 510)->encode('jpg')->save($thumb_path);
-            $image = Image::make($file)->fit(720, 720)->encode('jpg')->save($image_path);
+            $image = Image::make($file)->fit(1280, 720)->encode('jpg')->save($image_path);
 
             $row->thumb = $thumb_path;
             $row->image = $image_path;
@@ -156,19 +184,6 @@ class EventController extends Controller
 
             $row->author_img = $image_path;
             $row->save();
-        }
-
-        $row->user_id = auth()->user()->id;
-        $row->save();
-
-        $message = trans('t.saved_successfully');
-
-        if($row){
-            // if($request->get('to_facebook')){
-            //     $row->notify(new PostPublished);
-            // }
-            toast($message,'success','top-right');
-            return redirect()->route('admin.event.index');
         }
     }
 
@@ -234,82 +249,13 @@ class EventController extends Controller
         }
         $row->description = $description;
         $row->save();
+
+        if(!$request->get('has_deadline')){
+            $row->deadline_date = $row->event_start_date->format('Y-m-d H:i:s');
+        }
         
-         // Tags
-        $tagsRu = $request->input('tags')['ru'];
-        if($tagsRu){
-            $tags = explode(',', $tagsRu);
-      
-            foreach ($tags as $key => $title)
-            {
-                if(!is_numeric($title) && !empty($title))
-                {
-                    $tag = Tag::firstOrNew(['title' => $title, 'lang' => 'ru']);
-                    $tag->save();
-                    $tag->title = $title;
-                    $tag->lang = 'ru';
-                    $tag->save();
-                    $tags[$key] = $tag->id;
-                }
-            }
-            $row->tags()->sync($tags);
-        }
-        $tagsEn = $request->input('tags')['en'];
-        if($tagsEn){
-            $tags = explode(',', $tagsEn);
-      
-            foreach ($tags as $key => $title)
-            {
-                if(!is_numeric($title) && !empty($title))
-                {
-                    $tag = Tag::firstOrNew(['title' => $title, 'lang' => 'en']);
-                    $tag->title = $title;
-                    $tag->lang = 'en';
-                    $tag->save();
-                    $tags[$key] = $tag->id;
-                }
-            }
-            $row->tags()->syncWithoutDetaching($tags);
-        }
-
-        if($request->hasFile('image')){
-            $file = $request->file('image');
-            $dir  = 'uploads/events/'.$row->id.'/';
-            if (!file_exists($dir)) {
-                mkdir($dir, 0777, true);
-            }
-            $btw = time();
-
-            $thumb_name = $btw.uniqid().'_thumb.jpg';
-            $image_name = $btw.uniqid().'_image.jpg';
-
-            $thumb_path = $dir.$thumb_name;
-            $image_path = $dir.$image_name;
-            
-            $thumb = Image::make($file)->fit(510, 510)->encode('jpg')->save($thumb_path);
-            $image = Image::make($file)->fit(720, 720)->encode('jpg')->save($image_path);
-
-            $row->thumb = $thumb_path;
-            $row->image = $image_path;
-            $row->save();
-        }
-
-        if($request->hasFile('author_img')){
-            $file = $request->file('author_img');
-            $dir  = 'uploads/events/'.$row->id.'/';
-            if (!file_exists($dir)) {
-                mkdir($dir, 0777, true);
-            }
-            $image_name = 'author_image.jpg';
-
-            $image_path = $dir.$image_name;
-            
-            $image = Image::make($file)->fit(150, 150)->encode('jpg')->save($image_path);
-
-            $row->author_img = $image_path;
-            $row->save();
-        }
-
+        $this->setTags($request, $row);
+        $this->setImages($request, $row);
 
         if(!$row->user_id){
             $row->user_id =  auth()->user()->id;

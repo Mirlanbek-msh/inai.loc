@@ -21,8 +21,14 @@
                 
             },
             extended_valid_elements: [
+                'p[style]',
                 'table[class=table table-bordered|width=100%]'
-            ]
+            ],
+            valid_classes: {
+                '*': 'table table-bordered w-100', // Global classes
+                table: 'table table-bordered w-100' // Link specific classes
+            },
+            paste_strip_class_attributes: true
             // image_dimensions: false
         });
 

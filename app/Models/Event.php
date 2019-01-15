@@ -22,6 +22,7 @@ class Event extends Model
         'description',
         'status',
         'to_banner',
+        'deadline_date',
         'created_at',
         'content',
         'video_id',
@@ -53,6 +54,8 @@ class Event extends Model
         'author_desc' => 'json',
         'tags' => 'json',
     ];
+
+    protected $dates = ['created_at', 'updated_at', 'deadline_date'];
 
     public function tags()
     {
@@ -251,6 +254,12 @@ class Event extends Model
     public function getSigninUpDescLangAttribute()
     {
         return $this->signin_up_desc[app()->getLocale()];
+    }
+
+    public function canShowForm()
+    {
+        return $this->has_signing_up_form && (($this->deadline_date && $this->deadline_date->isFuture()) 
+            || (!$this->deadline_date && $this->event_start_date->isFuture()));
     }
     
 }

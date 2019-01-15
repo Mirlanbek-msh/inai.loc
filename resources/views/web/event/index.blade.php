@@ -37,7 +37,7 @@
                         <img src="{{ asset($row->image) }}" alt="">
                         <div class="event-overlay">
                             <a href="{{ route('web.event.show', $row->slug) }}" class="btn btn-primary">{{ trans('t.learn_more') }}</a>
-                            @if($row->has_signing_up_form && $row->event_start_date->isFuture())
+                            @if($row->canShowForm())
                             <a href="{{ route('web.event.apply', $row->slug) }}" class="btn btn-outline-primary">{{ trans('t.sign_up') }}</a>
                             @endif
                         </div>

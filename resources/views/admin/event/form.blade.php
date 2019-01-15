@@ -287,6 +287,28 @@
     </div>
 </fieldset>
 <fieldset>
+    <legend><span>{{trans('t.signing_up')}}</span></legend>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">{{trans('t.has_deadline_date')}}</label>
+        <div class="col-sm-10">
+            <div class="checkbox">
+                <label>
+                    {!! Form::checkbox('has_deadline', 1, $row->deadline_date ? ['checked' => 'checked'] : null) !!}
+                    <i></i>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row deadline-date">
+        <label class="col-sm-2 col-form-label">{{trans('t.deadline_date')}}</label>
+        <div class="col-sm-3">
+            <div class="date-input">
+                {!! Form::text('deadline_date', null, ['class' => 'form-control daterangetime']) !!}
+            </div>
+        </div>
+    </div>
+</fieldset>
+<fieldset>
     <legend><span>{{trans('t.other_info')}}</span></legend>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">{{trans('t.image')}} *</label>

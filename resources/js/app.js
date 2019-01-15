@@ -92,4 +92,29 @@ $(document).ready(function () {
     });
 
     $('.carousel').bcSwipe({ threshold: 50 });
+
+
+    var hash = window.location.hash;
+    hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+    // bootstrap tabs
+    $('.nav-tabs a').click(function (e) {
+        $(this).tab('show');
+    });
+    var url = document.location.toString();
+    if (url.match('#') && url.split('#')[1] != 'p1') {
+        var el = $('.card-title a.nav-link.active').click();
+        var element = "a[href='#collapse-"+url.split('#')[1] + "']";
+        $(element).click();
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 1);
+    }
+    $(window).on('hashchange', function() {
+        location.reload();
+    });
+
+    if ($('.form-validate').length) {
+        $('.form-validate').validator();
+    }
 });

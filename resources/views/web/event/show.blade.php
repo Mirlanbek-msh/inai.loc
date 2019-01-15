@@ -56,20 +56,37 @@
                         <span><i class="fa fa-user-friends"></i> {{ trans('t.signed_up') }}: {{$row->replies()->count()}}</span>
                     </div>
                 </div>
-                <div class="col-md-6 col-12">
-                    <div class="event-img">
+                <div class="col-12">
+                    <div class="post-img">
                         <img src="{{ asset($row->image) }}" alt="" class="w-100">
                     </div>
-                    <div class="mt-3 content-body">
+                </div>
+
+                <div class="col-12 mt-3">
+                    <div class="content-body">
+                        <h3>{{trans('t.about_event')}}</h3>
+                        {!!$row->content_lang!!}
+
+                        <h3>{{trans('t.where_and_when')}}</h3>
+                        @if($row->has_end_date)
+                        <p><span class="meta">{{trans('t.start_date')}}:</span> {{$row->event_start_date_full}}</p>
+                        <p><span class="meta">{{trans('t.time')}}:</span> {{$row->event_start_date->format('H:i')}}</p>
+                        <p><span class="meta">{{trans('t.end_date')}}:</span> {{$row->event_end_date_full}}</p>
+                        @else
+                            <p><span class="meta">{{trans('t.date')}}:</span> {{$row->event_start_date_full}}</p>
+                        @endif
+                        <p><span class="meta">{{trans('t.event_place')}}:</span> {{$row->event_place_lang}}</p>
+                        <p><span class="meta">{{trans('t.deadline_date')}}:</span> {{$row->deadline_date->format('d.m.Y')}}</p>
+                        <p><span class="meta">{{trans('t.event_entrance')}}:</span> {{$row->event_entrance_lang}}</p>
                         <h3>{{trans('t.for_questions')}}:</h3>
                         <div class="author">
                             <div class="row">
-                                <div class="col-lg-3 col-md-4 col-sm-3 col-4">
-                                    <div class="event-img">
+                                <div class="col-lg-2 col-md-3 col-sm-3 col-4">
+                                    <div class="event-img m-auto w-75">
                                         <img src="{{ asset($row->author_img) }}" alt="" class="w-100">
                                     </div>
                                 </div>
-                                <div class="col-lg-9 col-md-8 col-sm-9 col-8">
+                                <div class="col-lg-10 col-md-9 col-sm-9 col-8">
                                     <h3 class="mt-0 mt-xl-3 no-underline">{{$row->author_name_lang}}</h3>
                                     <span class="mt-3"><a href="tel:{{$row->author_phone}}"><i class="fa fa-phone"></i> {{$row->author_phone}}</a></span>
                                     <span><a href="mailto:{{$row->author_email}}"><i class="fa fa-envelope"></i> {{$row->author_email}}</a></span>
@@ -80,33 +97,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-12">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="content-body">
-                                <h3>{{trans('t.about_event')}}</h3>
-                                {!!$row->content_lang!!}
-                                <h3>{{trans('t.where_and_when')}}</h3>
-                                @if($row->has_end_date)
-                                <p><span class="meta">{{trans('t.start_date')}}:</span> {{$row->event_start_date_full}}</p>
-                                <p><span class="meta">{{trans('t.time')}}:</span> {{$row->event_start_date->format('H:i')}}</p>
-                                <p><span class="meta">{{trans('t.end_date')}}:</span> {{$row->event_end_date_full}}</p>
-                                @else
-                                    <p><span class="meta">{{trans('t.date')}}:</span> {{$row->event_start_date_full}}</p>
-                                @endif
-                                <p><span class="meta">{{trans('t.event_place')}}:</span> {{$row->event_place_lang}}</p>
-                                <p><span class="meta">{{trans('t.event_entrance')}}:</span> {{$row->event_entrance_lang}}</p>
-                            </div>
-                        </div>
-                        @if($row->has_signing_up_form && $row->event_start_date->isFuture())
-                        <div class="col-12 mt-3 d-md-block d-flex justify-content-center">
-                            <a href="{{ route('web.event.apply', $row->slug) }}" class="btn btn-primary">{{ trans('t.sign_up') }}</a>
-                        </div>
-                        @endif
-                    </div>
                     
                 </div>
+                @if($row->canShowForm())
+                <div class="col-12 mt-3 d-md-block d-flex justify-content-center">
+                    <a href="{{ route('web.event.apply', $row->slug) }}" class="btn btn-primary">{{ trans('t.sign_up') }}</a>
+                </div>
+                @endif
                 
                 <div class="col-12 mt-3">
                     <ul class="tags list-unstyled">

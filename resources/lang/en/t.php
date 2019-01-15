@@ -146,8 +146,8 @@ return [
     'about_event' => 'About event',
     'time' => 'Time',
     'where_and_when' => 'Place and time?',
-    'start_date' => 'Ending date',
-    'end_date' => 'Starting date',
+    'start_date' => 'Starting date',
+    'end_date' => 'Ending date',
     'date' => 'Date',
     'file' => 'File',
     
@@ -208,4 +208,11 @@ return [
     'instagram' => 'Instagram link',
     'wa' => 'WhatsApp number',
     'example' => 'Example',
+
+    /**Dealine */
+    'has_deadline_date' => 'Has deadline',
+    'deadline_date' => 'Registration deadline',
+    'deadline_past' => 'Deadline',
+
+
 ];

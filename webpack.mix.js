@@ -21,6 +21,7 @@ mix.scripts([
    'resources/js/libs/select2.full.min.js',
    'resources/js/libs/icheck.min.js',
    'resources/js/libs/jasny-bootstrap.min.js',
+   'resources/admin/bower_components/bootstrap-validator/dist/validator.min.js',
    'resources/js/libs/scrollPosStyler.js',
    'resources/js/libs/jquery.bcSwipe.min.js',
    'resources/js/libs/lightgallery/lightslider.min.js',

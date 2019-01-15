@@ -32,7 +32,9 @@ class CreateEventsTable extends Migration
             $table->integer('user_id')->unsigned()->nullable();
             $table->tinyInteger('status')->default(0);
             $table->tinyInteger('to_banner')->default(0);
+            $table->timestamp('deadline_date')->nullable();
             $table->integer('views')->default(0);
+
 
             /** Author */
             $table->text('author_name')->nullable();
