@@ -37,6 +37,9 @@ class EventController extends Controller
 
         if($event->need_org_name) $validation_array['org_name'] = 'required';
         if($event->need_full_name) $validation_array['full_name'] = 'required';
+        if($event->need_university) $validation_array['university'] = 'required';
+        if($event->need_group_course) $validation_array['group_course'] = 'required';
+        if($event->need_team_name) $validation_array['team_name'] = 'required';
         if($event->need_phone) $validation_array['phone'] = 'required|unique:event_replies';
         if($event->need_email) $validation_array['email'] = 'required|unique:event_replies';
         if($event->need_file) $validation_array['file'] = 'required';
@@ -76,9 +79,9 @@ class EventController extends Controller
                 $file_name = 'file.'.$file->getClientOriginalExtension();
                 $file->move($dir, $file_name);
                 $row->file = $dir.$file_name;
-                $row->save();
             }
             
+            $row->save();
             toast(trans('t.registered_successfully'),'success','top-right');
             return redirect()->route('web.event.show', $event->slug);
         }

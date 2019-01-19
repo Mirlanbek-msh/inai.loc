@@ -32,6 +32,36 @@
             </div>
         </div>
         @endif
+        @if($event->need_university)
+        <div class="entry">
+            <div class="title">
+                <h3>{{ trans('t.university') }}</h3>
+            </div>
+            <div class="body">
+                <p>{{$row->university}}</p>
+            </div>
+        </div>
+        @endif
+        @if($event->need_group_course)
+        <div class="entry">
+            <div class="title">
+                <h3>{{ trans('t.group_course') }}</h3>
+            </div>
+            <div class="body">
+                <p>{{$row->group_course}}</p>
+            </div>
+        </div>
+        @endif
+        @if($event->need_team_name)
+        <div class="entry">
+            <div class="title">
+                <h3>{{ trans('t.team_name') }}</h3>
+            </div>
+            <div class="body">
+                <p>{{$row->team_name}}</p>
+            </div>
+        </div>
+        @endif
         @if($event->need_phone)
         <div class="entry">
             <div class="title">
