@@ -224,6 +224,7 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->all());
         $request->validate([
             'title' => 'required',
             // 'description' => '',
@@ -232,6 +233,7 @@ class EventController extends Controller
             'author_img' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
         ]);
         $row = Event::findOrFail($id);
+        $this->setFormFields($row);
         $row->update($request->all());
 
         if($request->get('has_end_date')){
@@ -272,6 +274,18 @@ class EventController extends Controller
             // }
             return redirect()->route('admin.event.show', $row);
         }
+    }
+
+    private function setFormFields($row)
+    {
+        $row->need_org_name = 0;
+        $row->need_full_name = 0;
+        $row->need_university = 0;
+        $row->need_group_course = 0;
+        $row->need_team_name = 0;
+        $row->need_phone = 0;
+        $row->need_email = 0;
+        $row->need_file = 0;
     }
 
     /**

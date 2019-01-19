@@ -17,6 +17,9 @@ class CreateEventRepliesTable extends Migration
             $table->increments('id');
             $table->string('org_name')->nullable();
             $table->string('full_name')->nullable();
+            $table->string('university')->nullable();
+            $table->string('group_course')->nullable();
+            $table->string('team_name')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('file')->nullable();

@@ -39,6 +39,9 @@ class Event extends Model
         'has_signing_up_form',
         'need_org_name',
         'need_full_name',
+        'need_university',
+        'need_group_course',
+        'need_team_name',
         'need_phone',
         'need_email',
         'need_file',
@@ -124,7 +127,6 @@ class Event extends Model
         });
 
         self::updating(function($model){
-            // ... code here
 
         });
 

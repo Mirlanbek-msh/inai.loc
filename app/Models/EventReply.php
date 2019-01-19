@@ -11,6 +11,9 @@ class EventReply extends Model
     protected $fillable = [
         'org_name',
         'full_name',
+        'university',
+        'group_course',
+        'team_name',
         'phone',
         'email',
         'seen',

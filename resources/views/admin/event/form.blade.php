@@ -185,6 +185,39 @@
         </div>
     </div>
     <div class="form-group row">
+        <label class="col-sm-2 col-form-label">{{trans('t.need_university')}}</label>
+        <div class="col-sm-10">
+            <div class="checkbox">
+                <label>
+                    {!! Form::checkbox('need_university', 1, null) !!}
+                    <i></i>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">{{trans('t.need_group_course')}}</label>
+        <div class="col-sm-10">
+            <div class="checkbox">
+                <label>
+                    {!! Form::checkbox('need_group_course', 1, null) !!}
+                    <i></i>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">{{trans('t.need_team_name')}}</label>
+        <div class="col-sm-10">
+            <div class="checkbox">
+                <label>
+                    {!! Form::checkbox('need_team_name', 1, null) !!}
+                    <i></i>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
         <label class="col-sm-2 col-form-label">{{trans('t.need_phone')}}</label>
         <div class="col-sm-10">
             <div class="checkbox">

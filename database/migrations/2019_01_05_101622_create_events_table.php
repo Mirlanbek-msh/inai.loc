@@ -47,6 +47,9 @@ class CreateEventsTable extends Migration
             $table->tinyInteger('has_signing_up_form')->default(0);
             $table->tinyInteger('need_org_name')->default(0);
             $table->tinyInteger('need_full_name')->default(0);
+            $table->tinyInteger('need_university')->default(0);
+            $table->tinyInteger('need_group_course')->default(0);
+            $table->tinyInteger('need_team_name')->default(0);
             $table->tinyInteger('need_phone')->default(0);
             $table->tinyInteger('need_email')->default(0);
             $table->tinyInteger('need_file')->default(0);

@@ -55,6 +55,27 @@
                                         <div class="help-block with-errors text-danger"></div>
                                     </div>
                                     @endif
+                                    @if($row->need_university)
+                                    <div class="form-group">
+                                        <label for="">{{ trans('t.university') }}:</label>
+                                        <input placeholder="{{trans('t.university_example')}}" name="university" data-error="{{trans('validation.required',['attribute' => ''])}}" class="form-control" type="text" required>
+                                        <div class="help-block with-errors text-danger"></div>
+                                    </div>
+                                    @endif
+                                    @if($row->need_group_course)
+                                    <div class="form-group">
+                                        <label for="">{{ trans('t.group_course') }}:</label>
+                                        <input placeholder="{{trans('t.group_course_example')}}" name="group_course" data-error="{{trans('validation.required',['attribute' => ''])}}" class="form-control" type="text" required>
+                                        <div class="help-block with-errors text-danger"></div>
+                                    </div>
+                                    @endif
+                                    @if($row->need_team_name)
+                                    <div class="form-group">
+                                        <label for="">{{ trans('t.team_name') }}:</label>
+                                        <input placeholder="{{trans('t.team_name_example')}}" name="team_name" data-error="{{trans('validation.required',['attribute' => ''])}}" class="form-control" type="text" required>
+                                        <div class="help-block with-errors text-danger"></div>
+                                    </div>
+                                    @endif
                                     @if($row->need_phone)
                                     <div class="form-group">
                                         <label for="">{{ trans('t.phone_number') }}:</label>
