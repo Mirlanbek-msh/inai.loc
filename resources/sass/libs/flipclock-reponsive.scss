@@ -1,0 +1,69 @@
+// Responsive mixins
+
+@mixin screen-xs{
+    @media all and (max-width: 320px){
+        @content;
+    }
+}
+
+@mixin screen-sm{
+    @media all and (max-width: 479px){
+        @content;
+    }
+}
+
+@mixin screen-md{
+    @media all and (max-width: 768px){
+        @content;
+    }
+}
+
+@mixin screen-lg{
+    @media all and (max-width: 900px){
+        @content;
+    }
+}
+
+@mixin screen-xl{
+    @media all and (max-width: 1300px){
+        @content;
+    }
+}
+
+
+.flipclock-cont{
+    .clock{
+        padding-top: 10px;
+        zoom: 1.0;
+        width: 100%;
+        -moz-transform: scale(1.0);
+        margin: 0 auto !important;
+        display: flex !important;
+
+        .flip{
+            flex: 1;
+        }
+
+
+        @include screen-xl{
+            zoom: 1.0;
+            -moz-transform: scale(1.0);
+        }
+        @include screen-lg{
+            zoom: 0.8;
+            -moz-transform: scale(0.8);
+        }
+        @include screen-md{
+            zoom: 0.6;
+            -moz-transform: scale(0.6);
+        }
+        @include screen-sm{
+            zoom: 0.45;
+            -moz-transform: scale(0.45);
+        }
+        @include screen-xs{
+            zoom: 0.40;
+            -moz-transform: scale(0.40);
+        }
+    }
+}

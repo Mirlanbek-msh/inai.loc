@@ -225,5 +225,6 @@ return [
     'has_deadline_date' => 'Указать дедлайн',
     'deadline_date' => 'Дедлайн для регистрации',
     'deadline_past' => 'Дедлайн прошел',
+    'dates_to_deadline' => 'Осталось до дедлайна',
 
 ];

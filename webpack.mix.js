@@ -26,6 +26,7 @@ mix.scripts([
    'resources/js/libs/jquery.bcSwipe.min.js',
    'resources/js/libs/lightgallery/lightslider.min.js',
    'resources/js/libs/lightgallery/lightgallery-all.min.js',
+   'resources/js/libs/flipclock.min.js',
    'resources/js/responsive-tabs.js',
    'resources/js/app.js'
 ], 'public/js/app.js').version();

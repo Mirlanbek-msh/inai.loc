@@ -96,6 +96,14 @@
                                 </div>
                             </div>
                         </div>
+
+                        @if($row->canShowForm())
+                        <h3>{{trans('t.dates_to_deadline')}}</h3>
+                        <div class="flipclock-cont">
+                            <div class="clock"></div>
+	                        <div class="message"></div>
+                        </div>
+                        @endif
                     </div>
                     
                 </div>
@@ -145,6 +153,28 @@
 @section('scripts')
 <script>
 
+    @if($row->canShowForm())
+    var clock;
+
+    $(document).ready(function() {
+
+        // Grab the current date
+        var currentDate = new Date();
+
+        // Set some date in the future. In this case, it's always Jan 1
+        var futureDate  = new Date({{$row->deadline_date->format('Y, n - 1, d, H, i, s')}});
+
+        // Calculate the difference in seconds between the future and current date
+        var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+        // Instantiate a coutdown FlipClock
+        clock = $('.clock').FlipClock(diff, {
+            clockFace: 'DailyCounter',
+            countdown: true,
+            language: '{{ app()->getLocale()}}'
+        });
+    });
+    @endif
 
 </script>
 @endsection
