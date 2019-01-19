@@ -222,7 +222,7 @@ return [
     'has_deadline_date' => 'Has deadline',
     'deadline_date' => 'Registration deadline',
     'deadline_past' => 'Deadline',
-    'dates_to_deadline' => 'Dates left to deadline',
+    'dates_to_deadline' => 'Dates left to the deadline',
 
 
 ];
