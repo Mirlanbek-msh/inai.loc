@@ -145,7 +145,7 @@ return [
     
     'has_signing_up_form' => 'Has signing up form',
     'event_speaker' => 'Speakers',
-    'for_questions' => 'If you have questions',
+    'for_questions' => 'For further questions please turn to',
     'about_event' => 'About event',
     'time' => 'Time',
     'where_and_when' => 'Place and time?',
@@ -158,7 +158,7 @@ return [
     'event_time_place' => 'Venue',
     'event_place' => 'Venue',
     'event_place_example' => 'Bishkek, Hotel Damas',
-    'event_entrance' => 'Entrance',
+    'event_entrance' => 'Participation',
     'event_entrance_example' => 'Free, 500 som',
     'event_about_author' => 'Event speaker',
     'author_name' => 'Speaker name',
