@@ -1,0 +1,82 @@
+@keyframes onoi-logo-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+.bottom-panel{
+    position: relative;
+}
+
+.onoi-logo{
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    min-width: 160px;
+
+    @media(max-width: 575px){
+        min-width: 40px;
+        a{
+
+            .left, .right{
+                display: none !important;
+            }
+        }
+    }
+
+    a{
+        opacity: 0.6;
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+
+        i{
+            margin: 0;
+        }
+        
+        .left{
+            transform: translateX(50px);
+        }
+        .right{
+            transform: translateX(-50px);
+        }
+        
+        .left, .right{
+            display: inline-block;
+            opacity: 0;
+        }
+
+        &:hover{
+            .left, .right{
+                opacity: 1;
+            }
+            .left{
+                transform: translateX(0);
+            }
+            .right{
+                transform: translateX(0);
+            }
+            // font-size: 15px;
+
+            opacity: 1;
+            .onoi-logo-img{
+                max-width: 25px;
+                animation: onoi-logo-rotate 8000ms infinite linear;
+            }
+        }
+        
+        .onoi-logo-img{
+            max-width: 20px;
+            animation: onoi-logo-rotate 10000ms infinite linear;
+        }
+
+        .onoi-text{
+            font-weight: 600;
+        }
+    }
+
+
+}
