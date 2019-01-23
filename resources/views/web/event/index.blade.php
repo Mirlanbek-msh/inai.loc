@@ -60,7 +60,7 @@
             @endforeach
 
             <div class="col-12">
-                {!! $posts->links() !!}
+                {!! $events->links() !!}
             </div>
 
         </div>
