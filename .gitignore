@@ -1,9 +1,9 @@
 /node_modules
 /public/storage
 /public/uploads
-/resources/sass
-/resources/js
-/resources/admin
+/resources/sass/*
+/resources/js/*
+/resources/admin/*
 webpack.mix.js
 /storage/*.key
 /vendor
