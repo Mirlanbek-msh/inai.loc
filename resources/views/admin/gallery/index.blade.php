@@ -61,7 +61,6 @@
             var table = $('#datatables').DataTable({
                 "order": [],
                 pageLength: 50,
-                paging: false,
                 @if(app()->getLocale() == 'ru')
                 language: {
                     "processing": "Подождите...",

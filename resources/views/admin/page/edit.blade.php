@@ -5,8 +5,8 @@
 @section('content')
 
     <div class="element-actions">
-        <a class="mr-2 mb-2 btn btn-success" href="{{ route('admin.post.index') }}">
-            <i class="os-icon os-icon-user-male-circle"></i> Все посты
+        <a class="mr-2 mb-2 btn btn-success" href="{{ route('admin.page.index') }}">
+            <i class="os-icon os-icon-user-male-circle"></i> {{trans('t.all_pages')}}
         </a>
     </div>
     <h6 class="element-header">

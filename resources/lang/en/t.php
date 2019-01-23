@@ -224,6 +224,8 @@ return [
     'deadline_past' => 'Deadline',
     'dates_to_deadline' => 'Dates left to the deadline',
     'no_data' => 'No data',
+    'posts_amount' => 'Posts amount',
+    'pages_amount' => 'Pages amount',
 
 
 ];

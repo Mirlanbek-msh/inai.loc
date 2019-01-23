@@ -227,5 +227,7 @@ return [
     'deadline_past' => 'Дедлайн прошел',
     'dates_to_deadline' => 'Осталось до дедлайна',
     'no_data' => 'Нет данных',
+    'posts_amount' => 'Кол-во постов',
+    'pages_amount' => 'Кол-во страниц',
 
 ];

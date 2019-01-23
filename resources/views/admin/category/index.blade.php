@@ -1,13 +1,13 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Все категории')
+@section('title', trans('t.all_categories'))
 
 @section('content')
     <div class="element-actions">
-        <a class="btn btn-primary btn-sm" href="{{ route('admin.category.create') }}"><i class="os-icon os-icon-ui-22"></i><span>Новая категория</span></a>
+        <a class="btn btn-primary btn-sm" href="{{ route('admin.category.create') }}"><i class="os-icon os-icon-ui-22"></i><span>{{trans('t.create_category')}}</span></a>
     </div>
     <h6 class="element-header">
-        Все категории
+            {{trans('t.all_categories')}}
     </h6>
     <div class="element-box">
         <div class="table-responsive">
@@ -15,10 +15,10 @@
                 <thead>    
                     <tr>
                         <th>ID</th>
-                        <th>Название</th>
-                        <th>Кол-во постов</th>
-                        <th>Статус</th>
-                        <th width="150px" class="text-center">Действия</th>
+                        <th>{{trans('t.title')}}</th>
+                        <th>{{trans('t.posts_amount')}}</th>
+                        <th>{{trans('t.status')}}</th>
+                        <th width="150px" class="text-center">{{trans('t.actions')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,7 +53,6 @@
             var table = $('#datatables').DataTable({
                 "order": [],
                 pageLength: 50,
-                paging: false,
                 @if(app()->getLocale() == 'ru')
                 language: {
                     "processing": "Подождите...",
