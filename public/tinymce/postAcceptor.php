@@ -2,7 +2,7 @@
   /*******************************************************
    * Only these origins will be allowed to upload images *
    ******************************************************/
-  $accepted_origins = array("http://localhost:8000", "http://192.168.1.1", "https://beta.centr.asia", "https://centr.asia");
+  $accepted_origins = array("http://localhost:8000", "http://192.168.1.1", "https://inai.kg", "http://inai.kg");
 
   /*********************************************
    * Change this line to set the upload folder *

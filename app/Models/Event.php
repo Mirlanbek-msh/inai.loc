@@ -106,6 +106,14 @@ class Event extends Model
 
     public function removeOldImages()
     {
+        if($this->image){
+            File::delete($this->image);
+            File::delete($this->thumb);
+        }
+    }
+
+    public function removeDirectory()
+    {
         if($this->image || $this->thumb)
         {
             File::deleteDirectory("uploads/events/$this->id/");
@@ -135,7 +143,7 @@ class Event extends Model
         });
 
         self::deleting(function($model){
-            $model->removeOldImages();
+            $model->removeDirectory();
         });
 
         self::deleted(function($model){

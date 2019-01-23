@@ -149,15 +149,15 @@ class EventController extends Controller
     public function setImages($request, $row)
     {
         if($request->hasFile('image')){
+            $row->removeOldImages();
             $file = $request->file('image');
             $dir  = 'uploads/events/'.$row->id.'/';
             if (!file_exists($dir)) {
                 mkdir($dir, 0777, true);
             }
-            $btw = time();
 
-            $thumb_name = $btw.uniqid().'_thumb.jpg';
-            $image_name = $btw.uniqid().'_image.jpg';
+            $thumb_name = 'thumb.jpg';
+            $image_name = 'image.jpg';
 
             $thumb_path = $dir.$thumb_name;
             $image_path = $dir.$image_name;
