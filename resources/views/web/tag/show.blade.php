@@ -19,53 +19,6 @@
 
 @section('content')
 
-<section class="section sps sps--abv sps-pt-60">
-    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-            @for($i = 0; $i < ($banner_events->count() + $banner_posts->count()); $i++)
-            <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}" @if($i == 0) class="active" @endif></li>
-            @endfor
-        </ol>
-        <div class="carousel-inner">
-            @foreach($banner_events as $row)
-            <div class="carousel-item @if($loop->first) active @endif">
-                <img class="d-block w-100" src="{{ asset($row->image) }}" alt="">
-                <div class="carousel-caption d-md-block">
-                    <h5>{{ $row->title_lang }}</h5>
-                    <p class="d-sm-none d-md-block">{{ $row->description_lang }}</p>
-
-                    <a href="{{ route('web.event.show', $row->slug) }}" class="btn btn-primary">{{ trans('t.learn_more') }}</a>
-                    @if($row->canShowForm())
-                    <a href="{{ route('web.event.apply', $row->slug) }}" class="btn btn-outline-primary">{{ trans('t.sign_up') }}</a>
-                    @endif
-                </div>
-            </div>
-            @endforeach
-
-            @foreach($banner_posts as $row)
-            <div class="carousel-item @if($loop->first && !$banner_events->count()) active @endif">
-                <img class="d-block w-100" src="{{ asset($row->image) }}" alt="">
-                <div class="carousel-caption d-md-block">
-                    <h5>{{ $row->title }}</h5>
-                    <p class="d-sm-none d-md-block">{{ $row->description }}</p>
-
-                    <a href="{{ route('web.post.show', $row->slug) }}" class="btn btn-primary">{{ trans('t.learn_more') }}</a>
-                    {{-- <a href="" class="btn btn-outline-primary">Other</a> --}}
-                </div>
-            </div>
-            @endforeach
-        </div>
-        <a class="carousel-control-prev d-lg-flex d-none" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only"><i class="fa fa-angle-left"></i></span>
-        </a>
-        <a class="carousel-control-next d-lg-flex d-none" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only"><i class="fa fa-angle-right"></i></span>
-        </a>
-    </div>
-</section>
-
 <section class="section bg-gray pt-5">
     <div class="container">
         <div class="row">
@@ -149,7 +102,6 @@
             <div class="col-12 justify-content-center d-flex mb-3">
                 <a href="{{ route('web.post.index') }}" class="btn btn-primary">{{ trans('t.show_more') }}</a>
             </div>
-
         </div>
     </div>
 </section>

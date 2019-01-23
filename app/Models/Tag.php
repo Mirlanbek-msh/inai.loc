@@ -19,6 +19,11 @@ class Tag extends Model
         return $this->belongsToMany(Post::class, 'posts_tags');
     }
 
+    public function events()
+    {
+        return $this->belongsToMany(Event::class, 'events_tags');
+    }
+
     public function toggleStatus()
     {
         $this->status = !$this->status;

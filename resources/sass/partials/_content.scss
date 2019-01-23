@@ -693,14 +693,22 @@ nav {
             }
         }
 
+        .page-link{
+            border: none;
+
+            &:hover, &:focus{
+                box-shadow: none !important;
+            }
+        }
+
         &.active {
-            a{
+            .page-link{
                 background-color: $blue;
             }
         }
 
         &.disabled {
-            a {
+            .page-link {
                 color: $gray !important;
             }
         }

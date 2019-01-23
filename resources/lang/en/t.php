@@ -223,6 +223,7 @@ return [
     'deadline_date' => 'Registration deadline',
     'deadline_past' => 'Deadline',
     'dates_to_deadline' => 'Dates left to the deadline',
+    'no_data' => 'No data',
 
 
 ];
