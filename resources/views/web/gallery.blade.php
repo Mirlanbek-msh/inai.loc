@@ -8,7 +8,7 @@
 
 @section('content')
 
-<section class="section pt-4 sps sps--abv sps-pt-80">
+<section class="section bg-gray pt-4 sps sps--abv sps-pt-80">
     <div class="container">
         <nav class="mt-md-4 mt-sm-1">
             <ol class="breadcrumb">
@@ -34,6 +34,10 @@
                         </a>
                         @endforeach
                     </div>
+                </div>
+
+                <div class="col-12">
+                    {!! $data->links() !!}
                 </div>
             </div>
 

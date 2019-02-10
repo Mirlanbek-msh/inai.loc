@@ -41,7 +41,7 @@ class HomeController extends Controller
 
     public function gallery()
     {
-        $data = Gallery::where('status', 1)->orderBy('created_at', 'desc')->get();
+        $data = Gallery::where('status', 1)->orderBy('created_at', 'desc')->paginate(18);
         return view('web.gallery', compact('data'));
     }
 }
