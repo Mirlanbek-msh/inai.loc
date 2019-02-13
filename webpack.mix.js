@@ -45,7 +45,7 @@ mix.styles([
    // 'resources/admin/bower_components/fullcalendar/dist/fullcalendar.min.css',
    // 'resources/admin/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css',
    // 'resources/admin/bower_components/slick-carousel/slick/slick.css',
-   // 'resources/admin/icon_fonts_assets/feather/style.css',
+   'resources/admin/icon_fonts_assets/feather/style.css',
    'resources/admin/css/tagify.css',
    'resources/admin/css/jasny-bootstrap.min.css',
 ], 'public/admin/css/dist.css').version();
