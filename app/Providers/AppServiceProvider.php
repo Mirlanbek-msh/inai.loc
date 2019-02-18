@@ -38,8 +38,14 @@ class AppServiceProvider extends ServiceProvider
     {
         Blade::directive('active', function($expression){
             // dd($expression);
-            list($routeName, $routeNumber) = explode(', ', $expression);
-            return "<?php echo {$routeName} == Request::capture()->segment(intval($routeNumber)) ? 'active' : ''; ?>";
+            $array = explode(', ', $expression);
+            if(count($array) > 1){
+                list($routeName, $routeNumber) = explode(', ', $expression);
+            }else{
+                $routeName = $array[0];                
+                $routeNumber = 3;
+            }
+            return "<?php echo {$routeName} == Request::capture()->segment(intval($routeNumber)) ? 'current' : ''; ?>";
         });
     }
 

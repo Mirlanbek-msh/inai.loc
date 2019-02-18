@@ -3,7 +3,7 @@
         <span>{{trans('t.main_items')}}</span>
     </li>
     @hasanyrole('Super Administrator|Administrator')
-    <li class="has-sub-menu @if($current_three == 'category') current @endif">
+    <li class="has-sub-menu @active('post') @active('category')">
         <a href="#">
             <div class="icon-w">
                 <div class="os-icon os-icon-edit-3"></div>
@@ -19,7 +19,7 @@
             </li>
         </ul>
     </li>
-    <li @if($current_three == 'category') current @endif">
+    <li class="@active('event')">
         <a href="{{ route('admin.event.index') }}">
             <div class="icon-w">
                 <div class="os-icon os-icon-tasks-checked"></div>
@@ -32,7 +32,7 @@
     <li class="sub-header">
         <span>{{trans('t.special_pages')}}</span>
     </li>
-    <li class="has-sub-menu @if($current_three == 'category') current @endif">
+    <li class="has-sub-menu @active('page') @active('pagecategory')">
         <a href="#">
             <div class="icon-w">
                 <div class="os-icon os-icon-hierarchy-structure-2"></div>
@@ -48,7 +48,7 @@
             </li>
         </ul>
     </li>
-    <li>
+    <li class="@active('gallery')">
         <a href="{{route('admin.gallery.index')}}" class="@if($current_three == 'gallery') current @endif">
             <div class="icon-w">
                 <div class="os-icon os-icon-documents-07"></div>
@@ -64,7 +64,7 @@
             <span>{{trans('t.about')}}</span>
         </a>
     </li>
-    <li>
+    <li class="@active('contact')">
         <a href="{{route('admin.contact.index')}}" class="@if($current_three == 'user') current @endif">
             <div class="icon-w">
                 <div class="os-icon os-icon-link-3"></div>
