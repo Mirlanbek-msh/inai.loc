@@ -58,6 +58,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             Route::get('/{slug}', 'ApplicationController@show')->name('show');
         });
 
+        // Modules
+        Route::group(['prefix' => 'module', 'as' => 'module.'], function(){
+            Route::get('/', 'ModuleController@index')->name('index');
+            Route::get('/obligatory-catalog', 'ModuleController@obModules')->name('show');
+            Route::get('/{slug}', 'ModuleController@show')->name('show');
+        });
+
         Route::group(['as' => 'auth.'], function(){
             Route::get('/login', 'Auth\LoginController@showLoginForm')->name('loginForm');
             Route::post('/login', 'Auth\LoginController@login')->name('login');

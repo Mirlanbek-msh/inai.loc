@@ -28,7 +28,17 @@ mix.scripts([
    'resources/js/libs/lightgallery/lightgallery-all.min.js',
    'resources/js/libs/flipclock.min.js',
    'resources/js/responsive-tabs.js',
+
+   'resources/admin/js/jquery.dataTables.min.js',
+   'resources/admin/js/dataTables.bootstrap4.min.js',
+   // 'resources/admin/js/dataTables.jqueryui.min.js',
+   'resources/admin/js/dataTables.responsive.js',
+   // 'resources/admin/js/dataTables.responsive.js',
+   // 'resources/admin/js/responsive.bootstrap4.min.js',
+
    'resources/js/app.js'
+
+
 ], 'public/js/app.js').version();
 
 //  Front css

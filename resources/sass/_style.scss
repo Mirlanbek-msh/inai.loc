@@ -256,3 +256,35 @@ a {
         height: 500px;
     }
 }
+
+
+table{
+    &.dataTable{
+        thead th{
+            // border-bottom-width: 0;
+        }
+        border-collapse: collapse !important;
+    }
+
+    .hidden-row {
+        padding: 0 !important;
+    }
+
+    
+}
+
+.dataTables_wrapper{
+    .dataTables_paginate{
+        .paginate_button{
+            padding: 0;
+            margin: 0;
+            // color: unset !important;
+            border: none !important;
+
+            &:hover{
+                border: none !important;
+                // background: none;
+            }
+        }
+    }
+}

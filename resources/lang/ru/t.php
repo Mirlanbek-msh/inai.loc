@@ -230,4 +230,8 @@ return [
     'posts_amount' => 'Кол-во постов',
     'pages_amount' => 'Кол-во страниц',
 
+
+    'modules' => 'Модули',
+    'list_of_all_modules' => 'Список всех модулей',
+
 ];

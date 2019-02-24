@@ -227,5 +227,9 @@ return [
     'posts_amount' => 'Posts amount',
     'pages_amount' => 'Pages amount',
 
+    'modules' => 'Modules',
+    'list_of_all_modules' => 'List of all modules',
+
+
 
 ];

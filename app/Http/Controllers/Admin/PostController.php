@@ -37,18 +37,6 @@ class PostController extends Controller
         return view('admin.post.index', compact('data'));
     }
 
-    public function getPostsByPermission()
-    {
-        $countries = auth()->user()->countries;
-        $categories = auth()->user()->categories;
-        $categoryPosts = collect();
-        foreach($categories as $category)
-        {
-            $categoryPosts = $categoryPosts->merge($category->posts);
-        }
-        return $data;
-    }
-
     /**
      * Show the form for creating a new resource.
      *

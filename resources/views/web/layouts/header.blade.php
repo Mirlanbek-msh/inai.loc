@@ -62,6 +62,36 @@
                     </li>
                     <li class="nav-item dropdown mega-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
+                        {{ trans('t.modules') }}
+                        </a>
+                        <ul class="dropdown-menu mega-dropdown-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <li class="col-lg-6 col-md-12 col-sm-12">
+                                        <ul>
+                                            {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
+                                            <li>
+                                                <a href="{{ route('web.module.show', 'software-technologies') }}">Software Technologies</a>
+                                                <a href="{{ route('web.module.show', 'medical-informatics') }}">Medical Informatics</a>
+                                                <a href="{{ route('web.module.show', 'web-informatics') }}">Web Informatics</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-lg-6 col-md-12 col-sm-12">
+                                        <ul>
+                                            {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
+                                            <li>
+                                                <a href="{{ route('web.module.index') }}">{{trans('t.list_of_all_modules')}}</a>
+                                                <a href="{{ route('web.module.show', 'obligatory-catalog') }}">Obligatory Modules</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
                         <i class="fa fa-graduation-cap"></i> {{ trans('t.for_graduates') }}
                         </a>
                         <ul class="dropdown-menu mega-dropdown-menu">
