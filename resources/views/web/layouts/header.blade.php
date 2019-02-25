@@ -72,7 +72,11 @@
                                             {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
                                             <li>
                                                 <a href="{{ route('web.module.show', 'software-technologies') }}">Software Technologies</a>
+                                            </li>
+                                            <li>
                                                 <a href="{{ route('web.module.show', 'medical-informatics') }}">Medical Informatics</a>
+                                            </li>
+                                            <li>
                                                 <a href="{{ route('web.module.show', 'web-informatics') }}">Web Informatics</a>
                                             </li>
                                         </ul>
@@ -82,6 +86,8 @@
                                             {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
                                             <li>
                                                 <a href="{{ route('web.module.index') }}">{{trans('t.list_of_all_modules')}}</a>
+                                            </li>
+                                            <li>
                                                 <a href="{{ route('web.module.show', 'obligatory-catalog') }}">Obligatory Modules</a>
                                             </li>
                                         </ul>

@@ -33,10 +33,11 @@
                 <table width='100%' cellspacing="0" id="datatables" class="table table-bordered table-hover display responsive">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>NR</th>
+                            {{-- <th>ID</th> --}}
+                            <th></th>
                             <th>Label</th>
-                            <th class="none">Ects</th>
+                            <th>Subject #</th>
+                            <th>Ects</th>
                             <th class="none">Professor</th>
                             <th class="none">Content</th>
                             <th class="none">Learning goals</th>
@@ -53,9 +54,12 @@
                     <tbody>
                         @foreach($data as $row)
                         <tr>
-                            <td>{{$row->id}}</td>
-                            <td>{{$row->nr}}</td>
+                            <td>
+                                <span></span>
+                            </td>
+                            {{-- <td>{{$row->id}}</td> --}}
                             <td>{{$row->label}}</td>
+                            <td>{{$row->nr}}</td>
                             <td>{{$row->ects}}</td>
                             <td>{{$row->professor}}</td>
                             <td>{{$row->content}}</td>
@@ -70,6 +74,26 @@
                             <td>{{$row->curriculum->semester}}</td>
                         </tr>
                         @endforeach
+                        <tfoot>
+                            <tr>
+                                {{-- <th>ID</th> --}}
+                                <th></th>
+                                <th>Label</th>
+                                <th>Subject #</th>
+                                <th>Ects</th>
+                                <th class="none">Professor</th>
+                                <th class="none">Content</th>
+                                <th class="none">Learning goals</th>
+                                <th class="none">Literature</th>
+                                <th class="none">Preleminary knowledge</th>
+                                <th class="none">Preleminary work</th>
+                                <th class="none">Examination</th>
+                                <th class="none">Exam duration</th>
+                                <th class="none">Comment</th>
+                                <th class="none">Specialisation</th>
+                                <th class="none">Semester</th>
+                            </tr>
+                        </tfoot>
                     </tbody>
                 </table>
             </div>
@@ -106,8 +130,16 @@
 
         var table = $('#datatables').DataTable({
             "order": [],
-            pageLength: 50,
+            pageLength: 25,
             responsive: true,
+            columnDefs: [
+                {
+                    className: 'control',
+                    orderable: false,
+                    targets: 0
+                }
+            ],
+            order: [1, 'asc'],
             @if(app()->getLocale() == 'ru')
             language: {
                 "processing": "Подождите...",
