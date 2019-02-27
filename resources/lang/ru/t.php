@@ -234,5 +234,6 @@ return [
     'modules' => 'Модули',
     'list_of_all_modules' => 'Список всех модулей',
 
-
+    'create_page' => 'Создать страницу',
+    'is_link' => 'Ссылка',
 ];
