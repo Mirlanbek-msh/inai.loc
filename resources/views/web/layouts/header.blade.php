@@ -119,13 +119,15 @@
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
                                             {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
-                                            @foreach($services->pagesChunk()[1] as $row)
-                                                @if($row->link)
-                                                    <li><a href="{{$row->link}}" target="_blank">{{$row->title_lang}}<i style="margin-left: 5px" class="fa fa-external-link-alt"></i></a></li>
-                                                @else
-                                                    <li><a href="{{ route('web.page.show', $row->slug) }}">{{$row->title_lang}}</a></li>
-                                                @endif
-                                            @endforeach
+                                            @if($services->pagesChunk()->count() > 1)
+                                                @foreach($services->pagesChunk()[1] as $row)
+                                                    @if($row->link)
+                                                        <li><a href="{{$row->link}}" target="_blank">{{$row->title_lang}}<i style="margin-left: 5px" class="fa fa-external-link-alt"></i></a></li>
+                                                    @else
+                                                        <li><a href="{{ route('web.page.show', $row->slug) }}">{{$row->title_lang}}</a></li>
+                                                    @endif
+                                                @endforeach
+                                            @endif
                                         </ul>
                                     </li>
                                 </div>
