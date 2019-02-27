@@ -45,9 +45,9 @@
             </div>
             <nav id="main-nav">
                 <ul class="nav float-right">
-                    <li class="nav-item active">
+                    {{-- <li class="nav-item active">
                         <a class="nav-link" href="{{ route('web.home') }}">{{ trans('t.home') }}</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('web.event.index') }}">{{ trans('t.events') }}</a>
                     </li>
@@ -96,6 +96,43 @@
                             </div>
                         </ul>
                     </li>
+                    @if($services->pages->count())
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
+                        {{ $services->title_lang }}
+                        </a>
+                        <ul class="dropdown-menu mega-dropdown-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <li class="col-lg-6 col-md-12 col-sm-12">
+                                        <ul>
+                                            {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
+                                            @foreach($services->pagesChunk()[0] as $row)
+                                                @if($row->link)
+                                                    <li><a href="{{$row->link}}" target="_blank">{{$row->title_lang}}<i style="margin-left: 5px" class="fa fa-external-link-alt"></i></a></li>
+                                                @else
+                                                    <li><a href="{{ route('web.page.show', $row->slug) }}">{{$row->title_lang}}</a></li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    <li class="col-lg-6 col-md-12 col-sm-12">
+                                        <ul>
+                                            {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
+                                            @foreach($services->pagesChunk()[1] as $row)
+                                                @if($row->link)
+                                                    <li><a href="{{$row->link}}" target="_blank">{{$row->title_lang}}<i style="margin-left: 5px" class="fa fa-external-link-alt"></i></a></li>
+                                                @else
+                                                    <li><a href="{{ route('web.page.show', $row->slug) }}">{{$row->title_lang}}</a></li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    @endif
                     <li class="nav-item dropdown mega-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
                         <i class="fa fa-graduation-cap"></i> {{ trans('t.for_graduates') }}

@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
-@section('title', trans('t.all_posts'))
+@section('title', trans('t.all_pages'))
 
 @section('content')
 
     <div class="element-actions">
-        {{-- <a class="btn btn-primary btn-sm" href="{{ route('admin.post.create') }}"><i class="os-icon os-icon-ui-22"></i><span>{{trans('t.create_post')}}</span></a> --}}
+        <a class="btn btn-primary btn-sm" href="{{ route('admin.page.create') }}">
+            <i class="os-icon os-icon-ui-22"></i><span>{{trans('t.create_page')}}</span>
+        </a>
     </div>
     <h6 class="element-header">
         {{trans('t.all_pages')}}
@@ -34,10 +36,10 @@
                         <td class="text-center">
                             <a class="btn btn-table btn-table-show" href="{{ route('admin.page.show',$row->id) }}"><i class="icon-feather-book-open"></i></a>
                             <a class="btn btn-table btn-table-edit" href="{{ route('admin.page.edit',$row->id) }}"><i class="icon-feather-edit"></i></a>
-                            {{-- {!! Form::open(['method' => 'DELETE','route' => ['admin.page.destroy', $row->id],'style'=>'display:inline', 'onsubmit' => 'return confirmDelete()']) !!}
+                            {!! Form::open(['method' => 'DELETE','route' => ['admin.page.destroy', $row->id],'style'=>'display:inline', 'onsubmit' => 'return confirmDelete()']) !!}
                             <input type="hidden" value="Delete">
                             <button class="btn btn-table btn-table-trash" type="submit"><i class="icon-feather-trash-2"></i></button>
-                            {!! Form::close() !!} --}}
+                            {!! Form::close() !!}
                         </td>
                     </tr>
                 @endforeach

@@ -43,6 +43,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             Route::post('/{id}/comment', 'PostController@comment')->name('comment');
         });
 
+        // Page
+        Route::group(['prefix' => 'page', 'as' => 'page.'], function(){
+            // Route::get('/', 'PageController@index')->name('index');
+            Route::get('/{slug}', 'PageController@show')->name('show');
+        });
+
         // Event
         Route::group(['prefix' => 'event', 'as' => 'event.'], function(){
             Route::get('/', 'EventController@index')->name('index');

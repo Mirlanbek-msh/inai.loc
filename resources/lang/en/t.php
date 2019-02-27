@@ -230,6 +230,7 @@ return [
     'modules' => 'Modules',
     'list_of_all_modules' => 'List of all modules',
 
-
+    'create_page' => 'Create page',
+    'is_link' => 'Is link',
 
 ];

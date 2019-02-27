@@ -28,14 +28,25 @@
                 <p>{{ $row->description_lang }}</p>
             </div>
         </div>
-        <div class="entry">
-            <div class="title">
-                <h3>{{ trans('t.content') }}</h3>
+        @if($row->link)
+            <div class="entry">
+                <div class="title">
+                    <h3>{{ trans('t.link') }}</h3>
+                </div>
+                <div class="body">
+                    <a href="{{$row->link}}" target="_blank">{{$row->link}} <i class="fa fa-external-link"></i></a>
+                </div>
             </div>
-            <div class="body">
-                <p>{!! $row->content_lang !!}</p>
+        @else
+            <div class="entry">
+                <div class="title">
+                    <h3>{{ trans('t.content') }}</h3>
+                </div>
+                <div class="body">
+                    <p>{!! $row->content_lang !!}</p>
+                </div>
             </div>
-        </div>
+        @endif
         <div class="entry">
             <div class="title">
                 <h3>{{ trans('t.category') }}</h3>
@@ -69,14 +80,14 @@
         <div class="buttons-w">
             <a class="btn btn-success" href="{{route('admin.page.index')}}">{{ trans('t.all_pages') }}</a>
             <a class="btn btn-primary" href="{{ route('admin.page.edit', $row) }}">{{ trans('t.edit') }}</a> 
-            {{-- {!! Form::open(['method'
+            {!! Form::open(['method'
             => 'DELETE','route' => ['admin.page.destroy', $row],'style'=>'display:inline', 'onsubmit' => 'return confirmDelete()'])
             !!}
             <input type="hidden" value="Delete">
             <button class="btn btn-danger float-right" type="submit"><i class="icon-feather-trash-2"></i>
                 {{ trans('t.remove') }}
             </button>
-            {!! Form::close() !!} --}}
+            {!! Form::close() !!}
         </div>
     </fieldset>
 </div>

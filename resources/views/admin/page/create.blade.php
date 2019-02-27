@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', $row->title_lang )
+@section('title', trans('t.create_page'))
 
 @section('content')
 
@@ -10,7 +10,7 @@
         </a>
     </div>
     <h6 class="element-header">
-        {{$row->title_lang }}
+        {{trans('t.create_page')}}
     </h6>
     <div class="element-box">
         @if (count($errors) > 0)
@@ -24,10 +24,9 @@
             </div>
         @endif
         {!! Form::model($row,
-            [	'id' => 'editForm',
+            [	'id' => 'createForm',
                 'class' => 'form-validate',
-                'route' => ['admin.page.update', $row],
-                'method' => 'PUT',
+                'route' => 'admin.page.store',
                 'enctype' => 'multipart/form-data'
             ]) !!}
         @include('admin.page.form', $row)
@@ -37,8 +36,7 @@
 @endsection
 
 @section('scripts')
-@include('admin.page.form_scripts')
-
+    @include('admin.page.form_scripts')
     <script>
         $(document).ready(function() {
             $('.directs').select2();

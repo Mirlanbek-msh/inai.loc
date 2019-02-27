@@ -40,7 +40,7 @@ Route::group(
                 Route::resource('event', 'EventController');
 
                 /**Pages */
-                Route::get('page/about', 'PageController@about')->name('page.about');
+                Route::get('about', 'PageController@about')->name('page.about');
                 Route::resource('page', 'PageController');
                 Route::resource('pagecategory', 'PageCategoryController');
                 

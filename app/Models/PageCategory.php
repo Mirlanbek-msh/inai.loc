@@ -31,4 +31,12 @@ class PageCategory extends Model
     {
         return $this->description[app()->getLocale()];
     }
+
+    public function pagesChunk()
+    {
+        $collection = $this->pages;
+        $half = ceil($collection->count() / 2);
+        $chunks = $collection->chunk($half);
+        return $chunks;
+    }
 }

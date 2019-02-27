@@ -13,40 +13,49 @@ class PageCategoriesTagleSeeder extends Seeder
     public function run()
     {
         // PageCategory::truncate();
+        // PageCategory::create([
+        //     'id' => 1,
+        //     'title' => [
+        //         'ru' => 'Бакалавриат информатики',
+        //         'en' => 'Bachelor of Sciences (Informatics)',
+        //     ],
+        //     'slug' => 'bachelor',
+        //     'status' => 1,
+        // ]);
+        // PageCategory::create([
+        //     'id' => 2,
+        //     'title' => [
+        //         'ru' => 'Магистратура информатики',
+        //         'en' => 'Master of Sciences (Informatics)',
+        //     ],
+        //     'slug' => 'master',
+        //     'status' => 1,
+        // ]);
+        // PageCategory::create([
+        //     'id' => 3,
+        //     'title' => [
+        //         'ru' => 'Требования к поступлению',
+        //         'en' => 'Admission Requirements',
+        //     ],
+        //     'slug' => 'admission',
+        //     'status' => 1,
+        // ]);
+        // PageCategory::create([
+        //     'id' => 4,
+        //     'title' => [
+        //         'ru' => 'Международное сотрудничество',
+        //         'en' => 'Internationalization',
+        //     ],
+        //     'slug' => 'internationalization',
+        //     'status' => 1,
+        // ]);
         PageCategory::create([
-            'id' => 1,
+            'id' => 5,
             'title' => [
-                'ru' => 'Бакалавриат информатики',
-                'en' => 'Bachelor of Sciences (Informatics)',
+                'ru' => 'Сервисы',
+                'en' => 'Services',
             ],
-            'slug' => 'bachelor',
-            'status' => 1,
-        ]);
-        PageCategory::create([
-            'id' => 2,
-            'title' => [
-                'ru' => 'Магистратура информатики',
-                'en' => 'Master of Sciences (Informatics)',
-            ],
-            'slug' => 'master',
-            'status' => 1,
-        ]);
-        PageCategory::create([
-            'id' => 3,
-            'title' => [
-                'ru' => 'Требования к поступлению',
-                'en' => 'Admission Requirements',
-            ],
-            'slug' => 'admission',
-            'status' => 1,
-        ]);
-        PageCategory::create([
-            'id' => 4,
-            'title' => [
-                'ru' => 'Международное сотрудничество',
-                'en' => 'Internationalization',
-            ],
-            'slug' => 'internationalization',
+            'slug' => 'services',
             'status' => 1,
         ]);
     }

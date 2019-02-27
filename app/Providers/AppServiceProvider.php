@@ -71,6 +71,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('admission', $this->loadAdmission());
             $view->with('contact_data', $this->loadContactData());
             $view->with('internationalization', $this->loadInternationalization());
+            $view->with('services', $this->loadServices());
         });
     }
 
@@ -97,6 +98,14 @@ class AppServiceProvider extends ServiceProvider
     public function loadInternationalization()
     {
         return PageCategory::where('slug', 'internationalization')->firstOrFail();
+    }
+
+    public function loadServices()
+    {
+        // $r =  PageCategory::where('slug', 'services')->firstOrFail();
+        // dd($r->pagesChunk());
+        // dd($r->pagesChunk()->first->count(), $r->pagesChunk()->second->count());
+        return PageCategory::where('slug', 'services')->firstOrFail();
     }
 
     public function loadLocalizedDate()

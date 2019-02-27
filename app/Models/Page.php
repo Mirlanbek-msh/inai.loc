@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Page extends Model
 {
+    use Sluggable;
+
     protected $casts = [
         // 'gallery' => 'json',
         'title' => 'json',
@@ -21,6 +24,7 @@ class Page extends Model
         'created_at',
         'content',
         'video_id',
+        'link',
     ];
 
     public function category()
@@ -40,11 +44,24 @@ class Page extends Model
 
     public function getDescriptionLangAttribute()
     {
-        return $this->description[app()->getLocale()];
+        if(array_key_exists(app()->getLocale(), $this->description))
+            return $this->description[app()->getLocale()];
+        return null;
     }
 
     public function getContentLangAttribute()
     {
-        return $this->content[app()->getLocale()];
+        if(array_key_exists(app()->getLocale(), $this->content))
+            return $this->content[app()->getLocale()];
+        return null;
+    }
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title_lang'
+            ]
+        ];
     }
 }

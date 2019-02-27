@@ -37,7 +37,7 @@
             <div class="icon-w">
                 <div class="os-icon os-icon-hierarchy-structure-2"></div>
             </div>
-            <span>{{ trans('t.for_graduates') }}</span>
+            <span>{{ trans('t.pages') }}</span>
         </a>
         <ul class="sub-menu">
             <li>
@@ -49,15 +49,15 @@
         </ul>
     </li>
     <li class="@active('gallery')">
-        <a href="{{route('admin.gallery.index')}}" class="@if($current_three == 'gallery') current @endif">
+        <a href="{{route('admin.gallery.index')}}">
             <div class="icon-w">
                 <div class="os-icon os-icon-documents-07"></div>
             </div>
             <span>{{ trans('t.gallery') }}</span>
         </a>
     </li>
-    <li>
-        <a href="{{ route('admin.page.about') }}" class="@if($current_three == 'user') current @endif">
+    <li class="@active('about')">
+        <a href="{{ route('admin.page.about') }}">
             <div class="icon-w">
                 <div class="os-icon os-icon-mail-07"></div>
             </div>
@@ -65,7 +65,7 @@
         </a>
     </li>
     <li class="@active('contact')">
-        <a href="{{route('admin.contact.index')}}" class="@if($current_three == 'user') current @endif">
+        <a href="{{route('admin.contact.index')}}">
             <div class="icon-w">
                 <div class="os-icon os-icon-link-3"></div>
             </div>

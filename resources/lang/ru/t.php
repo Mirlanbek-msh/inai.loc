@@ -234,4 +234,5 @@ return [
     'modules' => 'Модули',
     'list_of_all_modules' => 'Список всех модулей',
 
+
 ];

@@ -16,12 +16,8 @@
             plugin_preview_width: 800,
             image_caption: true,
             image_description: false,
-            content_css : "/admin/tinymce/skins/lightgray/content.min.css,/admin/tinymce/custom_content.css",
-            valid_styles: {
-                
-            },
+            // content_css : "/admin/tinymce/skins/lightgray/content.min.css,/admin/tinymce/custom_content.css",
             extended_valid_elements: [
-                'p[style]',
                 'table[class=table table-bordered|width=100%]'
             ],
             valid_classes: {

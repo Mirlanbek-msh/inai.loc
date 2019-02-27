@@ -22,7 +22,7 @@
                         <div class="mb-2"></div>
                     </div>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row content-cont">
                     <label class="col-sm-2 col-form-label">{{trans('t.content')}} *</label>
                     <div class="col-sm-10">
                         {!! Form::textarea('content[ru]', null, ["class" => "form-control editor", 'rows' => 10]) !!}
@@ -48,7 +48,7 @@
                         <div class="mb-2"></div>
                     </div>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row content-cont">
                     <label class="col-sm-2 col-form-label">{{trans('t.content')}} *</label>
                     <div class="col-sm-10">
                         {!! Form::textarea('content[en]', null, ["class" => "form-control editor", 'rows' => 10]) !!}
@@ -59,6 +59,24 @@
     </div>
     <fieldset>
         <legend><span>{{trans('t.other_info')}}</span></legend>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">{{trans('t.is_link')}}</label>
+            <div class="col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        {!! Form::checkbox('is_link', $is_link ? 1 : 0, $is_link) !!}
+                        <i></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row link-cont">
+            <label class="col-sm-2 col-form-label">{{trans('t.link')}} *</label>
+            <div class="col-sm-10">
+                {!! Form::text('link', null, ['class' => 'form-control', 'placeholder' => 'https://example.kg', 'pattern' => "^http(s)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!$&'\(\)\*\+,;=.]+$", 'data-error' => trans('validation.regex',['attribute' => '']) . ' '.trans('t.example').": http://example.kg"]) !!}
+                <div class="help-block with-errors text-danger"></div>
+            </div>
+        </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">{{trans('t.category')}}</label>
             <div class="col-sm-10">
