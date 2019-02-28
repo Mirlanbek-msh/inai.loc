@@ -7,10 +7,10 @@ use App\Models\EventReply;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithHeadings;
-use PhpOffice\PhpSpreadsheet\Shared\Date;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
 
-class EventRepliesExport implements FromCollection, WithMapping, WithHeadings
+class EventRepliesExport implements FromCollection, WithMapping, WithHeadings, ShouldAutoSize
 {
     public function __construct(Event $event)
     {

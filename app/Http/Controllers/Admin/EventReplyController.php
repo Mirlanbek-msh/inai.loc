@@ -40,4 +40,10 @@ class EventReplyController extends Controller
         $row = Event::findOrFail($id);
         return Excel::download(new EventRepliesExport($row), str_replace(" ", "_", $row->title_lang.'_signed_up.xlsx'));
     }
+
+    public function downloadPdf($id)
+    {
+        // $row = Event::findOrFail($id);
+        // return Excel::download(new EventRepliesExport($row), str_replace(" ", "_", $row->title_lang.'_signed_up.pdf'), \Maatwebsite\Excel\Excel::TCPDF);
+    }
 }
