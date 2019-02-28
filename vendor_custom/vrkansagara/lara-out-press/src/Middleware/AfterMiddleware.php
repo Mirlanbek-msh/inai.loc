@@ -50,9 +50,11 @@ class AfterMiddleware
     public function handle($request, Closure $next)
     {
         $path = explode('/', $request->path());
-        $preFinalRoute = $path[count($path) - 2];
-        if($preFinalRoute == 'download'){
-            return $next($request);
+        if(count($path) > 3){
+            $preFinalRoute = $path[count($path) - 2];
+            if($preFinalRoute == 'download'){
+                return $next($request);
+            }
         }
         if (!$this->laraOutPress->isEnabled()) {
             return $next($request);
