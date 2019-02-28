@@ -5,6 +5,10 @@
 @section('content')
 
     <div class="element-actions">
+        <a class="btn btn-primary btn-sm" href="{{ route('admin.event.download-excel', $row) }}">
+            <i class="icon-feather-arrow-down-circle"></i>
+            <span> {{trans('t.download')}} Excel</span>
+        </a>
     </div>
     <h6 class="element-header">
         {{trans('t.signed_up')}}

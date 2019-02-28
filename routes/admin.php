@@ -35,6 +35,7 @@ Route::group(
                 
                 /**Events */
                 Route::get('event/{id}/reply', 'EventReplyController@index')->name('event.reply');
+                Route::get('event/{id}/reply/download/excel', 'EventReplyController@downloadExcel')->name('event.download-excel');
                 Route::get('event/{event_id}/reply/{id}', 'EventReplyController@show')->name('event.reply.show');
                 Route::delete('event/{event_id}/reply/{id}/destroy', 'EventReplyController@destroy')->name('event.reply.destroy');
                 Route::resource('event', 'EventController');

@@ -77,7 +77,7 @@ class PageController extends Controller
             $row->save();
         }
 
-        $message = trans('t.created_successfully');
+        $message = trans('t.saved_successfully');
 
         if($row){
             toast($message,'success','top-right');

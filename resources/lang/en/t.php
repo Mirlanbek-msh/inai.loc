@@ -233,4 +233,7 @@ return [
     'create_page' => 'Create page',
     'is_link' => 'Is link',
 
+    'download' => 'Скачать',
+
+
 ];

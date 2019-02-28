@@ -10,8 +10,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\Tag;
-use File;
-use function GuzzleHttp\json_decode;
+
 
 class EventController extends Controller
 {
