@@ -56,7 +56,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group row">
+        {{-- <div class="form-group row">
             <label class="col-sm-2 col-form-label">{{trans('t.publish_on')}} FaceBook</label>
             <div class="col-sm-10">
                 <div class="checkbox">
@@ -66,7 +66,7 @@
                     </label>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">{{trans('t.publish')}}</label>
             <div class="col-sm-10">

@@ -10,6 +10,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\Tag;
+use App\Notifications\EventPublished;
 
 
 class EventController extends Controller
@@ -97,9 +98,9 @@ class EventController extends Controller
         $message = trans('t.saved_successfully');
 
         if($row){
-            // if($request->get('to_facebook')){
-            //     $row->notify(new PostPublished);
-            // }
+            if($request->get('to_facebook')){
+                $row->notify(new EventPublished);
+            }
             toast($message,'success','top-right');
             return redirect()->route('admin.event.index');
         }
@@ -268,9 +269,9 @@ class EventController extends Controller
         if($row){
             toast($message,'success','top-right');
             // dd($request->get('to_facebook'));
-            // if($request->get('to_facebook')){
-            //     $row->notify(new PostPublished);
-            // }
+            if($request->get('to_facebook')){
+                $row->notify(new EventPublished);
+            }
             return redirect()->route('admin.event.show', $row);
         }
     }

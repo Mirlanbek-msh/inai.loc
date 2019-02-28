@@ -181,6 +181,8 @@ return [
         Vrkansagara\LaraOutPress\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
+        NotificationChannels\FacebookPoster\FacebookPosterServiceProvider::class,
+
     ],
 
     /*

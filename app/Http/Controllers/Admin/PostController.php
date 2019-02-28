@@ -12,6 +12,7 @@ use App\Models\PostCategory;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\Tag;
 use File;
+use App\Notifications\PostPublished;
 
 
 class PostController extends Controller
@@ -79,9 +80,9 @@ class PostController extends Controller
         $message = trans('t.saved_successfully');
 
         if($row){
-            // if($request->get('to_facebook')){
-            //     $row->notify(new PostPublished);
-            // }
+            if($request->get('to_facebook')){
+                $row->notify(new PostPublished);
+            }
             toast($message,'success','top-right');
             if($request->file('files')){
                 return response('success', 200);
@@ -155,9 +156,9 @@ class PostController extends Controller
         if($row){
             toast($message,'success','top-right');
             // dd($request->get('to_facebook'));
-            // if($request->get('to_facebook')){
-                //     $row->notify(new PostPublished);
-            // }
+            if($request->get('to_facebook')){
+                    $row->notify(new PostPublished);
+            }
             if($request->file('files')){
                 return response('success', 200);
             }

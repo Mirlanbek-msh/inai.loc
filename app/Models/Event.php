@@ -60,6 +60,12 @@ class Event extends Model
 
     protected $dates = ['created_at', 'updated_at', 'deadline_date'];
 
+
+    public function getLink()
+    {
+        return route('web.event.show', $this->slug);
+    }
+
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'events_tags', 'event_id', 'tag_id');
