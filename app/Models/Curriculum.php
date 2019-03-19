@@ -13,6 +13,6 @@ class Curriculum extends Model
 
     public function specialisation()
     {
-        return $this->hasOne(Specialisation::class)->withDefault();
+        return $this->belongsTo(Specialisation::class)->withDefault();
     }
 }

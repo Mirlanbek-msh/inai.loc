@@ -70,7 +70,7 @@
                             <td>{{$row->examination}}</td>
                             <td>{{$row->exam_duration}}</td>
                             <td>{{$row->comment}}</td>
-                            <td>{{$row->specialisation->label}}</td>
+                            <td>{{$row->curriculum->specialisation->label}}</td>
                             <td>{{$row->curriculum->semester}}</td>
                         </tr>
                         @endforeach
