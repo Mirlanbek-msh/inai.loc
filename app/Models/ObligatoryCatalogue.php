@@ -20,7 +20,7 @@ class ObligatoryCatalogue extends Model
 
     public function placeholderModule()
     {
-        return $this->belongsTo(Module::class, 'placeholder_module_id');
+        return $this->belongsTo(Module::class, 'placeholder_module_id', 'ID')->withDefault();
     }
 
     public function obligatoryModule()

@@ -26,7 +26,10 @@ class Module extends Model
         'comment',
     ];
 
-
+    public function obligatoryCatalogue()
+    {
+        return $this->hasOne(ObligatoryCatalogue::class, 'obligatory_module_id', 'ID');
+    }
 
     public function curriculum()
     {

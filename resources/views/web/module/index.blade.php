@@ -35,10 +35,15 @@
                         <tr>
                             {{-- <th>ID</th> --}}
                             <th></th>
+                            @isset($obCatalogue)
+                            <th>Obligatory catalogue</th>
+                            @endif
                             <th>Label</th>
                             <th>Subject #</th>
                             @if($semester)
                             <th>Semester</th>
+                            <th class="none">Ects</th>
+                            @elseif(isset($obCatalogue))
                             <th class="none">Ects</th>
                             @else
                             <th>Ects</th>
@@ -65,6 +70,9 @@
                                 <span></span>
                             </td>
                             {{-- <td>{{$row->id}}</td> --}}
+                            @isset($obCatalogue)
+                            <td>{{$row->obligatoryCatalogue->placeholderModule->label}}</td>
+                            @endif
                             <td>{{$row->label}}</td>
                             <td>{{$row->nr}}</td>
                             @if($semester)
@@ -90,10 +98,15 @@
                             <tr>
                                 {{-- <th>ID</th> --}}
                                 <th></th>
+                                @isset($obCatalogue)
+                                <th>Obligatory catalogue</th>
+                                @endif
                                 <th>Label</th>
                                 <th>Subject #</th>
                                 @if($semester)
                                 <th>Semester</th>
+                                <th class="none">Ects</th>
+                                @elseif(isset($obCatalogue))
                                 <th class="none">Ects</th>
                                 @else
                                 <th>Ects</th>

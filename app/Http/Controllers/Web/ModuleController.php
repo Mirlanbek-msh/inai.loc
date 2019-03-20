@@ -75,22 +75,25 @@ class ModuleController extends Controller
 
     public function obModules()
     {
-        $data = DB::connection('mysql2')->select('SELECT if(o.placeholder_module_id = 207, REPLACE(o.placeholder_module_id, 207, 1), REPLACE(o.placeholder_module_id, 208, 2)  ) as placeholder_module, m.*, s.label as specialisation 
-        FROM module m left join obligatorycatalogue o on m.id = o.obligatory_module_id 
-        left join specialisation s on s.id = o.obligatory_module_id 
-        WHERE o.placeholder_module_id = 207 or o.placeholder_module_id = 208;');
-        $title = $data[0]->specialisation;
+        // $data = DB::connection('mysql2')->select('SELECT if(o.placeholder_module_id = 207, REPLACE(o.placeholder_module_id, 207, 1), REPLACE(o.placeholder_module_id, 208, 2)  ) as placeholder_module, m.*, s.label as specialisation 
+        // FROM module m left join obligatorycatalogue o on m.id = o.obligatory_module_id 
+        // left join specialisation s on s.id = o.obligatory_module_id 
+        // WHERE o.placeholder_module_id = 207 or o.placeholder_module_id = 208;');
+        // $title = $data[0]->specialisation;
+        // dd($data);
         $semester = false;
-        // $obCatalogues = ObligatoryCatalogue::where(function($query){
-        //     $query->where('placeholder_module_id', 207)
-        //         ->orWhere('placeholder_module_id', 208);
-        // })->get();
-        // $title = 'Obligatory Modules';
-        // $data = collect();
-        // foreach($obCatalogues as $obCatalogue){
-        //     $data->push($obCatalogue->obligatoryModule);
-        // }
-        return view('web.module.index', compact('data', 'title', 'semester'));
+        $obCatalogue = true;
+        $obCatalogues = ObligatoryCatalogue::where(function($query){
+            $query->where('placeholder_module_id', 207)
+                ->orWhere('placeholder_module_id', 208);
+        })->get();
+        $title = 'Obligatory Modules';
+        $data = collect();
+        foreach($obCatalogues as $obCatalogue){
+            $data->push($obCatalogue->obligatoryModule);
+        }
+        // dd($data->first()->obligatoryCatalogue()->get());
+        return view('web.module.index', compact('data', 'title', 'semester', 'obCatalogue'));
     }
 
     public function show($slug)
