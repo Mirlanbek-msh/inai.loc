@@ -35,9 +35,19 @@
                         <tr>
                             {{-- <th>ID</th> --}}
                             <th></th>
+                            @isset($obCatalogue)
+                            <th>Obligatory catalogue</th>
+                            @endif
                             <th>Label</th>
                             <th>Subject #</th>
+                            @if($semester)
+                            <th>Semester</th>
+                            <th class="none">Ects</th>
+                            @elseif(isset($obCatalogue))
+                            <th class="none">Ects</th>
+                            @else
                             <th>Ects</th>
+                            @endif
                             <th class="none">Professor</th>
                             <th class="none">Content</th>
                             <th class="none">Learning goals</th>
@@ -48,6 +58,9 @@
                             <th class="none">Exam duration</th>
                             <th class="none">Comment</th>
                             <th class="none">Specialisation</th>
+                            @if(!$semester)
+                            <th class="none">Semester</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -57,8 +70,14 @@
                                 <span></span>
                             </td>
                             {{-- <td>{{$row->id}}</td> --}}
+                            @isset($obCatalogue)
+                            <td>{{$row->obligatoryCatalogue->placeholderModule->label}}</td>
+                            @endif
                             <td>{{$row->label}}</td>
                             <td>{{$row->nr}}</td>
+                            @if($semester)
+                            <td>{{optional($row)->semester}}</td>
+                            @endif
                             <td>{{$row->ects}}</td>
                             <td>{{$row->professor}}</td>
                             <td>{{$row->content}}</td>
@@ -70,15 +89,28 @@
                             <td>{{$row->exam_duration}}</td>
                             <td>{{optional($row)->comment}}</td>
                             <td>{{optional($row)->specialisation}}</td>
+                            @if(!$semester)
+                            <td>{{optional($row)->semester}}</td>
+                            @endif
                         </tr>
                         @endforeach
                         <tfoot>
                             <tr>
                                 {{-- <th>ID</th> --}}
                                 <th></th>
+                                @isset($obCatalogue)
+                                <th>Obligatory catalogue</th>
+                                @endif
                                 <th>Label</th>
                                 <th>Subject #</th>
+                                @if($semester)
+                                <th>Semester</th>
+                                <th class="none">Ects</th>
+                                @elseif(isset($obCatalogue))
+                                <th class="none">Ects</th>
+                                @else
                                 <th>Ects</th>
+                                @endif
                                 <th class="none">Professor</th>
                                 <th class="none">Content</th>
                                 <th class="none">Learning goals</th>
@@ -89,6 +121,9 @@
                                 <th class="none">Exam duration</th>
                                 <th class="none">Comment</th>
                                 <th class="none">Specialisation</th>
+                                @if(!$semester)
+                                <th class="none">Semester</th>
+                                @endif
                             </tr>
                         </tfoot>
                     </tbody>
@@ -146,7 +181,13 @@
                     targets: 3,
                 }
             ],
+            @if(isset($obCatalogue))
+            order: [1, 'asc'],
+            @elseif($semester)
+            order: [3, 'asc'],
+            @else
             order: [2, 'asc'],
+            @endif
             @if(app()->getLocale() == 'ru')
             language: {
                 "processing": "Подождите...",

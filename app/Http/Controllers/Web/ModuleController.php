@@ -17,9 +17,8 @@ class ModuleController extends Controller
         $data = DB::connection('mysql2')->select('SELECT DISTINCT m.id, m.nr, m.label, c.semester, m.ects, m.professor, m.content, m.learning_goals, m.literature,m.preliminary_knowledge, m.preliminary_work, m.examination, m.exam_duration
         FROM module m left join curricula c on m.id = c.module_id;');
         $title = trans('t.list_of_all_modules');
-        $semester = true;
         // dd($data->first()->curriculum);
-        return view('web.module.index', compact('data', 'title', 'semester'));
+        return view('web.module.index', compact('data', 'title'));
     }
 
     public function softwareTechnologies()
@@ -36,7 +35,7 @@ class ModuleController extends Controller
         // foreach($curricula as $curriculum){
         //     $data->push($curriculum->module);
         // }
-        return view('web.module.index', compact('data', 'title', 'semester'));
+        return view('web.module.show', compact('data', 'title', 'semester'));
     }
 
     public function medicalInformatics()
@@ -53,7 +52,7 @@ class ModuleController extends Controller
         // foreach($curricula as $curriculum){
         //     $data->push($curriculum->module);
         // }
-        return view('web.module.index', compact('data', 'title', 'semester'));
+        return view('web.module.show', compact('data', 'title', 'semester'));
     }
 
     public function webInformatics()
@@ -70,7 +69,7 @@ class ModuleController extends Controller
         // foreach($curricula as $curriculum){
         //     $data->push($curriculum->module);
         // }
-        return view('web.module.index', compact('data', 'title', 'semester'));
+        return view('web.module.show', compact('data', 'title', 'semester'));
     }
 
     public function obModules()
@@ -93,7 +92,7 @@ class ModuleController extends Controller
             $data->push($obCatalogue->obligatoryModule);
         }
         // dd($data->first()->obligatoryCatalogue()->get());
-        return view('web.module.index', compact('data', 'title', 'semester', 'obCatalogue'));
+        return view('web.module.show', compact('data', 'title', 'semester', 'obCatalogue'));
     }
 
     public function show($slug)
