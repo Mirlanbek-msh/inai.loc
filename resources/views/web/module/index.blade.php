@@ -37,7 +37,12 @@
                             <th></th>
                             <th>Label</th>
                             <th>Subject #</th>
+                            @if($semester)
+                            <th>Semester</th>
+                            <th class="none">Ects</th>
+                            @else
                             <th>Ects</th>
+                            @endif
                             <th class="none">Professor</th>
                             <th class="none">Content</th>
                             <th class="none">Learning goals</th>
@@ -48,7 +53,9 @@
                             <th class="none">Exam duration</th>
                             <th class="none">Comment</th>
                             <th class="none">Specialisation</th>
+                            @if(!$semester)
                             <th class="none">Semester</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -60,6 +67,9 @@
                             {{-- <td>{{$row->id}}</td> --}}
                             <td>{{$row->label}}</td>
                             <td>{{$row->nr}}</td>
+                            @if($semester)
+                            <td>{{optional($row)->semester}}</td>
+                            @endif
                             <td>{{$row->ects}}</td>
                             <td>{{$row->professor}}</td>
                             <td>{{$row->content}}</td>
@@ -69,9 +79,11 @@
                             <td>{{$row->preliminary_work}}</td>
                             <td>{{$row->examination}}</td>
                             <td>{{$row->exam_duration}}</td>
-                            <td>{{$row->comment}}</td>
-                            <td>{{$row->curriculum->specialisation->label}}</td>
-                            <td>{{$row->curriculum->semester}}</td>
+                            <td>{{optional($row)->comment}}</td>
+                            <td>{{optional($row)->specialisation}}</td>
+                            @if(!$semester)
+                            <td>{{optional($row)->semester}}</td>
+                            @endif
                         </tr>
                         @endforeach
                         <tfoot>
@@ -80,7 +92,12 @@
                                 <th></th>
                                 <th>Label</th>
                                 <th>Subject #</th>
+                                @if($semester)
+                                <th>Semester</th>
+                                <th class="none">Ects</th>
+                                @else
                                 <th>Ects</th>
+                                @endif
                                 <th class="none">Professor</th>
                                 <th class="none">Content</th>
                                 <th class="none">Learning goals</th>
@@ -91,7 +108,9 @@
                                 <th class="none">Exam duration</th>
                                 <th class="none">Comment</th>
                                 <th class="none">Specialisation</th>
+                                @if(!$semester)
                                 <th class="none">Semester</th>
+                                @endif
                             </tr>
                         </tfoot>
                     </tbody>
@@ -109,37 +128,51 @@
 
     $(document).ready(function() {
 
-        /* Formatting function for row details - modify as you need */
-        function format ( d ) {
-            // `d` is the original data object for the row
-            return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-                '<tr>'+
-                    '<td>Full name:</td>'+
-                    '<td>'+d.name+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                    '<td>Extension number:</td>'+
-                    '<td>'+d.extn+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                    '<td>Extra info:</td>'+
-                    '<td>And any further details here (images etc)...</td>'+
-                '</tr>'+
-            '</table>';
+        $.fn.dataTableExt.oSort['test-asc'] = function(x,y) {
+            var retVal;
+            x = $.trim(x);
+            y = $.trim(y);
+
+            if (x==y) retVal= 0;
+            else if (x == "" || x == " ") retVal= 1;
+            else if (y == "" || y == " ") retVal= -1;
+            else if (x > y) retVal= 1;
+            else retVal = -1;
+            return retVal;
+        }
+        $.fn.dataTableExt.oSort['test-desc'] = function(y,x) {
+            var retVal;
+            x = $.trim(x);
+            y = $.trim(y);
+
+            if (x==y) retVal= 0; 
+            else if (x == "" || x == " ") retVal= -1;
+            else if (y == "" || y == " ") retVal= 1;
+            else if (x > y) retVal= 1;
+            else retVal = -1;
+
+            return retVal;
         }
 
         var table = $('#datatables').DataTable({
-            "order": [],
             pageLength: 25,
             responsive: true,
             columnDefs: [
                 {
                     className: 'control',
                     orderable: false,
-                    targets: 0
+                    targets: 0,
+                },
+                {
+                    type: 'test',
+                    targets: 3,
                 }
             ],
-            order: [1, 'asc'],
+            @if($semester)
+            order: [3, 'asc'],
+            @else
+            order: [2, 'asc'],
+            @endif
             @if(app()->getLocale() == 'ru')
             language: {
                 "processing": "Подождите...",
@@ -165,23 +198,6 @@
             }
             @endif
         });
-
-        // Add event listener for opening and closing details
-        // $('#datatables tbody').on('click', 'tr', function () {
-        //     var tr = $(this);
-        //     var row = table.row( tr );
-    
-        //     if ( row.child.isShown() ) {
-        //         // This row is already open - close it
-        //         row.child.hide();
-        //         tr.removeClass('shown');
-        //     }
-        //     else {
-        //         // Open this row
-        //         row.child( format(row.data()) ).show();
-        //         tr.addClass('shown');
-        //     }
-        // } );
     });
 
 </script>
