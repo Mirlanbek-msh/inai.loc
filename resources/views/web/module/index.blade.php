@@ -7,13 +7,13 @@
     {{-- <meta name="twitter:site" content="@centraltoday"> --}}
     {{-- <meta name="twitter:creator" content="@centraltoday"> --}}
     <meta name="twitter:card" content="{{ trans('t.kgiai') }}">
-    <meta name="twitter:title" content="{{ trans('t.kgiai') }}">
+    <meta name="twitter:title" content="{{trans('t.modules')}}: $title | INAI.KG">
     <meta name="twitter:description" content="{{ trans('t.kgiai') }}">
     <meta name="twitter:image" content={{ asset('images/favicon.ico') }}">
 
     <!-- Facebook Meta -->
     <meta property="og:description" content="{{ trans('t.kgiai') }}">
-    <meta property="og:title" content="{{ trans('t.modules') }} | INAI.KG">
+    <meta property="og:title" content="{{trans('t.modules')}}: $title | INAI.KG">
 
     @include('partials.ogdata')
     
