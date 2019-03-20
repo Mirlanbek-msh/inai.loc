@@ -110,6 +110,7 @@ $(document).ready(function () {
             window.scrollTo(0, 0);
         }, 1);
     }
+    
     $(window).on('hashchange', function() {
         location.reload();
     });
