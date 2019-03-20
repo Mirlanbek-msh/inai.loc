@@ -31,7 +31,7 @@ class CurriculumController extends Controller
     {
         $row = new Curriculum;
         $modules = Module::all();
-        $modules = $modules->sortBy('label')->pluck('nr_label', 'ID');
+        $modules = $modules->sortBy('nr')->pluck('nr_label', 'ID');
         $specialisations = Specialisation::all();
         $specialisations = $specialisations->pluck('label', 'ID');
         return view('admin.curriculum.create', compact('row', 'modules', 'specialisations'));
@@ -81,7 +81,7 @@ class CurriculumController extends Controller
     {
         $row = Curriculum::findOrFail($id);
         $modules = Module::all();
-        $modules = $modules->sortBy('label')->pluck('nr_label', 'ID');
+        $modules = $modules->sortBy('nr')->pluck('nr_label', 'ID');
         $specialisations = Specialisation::all();
         $specialisations = $specialisations->pluck('label', 'ID');
         return view('admin.curriculum.edit', compact('row', 'modules', 'specialisations'));
