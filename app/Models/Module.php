@@ -32,4 +32,9 @@ class Module extends Model
     {
         return $this->hasOne(Curriculum::class, 'module_id')->withDefault();
     }
+
+    public function getNrLabelAttribute()
+    {
+        return "$this->nr $this->label";
+    }
 }
