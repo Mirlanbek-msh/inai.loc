@@ -11,14 +11,18 @@ class Specialisation extends Model
     protected $primaryKey = 'ID';
     public $timestamps = false;
 
-
-    public function modules()
-    {
-        return $this->hasMany(Module::class, 'module_id');
-    }
+    protected $fillable = [
+        'label',
+        'program_id',
+    ];
 
     public function curricula()
     {
         return $this->hasMany(Curriculum::class, 'specialisation_id');
+    }
+
+    public function program()
+    {
+        return $this->belongsTo(Program::class, 'program_id');
     }
 }

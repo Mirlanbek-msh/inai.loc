@@ -10,7 +10,13 @@ class Curriculum extends Model
     protected $table = 'curricula';
     protected $primaryKey = 'ID';
     public $timestamps = false;
-    
+
+    protected $fillable = [
+        'semester',
+        'specialisation_id',
+        'module_id',
+        'comment'
+    ];
 
     public function module()
     {

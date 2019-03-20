@@ -11,6 +11,21 @@ class Module extends Model
     protected $primaryKey = 'ID';
     public $timestamps = false;
 
+    protected $fillable = [
+        'nr',
+        'label',
+        'ects',
+        'professor',
+        'content',
+        'learning_goals',
+        'literature',
+        'preliminary_knowledge',
+        'preliminary_work',
+        'examination',
+        'exam_duration',
+        'comment',
+    ];
+
 
 
     public function curriculum()

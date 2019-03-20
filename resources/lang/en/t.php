@@ -22,7 +22,7 @@ return [
     'contacts'   => 'Contacts',
     'for_graduates'   => 'For graduates',
     'bachelor_informatics'   => 'Bachelor of Sciences (Informatics)',
-    // 'programm_technologies'   => 'Для абитуриентов',
+    // 'program_technologies'   => 'Для абитуриентов',
     // 'medicine_informatics'   => 'Для абитуриентов',
     // 'web_informatics'   => 'Для абитуриентов',
     'master_informatics'   => 'Master of Sciences (Informatics)',
@@ -234,6 +234,52 @@ return [
     'is_link' => 'Is link',
 
     'download' => 'Download',
+
+
+    'all_modules' => 'All modules',
+    'create_module' => 'Create module',
+
+    'curricula' => 'Curricula',
+    'all_curricula' => 'All curricula',
+    'create_curriculum' => 'Create curriculum',
+
+    'specialisations' => 'Specialisations',
+    'all_specialisations' => 'All specialisations',
+    'create_specialisation' => 'Create specialisation',
+
+    'programs' => 'Programs',
+    'all_programs' => 'All programs',
+    'create_program' => 'Create program',
+
+    'obligatory-catalogues' => 'Obligatory catalogues',
+    'all_obligatory-catalogues' => 'All obligatory catalogues',
+    'create_obligatory-catalogue' => 'Create obligatory catalogue',
+
+
+    'label' => 'Label',
+    'nr' => 'Nr',
+    'ects' => 'Ects',
+    'professor' => 'Professor',
+    'learning_goals' => 'Learning goals',
+    'literature' => 'Literature',
+    'preliminary_knowledge' => 'Preliminary knowledge',
+    'preliminary_work' => 'Preliminary work',
+    'examination' => 'Examination',
+    'exam_duration' => 'Exam duration',
+    'comment' => 'Comment',
+
+
+    'module' => 'Module',
+    'specialisation' => 'Specialisation',
+    'semester' => 'Semester',
+
+    'placeholder_module' => 'Placeholder module',
+    'obligatory_module' => 'Obligatory module',
+
+    'program' => 'Program',
+
+    'licensed' => 'Licensed',
+    'degree' => 'Degree',
 
 
 ];

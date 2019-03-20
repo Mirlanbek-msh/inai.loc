@@ -48,6 +48,31 @@
             </li>
         </ul>
     </li>
+    <li class="has-sub-menu @active('modules')">
+        <a href="#">
+            <div class="icon-w">
+                <div class="os-icon os-icon-agenda-1"></div>
+            </div>
+            <span>{{ trans('t.modules') }}</span>
+        </a>
+        <ul class="sub-menu">
+            <li>
+                <a href="{{route('admin.module.index')}}">{{ trans('t.modules') }}</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.curriculum.index') }}">{{trans('t.curricula')}}</a>
+            </li>
+            <li>
+                <a href="{{route('admin.obligatory-catalogue.index')}}">{{ trans('t.obligatory-catalogues') }}</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.specialisation.index') }}">{{trans('t.specialisations')}}</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.program.index') }}">{{trans('t.programs')}}</a>
+            </li>
+        </ul>
+    </li>
     <li class="@active('gallery')">
         <a href="{{route('admin.gallery.index')}}">
             <div class="icon-w">

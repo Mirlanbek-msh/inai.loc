@@ -45,6 +45,13 @@ Route::group(
                 Route::get('about', 'PageController@about')->name('page.about');
                 Route::resource('page', 'PageController');
                 Route::resource('pagecategory', 'PageCategoryController');
+
+                /**Modules */
+                Route::resource('module', 'ModuleController');
+                Route::resource('obligatory-catalogue', 'ObligatoryCatalogueController');
+                Route::resource('specialisation', 'SpecialisationController');
+                Route::resource('curriculum', 'CurriculumController');
+                Route::resource('program', 'ProgramController');
                 
                 Route::resource('user','UserController');           
             });
