@@ -20,7 +20,9 @@ class Curriculum extends Model
 
     public function module()
     {
-        return $this->belongsTo(Module::class, 'module_id', 'ID')->withDefault();
+        return $this->belongsTo(Module::class, 'module_id', 'ID')->withDefault([
+            'label' => 'No module'
+        ]);
     }
 
     public function specialisation()
