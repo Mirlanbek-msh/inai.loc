@@ -47,7 +47,6 @@
                             <th class="none">Examination</th>
                             <th class="none">Exam duration</th>
                             <th class="none">Comment</th>
-                            <th class="none">Specialisation</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,7 +68,6 @@
                             <td>{{$row->examination}}</td>
                             <td>{{$row->exam_duration}}</td>
                             <td>{{optional($row)->comment}}</td>
-                            <td>{{optional($row)->specialisation}}</td>
                         </tr>
                         @endforeach
                         <tfoot>
@@ -88,7 +86,6 @@
                                 <th class="none">Examination</th>
                                 <th class="none">Exam duration</th>
                                 <th class="none">Comment</th>
-                                <th class="none">Specialisation</th>
                             </tr>
                         </tfoot>
                     </tbody>
