@@ -87,7 +87,7 @@
                 <div class="col-md-6">
                     {{-- <label class="col-form-label">Категория</label> --}}
                     <div class="d-block">
-                        {!! Form::select('category_id', $categories, $row->country_id, ['class' => 'form-control directs',
+                        {!! Form::select('category_id', $categories, $row->country_id, ['class' => 'form-control select2',
                         'placeholder' => '-- '.trans('t.select').' --'])!!}
                     </div>
                 </div>

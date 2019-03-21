@@ -35,32 +35,20 @@
                         <tr>
                             {{-- <th>ID</th> --}}
                             <th></th>
-                            @isset($obCatalogue)
-                            <th>Obligatory catalogue</th>
-                            @endif
-                            <th>Label</th>
-                            <th>Subject #</th>
-                            @if($semester)
-                            <th>Semester</th>
-                            <th class="none">Ects</th>
-                            @elseif(isset($obCatalogue))
-                            <th class="none">Ects</th>
-                            @else
-                            <th>Ects</th>
-                            @endif
-                            <th class="none">Professor</th>
-                            <th class="none">Content</th>
-                            <th class="none">Learning goals</th>
-                            <th class="none">Literature</th>
-                            <th class="none">Preleminary knowledge</th>
-                            <th class="none">Preleminary work</th>
-                            <th class="none">Examination</th>
-                            <th class="none">Exam duration</th>
-                            <th class="none">Comment</th>
-                            <th class="none">Specialisation</th>
-                            @if(!$semester)
-                            <th class="none">Semester</th>
-                            @endif
+                            <th>{{trans('t.label')}}</th>
+                            <th>{{trans('t.subject')}} #</th>
+                            <th>{{trans('t.semester')}}</th>
+                            <th class="none">{{trans('t.ects')}}</th>
+                            <th class="none">{{trans('t.professor')}}</th>
+                            <th class="none">{{trans('t.content')}}</th>
+                            <th class="none">{{trans('t.learning_goals')}}</th>
+                            <th class="none">{{trans('t.literature')}}</th>
+                            <th class="none">{{trans('t.preliminary_knowledge')}}</th>
+                            <th class="none">{{trans('t.preliminary_work')}}</th>
+                            <th class="none">{{trans('t.examination')}}</th>
+                            <th class="none">{{trans('t.exam_duration')}}</th>
+                            <th class="none">{{trans('t.comment')}}</th>
+                            <th class="none">{{trans('t.specialisation')}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -70,60 +58,40 @@
                                 <span></span>
                             </td>
                             {{-- <td>{{$row->id}}</td> --}}
-                            @isset($obCatalogue)
-                            <td>{{$row->obligatoryCatalogue->placeholderModule->label}}</td>
-                            @endif
-                            <td>{{$row->label}}</td>
-                            <td>{{$row->nr}}</td>
-                            @if($semester)
+                            <td>{{$row->module->label_lang}}</td>
+                            <td>{{$row->module->nr}}</td>
                             <td>{{optional($row)->semester}}</td>
-                            @endif
-                            <td>{{$row->ects}}</td>
-                            <td>{{$row->professor}}</td>
-                            <td>{{$row->content}}</td>
-                            <td>{{$row->learning_goals}}</td>
-                            <td>{{$row->literature}}</td>
-                            <td>{{$row->preliminary_knowledge}}</td>
-                            <td>{{$row->preliminary_work}}</td>
-                            <td>{{$row->examination}}</td>
-                            <td>{{$row->exam_duration}}</td>
-                            <td>{{optional($row)->comment}}</td>
-                            <td>{{optional($row)->specialisation}}</td>
-                            @if(!$semester)
-                            <td>{{optional($row)->semester}}</td>
-                            @endif
+                            <td>{{$row->module->ects}}</td>
+                            <td>{{$row->module->professor_lang}}</td>
+                            <td>{{$row->module->content_lang}}</td>
+                            <td>{{$row->module->learning_goals_lang}}</td>
+                            <td>{{$row->module->literature_lang}}</td>
+                            <td>{{$row->module->preliminary_knowledge_lang}}</td>
+                            <td>{{$row->module->preliminary_work_lang}}</td>
+                            <td>{{$row->module->examination_lang}}</td>
+                            <td>{{$row->module->exam_duration_lang}}</td>
+                            <td>{{optional($row)->module->comment_lang}}</td>
+                            <td>{{optional($row)->specialisation->label_lang}}</td>
                         </tr>
                         @endforeach
                         <tfoot>
                             <tr>
                                 {{-- <th>ID</th> --}}
                                 <th></th>
-                                @isset($obCatalogue)
-                                <th>Obligatory catalogue</th>
-                                @endif
-                                <th>Label</th>
-                                <th>Subject #</th>
-                                @if($semester)
-                                <th>Semester</th>
-                                <th class="none">Ects</th>
-                                @elseif(isset($obCatalogue))
-                                <th class="none">Ects</th>
-                                @else
-                                <th>Ects</th>
-                                @endif
-                                <th class="none">Professor</th>
-                                <th class="none">Content</th>
-                                <th class="none">Learning goals</th>
-                                <th class="none">Literature</th>
-                                <th class="none">Preleminary knowledge</th>
-                                <th class="none">Preleminary work</th>
-                                <th class="none">Examination</th>
-                                <th class="none">Exam duration</th>
-                                <th class="none">Comment</th>
-                                <th class="none">Specialisation</th>
-                                @if(!$semester)
-                                <th class="none">Semester</th>
-                                @endif
+                                <th>{{trans('t.label')}}</th>
+                                <th>{{trans('t.subject')}} #</th>
+                                <th>{{trans('t.semester')}}</th>
+                                <th class="none">{{trans('t.ects')}}</th>
+                                <th class="none">{{trans('t.professor')}}</th>
+                                <th class="none">{{trans('t.content')}}</th>
+                                <th class="none">{{trans('t.learning_goals')}}</th>
+                                <th class="none">{{trans('t.literature')}}</th>
+                                <th class="none">{{trans('t.preliminary_knowledge')}}</th>
+                                <th class="none">{{trans('t.preliminary_work')}}</th>
+                                <th class="none">{{trans('t.examination')}}</th>
+                                <th class="none">{{trans('t.exam_duration')}}</th>
+                                <th class="none">{{trans('t.comment')}}</th>
+                                <th class="none">{{trans('t.specialisation')}}</th>
                             </tr>
                         </tfoot>
                     </tbody>
@@ -181,13 +149,7 @@
                     targets: 3,
                 }
             ],
-            @if(isset($obCatalogue))
-            order: [1, 'asc'],
-            @elseif($semester)
             order: [3, 'asc'],
-            @else
-            order: [2, 'asc'],
-            @endif
             @if(app()->getLocale() == 'ru')
             language: {
                 "processing": "Подождите...",

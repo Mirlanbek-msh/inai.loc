@@ -71,13 +71,13 @@
                                         <ul>
                                             {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
                                             <li>
-                                                <a href="{{ route('web.module.softwareTechnologies') }}">Software Technologies</a>
+                                            <a href="{{ route('web.module.softwareTechnologies') }}">{{optional($h_specialisations[0])->label_lang}}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('web.module.medicalInformatics') }}">Medical Informatics</a>
+                                                <a href="{{ route('web.module.medicalInformatics') }}">{{optional($h_specialisations[1])->label_lang}}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('web.module.webInformatics') }}">Web Informatics</a>
+                                                <a href="{{ route('web.module.webInformatics') }}">{{optional($h_specialisations[2])->label_lang}}</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -88,7 +88,7 @@
                                                 <a href="{{ route('web.module.index') }}">{{trans('t.list_of_all_modules')}}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('web.module.obligatoryCatalog') }}">Obligatory Modules</a>
+                                                <a href="{{ route('web.module.obligatoryCatalog') }}">{{trans('t.obligatory_modules')}}</a>
                                             </li>
                                         </ul>
                                     </li>

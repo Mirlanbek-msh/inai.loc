@@ -48,7 +48,7 @@
             </li>
         </ul>
     </li>
-    <li class="has-sub-menu @active('modules')">
+    <li class="has-sub-menu @active('module') @active('obligatory-catalogue') @active('specialisation') @active('curriculum') @active('program')">
         <a href="#">
             <div class="icon-w">
                 <div class="os-icon os-icon-agenda-1"></div>

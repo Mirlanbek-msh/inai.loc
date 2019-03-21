@@ -275,11 +275,16 @@ return [
 
     'placeholder_module' => 'Placeholder module',
     'obligatory_module' => 'Obligatory module',
-
+    'obligatory_modules' => 'Obligatory modules',
+    
     'program' => 'Program',
-
+    
     'licensed' => 'Licensed',
     'degree' => 'Degree',
+    
+    'subject' => 'Subject',
+
+    'obligatory_catalogue' => 'Obligatory Catalogue',
 
 
 ];

@@ -15,8 +15,16 @@ class Curriculum extends Model
         'semester',
         'specialisation_id',
         'module_id',
-        'comment'
+
+        'comment',
+        'comment_ru'
     ];
+
+    public function getCommentLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->comment_ru) > 0) return $this->comment_ru;
+        return $this->comment;
+    }
 
     public function module()
     {

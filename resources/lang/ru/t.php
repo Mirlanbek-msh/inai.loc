@@ -240,8 +240,8 @@ return [
     'download' => 'Скачать',
 
 
-    'all_modules' => 'All modules',
-    'create_module' => 'Create module',
+    'all_modules' => 'Все модули',
+    'create_module' => 'Добавить модуль',
 
     'curricula' => 'Curricula',
     'all_curricula' => 'All curricula',
@@ -260,29 +260,35 @@ return [
     'create_obligatory-catalogue' => 'Create obligatory catalogue',
 
 
-    'label' => 'Label',
+    'label' => 'Наименование',
     'nr' => 'Nr',
     'ects' => 'Ects',
-    'professor' => 'Professor',
+    'professor' => 'Профессор',
     'learning_goals' => 'Learning goals',
-    'literature' => 'Literature',
+    'literature' => 'Литература',
     'preliminary_knowledge' => 'Preliminary knowledge',
     'preliminary_work' => 'Preliminary work',
-    'examination' => 'Examination',
-    'exam_duration' => 'Exam duration',
-    'comment' => 'Comment',
+    'examination' => 'Экзамен',
+    'exam_duration' => 'Длительность экзамена',
+    'comment' => 'Комментарий',
 
 
-    'module' => 'Module',
+    'module' => 'Модуль',
     'specialisation' => 'Specialisation',
-    'semester' => 'Semester',
+    'semester' => 'Семестр',
 
     'placeholder_module' => 'Placeholder module',
     'obligatory_module' => 'Obligatory module',
+    'obligatory_modules' => 'Obligatory modules',
 
-    'program' => 'Program',
+    'program' => 'Учебная программа',
 
-    'licensed' => 'Licensed',
-    'degree' => 'Degree',
+    'licensed' => 'Лицензирована',
+    'degree' => 'Степень',
+
+    'subject' => 'Предмет',
+
+    'obligatory_catalogue' => 'Obligatory Catalogue',
+
 
 ];

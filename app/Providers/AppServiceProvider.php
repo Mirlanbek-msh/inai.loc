@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Blade;
 use App\Models\PageCategory;
 use App\Models\Contact;
+use App\Models\Specialisation;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -72,6 +73,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('contact_data', $this->loadContactData());
             $view->with('internationalization', $this->loadInternationalization());
             $view->with('services', $this->loadServices());
+            $view->with('h_specialisations', $this->loadSpecialisations());
         });
     }
 
@@ -106,6 +108,15 @@ class AppServiceProvider extends ServiceProvider
         // dd($r->pagesChunk());
         // dd($r->pagesChunk()->first->count(), $r->pagesChunk()->second->count());
         return PageCategory::where('slug', 'services')->firstOrFail();
+    }
+
+    public function loadSpecialisations()
+    {
+        return [
+            Specialisation::find(1),
+            Specialisation::find(3),
+            Specialisation::find(2),
+        ];
     }
 
     public function loadLocalizedDate()
