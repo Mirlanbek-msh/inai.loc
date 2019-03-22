@@ -41,7 +41,7 @@ class ModuleController extends Controller
         // specialisation s on s.id = c.specialisation_id WHERE s.id = 3;');
         // $title = $data[0]->specialisation;
         $specialisation = Specialisation::findOrFail(3);
-        $title = $specialisation->label;
+        $title = $specialisation->label_lang;
         $data = $specialisation->curricula;
         return view('web.module.show', compact('data', 'title'));
     }
@@ -53,7 +53,7 @@ class ModuleController extends Controller
         // specialisation s on s.id = c.specialisation_id WHERE s.id = 2;');
         // $title = $data[0]->specialisation;
         $specialisation = Specialisation::findOrFail(2);
-        $title = $specialisation->label;
+        $title = $specialisation->label_lang;
         $data = $specialisation->curricula;
         return view('web.module.show', compact('data', 'title'));
     }
@@ -82,7 +82,7 @@ class ModuleController extends Controller
     public function show($slug)
     {
         $specialisation = Specialisation::where('slug', $slug)->firstOrFail();
-        $title = $specialisation->label;
+        $title = $specialisation->label_lang;
         $curricula = $specialisation->curricula;
         $data = collect();
         foreach($curricula as $curriculum){
