@@ -204,8 +204,10 @@ class PostController extends Controller
                 mkdir($dir, 0777, true);
             }
 
-            $thumb_name = 'thumb.jpg';
-            $image_name = 'image.jpg';
+            $time = time();
+
+            $thumb_name = "thumb_$time.jpg";
+            $image_name = "image_$time.jpg";
 
             $thumb_path = $dir.$thumb_name;
             $image_path = $dir.$image_name;
