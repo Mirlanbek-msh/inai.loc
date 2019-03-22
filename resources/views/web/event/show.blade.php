@@ -83,7 +83,7 @@
                             <div class="row">
                                 <div class="col-lg-2 col-md-3 col-sm-3 col-4">
                                     <div class="event-img m-auto w-75">
-                                        <img src="{{ asset($row->author_img) }}" alt="" class="w-100">
+                                        <img src="{{ $row->author_img_url }}" alt="" class="w-100">
                                     </div>
                                 </div>
                                 <div class="col-lg-10 col-md-9 col-sm-9 col-8">

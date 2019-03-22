@@ -60,6 +60,12 @@ class Event extends Model
 
     protected $dates = ['created_at', 'updated_at', 'deadline_date'];
 
+    public function getAuthorImgUrlAttribute()
+    {
+        if($this->autor_img)
+            return asset($this->author_img);
+        return asset('images/icon-sq.png');
+    }
 
     public function getLink()
     {
