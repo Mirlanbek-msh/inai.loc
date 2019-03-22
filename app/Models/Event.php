@@ -62,7 +62,7 @@ class Event extends Model
 
     public function getAuthorImgUrlAttribute()
     {
-        if($this->autor_img)
+        if($this->author_img)
             return asset($this->author_img);
         return asset('images/icon-sq.png');
     }
