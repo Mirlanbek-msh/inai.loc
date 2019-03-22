@@ -40,7 +40,8 @@ class Module extends Model
 
     public function getLabelLangAttribute()
     {
-        if(app()->getLocale() == 'ru' && strlen($this->label_ru) > 0) return $this->label_ru;
+        if(app()->getLocale() == 'ru' && strlen($this->label_ru) > 0) 
+            return $this->label_ru;
         return $this->label;
     }
 
