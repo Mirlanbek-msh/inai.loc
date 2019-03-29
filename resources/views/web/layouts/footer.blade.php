@@ -64,6 +64,13 @@
                 <div class="footer-divider"></div>
                 <div class="footer-body">
                     <ul>
+                        <li>
+                            <a href="https://prezi.com/view/gH9mVYXNNf1NG2ltNZt6/" target="_blank">
+                                <i class="fa fa-file-powerpoint"></i> {{ trans('t.inai_presentation') }}
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
                         <li><i class="fa fa-mobile-alt"></i> {{ trans('t.career_fair_app') }}</li>
                     </ul>
                     <a target="_blank" href="#" class="btn mb-2 btn-slink">
@@ -74,14 +81,9 @@
                         <img class="hover-no" src="{{ asset('/images/google-app-store-white.svg') }}" alt="">
                         <img class="hover-on" src="{{ asset('/images/google-app-store.svg') }}" alt="">
                     </a>
-                    <ul>
-                        {{-- <li><a href="#"><i class="fa fa-envelope"></i> {{ trans('t.login_to_email') }}</a></li> --}}
-                        <li>
-                            <a href="https://prezi.com/view/gH9mVYXNNf1NG2ltNZt6/" target="_blank">
-                                <i class="fa fa-file-powerpoint"></i> {{ trans('t.inai_presentation') }}
-                            </a>
-                        </li>
-                    </ul>
+                    {{-- <ul>
+                        <li><a href="#"><i class="fa fa-envelope"></i> {{ trans('t.login_to_email') }}</a></li>
+                    </ul> --}}
                 </div>
 
             </div>
