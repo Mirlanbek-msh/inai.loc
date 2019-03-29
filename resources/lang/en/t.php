@@ -286,5 +286,8 @@ return [
 
     'obligatory_catalogue' => 'Obligatory Catalogue',
 
+    'inai_presentation' => 'Presentation of institute',
+
+
 
 ];

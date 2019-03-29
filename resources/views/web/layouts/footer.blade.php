@@ -75,7 +75,12 @@
                         <img class="hover-on" src="{{ asset('/images/google-app-store.svg') }}" alt="">
                     </a>
                     <ul>
-                        <li><a href="#"><i class="fa fa-envelope"></i> {{ trans('t.login_to_email') }}</a></li>
+                        {{-- <li><a href="#"><i class="fa fa-envelope"></i> {{ trans('t.login_to_email') }}</a></li> --}}
+                        <li>
+                            <a href="https://prezi.com/view/gH9mVYXNNf1NG2ltNZt6/" target="_blank">
+                                <i class="fa fa-file-powerpoint"></i> {{ trans('t.inai_presentation') }}
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
