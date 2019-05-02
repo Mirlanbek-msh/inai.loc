@@ -93,6 +93,6 @@
 <div class="bottom-panel">
     <div class="text-center">
         <p>&copy; INAI.KG {{ date('Y') }}</p>
-        <span class="onoi-logo" title="Разработка - легко!"><a target="_blank" href="https://www.onoi.io"><span class="left">With <i class="fa fa-heart"></i> by </span><img class="onoi-logo-img" src="{{ asset('/images/onoi-logo.svg') }}" alt=""><span class="right onoi-text">onoi.io</span></a></span>
+        <span class="onoi-logo" title="Разработка - легко!"><a target="_blank" href="https://www.onoi.dev"><span class="left">With <i class="fa fa-heart"></i> by </span><img class="onoi-logo-img" src="{{ asset('/images/onoi-logo.svg') }}" alt=""><span class="right onoi-text">onoi.dev</span></a></span>
     </div>
 </div>
