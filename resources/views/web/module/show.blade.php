@@ -39,16 +39,16 @@
                             <th>{{trans('t.subject')}} #</th>
                             <th>{{trans('t.semester')}}</th>
                             <th class="none">{{trans('t.ects')}}</th>
-                            <th class="none">{{trans('t.professor')}}</th>
+                            {{-- <th class="none">{{trans('t.professor')}}</th> --}}
                             <th class="none">{{trans('t.content')}}</th>
                             <th class="none">{{trans('t.learning_goals')}}</th>
-                            <th class="none">{{trans('t.literature')}}</th>
+                            {{-- <th class="none">{{trans('t.literature')}}</th>
                             <th class="none">{{trans('t.preliminary_knowledge')}}</th>
                             <th class="none">{{trans('t.preliminary_work')}}</th>
                             <th class="none">{{trans('t.examination')}}</th>
                             <th class="none">{{trans('t.exam_duration')}}</th>
                             <th class="none">{{trans('t.comment')}}</th>
-                            <th class="none">{{trans('t.specialisation')}}</th>
+                            <th class="none">{{trans('t.specialisation')}}</th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -62,16 +62,16 @@
                             <td>{{$row->module->nr}}</td>
                             <td>{{optional($row)->semester}}</td>
                             <td>{{$row->module->ects}}</td>
-                            <td>{{$row->module->professor_lang}}</td>
+                            {{-- <td>{{$row->module->professor_lang}}</td> --}}
                             <td>{{$row->module->content_lang}}</td>
                             <td>{{$row->module->learning_goals_lang}}</td>
-                            <td>{{$row->module->literature_lang}}</td>
+                            {{-- <td>{{$row->module->literature_lang}}</td>
                             <td>{{$row->module->preliminary_knowledge_lang}}</td>
                             <td>{{$row->module->preliminary_work_lang}}</td>
                             <td>{{$row->module->examination_lang}}</td>
                             <td>{{$row->module->exam_duration_lang}}</td>
                             <td>{{optional($row)->module->comment_lang}}</td>
-                            <td>{{optional($row)->specialisation->label_lang}}</td>
+                            <td>{{optional($row)->specialisation->label_lang}}</td> --}}
                         </tr>
                         @endforeach
                         <tfoot>
@@ -82,16 +82,16 @@
                                 <th>{{trans('t.subject')}} #</th>
                                 <th>{{trans('t.semester')}}</th>
                                 <th class="none">{{trans('t.ects')}}</th>
-                                <th class="none">{{trans('t.professor')}}</th>
+                                {{-- <th class="none">{{trans('t.professor')}}</th> --}}
                                 <th class="none">{{trans('t.content')}}</th>
                                 <th class="none">{{trans('t.learning_goals')}}</th>
-                                <th class="none">{{trans('t.literature')}}</th>
+                                {{-- <th class="none">{{trans('t.literature')}}</th>
                                 <th class="none">{{trans('t.preliminary_knowledge')}}</th>
                                 <th class="none">{{trans('t.preliminary_work')}}</th>
                                 <th class="none">{{trans('t.examination')}}</th>
                                 <th class="none">{{trans('t.exam_duration')}}</th>
                                 <th class="none">{{trans('t.comment')}}</th>
-                                <th class="none">{{trans('t.specialisation')}}</th>
+                                <th class="none">{{trans('t.specialisation')}}</th> --}}
                             </tr>
                         </tfoot>
                     </tbody>

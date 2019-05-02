@@ -1,5 +1,5 @@
 @extends('admin.layouts.app') 
-@section('title', $row->label) 
+@section('title', $row->label_lang) 
 @section('content')
 
 <div class="element-actions">
@@ -7,7 +7,7 @@
         {{ trans('t.all_modules') }}</a>
 </div>
 <h6 class="element-header">
-    {{$row->label}}
+    {{$row->label_lang}}
 </h6>
 <div class="element-box timeline">
 
@@ -17,7 +17,7 @@
                 <h3>{{ trans('t.label') }}</h3>
             </div>
             <div class="body">
-                <p>{{$row->label}}</p>
+                <p>{{$row->label_lang}}</p>
             </div>
         </div>
         <div class="entry">
@@ -41,7 +41,7 @@
                 <h3>{{ trans('t.professor') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->professor }}</p>
+                <p>{{ $row->professor_lang }}</p>
             </div>
         </div>
         <div class="entry">
@@ -49,7 +49,7 @@
                 <h3>{{ trans('t.content') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->content }}</p>
+                <p>{{ $row->content_lang }}</p>
             </div>
         </div>
         <div class="entry">
@@ -57,7 +57,7 @@
                 <h3>{{ trans('t.learning_goals') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->learning_goals }}</p>
+                <p>{{ $row->learning_goals_lang }}</p>
             </div>
         </div>
         <div class="entry">
@@ -65,7 +65,7 @@
                 <h3>{{ trans('t.literature') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->literature }}</p>
+                <p>{{ $row->literature_lang }}</p>
             </div>
         </div>
         <div class="entry">
@@ -73,7 +73,7 @@
                 <h3>{{ trans('t.preliminary_knowledge') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->preliminary_knowledge }}</p>
+                <p>{{ $row->preliminary_knowledge_lang }}</p>
             </div>
         </div>
         <div class="entry">
@@ -81,7 +81,7 @@
                 <h3>{{ trans('t.preliminary_work') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->preliminary_work }}</p>
+                <p>{{ $row->preliminary_work_lang }}</p>
             </div>
         </div>
         <div class="entry">
@@ -89,7 +89,7 @@
                 <h3>{{ trans('t.examination') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->examination }}</p>
+                <p>{{ $row->examination_lang }}</p>
             </div>
         </div>
         <div class="entry">
@@ -97,7 +97,7 @@
                 <h3>{{ trans('t.exam_duration') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->exam_duration }}</p>
+                <p>{{ $row->exam_duration_lang }}</p>
             </div>
         </div>
         <div class="entry">
@@ -105,7 +105,7 @@
                 <h3>{{ trans('t.comment') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->comment }}</p>
+                <p>{{ $row->comment_lang }}</p>
             </div>
         </div>
     </fieldset>

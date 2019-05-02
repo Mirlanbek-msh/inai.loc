@@ -28,8 +28,8 @@
                 @foreach ($data as $key => $row)
                     <tr>
                         <td>{{ $row->ID }}</td>
-                        <td>{{ $row->placeholderModule->label }}</td>
-                        <td>{{ $row->obligatoryModule->label }}</td>
+                        <td>{{ $row->placeholderModule->label_lang }}</td>
+                        <td>{{ $row->obligatoryModule->label_lang }}</td>
                         <td>{{ $row->obligatoryModule->nr }}</td>
                         <td>{{ $row->obligatoryModule->ects }}</td>
                         <td>{{ $row->obligatoryModule->professor }}</td>

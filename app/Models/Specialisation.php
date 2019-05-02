@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Specialisation extends Model
 {
+    use Sluggable;
+
     protected $connection = 'mysql2';
     protected $table = 'specialisation';
     protected $primaryKey = 'ID';
@@ -32,5 +35,14 @@ class Specialisation extends Model
     public function program()
     {
         return $this->belongsTo(Program::class, 'program_id');
+    }
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'label'
+            ]
+        ];
     }
 }

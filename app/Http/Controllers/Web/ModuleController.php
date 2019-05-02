@@ -22,42 +22,6 @@ class ModuleController extends Controller
         return view('web.module.index', compact('data', 'title'));
     }
 
-    public function softwareTechnologies()
-    {
-        // $data = DB::connection('mysql2')->select('SELECT m.id, m.nr, m.label, c.semester, m.ects, m.professor, m.content, m.learning_goals, m.literature,m.preliminary_knowledge, m.preliminary_work, m.examination, m.exam_duration, c.comment, c.specialisation_id,  s.label as specialisation FROM module m 
-        // left join curricula c on m.id = c.module_id  left join 
-        // specialisation s on s.id = c.specialisation_id WHERE s.id = 1;');
-        // $title = $data[0]->specialisation;
-        $specialisation = Specialisation::findOrFail(1);
-        $title = $specialisation->label_lang;
-        $data = $specialisation->curricula;
-        return view('web.module.show', compact('data', 'title'));
-    }
-
-    public function medicalInformatics()
-    {
-        // $data = DB::connection('mysql2')->select('SELECT m.id, m.nr, m.label, c.semester, m.ects, m.professor, m.content, m.learning_goals, m.literature,m.preliminary_knowledge, m.preliminary_work, m.examination, m.exam_duration, c.comment, c.specialisation_id,  s.label as specialisation FROM module m 
-        // left join curricula c on m.id = c.module_id  left join 
-        // specialisation s on s.id = c.specialisation_id WHERE s.id = 3;');
-        // $title = $data[0]->specialisation;
-        $specialisation = Specialisation::findOrFail(3);
-        $title = $specialisation->label_lang;
-        $data = $specialisation->curricula;
-        return view('web.module.show', compact('data', 'title'));
-    }
-
-    public function webInformatics()
-    {
-        // $data = DB::connection('mysql2')->select('SELECT m.id, m.nr, m.label, c.semester, m.ects, m.professor, m.content, m.learning_goals, m.literature,m.preliminary_knowledge, m.preliminary_work, m.examination, m.exam_duration, c.comment, c.specialisation_id,  s.label as specialisation FROM module m 
-        // left join curricula c on m.id = c.module_id  left join 
-        // specialisation s on s.id = c.specialisation_id WHERE s.id = 2;');
-        // $title = $data[0]->specialisation;
-        $specialisation = Specialisation::findOrFail(2);
-        $title = $specialisation->label_lang;
-        $data = $specialisation->curricula;
-        return view('web.module.show', compact('data', 'title'));
-    }
-
     public function obModules()
     {
         // $data = DB::connection('mysql2')->select('SELECT if(o.placeholder_module_id = 207, REPLACE(o.placeholder_module_id, 207, 1), REPLACE(o.placeholder_module_id, 208, 2)  ) as placeholder_module, m.*, s.label as specialisation 
@@ -83,11 +47,7 @@ class ModuleController extends Controller
     {
         $specialisation = Specialisation::where('slug', $slug)->firstOrFail();
         $title = $specialisation->label_lang;
-        $curricula = $specialisation->curricula;
-        $data = collect();
-        foreach($curricula as $curriculum){
-            $data->push($curriculum->module);
-        }
-        return view('web.module.index', compact('data', 'title'));
+        $data = $specialisation->curricula;
+        return view('web.module.show', compact('data', 'title'));
     }
 }

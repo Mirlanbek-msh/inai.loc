@@ -1,5 +1,5 @@
 @extends('admin.layouts.app') 
-@section('title', $row->label) 
+@section('title', $row->label_lang) 
 @section('content')
 
 <div class="element-actions">
@@ -7,7 +7,7 @@
         {{ trans('t.all_specialisations') }}</a>
 </div>
 <h6 class="element-header">
-    {{$row->label}}
+    {{$row->label_lang}}
 </h6>
 <div class="element-box timeline">
 
@@ -17,7 +17,7 @@
                 <h3>{{ trans('t.label') }}</h3>
             </div>
             <div class="body">
-                <p>{{$row->label}}</p>
+                <p>{{$row->label_lang}}</p>
             </div>
         </div>
         <div class="entry">
@@ -25,7 +25,7 @@
                 <h3>{{ trans('t.program') }}</h3>
             </div>
             <div class="body">
-                <p><a href="{{ route('admin.program.show', $row->program) }}">{{$row->program->label}}</a></p>
+                <p><a href="{{ route('admin.program.show', $row->program) }}">{{$row->program->label_lang}}</a></p>
             </div>
         </div>
     </fieldset>

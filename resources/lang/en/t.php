@@ -289,5 +289,8 @@ return [
     'inai_presentation' => 'Presentation of institute',
 
 
+    'bachelor' => 'Bachelor of Sciences (Informatics)',
+    'master' => 'Master of Sciences (Informatics)',
+
 
 ];

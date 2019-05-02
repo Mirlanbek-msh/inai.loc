@@ -27,10 +27,10 @@
                 @foreach ($data as $key => $row)
                     <tr>
                         <td>{{ $row->ID }}</td>
-                        <td>{{ $row->label }}</td>
+                        <td>{{ $row->label_lang }}</td>
                         <td>{{ $row->nr }}</td>
                         <td>{{ $row->ects }}</td>
-                        <td>{{ $row->professor }}</td>
+                        <td>{{ $row->professor_lang }}</td>
                         <td class="text-center">
                             <a class="btn btn-table btn-table-show" href="{{ route('admin.module.show',$row->ID) }}"><i class="icon-feather-book-open"></i></a>
                             <a class="btn btn-table btn-table-edit" href="{{ route('admin.module.edit',$row->ID) }}"><i class="icon-feather-edit"></i></a>

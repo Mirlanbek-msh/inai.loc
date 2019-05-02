@@ -1,5 +1,5 @@
 @extends('admin.layouts.app') 
-@section('title', $row->label) 
+@section('title', $row->label_lang) 
 @section('content')
 
 <div class="element-actions">
@@ -7,7 +7,7 @@
         {{ trans('t.all_programs') }}</a>
 </div>
 <h6 class="element-header">
-    {{$row->label}}
+    {{$row->label_lang}}
 </h6>
 <div class="element-box timeline">
 
@@ -17,7 +17,7 @@
                 <h3>{{ trans('t.label') }}</h3>
             </div>
             <div class="body">
-                <p>{{$row->label}}</p>
+                <p>{{$row->label_lang}}</p>
             </div>
         </div>
         <div class="entry">
@@ -33,7 +33,7 @@
                 <h3>{{ trans('t.degree') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->degree }}</p>
+                <p>{{ $row->degree_lang }}</p>
             </div>
         </div>
     </fieldset>

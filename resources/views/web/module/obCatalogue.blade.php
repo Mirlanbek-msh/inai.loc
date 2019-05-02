@@ -35,11 +35,11 @@
                         <tr>
                             {{-- <th>ID</th> --}}
                             <th></th>
-                            <th>{{trans('t.obligatory_catalogue')}}</th>
                             <th>{{trans('t.label')}}</th>
                             <th>{{trans('t.subject')}} #</th>
-                            <th class="none">{{trans('t.ects')}}</th>
-                            <th class="none">{{trans('t.professor')}}</th>
+                            <th>{{trans('t.ects')}}</th>
+                            <th class="none">{{trans('t.obligatory_catalogue')}}</th>
+                            {{-- <th class="none">{{trans('t.professor')}}</th>
                             <th class="none">{{trans('t.content')}}</th>
                             <th class="none">{{trans('t.learning_goals')}}</th>
                             <th class="none">{{trans('t.literature')}}</th>
@@ -49,7 +49,7 @@
                             <th class="none">{{trans('t.exam_duration')}}</th>
                             <th class="none">{{trans('t.comment')}}</th>
                             <th class="none">{{trans('t.specialisation')}}</th>
-                            <th class="none">{{trans('t.semester')}}</th>
+                            <th class="none">{{trans('t.semester')}}</th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -59,11 +59,11 @@
                                 <span></span>
                             </td>
                             {{-- <td>{{$row->id}}</td> --}}
-                            <td>{{$row->obligatoryCatalogue->placeholderModule->label_lang}}</td>
                             <td>{{$row->label_lang}}</td>
                             <td>{{$row->nr}}</td>
                             <td>{{$row->ects}}</td>
-                            <td>{{$row->professor_lang}}</td>
+                            <td>{{$row->obligatoryCatalogue->placeholderModule->label_lang}}</td>
+                            {{-- <td>{{$row->professor_lang}}</td>
                             <td>{{$row->content_lang}}</td>
                             <td>{{$row->learning_goals_lang}}</td>
                             <td>{{$row->literature_lang}}</td>
@@ -73,19 +73,19 @@
                             <td>{{$row->exam_duration_lang}}</td>
                             <td>{{optional($row)->comment_lang}}</td>
                             <td>{{optional($row->specialisation)->label_lang}}</td>
-                            <td>{{optional($row)->semester}}</td>
+                            <td>{{optional($row)->semester}}</td> --}}
                         </tr>
                         @endforeach
                         <tfoot>
                             <tr>
                                 {{-- <th>ID</th> --}}
                                 <th></th>
-                                <th>{{trans('t.obligatory_catalogue')}}</th>
                                 <th>{{trans('t.label')}}</th>
                                 <th>{{trans('t.subject')}} #</th>
-                                <th class="none">{{trans('t.ects')}}</th>
-                                <th class="none">{{trans('t.professor')}}</th>
-                                <th class="none">{{trans('t.content')}}</th>
+                                <th>{{trans('t.ects')}}</th>
+                                <th class="none">{{trans('t.obligatory_catalogue')}}</th>
+                                {{-- <th class="none">{{trans('t.professor')}}</th> --}}
+                                {{-- <th class="none">{{trans('t.content')}}</th>
                                 <th class="none">{{trans('t.learning_goals')}}</th>
                                 <th class="none">{{trans('t.literature')}}</th>
                                 <th class="none">{{trans('t.preliminary_knowledge')}}</th>
@@ -94,7 +94,7 @@
                                 <th class="none">{{trans('t.exam_duration')}}</th>
                                 <th class="none">{{trans('t.comment')}}</th>
                                 <th class="none">{{trans('t.specialisation')}}</th>
-                                <th class="none">{{trans('t.semester')}}</th>
+                                <th class="none">{{trans('t.semester')}}</th> --}}
                             </tr>
                         </tfoot>
                     </tbody>

@@ -26,9 +26,9 @@
                 @foreach ($data as $key => $row)
                     <tr>
                         <td>{{ $row->ID }}</td>
-                        <td>{{ $row->label }}</td>
+                        <td>{{ $row->label_lang }}</td>
                         <td>{{ $row->licensed }}</td>
-                        <td>{{ $row->degree }}</td>
+                        <td>{{ $row->degree_lang }}</td>
                         <td class="text-center">
                             <a class="btn btn-table btn-table-show" href="{{ route('admin.program.show',$row->ID) }}"><i class="icon-feather-book-open"></i></a>
                             <a class="btn btn-table btn-table-edit" href="{{ route('admin.program.edit',$row->ID) }}"><i class="icon-feather-edit"></i></a>

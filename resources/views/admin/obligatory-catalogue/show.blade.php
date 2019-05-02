@@ -1,5 +1,5 @@
 @extends('admin.layouts.app') 
-@section('title', $row->obligatoryModule->label) 
+@section('title', $row->obligatoryModule->label_lang) 
 @section('content')
 
 <div class="element-actions">
@@ -7,7 +7,7 @@
         {{ trans('t.all_obligatory-catalogues') }}</a>
 </div>
 <h6 class="element-header">
-    {{$row->obligatoryModule->label}}
+    {{$row->obligatoryModule->label_lang}}
 </h6>
 <div class="element-box timeline">
 
@@ -17,7 +17,7 @@
                 <h3>{{ trans('t.placeholder_module') }}</h3>
             </div>
             <div class="body">
-                <p><a href="{{ route('admin.module.show', $row->placeholderModule) }}">{{$row->placeholderModule->label}}</a></p>
+                <p><a href="{{ route('admin.module.show', $row->placeholderModule) }}">{{$row->placeholderModule->label_lang}}</a></p>
             </div>
         </div>
         <div class="entry">
@@ -25,7 +25,7 @@
                 <h3>{{ trans('t.obligatory_module') }}</h3>
             </div>
             <div class="body">
-                <p><a href="{{ route('admin.module.show', $row->obligatoryModule) }}">{{$row->obligatoryModule->label}}</a></p>
+                <p><a href="{{ route('admin.module.show', $row->obligatoryModule) }}">{{$row->obligatoryModule->label_lang}}</a></p>
             </div>
         </div>
         <div class="entry">
@@ -33,7 +33,7 @@
                 <h3>{{ trans('t.comment') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->comment }}</p>
+                <p>{{ $row->comment_lang }}</p>
             </div>
         </div>
     </fieldset>

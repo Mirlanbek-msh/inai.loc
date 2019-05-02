@@ -26,8 +26,8 @@
                 @foreach ($data as $key => $row)
                     <tr>
                         <td>{{ $row->ID }}</td>
-                        <td>{{ $row->module->label }}</td>
-                        <td>{{ $row->specialisation->label }}</td>
+                        <td>{{ $row->module->label_lang }}</td>
+                        <td>{{ $row->specialisation->label_lang }}</td>
                         <td>{{ $row->semester }}</td>
                         <td class="text-center">
                             <a class="btn btn-table btn-table-show" href="{{ route('admin.curriculum.show',$row->ID) }}"><i class="icon-feather-book-open"></i></a>

@@ -1,5 +1,5 @@
 @extends('admin.layouts.app') 
-@section('title', $row->module->label) 
+@section('title', $row->module->label_lang) 
 @section('content')
 
 <div class="element-actions">
@@ -7,7 +7,7 @@
         {{ trans('t.all_curricula') }}</a>
 </div>
 <h6 class="element-header">
-    {{$row->module->label}}
+    {{$row->module->label_lang}}
 </h6>
 <div class="element-box timeline">
 
@@ -17,7 +17,7 @@
                 <h3>{{ trans('t.module') }}</h3>
             </div>
             <div class="body">
-                <p><a href="{{ route('admin.module.show', $row->module) }}">{{$row->module->label}}</a></p>
+                <p><a href="{{ route('admin.module.show', $row->module) }}">{{$row->module->label_lang}}</a></p>
             </div>
         </div>
         <div class="entry">
@@ -25,7 +25,7 @@
                 <h3>{{ trans('t.specialisation') }}</h3>
             </div>
             <div class="body">
-                <p><a href="{{ route('admin.specialisation.show', $row->specialisation) }}">{{$row->specialisation->label}}</a></p>
+                <p><a href="{{ route('admin.specialisation.show', $row->specialisation) }}">{{$row->specialisation->label_lang}}</a></p>
             </div>
         </div>
         <div class="entry">
@@ -33,7 +33,7 @@
                 <h3>{{ trans('t.comment') }}</h3>
             </div>
             <div class="body">
-                <p>{{ $row->comment }}</p>
+                <p>{{ $row->comment_lang }}</p>
             </div>
         </div>
     </fieldset>

@@ -243,43 +243,43 @@ return [
     'all_modules' => 'Все модули',
     'create_module' => 'Добавить модуль',
 
-    'curricula' => 'Curricula',
-    'all_curricula' => 'All curricula',
-    'create_curriculum' => 'Create curriculum',
+    'curricula' => 'Учебный план',
+    'all_curricula' => 'Все учебные планы',
+    'create_curriculum' => 'Создать учебный план',
 
-    'specialisations' => 'Specialisations',
-    'all_specialisations' => 'All specialisations',
-    'create_specialisation' => 'Create specialisation',
+    'specialisations' => 'Специализации',
+    'all_specialisations' => 'Все специализации',
+    'create_specialisation' => 'Создать специализацию',
 
-    'programs' => 'Programs',
-    'all_programs' => 'All programs',
-    'create_program' => 'Create program',
+    'programs' => 'Программы',
+    'all_programs' => 'Все программы',
+    'create_program' => 'Создать программу',
 
-    'obligatory-catalogues' => 'Obligatory catalogues',
-    'all_obligatory-catalogues' => 'All obligatory catalogues',
-    'create_obligatory-catalogue' => 'Create obligatory catalogue',
+    'obligatory-catalogues' => 'Эликтивные дисциплины',
+    'all_obligatory-catalogues' => 'Все эликтивные дисциплины',
+    'create_obligatory-catalogue' => 'Создать эликтивную дисциплину',
 
 
     'label' => 'Наименование',
-    'nr' => 'Nr',
-    'ects' => 'Ects',
+    'nr' => 'Предмет',
+    'ects' => 'Кредиты',
     'professor' => 'Профессор',
-    'learning_goals' => 'Learning goals',
+    'learning_goals' => 'Цели обучения',
     'literature' => 'Литература',
-    'preliminary_knowledge' => 'Preliminary knowledge',
-    'preliminary_work' => 'Preliminary work',
+    'preliminary_knowledge' => 'Предварительные знания',
+    'preliminary_work' => 'Предварительная работа',
     'examination' => 'Экзамен',
     'exam_duration' => 'Длительность экзамена',
     'comment' => 'Комментарий',
 
 
     'module' => 'Модуль',
-    'specialisation' => 'Specialisation',
+    'specialisation' => 'Специализация',
     'semester' => 'Семестр',
 
     'placeholder_module' => 'Placeholder module',
     'obligatory_module' => 'Obligatory module',
-    'obligatory_modules' => 'Obligatory modules',
+    'obligatory_modules' => 'Каталог элективных дисциплин',
 
     'program' => 'Учебная программа',
 
@@ -288,9 +288,13 @@ return [
 
     'subject' => 'Предмет',
 
-    'obligatory_catalogue' => 'Obligatory Catalogue',
+    'obligatory_catalogue' => 'Каталог элективных дисциплин',
 
     'inai_presentation' => 'Презентация института',
+
+    
+    'bachelor' => 'Бакалавриат информатики',
+    'master' => 'Магистратура информатики',
 
 
 ];

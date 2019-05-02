@@ -69,27 +69,25 @@
                                 <div class="row">
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
-                                            {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
+                                            <li class="dropdown-header">{{trans('t.bachelor')}}</li>
+                                            @foreach ($bachelor_specs as $spec)
                                             <li>
-                                            <a href="{{ route('web.module.softwareTechnologies') }}">{{optional($h_specialisations[0])->label_lang}}</a>
+                                                <a href="{{ route('web.module.show', $spec->slug) }}">{{optional($spec)->label_lang}}</a>
                                             </li>
+                                            @endforeach
                                             <li>
-                                                <a href="{{ route('web.module.medicalInformatics') }}">{{optional($h_specialisations[1])->label_lang}}</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('web.module.webInformatics') }}">{{optional($h_specialisations[2])->label_lang}}</a>
+                                                <a href="{{ route('web.module.obligatoryCatalog') }}">{{trans('t.obligatory_modules')}}</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
-                                            {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
+                                            <li class="dropdown-header">{{trans('t.master')}}</li>
+                                            @foreach ($master_specs as $spec)
                                             <li>
-                                                <a href="{{ route('web.module.index') }}">{{trans('t.list_of_all_modules')}}</a>
+                                                <a href="{{ route('web.module.show', $spec->slug) }}">{{optional($spec)->label_lang}}</a>
                                             </li>
-                                            <li>
-                                                <a href="{{ route('web.module.obligatoryCatalog') }}">{{trans('t.obligatory_modules')}}</a>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                 </div>

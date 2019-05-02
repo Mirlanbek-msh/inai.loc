@@ -25,8 +25,8 @@
                 @foreach ($data as $key => $row)
                     <tr>
                         <td>{{ $row->ID }}</td>
-                        <td>{{ $row->label }}</td>
-                        <td>{{ $row->program->label }}</td>
+                        <td>{{ $row->label_lang }}</td>
+                        <td>{{ $row->program->label_lang }}</td>
                         <td class="text-center">
                             <a class="btn btn-table btn-table-show" href="{{ route('admin.specialisation.show',$row->ID) }}"><i class="icon-feather-book-open"></i></a>
                             <a class="btn btn-table btn-table-edit" href="{{ route('admin.specialisation.edit',$row->ID) }}"><i class="icon-feather-edit"></i></a>
