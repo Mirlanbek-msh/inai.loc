@@ -68,9 +68,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         Route::group(['prefix' => 'module', 'as' => 'module.'], function(){
             Route::get('/', 'ModuleController@index')->name('index');
             Route::get('/obligatory-catalog', 'ModuleController@obModules')->name('obligatoryCatalog');
-            Route::get('/software-technologies', 'ModuleController@softwareTechnologies')->name('softwareTechnologies');
-            Route::get('/medical-informatics', 'ModuleController@medicalInformatics')->name('medicalInformatics');
-            Route::get('/web-informatics', 'ModuleController@webInformatics')->name('webInformatics');
             Route::get('/{slug}', 'ModuleController@show')->name('show');
         });
 
