@@ -48,9 +48,9 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.event_entrance')}} *</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.event_entrance')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::text('event_entrance[ru]', null, ["class" => "form-control", 'placeholder' => trans('t.event_entrance_example'), 'required' => 'required', 'data-error' => trans('validation.required',['attribute' => ''])]) !!}
+                    {!! Form::text('event_entrance[ru]', null, ["class" => "form-control", 'placeholder' => trans('t.event_entrance_example')]) !!}
                     <div class="help-block with-errors text-danger"></div>
                     <div class="mb-2"></div>
                 </div>
@@ -118,7 +118,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.event_entrance')}} *</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.event_entrance')}}</label>
                 <div class="col-sm-10">
                     {!! Form::text('event_entrance[en]', null, ["class" => "form-control", 'placeholder' => trans('t.event_entrance_example')]) !!}
                     <div class="help-block with-errors text-danger"></div>
