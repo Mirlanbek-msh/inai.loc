@@ -11,6 +11,7 @@ use App\Models\PageCategory;
 use App\Models\Contact;
 use App\Models\Specialisation;
 use App\Models\Program;
+use Illuminate\Database\QueryException;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -74,8 +75,13 @@ class AppServiceProvider extends ServiceProvider
             $view->with('contact_data', $this->loadContactData());
             $view->with('internationalization', $this->loadInternationalization());
             $view->with('services', $this->loadServices());
-            $view->with('bachelor_specs', $this->loadBachelorSpecialisations());
-            $view->with('master_specs', $this->loadMasterSpecialisations());
+            try{
+                $view->with('bachelor_specs', $this->loadBachelorSpecialisations());
+                $view->with('master_specs', $this->loadMasterSpecialisations());
+            }catch(QueryException $e){
+                $view->with('bachelor_specs', collect());
+                $view->with('master_specs', collect());
+            }
         });
     }
 

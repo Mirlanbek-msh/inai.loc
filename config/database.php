@@ -66,6 +66,9 @@ return [
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
+            'options' => [
+                PDO::ATTR_TIMEOUT => 1
+            ],
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,

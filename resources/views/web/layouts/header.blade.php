@@ -60,6 +60,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('web.contact') }}">{{ trans('t.contacts') }}</a>
                     </li>
+                    @if($bachelor_specs->count())
                     <li class="nav-item dropdown mega-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
                         {{ trans('t.modules') }}
@@ -94,6 +95,7 @@
                             </div>
                         </ul>
                     </li>
+                    @endif
                     @if($services->pages->count())
                     <li class="nav-item dropdown mega-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
