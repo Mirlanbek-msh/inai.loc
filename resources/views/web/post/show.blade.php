@@ -66,9 +66,9 @@
                 <div class="col-12 mt-3">
                     <div class="post-body">
                         {!! $row->content !!}
-                        @isset($row->video)
+                        @isset($row->video_id)
                             <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $row->video }}?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $row->getYouTubeVideoId() }}?rel=0&amp;showinfo=0" allowfullscreen></iframe>
                             </div>
                         @endisset
                         @isset($row->gallery)

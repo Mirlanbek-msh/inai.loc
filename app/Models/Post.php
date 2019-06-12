@@ -31,6 +31,21 @@ class Post extends Model
         'author'
     ];
 
+    public function getYouTubeVideoId()
+    {
+        $youtube_video_id = $this->video_id;
+        if(strpos($youtube_video_id, 'youtu.be') !== false){
+            $offset = strpos($youtube_video_id, 'youtu.be');
+            $offset += 9;
+            return substr($youtube_video_id, $offset);
+        }else if(strpos($youtube_video_id, 'youtube.com/watch?v=') !== false){
+            $offset = strpos($youtube_video_id, 'youtube.com/watch?v=');
+            $offset += 20;
+            return substr($youtube_video_id, $offset);
+        }
+        return $youtube_video_id;
+    }
+
     public function getLink()
     {
         return route('web.post.show', $this->slug);
