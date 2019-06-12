@@ -67,6 +67,12 @@ class Event extends Model
         return asset('images/icon-sq.png');
     }
 
+    public function getImageAttribute($value)
+    {
+        if($value) return $value;
+        return asset('uploads/posts/default.jpg');
+    }
+
     public function getLink()
     {
         return route('web.event.show', $this->slug);

@@ -46,6 +46,12 @@ class Post extends Model
         return $youtube_video_id;
     }
 
+    public function getImageAttribute($value)
+    {
+        if($value) return $value;
+        return asset('uploads/posts/default.jpg');
+    }
+
     public function getLink()
     {
         return route('web.post.show', $this->slug);
