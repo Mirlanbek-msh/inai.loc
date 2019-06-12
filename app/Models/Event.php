@@ -70,7 +70,7 @@ class Event extends Model
     public function getImageAttribute($value)
     {
         if($value) return $value;
-        return asset('uploads/posts/default.jpg');
+        return asset('images/default_hd.jpg');
     }
 
     public function getLink()
