@@ -28,6 +28,18 @@
                 <p>{{ $row->description }}</p>
             </div>
         </div>
+        @isset($row->video_id)
+        <div class="entry">
+            <div class="title">
+                <h3>Video URL</h3>
+            </div>
+            <div class="body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $row->getYouTubeVideoId() }}?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        @endisset
         <div class="entry">
             <div class="title">
                 <h3>{{ trans('t.content') }}</h3>
