@@ -53,7 +53,9 @@
                     <div class="meta-text">
                         <span><i class="fa fa-calendar"></i> {{$row->created_at->diffForHumans()}}</span>
                         <span><i class="fa fa-eye"></i> {{$row->views}}</span>
-                        <span><i class="fa fa-user-friends"></i> {{ trans('t.signed_up') }}: {{$row->replies()->count()}}</span>
+                        @if($row->replies()->count() > 0)
+                            <span><i class="fa fa-user-friends"></i> {{ trans('t.signed_up') }}: {{$row->replies()->count()}}</span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-12">
