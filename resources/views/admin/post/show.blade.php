@@ -45,7 +45,7 @@
                 <h3>{{ trans('t.content') }}</h3>
             </div>
             <div class="body">
-                <p>{!! $row->content !!}</p>
+                <p><a target="_blank" href="{{ route('web.post.show', $row->slug) }}">{{ trans('t.open_on_site') }}</a></p>
             </div>
         </div>
         <div class="entry">

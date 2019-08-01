@@ -292,5 +292,8 @@ return [
     'bachelor' => 'Bachelor of Sciences (Informatics)',
     'master' => 'Master of Sciences (Informatics)',
 
+    'open_on_site' => 'Show on site',
+
+
 
 ];
