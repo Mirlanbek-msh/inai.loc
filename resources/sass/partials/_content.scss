@@ -201,6 +201,18 @@ nav {
     .post-body{
         padding: 30px;
 
+        img {
+            width: 100% !important;
+            height: auto !important;
+        }
+        figcaption {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            color: gray;
+            font-size: 90%;
+        }
+
         a{
             color: $blue-light;
 

@@ -7,14 +7,14 @@ return [
     // Regional languages are sorted by their base language, so "British English" sorts as "English, British"
     'supportedLocales' => [
         // 'de'          => ['name' => 'German',                 'script' => 'Latn', 'native' => 'Deutsch', 'regional' => 'de_DE'],
+        'ru'          => ['name' => 'Russian',                'script' => 'Cyrl', 'native' => 'русский', 'regional' => 'ru_RU'],
         'en'          => ['name' => 'English',                'script' => 'Latn', 'native' => 'English', 'regional' => 'en_GB'],
         //'ky'          => ['name' => 'Kyrgyz',                 'script' => 'Cyrl', 'native' => 'Кыргыз', 'regional' => 'ky_KG'],
-        'ru'          => ['name' => 'Russian',                'script' => 'Cyrl', 'native' => 'русский', 'regional' => 'ru_RU'],
     ],
 
     // Negotiate for the user locale using the Accept-Language header if it's not defined in the URL?
     // If false, system will take app.php locale attribute
-    'useAcceptLanguageHeader' => true,
+    'useAcceptLanguageHeader' => false,
 
     // If LaravelLocalizationRedirectFilter is active and hideDefaultLocaleInURL
     // is true, the url would not have the default application language
