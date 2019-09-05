@@ -63,6 +63,10 @@ class EventController extends Controller
             'title' => 'required',
             // 'description' => '',
             'content' => 'required',
+            'event_date' => 'nullable|max:191',
+            'author_phone' => 'nullable|max:191',
+            'author_email' => 'nullable|max:191',
+            'video_id' => 'nullable|max:191',
             'image' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
             'author_img' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
         ]);

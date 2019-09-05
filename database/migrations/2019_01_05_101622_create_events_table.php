@@ -26,7 +26,7 @@ class CreateEventsTable extends Migration
             $table->tinyInteger('has_end_date')->default(0);
             $table->string('event_date')->nullable();
             $table->text('event_place')->nullable();
-            $table->string('event_entrance')->nullable();
+            $table->text('event_entrance')->nullable();
             $table->string('video_id')->nullable();
 
             $table->integer('user_id')->unsigned()->nullable();
