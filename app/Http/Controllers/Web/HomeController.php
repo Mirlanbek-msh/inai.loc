@@ -16,8 +16,8 @@ class HomeController extends Controller
     {
         $posts = Post::where('status', 1)->where('lang', app()->getLocale())->orderBy('created_at', 'DESC')->take(6)->get();
         $events = Event::where('status', 1)->orderBy('created_at', 'DESC')->take(2)->get();
-        $banner_posts = Post::where('status', 1)->where('lang', app()->getLocale())->where('to_banner', 1)->orderBy('created_at', 'DESC')->get();
-        $banner_events = Event::where('status', 1)->where('to_banner', 1)->orderBy('created_at', 'DESC')->get();
+        $banner_posts = Post::where('status', 1)->where('lang', app()->getLocale())->where('to_banner', 1)->orderBy('created_at', 'DESC')->take(5)->get();
+        $banner_events = Event::where('status', 1)->where('to_banner', 1)->orderBy('created_at', 'DESC')->take(5)->get();
         return view('web.index', compact('posts', 'events', 'banner_posts', 'banner_events'));
     }
 
