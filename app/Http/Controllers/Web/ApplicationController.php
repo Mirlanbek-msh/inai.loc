@@ -15,7 +15,13 @@ class ApplicationController extends Controller
 
     public function show($slug)
     {
-        $category = PageCategory::where('slug', $slug)->firstOrFail();
-        return view('web.application.show', compact('category'));
+        if ($slug == 'graduates' OR $slug == 'graduates2'){
+            $category = PageCategory::where('slug', $slug)->firstOrFail();
+            return view('web.application.graduates', compact('category'));
+        } else {
+            $category = PageCategory::where('slug', $slug)->firstOrFail();
+            return view('web.application.show', compact('category'));
+        }
+
     }
 }

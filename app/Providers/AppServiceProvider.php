@@ -45,7 +45,7 @@ class AppServiceProvider extends ServiceProvider
             if(count($array) > 1){
                 list($routeName, $routeNumber) = explode(', ', $expression);
             }else{
-                $routeName = $array[0];                
+                $routeName = $array[0];
                 $routeNumber = 3;
             }
             return "<?php echo {$routeName} == Request::capture()->segment(intval($routeNumber)) ? 'current' : ''; ?>";
@@ -74,6 +74,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('admission', $this->loadAdmission());
             $view->with('contact_data', $this->loadContactData());
             $view->with('internationalization', $this->loadInternationalization());
+            $view->with('graduates', $this->loadGraduates());
+            $view->with('graduates2', $this->loadGraduates2());
             $view->with('services', $this->loadServices());
             try{
                 $view->with('bachelor_specs', $this->loadBachelorSpecialisations());
@@ -109,6 +111,14 @@ class AppServiceProvider extends ServiceProvider
     {
         return PageCategory::where('slug', 'internationalization')->firstOrFail();
     }
+    public function loadGraduates()
+    {
+        return PageCategory::where('slug', 'graduates')->firstOrFail();
+    }
+    public function loadGraduates2()
+    {
+        return PageCategory::where('slug', 'graduates2')->firstOrFail();
+    }
 
     public function loadServices()
     {
@@ -133,27 +143,27 @@ class AppServiceProvider extends ServiceProvider
     public function loadLocalizedDate()
     {
         $months = [
-            1 => 'Января', 
-            2 => 'Февраля', 
-            3 => 'Марта', 
-            4 => 'Апреля', 
-            5 => 'Мая', 
-            6 => 'Июня', 
-            7 => 'Июля', 
-            8 => 'Августа', 
-            9 => 'Сентября', 
-            10 => 'Октября', 
-            11 => 'Ноября', 
+            1 => 'Января',
+            2 => 'Февраля',
+            3 => 'Марта',
+            4 => 'Апреля',
+            5 => 'Мая',
+            6 => 'Июня',
+            7 => 'Июля',
+            8 => 'Августа',
+            9 => 'Сентября',
+            10 => 'Октября',
+            11 => 'Ноября',
             12 => 'Декабря'
         ];
-        
+
         $weekDays = [
-            1 => 'Понедельник', 
-            2 => 'Вторник', 
-            3 => 'Среда', 
-            4 => 'Четверг', 
-            5 => 'Пятница', 
-            6 => 'Суббота', 
+            1 => 'Понедельник',
+            2 => 'Вторник',
+            3 => 'Среда',
+            4 => 'Четверг',
+            5 => 'Пятница',
+            6 => 'Суббота',
             7 => 'Воскресенье'
         ];
         $monthNumber = date('n');

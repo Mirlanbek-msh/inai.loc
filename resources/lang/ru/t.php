@@ -21,7 +21,8 @@ return [
     'gallery'   => 'Галерея',
     'about'   => 'О нас',
     'contacts'   => 'Контакты',
-    'for_graduates'   => 'Для абитуриентов',
+    'for_graduates'   => 'Абитуриентам',
+    'graduates'   => 'Выпускникам',
     'bachelor_informatics'   => 'Бакалавриат информатики',
     // 'programm_technologies'   => 'Для абитуриентов',
     // 'medicine_informatics'   => 'Для абитуриентов',
@@ -67,7 +68,7 @@ return [
     'reception'   => 'Приемная',
     'project_office'   => 'Проектное бюро',
     'social_networks'   => 'Мы в социальных сетях',
-    
+
     /**Errors */
     'oops_error'   => 'Ой произошла ошибка!',
     'to_home'   => 'На главную',
@@ -88,7 +89,7 @@ return [
     /**Admin */
     'control_panel' => 'Панель управления',
     'to_site' => 'На сайт',
-    
+
     'main_items' => 'Основные',
     'special_pages' => 'Специальные страницы',
 
@@ -130,10 +131,10 @@ return [
 
     'create_post' => 'Добавить новость',
     'all_posts' => 'Все новости',
-    
+
     'create_event' => 'Добавить ивент',
     'all_events' => 'Все ивенты',
-    
+
     /**Forms */
     'in_russian' => 'На русском',
     'russian' => 'Русский',
@@ -144,7 +145,7 @@ return [
 
     'title_example' => 'Ночь программирования, Ярмарка карьеры и контактов',
     'description_example' => 'Ночь программирования это бла бла бла...',
-    
+
     'has_signing_up_form' => 'Нужна форма для регистрации',
     'event_speaker' => 'Спикеры',
     'for_questions' => 'По всем вопросам',
@@ -155,7 +156,7 @@ return [
     'end_date' => 'Дата окончания',
     'date' => 'Дата',
     'file' => 'Файл',
-    
+
     /**Event form */
     'event_time_place' => 'Место события',
     'event_place' => 'Место события',
@@ -207,7 +208,7 @@ return [
     'not_specified' => 'Не задан',
     'name' => 'Название',
     'value' => 'Значение',
-    
+
     /**Contacts */
     'phone_1' => 'Телефонный номер 1',
     'phone_2' => 'Телефонный номер 2',
@@ -236,7 +237,7 @@ return [
 
     'create_page' => 'Создать страницу',
     'is_link' => 'Ссылка',
-    
+
     'download' => 'Скачать',
 
 
@@ -292,7 +293,7 @@ return [
 
     'inai_presentation' => 'Презентация института',
 
-    
+
     'bachelor' => 'Бакалавриат информатики',
     'master' => 'Магистратура информатики',
 

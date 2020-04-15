@@ -21,6 +21,7 @@ return [
     'about'   => 'About',
     'contacts'   => 'Contacts',
     'for_graduates'   => 'For graduates',
+    'graduates'   => 'Graduates',
     'bachelor_informatics'   => 'Bachelor of Sciences (Informatics)',
     // 'program_technologies'   => 'Для абитуриентов',
     // 'medicine_informatics'   => 'Для абитуриентов',
@@ -86,7 +87,7 @@ return [
     /**Admin */
     'control_panel' => 'Control panel',
     'to_site' => 'Go to site',
-    
+
     'main_items' => 'Main',
     'special_pages' => 'Pages',
 
@@ -128,10 +129,10 @@ return [
 
     'create_post' => 'Create post',
     'all_posts' => 'All news',
-    
+
     'create_event' => 'Create event',
     'all_events' => 'All events',
-    
+
     /**Forms */
     'in_russian' => 'In russian',
     'russian' => 'Russian',
@@ -142,7 +143,7 @@ return [
 
     'title_example' => 'Hackathon, Career fair',
     'description_example' => 'Career fair is bla bla bla...',
-    
+
     'has_signing_up_form' => 'Has signing up form',
     'event_speaker' => 'Speakers',
     'for_questions' => 'For further questions please turn to',
@@ -153,7 +154,7 @@ return [
     'end_date' => 'Ending date',
     'date' => 'Date',
     'file' => 'File',
-    
+
     /**Event form */
     'event_time_place' => 'Venue',
     'event_place' => 'Venue',
@@ -205,7 +206,7 @@ return [
     'not_specified' => 'Not specified',
     'name' => 'Name',
     'value' => 'Value',
-    
+
     /**Contacts */
     'phone_1' => 'Phone number 1',
     'phone_2' => 'Phone number 2',
@@ -276,12 +277,12 @@ return [
     'placeholder_module' => 'Placeholder module',
     'obligatory_module' => 'Obligatory module',
     'obligatory_modules' => 'Obligatory modules',
-    
+
     'program' => 'Program',
-    
+
     'licensed' => 'Licensed',
     'degree' => 'Degree',
-    
+
     'subject' => 'Subject',
 
     'obligatory_catalogue' => 'Obligatory Catalogue',

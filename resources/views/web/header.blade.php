@@ -137,7 +137,7 @@
                     @endif
                     <li class="nav-item dropdown mega-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
-                        <i class="fa fa-graduation-cap"></i> {{ trans('t.for_graduates') }}
+                        <i class="fa fa-graduation-cap"></i> {{ trans('t.for_graduates') }}.
                         </a>
                         <ul class="dropdown-menu mega-dropdown-menu">
                             <div class="container">
@@ -178,36 +178,6 @@
                             </div>
                         </ul>
                     </li>
-{{--                    New line--}}
-
-                    <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
-{{--                        <i class="fa fa-graduation-cap"></i>--}} {{ trans('t.graduates') }}
-                        </a>
-                        <ul class="dropdown-menu mega-dropdown-menu">
-                            <div class="container">
-                                <div class="row">
-                                    <li class="col-lg-6 col-md-12 col-sm-12">
-                                        <ul>
-                                            @foreach($graduates2->pages as $row)
-                                                <li><a href="{{ route('web.application.show', $graduates2->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
-                                            @endforeach
-                                            <li class="dropdown-header">{{ $graduates->title_lang }}</li>
-                                            @foreach($graduates->pages as $row)
-                                                <li><a href="{{ route('web.application.show', $graduates->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                    <li class="col-lg-6 col-md-12 col-sm-12">
-                                        <ul>
-                                        </ul>
-                                    </li>
-                                </div>
-                            </div>
-                        </ul>
-                    </li>
-
-{{--                    END New line--}}
                 </ul>
                 <ul class="nav navbar-navs locale d-lg-none mt-3 float-left">
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
