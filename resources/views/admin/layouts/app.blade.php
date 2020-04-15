@@ -8,10 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
-    <link href="{{ mix('/admin/css/dist.css') }}" rel="stylesheet">
+    <link href="{{ mix('/assets/admin/css/dist.css') }}" rel="stylesheet">
     @include('partials.ogdata')
     @include('partials.favicon')
-    <link href="{{ mix('/admin/css/app.css') }}" rel="stylesheet"> 
+    <link href="{{ mix('/assets/admin/css/app.css') }}" rel="stylesheet"> 
     @yield('styles')
 </head>
 
@@ -35,7 +35,7 @@
         </div>
         <div class="display-type"></div>
     </div>
-    <script src="{{ mix('/admin/js/app.js') }}"></script>
+    <script src="{{ mix('/assets/admin/js/app.js') }}"></script>
 
     @include('sweetalert::alert') 
     @yield('scripts')

@@ -10,7 +10,7 @@
     <title>@yield('title')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('/assets/css/app.css') }}">
     @yield('social_meta')
     @include('partials.favicon')
     @yield('styles')
@@ -21,7 +21,7 @@
     @include('web.layouts.header')
     @yield('content')
     @include('web.layouts.footer')
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('/assets/js/app.js') }}"></script>
     @include('sweetalert::alert') 
     @yield('scripts')
 </body>

@@ -1,6 +1,6 @@
 <div class="menu-mobile menu-activated-on-click color-scheme-dark">
     <div class="mm-logo-buttons-w">
-        <a class="mm-logo" href="{{ route('admin.home') }}"><img src="{{ asset('admin/img/logo.png') }}"><span>Панель управления</span></a>
+        <a class="mm-logo" href="{{ route('admin.home') }}"><img src="{{ asset('/assets/admin/img/logo.png') }}"><span>Панель управления</span></a>
         <div class="mm-buttons">
             <div class="mobile-menu-trigger">
                 <div class="os-icon os-icon-hamburger-menu-1"></div>
@@ -10,7 +10,7 @@
     <div class="menu-and-user">
         <div class="logged-user-w">
             <div class="avatar-w">
-                <img alt="" src="{{ asset('admin/img/no_avatar.png') }}">
+                <img alt="" src="{{ asset('/assets/admin/img/no_avatar.png') }}">
             </div>
             <div class="logged-user-info-w">
                 <div class="logged-user-name">
@@ -29,7 +29,7 @@
     <div class="logo-w">
         <a class="logo" href="{{ route('admin.home') }}">
             <div class="logo">
-                <img src="{{asset('/admin/img/logo.png')}}" class="img-fluid">
+                <img src="{{asset('/assets/admin/img/logo.png')}}" class="img-fluid">
             </div>            
             <div class="logo-label">
                 {{trans('t.control_panel')}}
@@ -39,7 +39,7 @@
     <div class="logged-user-w">
         <div class="logged-user-i">
             <div class="avatar-w">
-                <img alt="" src="{{ asset('admin/img/no_avatar.png') }}">
+                <img alt="" src="{{ asset('/assets/admin/img/no_avatar.png') }}">
             </div>
             <div class="logged-user-info-w">
                 <div class="logged-user-name">
@@ -55,7 +55,7 @@
             <div class="logged-user-menu color-style-bright">
                 <div class="logged-user-avatar-info">
                     <div class="avatar-w">
-                        <img alt="" src="{{ asset('admin/img/no_avatar.png') }}">
+                        <img alt="" src="{{ asset('/assets/admin/img/no_avatar.png') }}">
                     </div>
                     <div class="logged-user-info-w">
                         <div class="logged-user-name">

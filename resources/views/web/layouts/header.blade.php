@@ -40,7 +40,7 @@
             </div>
             <div class="logo">
                 <a href="{{ route('web.home') }}" class="navbar-brand">
-                    <img src="{{ asset('/images/logo.png') }}" alt="">
+                    <img src="{{ asset('/assets/images/logo.png') }}" alt="">
                 </a>
             </div>
             <nav id="main-nav">

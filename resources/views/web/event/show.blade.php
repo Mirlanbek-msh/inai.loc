@@ -181,4 +181,5 @@
     @endif
 
 </script>
+@include('web.partials._embedded')
 @endsection

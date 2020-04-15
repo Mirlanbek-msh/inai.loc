@@ -9,7 +9,7 @@
     <meta name="twitter:card" content="{{ trans('t.kgiai') }}">
     <meta name="twitter:title" content="{{ trans('t.kgiai') }}">
     <meta name="twitter:description" content="{{ trans('t.kgiai') }}">
-    <meta name="twitter:image" content={{ asset('/images/icon-sq.png') }}">
+    <meta name="twitter:image" content={{ asset('/assets/images/icon-sq.png') }}">
 
     <!-- Facebook Meta -->
     @include('partials.ogdata')

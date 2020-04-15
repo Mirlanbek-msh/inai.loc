@@ -141,4 +141,5 @@
         });
 
 </script>
+@include('web.partials._embedded')
 @endsection
