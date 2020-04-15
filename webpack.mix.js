@@ -33,6 +33,8 @@ mix.scripts([
    'resources/admin/js/dataTables.bootstrap4.min.js',
    // 'resources/admin/js/dataTables.jqueryui.min.js',
    'resources/admin/js/dataTables.responsive.js',
+   'resources/js/moment.min.js',
+   'resources/js/pignose.calendar.min.js',
    // 'resources/admin/js/dataTables.responsive.js',
    // 'resources/admin/js/responsive.bootstrap4.min.js',
 
