@@ -119,3 +119,8 @@ $(document).ready(function () {
         $('.form-validate').validator();
     }
 });
+
+function changeMonth(info, context){
+    var dateItems = [info.day, info.month, info.year];
+    window.location.href = '/?date=' + dateItems.join('-');
+}

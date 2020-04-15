@@ -14,6 +14,7 @@
 @import "libs/lightgallery/lightslider.min";
 @import "libs/flipclock";
 @import "libs/flipclock-reponsive";
+@import "libs/pignose.calendar.min";
 
 // @import "../admin/css/jquery.dataTables.min.css";
 @import "../admin/css/dataTables.jqueryui.min.css";
@@ -29,3 +30,4 @@
 @import 'style';
 
 @import 'partials/components';
+@import "pignose-overwrite";
