@@ -5,7 +5,7 @@
                 <div class="footer-body">
                     <div class="logo">
                         <div class="logo-img">
-                            <img src="{{ asset('/images/logo-sq.jpg') }}" alt="">
+                            <img src="{{ asset('/assets/images/logo-sq.jpg') }}" alt="">
                         </div>
                         <span class="logo-text">INAI.KG</span>
                     </div>
@@ -74,12 +74,12 @@
                         <li><i class="fa fa-mobile-alt"></i> {{ trans('t.career_fair_app') }}</li>
                     </ul>
                     <a target="_blank" href="#" class="btn mb-2 btn-slink">
-                        <img class="hover-no" src="{{ asset('/images/apple-app-store-white.svg') }}" alt="">                        
-                        <img class="hover-on" src="{{ asset('/images/apple-app-store.svg') }}" alt="">                        
+                        <img class="hover-no" src="{{ asset('/assets/images/apple-app-store-white.svg') }}" alt="">                        
+                        <img class="hover-on" src="{{ asset('/assets/images/apple-app-store.svg') }}" alt="">                        
                     </a>
                     <a target="_blank" href="#" class="btn mb-2 btn-slink">
-                        <img class="hover-no" src="{{ asset('/images/google-app-store-white.svg') }}" alt="">
-                        <img class="hover-on" src="{{ asset('/images/google-app-store.svg') }}" alt="">
+                        <img class="hover-no" src="{{ asset('/assets/images/google-app-store-white.svg') }}" alt="">
+                        <img class="hover-on" src="{{ asset('/assets/images/google-app-store.svg') }}" alt="">
                     </a>
                     {{-- <ul>
                         <li><a href="#"><i class="fa fa-envelope"></i> {{ trans('t.login_to_email') }}</a></li>
@@ -93,6 +93,6 @@
 <div class="bottom-panel">
     <div class="text-center">
         <p>&copy; INAI.KG {{ date('Y') }}</p>
-        <span class="onoi-logo"><a target="_blank" href="https://www.onoi.dev"><span class="left">With <i class="fa fa-heart"></i> by </span><img class="onoi-logo-img" src="{{ asset('/images/onoi-logo.svg') }}" alt=""><span class="right onoi-text">onoi.dev</span></a></span>
+        <span class="onoi-logo"><a target="_blank" href="https://www.onoi.dev"><span class="left">With <i class="fa fa-heart"></i> by </span><img class="onoi-logo-img" src="{{ asset('/assets/images/onoi-logo.svg') }}" alt=""><span class="right onoi-text">onoi.dev</span></a></span>
     </div>
 </div>

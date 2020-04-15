@@ -41,13 +41,13 @@ mix.scripts([
    'resources/js/app.js'
 
 
-], 'public/js/app.js').version();
+], 'public/assets/js/app.js').version();
 
 //  Front css
-mix.sass('resources/sass/app.scss', 'public/css').version();
+mix.sass('resources/sass/app.scss', 'public/assets/css').version();
 
 //  Admin css
-mix.sass('resources/admin/main.scss', 'public/admin/css/app.css').version();
+mix.sass('resources/admin/main.scss', 'public/assets/admin/css/app.css').version();
 
 mix.styles([
    'resources/admin/bower_components/select2/dist/css/select2.min.css',
@@ -60,7 +60,7 @@ mix.styles([
    'resources/admin/icon_fonts_assets/feather/style.css',
    'resources/admin/css/tagify.css',
    'resources/admin/css/jasny-bootstrap.min.css',
-], 'public/admin/css/dist.css').version();
+], 'public/assets/admin/css/dist.css').version();
 
 //  Admin js
 mix.scripts([
@@ -98,5 +98,5 @@ mix.scripts([
    'resources/admin/js/tagify.js',
    'resources/admin/js/main.js',
    
-], 'public/admin/js/app.js').version();
+], 'public/assets/admin/js/app.js').version();
 

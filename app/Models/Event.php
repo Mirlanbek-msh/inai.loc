@@ -64,13 +64,13 @@ class Event extends Model
     {
         if($this->author_img)
             return asset($this->author_img);
-        return asset('images/icon-sq.png');
+        return asset('/assets/images/icon-sq.png');
     }
 
     public function getImageAttribute($value)
     {
         if($value) return $value;
-        return asset('images/default_hd.jpg');
+        return asset('/assets/images/default_hd.jpg');
     }
 
     public function getLink()

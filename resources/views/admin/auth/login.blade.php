@@ -10,7 +10,7 @@
     
     <title>{{trans('t.login')}} | {{trans('t.control_panel')}}</title>
 
-    <link rel="stylesheet" href="{{ asset('/admin/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/admin/css/app.css') }}">
 
     <!-- Twitter Meta -->
     {{-- <meta name="twitter:site" content="@centraltoday"> --}}
@@ -18,7 +18,7 @@
     <meta name="twitter:card" content="{{trans('t.login')}} | {{trans('t.control_panel')}}">
     <meta name="twitter:title" content="{{trans('t.login')}} | {{trans('t.control_panel')}}">
     <meta name="twitter:description" content="{{ trans('t.kgiai') }}">
-    <meta name="twitter:image" content={{ asset('/images/icon-sq.png') }}">
+    <meta name="twitter:image" content={{ asset('/assets/images/icon-sq.png') }}">
 
     <!-- Facebook Meta -->
     @include('partials.ogdata')
@@ -32,7 +32,7 @@
 <body class="auth-wrapper">
       <div class="auth-box-w">
         <div class="logo-w">
-        <img alt="" src="{{ asset('/admin/img/logo-big.png') }}">
+        <img alt="" src="{{ asset('/assets/admin/img/logo-big.png') }}">
         </div>
         <h4 class="auth-header">
                 {{trans('t.authorization')}}

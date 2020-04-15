@@ -9,7 +9,7 @@
     <meta name="twitter:card" content="{{ trans('t.kgiai') }}">
     <meta name="twitter:title" content="{{trans('t.modules')}}: {{$title}} | INAI.KG">
     <meta name="twitter:description" content="{{ trans('t.kgiai') }}">
-    <meta name="twitter:image" content={{ asset('images/favicon.ico') }}">
+    <meta name="twitter:image" content={{ asset('/assets/images/favicon.ico') }}">
 
     <!-- Facebook Meta -->
     <meta property="og:description" content="{{ trans('t.kgiai') }}">

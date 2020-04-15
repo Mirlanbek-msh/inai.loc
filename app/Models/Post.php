@@ -49,7 +49,7 @@ class Post extends Model
     public function getImageAttribute($value)
     {
         if($value) return $value;
-        return asset('images/default_hd.jpg');
+        return asset('/assets/images/default_hd.jpg');
     }
 
     public function getLink()
