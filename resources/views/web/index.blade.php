@@ -132,9 +132,7 @@
                 <hr class="divider w-75">
             </div>
 
-            <div class="col-md-4 col-12">
-                <div class="calendar pb-4"></div>
-            </div>
+            
             <div class="col-md-8 col-12">
                 <div class="row">
                     @foreach($events as $row)
@@ -174,6 +172,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="calendar pb-4"></div>
             </div>
             <div class="col-12 justify-content-center d-flex">
                 <a href="{{ route('web.event.index') }}" class="btn btn-primary">{{ trans('t.show_more') }}</a>
