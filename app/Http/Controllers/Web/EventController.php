@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\EventReply;
+use Illuminate\Validation\Rule;
 
 class EventController extends Controller
 {
@@ -40,8 +41,20 @@ class EventController extends Controller
         if($event->need_university) $validation_array['university'] = 'required';
         if($event->need_group_course) $validation_array['group_course'] = 'required';
         if($event->need_team_name) $validation_array['team_name'] = 'required';
-        if($event->need_phone) $validation_array['phone'] = 'required|unique:event_replies';
-        if($event->need_email) $validation_array['email'] = 'required|unique:event_replies';
+        // if($event->need_phone) $validation_array['phone'] = 'required|unique:event_replies';
+        if($event->need_phone) $validation_array['phone'] = [
+            "required",
+            Rule::unique('event_replies', 'phone')->where(function ($query) use ($event) {
+                return $query->where('event_id', $event->id);
+            })
+        ];
+        // if($event->need_email) $validation_array['email'] = 'required|unique:event_replies';
+        if($event->need_email) $validation_array['email'] = [
+            "required",
+            Rule::unique('event_replies', 'email')->where(function ($query) use ($event) {
+                return $query->where('event_id', $event->id);
+            })
+        ];
         if($event->need_file) $validation_array['file'] = 'required';
         
         $request->validate($validation_array);
