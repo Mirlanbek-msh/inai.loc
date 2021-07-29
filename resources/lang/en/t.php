@@ -283,20 +283,15 @@ return [
     'comment' => 'Notes',
 
     'level' => 'Level',
-    'duration' => 'Duration',
-    'rotation' => 'Cycle',
     'lecturer' => 'Lecturer',
     'teaching_lang' => 'Teaching language (s)',
     'workload' => 'Workload',
     'courses' => 'Courses',
     'selfstudy_time' => 'Self study time',
-    'mediaform' => 'Media form',
     'course_struc' => 'Course content / structure',
     'sp_skills' => 'Social and personal skills',
     'spec_req' => 'Special admission requirements',
-    'con_possib' => 'Continuation options',
     'link' => 'Link to course / learning resources',
-    'assign_curric' => 'Assignment to curriculum',
 
 
     'module' => 'Module',

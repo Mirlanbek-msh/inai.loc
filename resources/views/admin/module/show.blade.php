@@ -38,22 +38,6 @@
         </div>
         <div class="entry">
             <div class="title">
-                <h3>{{ trans('t.duration') }}</h3>
-            </div>
-            <div class="body">
-                <p>{{ $row->duration_lang }}</p>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="title">
-                <h3>{{ trans('t.rotation') }}</h3>
-            </div>
-            <div class="body">
-                <p>{{ $row->rotation_lang }}</p>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="title">
                 <h3>{{ trans('t.professor') }}</h3>
             </div>
             <div class="body">
@@ -126,14 +110,6 @@
         </div>
         <div class="entry">
             <div class="title">
-                <h3>{{ trans('t.mediaform') }}</h3>
-            </div>
-            <div class="body">
-                <p>{{ $row->mediaform_lang }}</p>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="title">
                 <h3>{{ trans('t.course_struc') }}</h3>
             </div>
             <div class="body">
@@ -174,14 +150,6 @@
         </div>
         <div class="entry">
             <div class="title">
-                <h3>{{ trans('t.con_possib') }}</h3>
-            </div>
-            <div class="body">
-                <p>{{ $row->con_possib_lang }}</p>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="title">
                 <h3>{{ trans('t.literature') }}</h3>
             </div>
             <div class="body">
@@ -202,14 +170,6 @@
             </div>
             <div class="body">
                 <p>{{ $row->link_lang }}</p>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="title">
-                <h3>{{ trans('t.assign_curric') }}</h3>
-            </div>
-            <div class="body">
-                <p>{{ $row->assign_curric_lang }}</p>
             </div>
         </div>
     </fieldset>
