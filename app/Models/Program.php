@@ -36,7 +36,7 @@ class Program extends Model
 
     public function specialisations()
     {
-        return $this->hasMany(Specialisation::class, 'program_id');
+        return $this->hasMany(Specialisation::class, 'programm_id');
     }
 
 
