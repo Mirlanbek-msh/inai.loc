@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\Web;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Specialisation;
-use App\Models\ObligatoryCatalogue;
-use Illuminate\Support\Facades\DB;
-use App\Models\Curriculum;
 use App\Models\Module;
+use App\Models\Program;
+use App\Models\Specialisation;
 
 class ModuleController extends Controller
 {
@@ -22,24 +19,13 @@ class ModuleController extends Controller
         return view('web.module.index', compact('data', 'title'));
     }
 
-    public function obModules()
+    public function obModules($programId)
     {
-        // $data = DB::connection('mysql2')->select('SELECT if(o.placeholder_module_id = 207, REPLACE(o.placeholder_module_id, 207, 1), REPLACE(o.placeholder_module_id, 208, 2)  ) as placeholder_module, m.*, s.label as specialisation 
-        // FROM module m left join obligatorycatalogue o on m.id = o.obligatory_module_id 
-        // left join specialisation s on s.id = o.obligatory_module_id 
-        // WHERE o.placeholder_module_id = 207 or o.placeholder_module_id = 208;');
-        // $title = $data[0]->specialisation;
-        // dd($data);
-        $obCatalogues = ObligatoryCatalogue::where(function($query){
-            $query->where('placeholder_module_id', 207)
-                ->orWhere('placeholder_module_id', 208);
-        })->get();
-        $title = 'Obligatory Modules';
         $title = trans('t.obligatory_modules');
-        $data = collect();
-        foreach($obCatalogues as $obCatalogue){
-            $data->push($obCatalogue->obligatoryModule);
-        }
+        /** @var Program $program */
+        $program = Program::find($programId);
+        $data=$program->getInvolvedObligatoryModules();
+
         return view('web.module.obCatalogue', compact('data', 'title'));
     }
 
@@ -50,4 +36,6 @@ class ModuleController extends Controller
         $data = $specialisation->curricula;
         return view('web.module.show', compact('data', 'title'));
     }
+
+
 }

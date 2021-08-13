@@ -2,16 +2,13 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Blade;
-use App\Models\PageCategory;
 use App\Models\Contact;
-use App\Models\Specialisation;
+use App\Models\PageCategory;
 use App\Models\Program;
-use Illuminate\Database\QueryException;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -85,13 +82,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('bachelor_for_graduates', $this->loadBachelor_for_graduates());
             $view->with('master_for_graduates', $this->loadMaster_for_graduates());
             $view->with('services', $this->loadServices());
-            try{
-                $view->with('bachelor_specs', $this->loadBachelorSpecialisations());
-                $view->with('master_specs', $this->loadMasterSpecialisations());
-            }catch(QueryException $e){
-                $view->with('bachelor_specs', collect());
-                $view->with('master_specs', collect());
-            }
+            $view->with('study_programs', Program::all());
         });
     }
 
@@ -168,18 +159,6 @@ class AppServiceProvider extends ServiceProvider
         return PageCategory::where('slug', 'services')->firstOrFail();
     }
 
-    public function loadBachelorSpecialisations()
-    {
-        $specs = Program::find(1)->specialisations;
-        return $specs;
-    }
-
-    public function loadMasterSpecialisations()
-    {
-        $specs = Program::find(2)->specialisations;
-        return $specs;
-    }
-
     public function loadLocalizedDate()
     {
         $months = [
@@ -224,4 +203,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+
+
 }
