@@ -4,6 +4,22 @@
         <a href="#nav-ru" class="nav-item nav-link" id="nav-ru-tab" data-toggle="tab" role="tab" aria-controls="nav-ru" aria-selected="true">Русский</a>
     </div>
 </nav>
+<fieldset class="form-group">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">{{trans('t.nr')}}</label>
+        <div class="col-sm-10">
+            {!! Form::text('nr', null, ["class" => "form-control"]) !!}
+            <div class="mb-2"></div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">{{trans('t.ects')}} *</label>
+        <div class="col-sm-10">
+            {!! Form::text('ects', null, ['class' => 'form-control', 'required' => 'required', 'data-error' => trans('validation.required',['attribute' => ''])]) !!}
+            <div class="help-block with-errors text-danger"></div>
+        </div>
+    </div>
+</fieldset>
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-en" role="tabpanel">
         <fieldset class="form-group">
@@ -300,22 +316,7 @@
         </fieldset>
     </div>
 </div>
-<fieldset class="form-group">
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.nr')}}</label>
-        <div class="col-sm-10">
-            {!! Form::text('nr', null, ["class" => "form-control"]) !!}
-            <div class="mb-2"></div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.ects')}} *</label>
-        <div class="col-sm-10">
-            {!! Form::text('ects', null, ['class' => 'form-control', 'required' => 'required', 'data-error' => trans('validation.required',['attribute' => ''])]) !!}
-            <div class="help-block with-errors text-danger"></div>
-        </div>
-    </div>
-</fieldset>
+
 <fieldset class="form-group">
     <div class="form-buttons-w">
         <div class="form-group row">
