@@ -136,6 +136,7 @@
                                     <div class="form-group mt-4">
                                         <button class="btn btn-success">{{ trans('t.send') }}</button>
                                     </div>
+                                    <input type="hidden" name="event_id" value="{{$row->id}}">
                                 </form>
                                 @else
                                 <div class="alert alert-danger">

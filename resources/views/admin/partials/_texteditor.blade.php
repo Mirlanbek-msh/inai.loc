@@ -7,8 +7,8 @@
         tinymce.init({
             language: '{{ app()->getLocale() }}',
             selector: '.editor',
-            plugins: 'advlist responsivefilemanager link image imagetools colorpicker textcolor lists preview autolink fullscreen table hr media autolink paste',
-            toolbar: 'undo redo | formatselect bold italic underline strikethrough subscript superscript | hr blockquote bullist numlist outdent indent | alignleft aligncenter alignright alignjustify | link image media responsivefilemanager table | removeformat preview fullscreen',
+            plugins: 'advlist responsivefilemanager link image imagetools colorpicker textcolor lists preview autolink fullscreen table hr media autolink paste code',
+            toolbar: 'undo redo | formatselect bold italic underline strikethrough subscript superscript | hr blockquote bullist numlist outdent indent | alignleft aligncenter alignright alignjustify | link image media responsivefilemanager table | removeformat preview fullscreen code',
             menubar: false,
             block_formats: 'Paragraph=p;Header 3=h3;Header 4=h4;',
             images_upload_url: '/tinymce/postAcceptor.php',

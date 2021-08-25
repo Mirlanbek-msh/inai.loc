@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Program extends Model
 {
-    protected $connection = 'mysql2';
-    protected $table = 'program';
-    protected $primaryKey = 'ID';
+   // protected $connection = 'mysql2';
+    protected $table = 'programms';
+    protected $primaryKey = 'id';
     public $timestamps = false;
 
     protected $fillable = [
@@ -16,7 +16,7 @@ class Program extends Model
 
         'label',
         'degree',
-        
+
         'label_ru',
         'degree_ru',
     ];

@@ -1,0 +1,60 @@
+{
+  "name": "vrkansagara/lara-out-press",
+  "description": "This is simply compress your final out of Larvel Application and serve to the browser.",
+  "keywords": [
+    "laravel",
+    "compress"
+  ],
+  "homepage": "https://vrkansagara.in/",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Vallabh Kansagara",
+      "email": "vrkansagara@gmail.com",
+      "homepage": "https://vrkansagara.in/"
+    }
+  ],
+  "require": {
+    "php": ">=5.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vrkansagara\\LaraOutPress\\": "src/"
+    },
+    "files": [
+      "src/helper.php"
+    ]
+  },
+  "support": {
+    "email": "vrkansagara@gmail.com",
+    "issues": "https://github.com/vrkansagara/LaraOutPress/issues",
+    "source": "https://github.com/vrkansagara/LaraOutPress"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "laravel": {
+      "branch-alias": {
+        "dev-master": "develop"
+      },
+      "providers": [
+        "Vrkansagara\\LaraOutPress\\ServiceProvider"
+      ],
+      "aliases": {
+        "LaraOutPress": "Vrkansagara\\LaraOutPress\\Facade"
+      }
+    }
+  },
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {
+    "laravel/framework": "5.5.x"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump"
+    ]
+  }
+}

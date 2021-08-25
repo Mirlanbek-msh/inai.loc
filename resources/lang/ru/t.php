@@ -17,12 +17,24 @@ return [
 
 
     'home'   => 'Главная',
-    'events'   => 'Ивенты',
+    'events'   => 'Мероприятия',
     'gallery'   => 'Галерея',
+    'summer_school'   => 'Летняя школа',
     'about'   => 'О нас',
+    'organigram'   => 'Органиграмм',
+    'charter'   => 'Устав',
+    'license'   => 'Лицензия',
+    'accreditation'   => 'Аккредитация',
+    'accreditation_cert'   => 'Сертификаты аккредитации',
+    'rep_accreditation'   => 'Заключение аккредитационной комиссии',
+    'projects'   => 'Проекты',
+    'educ_process'   => 'Учебный процесс',
+    'q_assurance'   => 'Гарантия качества',
+    'for_students'   => 'Студентам',
     'contacts'   => 'Контакты',
     'for_graduates'   => 'Абитуриентам',
     'graduates'   => 'Выпускникам',
+    'learning_programs'   => 'Учебные программы',
     'bachelor_informatics'   => 'Бакалавриат информатики',
     // 'programm_technologies'   => 'Для абитуриентов',
     // 'medicine_informatics'   => 'Для абитуриентов',
@@ -261,17 +273,32 @@ return [
     'create_obligatory-catalogue' => 'Создать эликтивную дисциплину',
 
 
-    'label' => 'Наименование',
-    'nr' => 'Предмет',
-    'ects' => 'Кредиты',
-    'professor' => 'Профессор',
-    'learning_goals' => 'Цели обучения',
+    'label' => 'Модуль',
+    'nr' => 'Номер модуля',
+    'ects' => 'Кредит',
+    'professor' => 'Ответственный за модуль',
+    'learning_goals' => 'Цели квалификации',
     'literature' => 'Литература',
-    'preliminary_knowledge' => 'Предварительные знания',
-    'preliminary_work' => 'Предварительная работа',
-    'examination' => 'Экзамен',
-    'exam_duration' => 'Длительность экзамена',
-    'comment' => 'Комментарий',
+    'preliminary_knowledge' => 'Рекомендуемые предпосылки',
+    'preliminary_work' => 'Предэкзаменационное исполнение',
+    'examination' => 'Проведение экзаменов',
+    'comment' => 'Примечания',
+
+    'level' => 'Академическая степень',
+    'duration' => 'Продолжительность',
+    'rotation' => 'Цикл',
+    'lecturer' => 'Лектор(ы)',
+    'teaching_lang' => 'Язык(и) преподавания',
+    'workload' => 'Нагрузка',
+    'courses' => 'Лекция',
+    'selfstudy_time' => 'Самостоятельная работа',
+    'mediaform' => 'Медиа-форма',
+    'course_struc' => 'Содержание/структура обучения',
+    'sp_skills' => 'Социальные и личные качества',
+    'spec_req' => 'Специальное предложение/Требование к поступлению',
+    'con_possib' => 'Варианты продолжения',
+    'link' => 'Ссылка на курс/учебные ресурсы',
+    'assign_curric' => 'Задание по программе',
 
 
     'module' => 'Модуль',
@@ -299,9 +326,9 @@ return [
 
     'open_on_site' => 'Открыть на сайте',
 
-    
+
     'no_data_for_this_date' => 'Нет данных на выбранную дату',
-    'events_for' => 'Ивенты за',
+    'events_for' => 'Мероприятия за',
 
 
 ];

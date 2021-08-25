@@ -15,40 +15,77 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.level')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::text('level', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.duration')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::text('duration', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.rotation')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::text('rotation', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.professor')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::text('professor', null, ["class" => "form-control"]) !!}
+                    {!! Form::textarea('professor', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.content')}}</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.lecturer')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::textarea('content', null, ["class" => "form-control"]) !!}
+                    {!! Form::textarea('lecturer', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.learning_goals')}}</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.teaching_lang')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::textarea('learning_goals', null, ["class" => "form-control"]) !!}
+                    {!! Form::text('teaching_lang', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.literature')}}</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.workload')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::textarea('literature', null, ["class" => "form-control"]) !!}
+                    {!! Form::text('workload', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.preliminary_knowledge')}}</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.courses')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::textarea('preliminary_knowledge', null, ["class" => "form-control"]) !!}
+                    {!! Form::text('courses', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.selfstudy_time')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('selfstudy_time', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.preliminary_work')}}</label>
                 <div class="col-sm-10">
@@ -56,6 +93,7 @@
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.examination')}}</label>
                 <div class="col-sm-10">
@@ -63,17 +101,91 @@
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.exam_duration')}}</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.mediaform')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::textarea('exam_duration', null, ["class" => "form-control"]) !!}
+                    {!! Form::textarea('mediaform', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.course_struc')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('course_struc', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.learning_goals')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('learning_goals', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.sp_skills')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('sp_skills', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.spec_req')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('spec_req', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.preliminary_knowledge')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('preliminary_knowledge', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.con_possib')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('con_possib', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.literature')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('literature', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.comment')}}</label>
                 <div class="col-sm-10">
                     {!! Form::textarea('comment', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.link')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('link', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.assign_curric')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('assign_curric', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
@@ -89,40 +201,77 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.level')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::text('level_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.duration')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::text('duration_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.rotation')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::text('rotation_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.professor')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::text('professor_ru', null, ["class" => "form-control"]) !!}
+                    {!! Form::textarea('professor_ru', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.content')}}</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.lecturer')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::textarea('content_ru', null, ["class" => "form-control"]) !!}
+                    {!! Form::textarea('lecturer_ru', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.learning_goals')}}</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.teaching_lang')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::textarea('learning_goals_ru', null, ["class" => "form-control"]) !!}
+                    {!! Form::text('teaching_lang_ru', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.literature')}}</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.workload')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::textarea('literature_ru', null, ["class" => "form-control"]) !!}
+                    {!! Form::text('workload_ru', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.preliminary_knowledge')}}</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.courses')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::textarea('preliminary_knowledge_ru', null, ["class" => "form-control"]) !!}
+                    {!! Form::text('courses_ru', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.selfstudy_time')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('selfstudy_time_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.preliminary_work')}}</label>
                 <div class="col-sm-10">
@@ -130,6 +279,7 @@
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.examination')}}</label>
                 <div class="col-sm-10">
@@ -137,17 +287,91 @@
                     <div class="mb-2"></div>
                 </div>
             </div>
+
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.exam_duration')}}</label>
+                <label class="col-sm-2 col-form-label">{{trans('t.mediaform')}}</label>
                 <div class="col-sm-10">
-                    {!! Form::textarea('exam_duration_ru', null, ["class" => "form-control"]) !!}
+                    {!! Form::textarea('mediaform_ru', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.course_struc')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('course_struc_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.learning_goals')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('learning_goals_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.sp_skills')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('sp_skills_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.spec_req')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('spec_req_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.preliminary_knowledge')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('preliminary_knowledge_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.con_possib')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('con_possib_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.literature')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('literature_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.comment')}}</label>
                 <div class="col-sm-10">
                     {!! Form::textarea('comment_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.link')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('link_ru', null, ["class" => "form-control"]) !!}
+                    <div class="mb-2"></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{trans('t.assign_curric')}}</label>
+                <div class="col-sm-10">
+                    {!! Form::textarea('assign_curric_ru', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
@@ -163,10 +387,10 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.ects')}}</label>
+        <label class="col-sm-2 col-form-label">{{trans('t.ects')}} *</label>
         <div class="col-sm-10">
-            {!! Form::number('ects', null, ["class" => "form-control"]) !!}
-            <div class="mb-2"></div>
+            {!! Form::text('ects', null, ['class' => 'form-control', 'required' => 'required', 'data-error' => trans('validation.required',['attribute' => ''])]) !!}
+            <div class="help-block with-errors text-danger"></div>
         </div>
     </div>
 </fieldset>

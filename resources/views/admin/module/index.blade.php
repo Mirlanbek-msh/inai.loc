@@ -26,15 +26,15 @@
                 <tbody>
                 @foreach ($data as $key => $row)
                     <tr>
-                        <td>{{ $row->ID }}</td>
+                        <td>{{ $row->id }}</td>
                         <td>{{ $row->label_lang }}</td>
                         <td>{{ $row->nr }}</td>
                         <td>{{ $row->ects }}</td>
                         <td>{{ $row->professor_lang }}</td>
                         <td class="text-center">
-                            <a class="btn btn-table btn-table-show" href="{{ route('admin.module.show',$row->ID) }}"><i class="icon-feather-book-open"></i></a>
-                            <a class="btn btn-table btn-table-edit" href="{{ route('admin.module.edit',$row->ID) }}"><i class="icon-feather-edit"></i></a>
-                            {!! Form::open(['method' => 'DELETE','route' => ['admin.module.destroy', $row->ID],'style'=>'display:inline', 'onsubmit' => 'return confirmDelete()']) !!}
+                            <a class="btn btn-table btn-table-show" href="{{ route('admin.module.show',$row->id) }}"><i class="icon-feather-book-open"></i></a>
+                            <a class="btn btn-table btn-table-edit" href="{{ route('admin.module.edit',$row->id) }}"><i class="icon-feather-edit"></i></a>
+                            {!! Form::open(['method' => 'DELETE','route' => ['admin.module.destroy', $row->id],'style'=>'display:inline', 'onsubmit' => 'return confirmDelete()']) !!}
                             <input type="hidden" value="Delete">
                             <button class="btn btn-table btn-table-trash" type="submit"><i class="icon-feather-trash-2"></i></button>
                             {!! Form::close() !!}

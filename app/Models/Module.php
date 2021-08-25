@@ -6,41 +6,163 @@ use Illuminate\Database\Eloquent\Model;
 
 class Module extends Model
 {
-    protected $connection = 'mysql2';
-    protected $table = 'module';
-    protected $primaryKey = 'ID';
+   // protected $connection = 'mysql2';
+    protected $table = 'modules';
+    protected $primaryKey = 'id';
     public $timestamps = false;
 
     protected $fillable = [
         'ects',
-        
+
         'nr',
         'label',
         'professor',
-        'content',
         'learning_goals',
         'literature',
         'preliminary_knowledge',
         'preliminary_work',
         'examination',
-        'exam_duration',
+
+        'level',
+        'duration',
+        'rotation',
+        'lecturer',
+        'teaching_lang',
+        'workload',
+        'courses',
+        'selfstudy_time',
+        'mediaform',
+        'course_struc',
+        'sp_skills',
+        'spec_req',
+        'con_possib',
+        'link',
+        'assign_curric',
+
         'comment',
 
         'label_ru',
         'professor_ru',
-        'content_ru',
         'learning_goals_ru',
         'literature_ru',
         'preliminary_knowledge_ru',
         'preliminary_work_ru',
         'examination_ru',
-        'exam_duration_ru',
+
+        'level_ru',
+        'duration_ru',
+        'rotation_ru',
+        'lecturer_ru',
+        'teaching_lang_ru',
+        'workload_ru',
+        'courses_ru',
+        'selfstudy_time_ru',
+        'mediaform_ru',
+        'course_struc_ru',
+        'sp_skills_ru',
+        'spec_req_ru',
+        'con_possib_ru',
+        'link_ru',
+        'assign_curric_ru',
+
         'comment_ru',
     ];
 
+    public function getLevelLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->level_ru) > 0) return $this->level_ru;
+        return $this->level;
+    }
+
+    public function getDurationLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->duration_ru) > 0) return $this->duration_ru;
+        return $this->duration;
+    }
+
+    public function getRotationLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->rotation_ru) > 0) return $this->rotation_ru;
+        return $this->rotation;
+    }
+
+    public function getLecturerLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->lecturer_ru) > 0) return $this->lecturer_ru;
+        return $this->lecturer;
+    }
+
+    public function getTeachingLangLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->teaching_lang_ru) > 0) return $this->teaching_lang_ru;
+        return $this->teaching_lang;
+    }
+
+    public function getWorkloadLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->workload_ru) > 0) return $this->workload_ru;
+        return $this->workload;
+    }
+
+    public function getCoursesLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->courses_ru) > 0) return $this->courses_ru;
+        return $this->courses;
+    }
+
+    public function getSelfstudyTimeLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->selfstudy_time_ru) > 0) return $this->selfstudy_time_ru;
+        return $this->selfstudy_time;
+    }
+
+    public function getMediaformLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->mediaform_ru) > 0) return $this->mediaform_ru;
+        return $this->mediaform;
+    }
+
+    public function getCourseStrucLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->course_struc_ru) > 0) return $this->course_struc_ru;
+        return $this->course_struc;
+    }
+
+    public function getSpSkillsLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->sp_skills_ru) > 0) return $this->sp_skills_ru;
+        return $this->sp_skills;
+    }
+
+    public function getSpecReqLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->spec_req_ru) > 0) return $this->spec_req_ru;
+        return $this->spec_req;
+    }
+
+    public function getConPossibLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->con_possib_ru) > 0) return $this->con_possib_ru;
+        return $this->con_possib;
+    }
+
+    public function getLinkLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->link_ru) > 0) return $this->link_ru;
+        return $this->link;
+    }
+
+    public function getAssignCurricLangAttribute()
+    {
+        if(app()->getLocale() == 'ru' && strlen($this->assign_curric_ru) > 0)
+            return $this->assign_curric_ru;
+        return $this->assign_curric;
+    }
+
+
     public function getLabelLangAttribute()
     {
-        if(app()->getLocale() == 'ru' && strlen($this->label_ru) > 0) 
+        if(app()->getLocale() == 'ru' && strlen($this->label_ru) > 0)
             return $this->label_ru;
         return $this->label;
     }
@@ -49,12 +171,6 @@ class Module extends Model
     {
         if(app()->getLocale() == 'ru' && strlen($this->professor_ru) > 0) return $this->professor_ru;
         return $this->professor;
-    }
-
-    public function getContentLangAttribute()
-    {
-        if(app()->getLocale() == 'ru' && strlen($this->content_ru) > 0) return $this->content_ru;
-        return $this->content;
     }
 
     public function getLearningGoalsLangAttribute()
@@ -87,11 +203,6 @@ class Module extends Model
         return $this->examination;
     }
 
-    public function getExamDurationLangAttribute()
-    {
-        if(app()->getLocale() == 'ru' && strlen($this->exam_duration_ru) > 0) return $this->exam_duration_ru;
-        return $this->exam_duration;
-    }
 
     public function getCommentLangAttribute()
     {
@@ -101,7 +212,7 @@ class Module extends Model
 
     public function obligatoryCatalogue()
     {
-        return $this->hasOne(ObligatoryCatalogue::class, 'obligatory_module_id', 'ID');
+        return $this->hasOne(ObligatoryCatalogue::class, 'obligatory_module_id', 'id');
     }
 
     public function curricula()

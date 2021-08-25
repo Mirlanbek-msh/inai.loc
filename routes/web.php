@@ -30,6 +30,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
         Route::get('/', 'HomeController@index')->name('home');
         Route::get('/about', 'HomeController@about')->name('about');
+        Route::get('/projects', 'HomeController@projects')->name('projects');
         Route::get('/contact', 'HomeController@contact')->name('contact');
         Route::get('/gallery', 'HomeController@gallery')->name('gallery');
         Route::get('/tag/{slug}', 'HomeController@tag')->name('tag');

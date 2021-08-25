@@ -16,7 +16,7 @@
     <meta property="og:title" content="{{trans('t.modules')}}: {{$title}} | INAI.KG">
 
     @include('partials.ogdata')
-    
+
 @endsection
 
 @section('content')
@@ -36,17 +36,30 @@
                             {{-- <th>ID</th> --}}
                             <th></th>
                             <th>{{trans('t.label')}}</th>
-                            <th>{{trans('t.subject')}} #</th>
+                            <th>{{trans('t.nr')}} #</th>
                             <th>{{trans('t.ects')}}</th>
+                            <th class="none">{{trans('t.level')}}</th>
+                            <th class="none">{{trans('t.duration')}}</th>
+                            <th class="none">{{trans('t.rotation')}}</th>
                             <th class="none">{{trans('t.professor')}}</th>
-                            <th class="none">{{trans('t.content')}}</th>
-                            <th class="none">{{trans('t.learning_goals')}}</th>
-                            <th class="none">{{trans('t.literature')}}</th>
-                            <th class="none">{{trans('t.preliminary_knowledge')}}</th>
+                            <th class="none">{{trans('t.lecturer')}}</th>
+                            <th class="none">{{trans('t.teaching_lang')}}</th>
+                            <th class="none">{{trans('t.workload')}}</th>
+                            <th class="none">{{trans('t.courses')}}</th>
+                            <th class="none">{{trans('t.selfstudy_time')}}</th>
                             <th class="none">{{trans('t.preliminary_work')}}</th>
                             <th class="none">{{trans('t.examination')}}</th>
-                            <th class="none">{{trans('t.exam_duration')}}</th>
+                            <th class="none">{{trans('t.mediaform')}}</th>
+                            <th class="none">{{trans('t.course_struc')}}</th>
+                            <th class="none">{{trans('t.learning_goals')}}</th>
+                            <th class="none">{{trans('t.sp_skills')}}</th>
+                            <th class="none">{{trans('t.spec_req')}}</th>
+                            <th class="none">{{trans('t.preliminary_knowledge')}}</th>
+                            <th class="none">{{trans('t.con_possib')}}</th>
+                            <th class="none">{{trans('t.literature')}}</th>
                             <th class="none">{{trans('t.comment')}}</th>
+                            <th class="none">{{trans('t.link')}}</th>
+                            <th class="none">{{trans('t.assign_curric')}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,15 +72,28 @@
                             <td>{{$row->label_lang}}</td>
                             <td>{{$row->nr}}</td>
                             <td>{{$row->ects}}</td>
+                            <td>{{$row->level_lang}}</td>
+                            <td>{{$row->duration_lang}}</td>
+                            <td>{{$row->rotation_lang}}</td>
                             <td>{{$row->professor_lang}}</td>
-                            <td>{{$row->content_lang}}</td>
-                            <td>{{$row->learning_goals_lang}}</td>
-                            <td>{{$row->literature_lang}}</td>
-                            <td>{{$row->preliminary_knowledge_lang}}</td>
+                            <td>{{$row->lecturer_lang}}</td>
+                            <td>{{$row->teaching_lang_lang}}</td>
+                            <td>{{$row->workload_lang}}</td>
+                            <td>{{$row->courses_lang}}</td>
+                            <td>{{$row->selfstudy_time_lang}}</td>
                             <td>{{$row->preliminary_work_lang}}</td>
                             <td>{{$row->examination_lang}}</td>
-                            <td>{{$row->exam_duration_lang}}</td>
-                            <td>{{optional($row)->comment_lang}}</td>
+                            <td>{{$row->mediaform_lang}}</td>
+                            <td>{{$row->course_struc_lang}}</td>
+                            <td>{{$row->learning_goals_lang}}</td>
+                            <td>{{$row->sp_skills_lang}}</td>
+                            <td>{{$row->spec_req_lang}}</td>
+                            <td>{{$row->preliminary_knowledge_lang}}</td>
+                            <td>{{$row->con_possib_lang}}</td>
+                            <td>{{$row->literature_lang}}</td>
+                            <td>{{$row->comment_lang}}</td>
+                            <td>{{$row->link_lang}}</td>
+                            <td>{{$row->assign_curric_lang}}</td>
                         </tr>
                         @endforeach
                         <tfoot>
@@ -77,15 +103,28 @@
                                 <th>{{trans('t.label')}}</th>
                                 <th>{{trans('t.subject')}} #</th>
                                 <th>{{trans('t.ects')}}</th>
+                                <th class="none">{{trans('t.level')}}</th>
+                                <th class="none">{{trans('t.duration')}}</th>
+                                <th class="none">{{trans('t.rotation')}}</th>
                                 <th class="none">{{trans('t.professor')}}</th>
-                                <th class="none">{{trans('t.content')}}</th>
-                                <th class="none">{{trans('t.learning_goals')}}</th>
-                                <th class="none">{{trans('t.literature')}}</th>
-                                <th class="none">{{trans('t.preliminary_knowledge')}}</th>
+                                <th class="none">{{trans('t.lecturer')}}</th>
+                                <th class="none">{{trans('t.teaching_lang')}}</th>
+                                <th class="none">{{trans('t.workload')}}</th>
+                                <th class="none">{{trans('t.courses')}}</th>
+                                <th class="none">{{trans('t.selfstudy_time')}}</th>
                                 <th class="none">{{trans('t.preliminary_work')}}</th>
                                 <th class="none">{{trans('t.examination')}}</th>
-                                <th class="none">{{trans('t.exam_duration')}}</th>
+                                <th class="none">{{trans('t.mediaform')}}</th>
+                                <th class="none">{{trans('t.course_struc')}}</th>
+                                <th class="none">{{trans('t.learning_goals')}}</th>
+                                <th class="none">{{trans('t.sp_skills')}}</th>
+                                <th class="none">{{trans('t.spec_req')}}</th>
+                                <th class="none">{{trans('t.preliminary_knowledge')}}</th>
+                                <th class="none">{{trans('t.con_possib')}}</th>
+                                <th class="none">{{trans('t.literature')}}</th>
                                 <th class="none">{{trans('t.comment')}}</th>
+                                <th class="none">{{trans('t.link')}}</th>
+                                <th class="none">{{trans('t.assign_curric')}}</th>
                             </tr>
                         </tfoot>
                     </tbody>
@@ -97,7 +136,7 @@
 </section>
 
 @endsection
-                
+
 @section('scripts')
 <script>
 
@@ -120,7 +159,7 @@
             x = $.trim(x);
             y = $.trim(y);
 
-            if (x==y) retVal= 0; 
+            if (x==y) retVal= 0;
             else if (x == "" || x == " ") retVal= -1;
             else if (y == "" || y == " ") retVal= 1;
             else if (x > y) retVal= 1;

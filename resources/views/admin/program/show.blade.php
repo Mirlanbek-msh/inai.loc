@@ -1,5 +1,5 @@
-@extends('admin.layouts.app') 
-@section('title', $row->label_lang) 
+@extends('admin.layouts.app')
+@section('title', $row->label_lang)
 @section('content')
 
 <div class="element-actions">

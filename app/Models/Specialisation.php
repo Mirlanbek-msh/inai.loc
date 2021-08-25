@@ -9,9 +9,9 @@ class Specialisation extends Model
 {
     use Sluggable;
 
-    protected $connection = 'mysql2';
-    protected $table = 'specialisation';
-    protected $primaryKey = 'ID';
+   // protected $connection = 'mysql2';
+    protected $table = 'specialisations';
+    protected $primaryKey = 'id';
     public $timestamps = false;
 
     protected $fillable = [
@@ -34,7 +34,7 @@ class Specialisation extends Model
 
     public function program()
     {
-        return $this->belongsTo(Program::class, 'program_id');
+        return $this->belongsTo(Program::class, 'programm_id');
     }
 
     public function sluggable()

@@ -27,16 +27,16 @@
                 <tbody>
                 @foreach ($data as $key => $row)
                     <tr>
-                        <td>{{ $row->ID }}</td>
+                        <td>{{ $row->id }}</td>
                         <td>{{ $row->placeholderModule->label_lang }}</td>
                         <td>{{ $row->obligatoryModule->label_lang }}</td>
                         <td>{{ $row->obligatoryModule->nr }}</td>
                         <td>{{ $row->obligatoryModule->ects }}</td>
                         <td>{{ $row->obligatoryModule->professor }}</td>
                         <td class="text-center">
-                            <a class="btn btn-table btn-table-show" href="{{ route('admin.obligatory-catalogue.show',$row->ID) }}"><i class="icon-feather-book-open"></i></a>
-                            <a class="btn btn-table btn-table-edit" href="{{ route('admin.obligatory-catalogue.edit',$row->ID) }}"><i class="icon-feather-edit"></i></a>
-                            {!! Form::open(['method' => 'DELETE','route' => ['admin.obligatory-catalogue.destroy', $row->ID],'style'=>'display:inline', 'onsubmit' => 'return confirmDelete()']) !!}
+                            <a class="btn btn-table btn-table-show" href="{{ route('admin.obligatory-catalogue.show',$row->id) }}"><i class="icon-feather-book-open"></i></a>
+                            <a class="btn btn-table btn-table-edit" href="{{ route('admin.obligatory-catalogue.edit',$row->id) }}"><i class="icon-feather-edit"></i></a>
+                            {!! Form::open(['method' => 'DELETE','route' => ['admin.obligatory-catalogue.destroy', $row->id],'style'=>'display:inline', 'onsubmit' => 'return confirmDelete()']) !!}
                             <input type="hidden" value="Delete">
                             <button class="btn btn-table btn-table-trash" type="submit"><i class="icon-feather-trash-2"></i></button>
                             {!! Form::close() !!}

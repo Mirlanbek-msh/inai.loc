@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ObligatoryCatalogue extends Model
 {
-    protected $connection = 'mysql2';
-    protected $table = 'obligatorycatalogue';
-    protected $primaryKey = 'ID';
+   // protected $connection = 'mysql2';
+    protected $table = 'obligatory_catalogues';
+    protected $primaryKey = 'id';
     public $timestamps = false;
 
     protected $fillable = [
@@ -27,7 +27,7 @@ class ObligatoryCatalogue extends Model
 
     public function placeholderModule()
     {
-        return $this->belongsTo(Module::class, 'placeholder_module_id', 'ID')->withDefault();
+        return $this->belongsTo(Module::class, 'placeholder_module_id', 'id')->withDefault();
     }
 
     public function obligatoryModule()

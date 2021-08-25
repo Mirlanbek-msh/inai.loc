@@ -76,6 +76,14 @@ class AppServiceProvider extends ServiceProvider
             $view->with('internationalization', $this->loadInternationalization());
             $view->with('graduates', $this->loadGraduates());
             $view->with('graduates2', $this->loadGraduates2());
+            $view->with('organigram', $this->loadOrganigram());
+            $view->with('q_assurance', $this->loadQ_assurance());
+            $view->with('educational_process', $this->loadEducational_process());
+            $view->with('portal', $this->loadPortal());
+            $view->with('scholarship_programs', $this->loadScholarship_programs());
+            $view->with('normative_documents', $this->loadNormative_documents());
+            $view->with('bachelor_for_graduates', $this->loadBachelor_for_graduates());
+            $view->with('master_for_graduates', $this->loadMaster_for_graduates());
             $view->with('services', $this->loadServices());
             try{
                 $view->with('bachelor_specs', $this->loadBachelorSpecialisations());
@@ -118,6 +126,38 @@ class AppServiceProvider extends ServiceProvider
     public function loadGraduates2()
     {
         return PageCategory::where('slug', 'graduates2')->firstOrFail();
+    }
+    public function loadOrganigram()
+    {
+        return PageCategory::where('slug', 'organigram')->firstOrFail();
+    }
+    public function loadQ_assurance()
+    {
+        return PageCategory::where('slug', 'q_assurance')->firstOrFail();
+    }
+    public function loadEducational_process()
+    {
+        return PageCategory::where('slug', 'educational_process')->firstOrFail();
+    }
+    public function loadPortal()
+    {
+        return PageCategory::where('slug', 'portal')->firstOrFail();
+    }
+    public function loadScholarship_programs()
+    {
+        return PageCategory::where('slug', 'scholarship_programs')->firstOrFail();
+    }
+    public function loadNormative_documents()
+    {
+        return PageCategory::where('slug', 'normative_documents')->firstOrFail();
+    }
+    public function loadBachelor_for_graduates()
+    {
+        return PageCategory::where('slug', 'bachelor_for_graduates')->firstOrFail();
+    }
+    public function loadMaster_for_graduates()
+    {
+        return PageCategory::where('slug', 'master_for_graduates')->firstOrFail();
     }
 
     public function loadServices()

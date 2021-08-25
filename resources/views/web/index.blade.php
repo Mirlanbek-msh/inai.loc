@@ -74,7 +74,7 @@
 <section class="section sps sps--abv sps-pt-60">
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
-            @for($i = 0; $i < ($banner_events->count() + $banner_posts->count()); $i++)
+            @for($i = 0; $i < ($banner_events->count()); $i++)
                 <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}" @if($i==0) class="active" @endif>
                 </li>
                 @endfor

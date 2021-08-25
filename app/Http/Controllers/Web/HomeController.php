@@ -26,7 +26,7 @@ class HomeController extends Controller
             }
         });
         $banner_posts = Post::where('status', 1)->where('lang', app()->getLocale())->where('to_banner', 1)->orderBy('created_at', 'DESC')->take(2)->get();
-        $banner_events = Event::where('status', 1)->where('to_banner', 1)->orderBy('created_at', 'DESC')->take(2)->get();
+        $banner_events = Event::where('status', 1)->where('to_banner', 1)->orderBy('created_at', 'DESC')->take(4)->get();
         return view('web.index', compact('posts', 'events', 'banner_posts', 'banner_events', 'selected_date'));
     }
 
@@ -41,6 +41,11 @@ class HomeController extends Controller
     {
         $row = Page::where('slug', 'about')->firstOrFail();
         return view('web.about', compact('row'));
+    }
+    public function projects()
+    {
+        $row = Page::where('slug', 'proekty')->firstOrFail();
+        return view('web.projects', compact('row'));
     }
 
     public function contact()

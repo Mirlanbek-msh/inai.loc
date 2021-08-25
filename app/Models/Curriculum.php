@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Curriculum extends Model
 {
-    protected $connection = 'mysql2';
+   // protected $connection = 'mysql2';
     protected $table = 'curricula';
     protected $primaryKey = 'ID';
     public $timestamps = false;
