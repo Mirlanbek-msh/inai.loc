@@ -45,12 +45,14 @@
             </div>
             <nav id="main-nav">
                 <ul class="nav float-right">
-                    {{--                     <li class="nav-item active">--}}
-                    {{--                        <a class="nav-link" href="{{ route('web.home') }}">{{ trans('t.home') }}</a>--}}
-                    {{--                    </li>--}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('web.event.index') }}">{{ trans('t.events') }}</a>
-                    </li>
+                                         <li class="nav-item active">
+                                            <a class="nav-link" href="{{ route('web.home') }}">{{ trans('t.home') }}</a>
+                                        </li>
+
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link" href="{{ route('web.event.index') }}">{{ trans('t.events') }}</a>--}}
+{{--                    </li>--}}
+
                     <li class="nav-item dropdown mega-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
                             {{ trans('t.about') }}
@@ -169,17 +171,21 @@
                                                     @endforeach
                                                 @endif
 
-                                                <hr>
-                                                <li class=""><a href="/" target="_blank">Расписание<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>
-                                                <li class=""><a href="https://drive.google.com/file/d/1SlSg8gFjOTNtcWKTtxvyQu-jCvFM8Gwu/view?usp=sharing" target="_blank">Рабочий учебный план<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>
-                                                <li class=""><a href="https://inai.kg/uploads/filemanager/educational_process_schedule.pdf" target="_blank">График учебного процесса<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>
-                                                <li class=""><a href="https://inai.kg/uploads/filemanager/educational_schedule_2.pdf" target="_blank">График сессии<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>
+{{--                                                <hr>--}}
+{{--                                                <li class=""><a href="/" target="_blank">Расписание<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
+{{--                                                <li class=""><a href="https://drive.google.com/file/d/1SlSg8gFjOTNtcWKTtxvyQu-jCvFM8Gwu/view?usp=sharing" target="_blank">Рабочий учебный план<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
+{{--                                                <li class=""><a href="https://inai.kg/uploads/filemanager/educational_process_schedule.pdf" target="_blank">График учебного процесса<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
+{{--                                                <li class=""><a href="https://inai.kg/uploads/filemanager/educational_schedule_2.pdf" target="_blank">График сессии<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
+
+                                                {{-- Студенческая жизнь --}}
+                                                <li class="dropdown-header"> {{trans('t.students_life')}} </li>
                                                 {{-- Студенческий сенат, Энактус --}}
                                                 @foreach($educational_process->pages as $row)
                                                     <li><a style="padding: 0px 5px;" href="{{ route('web.application.show', $educational_process->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
                                                 @endforeach
                                                 {{-- END Студенческий сенат, Энактус --}}
-                                                <li class=""><a href="https://docs.google.com/forms/d/e/1FAIpQLSe2jht6PHsYXkOkQuY6Rw-UGAtgXKMFVdBFl1hzWkUE7iv_4A/viewform" target="_blank">Бизнес инкубатор<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>
+
+                                                {{-- END Студенческая жизнь --}}
                                             </ul>
 
                                         </li>

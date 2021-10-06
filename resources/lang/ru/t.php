@@ -29,6 +29,7 @@ return [
     'rep_accreditation'   => 'Заключение аккредитационной комиссии',
     'projects'   => 'Проекты',
     'educ_process'   => 'Учебный процесс',
+    'students_life'   => 'Студенческая жизнь',
     'q_assurance'   => 'Гарантия качества',
     'for_students'   => 'Студентам',
     'contacts'   => 'Контакты',

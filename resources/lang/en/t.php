@@ -29,6 +29,7 @@ return [
     'rep_accreditation'   => 'Report of the accreditation commission',
     'projects'   => 'Projects',
     'educ_process'   => 'Educational process',
+    'students_life'   => 'Student life',
     'q_assurance'   => 'Quality assurance',
     'for_students'   => 'For students',
     'contacts'   => 'Contacts',
