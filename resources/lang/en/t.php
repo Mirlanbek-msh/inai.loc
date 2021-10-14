@@ -195,7 +195,7 @@ return [
     'author_phone' => 'Speaker phone number',
     'author_phone_example' => '+996 555 555 555',
     'author_email' => 'Speaker email',
-    'author_email_example' => 'balanchaev@mail.com',
+    'author_email_example' => 'mymail@mail.com',
     'event_date' => 'Event date',
     'has_end_date' => 'Event has ending date',
     'event_date_time' => 'Date and time',
@@ -203,7 +203,7 @@ return [
     /**========================== */
     'view' => 'See',
     'seen' => 'Seen',
-    'full_name_example' => 'Jon Doe',
+    'full_name_example' => 'Full name',
     'university_example' => 'INAI.KG',
     'group_course_example' => 'AIN-1-16, 3 study year',
     'team_name_example' => 'Bazar zhok progers',

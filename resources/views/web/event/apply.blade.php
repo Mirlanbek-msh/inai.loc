@@ -86,7 +86,7 @@
                                     @if($row->need_email)
                                     <div class="form-group">
                                         <label for="">Email:</label>
-                                        <input required name="email" placeholder="balanchaev@mail.com" data-error="{{trans('validation.email',['attribute' => ''])}}" class="form-control" type="email">
+                                        <input required name="email" placeholder="mymail@mail.com" data-error="{{trans('validation.email',['attribute' => ''])}}" class="form-control" type="email">
                                         <div class="help-block with-errors text-danger"></div>
                                     </div>
                                     @endif

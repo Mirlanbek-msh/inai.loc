@@ -196,7 +196,7 @@ return [
     'author_phone' => 'Номер организатора',
     'author_phone_example' => '+996 555 555 555',
     'author_email' => 'Email организатора',
-    'author_email_example' => 'balanchaev@mail.com',
+    'author_email_example' => 'mymail@mail.com',
     'event_date' => 'Дата проведения события',
     'has_end_date' => 'Есть дата окончания',
     'event_date_time' => 'Дата и время',
@@ -204,7 +204,7 @@ return [
     /**========================== */
     'view' => 'Просмотреть',
     'seen' => 'Просмотрен',
-    'full_name_example' => 'Баланчаев Баланча',
+    'full_name_example' => 'ФИО',
     'university_example' => 'INAI.KG',
     'group_course_example' => 'AIN-1-16, 3 курс',
     'team_name_example' => 'Базар жок прогеры',
