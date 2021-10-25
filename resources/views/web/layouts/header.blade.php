@@ -171,11 +171,17 @@
                                                     @endforeach
                                                 @endif
 
+                                                @foreach($portal->pages as $row)
+                                                    <li><a style="padding: 0px 5px;" href="{{ route('web.application.show', $portal->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
+                                                @endforeach
+                                                
 {{--                                                <hr>--}}
 {{--                                                <li class=""><a href="/" target="_blank">Расписание<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
 {{--                                                <li class=""><a href="https://drive.google.com/file/d/1SlSg8gFjOTNtcWKTtxvyQu-jCvFM8Gwu/view?usp=sharing" target="_blank">Рабочий учебный план<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
 {{--                                                <li class=""><a href="https://inai.kg/uploads/filemanager/educational_process_schedule.pdf" target="_blank">График учебного процесса<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
 {{--                                                <li class=""><a href="https://inai.kg/uploads/filemanager/educational_schedule_2.pdf" target="_blank">График сессии<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
+
+                                                <li class="dropdown-header"><a class="dropdown-header" style="color:white" href="{{ route('web.application.show', $normative_documents->slug) }}">{{ $normative_documents->title_lang }}</a></li>
 
                                                 {{-- Студенческая жизнь --}}
                                                 <li class="dropdown-header"> {{trans('t.students_life')}} </li>
@@ -186,21 +192,41 @@
                                                 {{-- END Студенческий сенат, Энактус --}}
 
                                                 {{-- END Студенческая жизнь --}}
+
+                                                <li class="dropdown-header">{{trans('t.q_assurance')}}</li>
+                                                @foreach($q_assurance->pages as $row)
+                                                    <li><a style="padding: 0px 5px;" href="{{ route('web.application.show', $q_assurance->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
+                                                @endforeach
+
                                             </ul>
 
                                         </li>
                                         <li class="col-lg-6 col-md-12 col-sm-12">
                                             <ul>
-                                                <li class="dropdown-header">{{trans('t.q_assurance')}}</li>
-                                                @foreach($q_assurance->pages as $row)
-                                                    <li><a style="padding: 0px 5px;" href="{{ route('web.application.show', $q_assurance->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
-                                                @endforeach
-                                                <li class="dropdown-header">{{ $normative_documents->title_lang }}</li>
-                                                @foreach($normative_documents->pages as $row)
-                                                    <li><a style="padding: 0px 5px;" href="{{ route('web.application.show', $normative_documents->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
-                                                @endforeach
-                                                <li class="dropdown-header">{{trans('t.modules')}}</li>
-                                                <li><a href="{{ route('web.module.index', $row->slug) }}">{{trans('t.modules')}}</a></li>
+
+                                                <li >
+                                                    <ul ><li class="dropdown-header">{{trans('t.curricula')}}</li></ul>
+                                                    <ul style="margin-left: 15px;">
+                                                        <li class="dropdown-header" style="font-weight: 500">
+                                                            <a href="{{ route('web.module.index', $row->slug) }}">{{trans('t.modules')}}</a>
+                                                        </li>
+                                                        @foreach ($study_programs as $program)
+                                                            <li class="dropdown-header" style="font-weight: 500">{{$program->label}} {{$program->degree}}
+                                                                ({{$program->licensedYear()}})
+                                                            </li>
+                                                            @foreach ($program->specialisations as $spec)
+                                                                <li>
+                                                                    <a href="{{ route('web.module.show', $spec->slug) }}">{{optional($spec)->label_lang}}</a>
+                                                                </li>
+                                                            @endforeach
+                                                            <li>
+                                                                <a href="{{ route('web.module.obligatoryCatalog',$program->id) }}">{{trans('t.obligatory_modules')}}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+
+
                                                 {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
                                                 {{--                                            @if($services->pagesChunk()->count() > 1)--}}
                                                 {{--                                                @foreach($services->pagesChunk()[1] as $row)--}}
@@ -214,9 +240,7 @@
 
                                                 <hr>
                                                 {{-- Портал практикантов и работодателей --}}
-                                                @foreach($portal->pages as $row)
-                                                    <li><a style="padding: 0px 5px;" href="{{ route('web.application.show', $portal->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
-                                                @endforeach
+
                                                 {{-- END Портал практикантов и работодателей --}}
                                             </ul>
 
@@ -271,42 +295,42 @@
                     {{--                        <a class="nav-link" href="{{ route('web.about') }}">{{ trans('t.about') }}</a>--}}
                     {{--                    </li>--}}
 
-                    @if($bachelor_specs->count())
-                        <li class="nav-item dropdown mega-dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">
-                                {{ trans('t.modules') }}?
-                            </a>
-                            <ul class="dropdown-menu mega-dropdown-menu">
-                                <div class="container">
-                                    <div class="row">
-                                        <li class="col-lg-6 col-md-12 col-sm-12">
-                                            <ul>
-                                                <li class="dropdown-header">{{trans('t.bachelor')}}</li>
-                                                @foreach ($bachelor_specs as $spec)
-                                                    <li>
-                                                        <a href="{{ route('web.module.show', $spec->slug) }}">{{optional($spec)->label_lang}}</a>
-                                                    </li>
-                                                @endforeach
-                                                <li>
-                                                    <a href="{{ route('web.module.obligatoryCatalog') }}">{{trans('t.obligatory_modules')}}</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-lg-6 col-md-12 col-sm-12">
-                                            <ul>
-                                                <li class="dropdown-header">{{trans('t.master')}}</li>
-                                                @foreach ($master_specs as $spec)
-                                                    <li>
-                                                        <a href="{{ route('web.module.show', $spec->slug) }}">{{optional($spec)->label_lang}}</a>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </li>
-                    @endif
+{{--                    @if($bachelor_specs->count())--}}
+{{--                        <li class="nav-item dropdown mega-dropdown">--}}
+{{--                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-flip="false" data-display="static">--}}
+{{--                                {{ trans('t.modules') }}?--}}
+{{--                            </a>--}}
+{{--                            <ul class="dropdown-menu mega-dropdown-menu">--}}
+{{--                                <div class="container">--}}
+{{--                                    <div class="row">--}}
+{{--                                        <li class="col-lg-6 col-md-12 col-sm-12">--}}
+{{--                                            <ul>--}}
+{{--                                                <li class="dropdown-header">{{trans('t.bachelor')}}</li>--}}
+{{--                                                @foreach ($bachelor_specs as $spec)--}}
+{{--                                                    <li>--}}
+{{--                                                        <a href="{{ route('web.module.show', $spec->slug) }}">{{optional($spec)->label_lang}}</a>--}}
+{{--                                                    </li>--}}
+{{--                                                @endforeach--}}
+{{--                                                <li>--}}
+{{--                                                    <a href="{{ route('web.module.obligatoryCatalog') }}">{{trans('t.obligatory_modules')}}</a>--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
+{{--                                        </li>--}}
+{{--                                        <li class="col-lg-6 col-md-12 col-sm-12">--}}
+{{--                                            <ul>--}}
+{{--                                                <li class="dropdown-header">{{trans('t.master')}}</li>--}}
+{{--                                                @foreach ($master_specs as $spec)--}}
+{{--                                                    <li>--}}
+{{--                                                        <a href="{{ route('web.module.show', $spec->slug) }}">{{optional($spec)->label_lang}}</a>--}}
+{{--                                                    </li>--}}
+{{--                                                @endforeach--}}
+{{--                                            </ul>--}}
+{{--                                        </li>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
+{{--                    @endif--}}
 
                 </ul>
                 <ul class="nav navbar-navs locale d-lg-none mt-3 float-left">

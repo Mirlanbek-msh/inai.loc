@@ -1,4 +1,12 @@
+UPDATE `inai-kg`.`pages` SET `title`='{\"ru\":\"\\u041f\\u043e\\u0440\\u0442\\u0430\\u043b \\u043f\\u0440\\u0430\\u043a\\u0442\\u0438\\u043a\\u0430\\u043d\\u0442\\u043e\\u0432\",\"en\":\"Internship Portal\"}' WHERE `id`='73';
+
+
+
 INSERT INTO `inai-kg`.`programms` (`label`, `licensed`, `degree`) VALUES ('Informatics', '2018-01-01', 'Master of Science');
+
+UPDATE `inai-kg`.`programms` SET `licensed`='2020-07-23 00:00:00' WHERE `id`='1';
+UPDATE `inai-kg`.`programms` SET `licensed`='2018-06-27 00:00:00' WHERE `id`='2';
+
 
 ALTER TABLE `inai-kg`.`modules` DROP COLUMN `duration`;
 ALTER TABLE `inai-kg`.`modules` DROP COLUMN `rotation`;
