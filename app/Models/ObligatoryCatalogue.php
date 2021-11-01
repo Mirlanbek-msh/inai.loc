@@ -30,6 +30,22 @@ class ObligatoryCatalogue extends Model
         return $this->belongsTo(Module::class, 'placeholder_module_id', 'id')->withDefault();
     }
 
+
+
+    /**
+     * @return Module[]
+     */
+    public static function getAllPlaceholderModules() {
+        $allPlaceholderModules=[];
+        foreach (ObligatoryCatalogue::all() as $obligatoryCatalogueModule) {
+            $placeholderModule=$obligatoryCatalogueModule->placeholderModule;
+            if (!key_exists($placeholderModule->getKey(),$allPlaceholderModules)) {
+                $allPlaceholderModules[$placeholderModule->getKey()]=$placeholderModule;
+            }
+        }
+        return $allPlaceholderModules;
+    }
+
     public function obligatoryModule()
     {
         return $this->belongsTo(Module::class, 'obligatory_module_id');

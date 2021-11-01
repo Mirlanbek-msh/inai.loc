@@ -4,6 +4,22 @@
         <a href="#nav-ru" class="nav-item nav-link" id="nav-ru-tab" data-toggle="tab" role="tab" aria-controls="nav-ru" aria-selected="true">Русский</a>
     </div>
 </nav>
+<fieldset class="form-group">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">{{trans('t.nr')}}</label>
+        <div class="col-sm-10">
+            {!! Form::text('nr', null, ["class" => "form-control"]) !!}
+            <div class="mb-2"></div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">{{trans('t.ects')}} *</label>
+        <div class="col-sm-10">
+            {!! Form::text('ects', null, ['class' => 'form-control', 'required' => 'required', 'data-error' => trans('validation.required',['attribute' => ''])]) !!}
+            <div class="help-block with-errors text-danger"></div>
+        </div>
+    </div>
+</fieldset>
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-en" role="tabpanel">
         <fieldset class="form-group">
@@ -18,22 +34,6 @@
                 <label class="col-sm-2 col-form-label">{{trans('t.level')}}</label>
                 <div class="col-sm-10">
                     {!! Form::text('level', null, ["class" => "form-control"]) !!}
-                    <div class="mb-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.duration')}}</label>
-                <div class="col-sm-10">
-                    {!! Form::text('duration', null, ["class" => "form-control"]) !!}
-                    <div class="mb-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.rotation')}}</label>
-                <div class="col-sm-10">
-                    {!! Form::text('rotation', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
@@ -103,14 +103,6 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.mediaform')}}</label>
-                <div class="col-sm-10">
-                    {!! Form::textarea('mediaform', null, ["class" => "form-control"]) !!}
-                    <div class="mb-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.course_struc')}}</label>
                 <div class="col-sm-10">
                     {!! Form::textarea('course_struc', null, ["class" => "form-control"]) !!}
@@ -151,14 +143,6 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.con_possib')}}</label>
-                <div class="col-sm-10">
-                    {!! Form::textarea('con_possib', null, ["class" => "form-control"]) !!}
-                    <div class="mb-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.literature')}}</label>
                 <div class="col-sm-10">
                     {!! Form::textarea('literature', null, ["class" => "form-control"]) !!}
@@ -182,13 +166,6 @@
                 </div>
             </div>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.assign_curric')}}</label>
-                <div class="col-sm-10">
-                    {!! Form::textarea('assign_curric', null, ["class" => "form-control"]) !!}
-                    <div class="mb-2"></div>
-                </div>
-            </div>
         </fieldset>
     </div>
     <div class="tab-pane fade show" id="nav-ru" role="tabpanel">
@@ -204,22 +181,6 @@
                 <label class="col-sm-2 col-form-label">{{trans('t.level')}}</label>
                 <div class="col-sm-10">
                     {!! Form::text('level_ru', null, ["class" => "form-control"]) !!}
-                    <div class="mb-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.duration')}}</label>
-                <div class="col-sm-10">
-                    {!! Form::text('duration_ru', null, ["class" => "form-control"]) !!}
-                    <div class="mb-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.rotation')}}</label>
-                <div class="col-sm-10">
-                    {!! Form::text('rotation_ru', null, ["class" => "form-control"]) !!}
                     <div class="mb-2"></div>
                 </div>
             </div>
@@ -289,14 +250,6 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.mediaform')}}</label>
-                <div class="col-sm-10">
-                    {!! Form::textarea('mediaform_ru', null, ["class" => "form-control"]) !!}
-                    <div class="mb-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.course_struc')}}</label>
                 <div class="col-sm-10">
                     {!! Form::textarea('course_struc_ru', null, ["class" => "form-control"]) !!}
@@ -337,14 +290,6 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.con_possib')}}</label>
-                <div class="col-sm-10">
-                    {!! Form::textarea('con_possib_ru', null, ["class" => "form-control"]) !!}
-                    <div class="mb-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
                 <label class="col-sm-2 col-form-label">{{trans('t.literature')}}</label>
                 <div class="col-sm-10">
                     {!! Form::textarea('literature_ru', null, ["class" => "form-control"]) !!}
@@ -368,32 +313,10 @@
                 </div>
             </div>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">{{trans('t.assign_curric')}}</label>
-                <div class="col-sm-10">
-                    {!! Form::textarea('assign_curric_ru', null, ["class" => "form-control"]) !!}
-                    <div class="mb-2"></div>
-                </div>
-            </div>
         </fieldset>
     </div>
 </div>
-<fieldset class="form-group">
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.nr')}}</label>
-        <div class="col-sm-10">
-            {!! Form::text('nr', null, ["class" => "form-control"]) !!}
-            <div class="mb-2"></div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">{{trans('t.ects')}} *</label>
-        <div class="col-sm-10">
-            {!! Form::text('ects', null, ['class' => 'form-control', 'required' => 'required', 'data-error' => trans('validation.required',['attribute' => ''])]) !!}
-            <div class="help-block with-errors text-danger"></div>
-        </div>
-    </div>
-</fieldset>
+
 <fieldset class="form-group">
     <div class="form-buttons-w">
         <div class="form-group row">

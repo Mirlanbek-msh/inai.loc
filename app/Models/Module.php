@@ -24,20 +24,15 @@ class Module extends Model
         'examination',
 
         'level',
-        'duration',
-        'rotation',
         'lecturer',
         'teaching_lang',
         'workload',
         'courses',
         'selfstudy_time',
-        'mediaform',
         'course_struc',
         'sp_skills',
         'spec_req',
-        'con_possib',
         'link',
-        'assign_curric',
 
         'comment',
 
@@ -50,20 +45,15 @@ class Module extends Model
         'examination_ru',
 
         'level_ru',
-        'duration_ru',
-        'rotation_ru',
         'lecturer_ru',
         'teaching_lang_ru',
         'workload_ru',
         'courses_ru',
         'selfstudy_time_ru',
-        'mediaform_ru',
         'course_struc_ru',
         'sp_skills_ru',
         'spec_req_ru',
-        'con_possib_ru',
         'link_ru',
-        'assign_curric_ru',
 
         'comment_ru',
     ];
@@ -74,19 +64,7 @@ class Module extends Model
         return $this->level;
     }
 
-    public function getDurationLangAttribute()
-    {
-        if(app()->getLocale() == 'ru' && strlen($this->duration_ru) > 0) return $this->duration_ru;
-        return $this->duration;
-    }
-
-    public function getRotationLangAttribute()
-    {
-        if(app()->getLocale() == 'ru' && strlen($this->rotation_ru) > 0) return $this->rotation_ru;
-        return $this->rotation;
-    }
-
-    public function getLecturerLangAttribute()
+   public function getLecturerLangAttribute()
     {
         if(app()->getLocale() == 'ru' && strlen($this->lecturer_ru) > 0) return $this->lecturer_ru;
         return $this->lecturer;
@@ -116,12 +94,6 @@ class Module extends Model
         return $this->selfstudy_time;
     }
 
-    public function getMediaformLangAttribute()
-    {
-        if(app()->getLocale() == 'ru' && strlen($this->mediaform_ru) > 0) return $this->mediaform_ru;
-        return $this->mediaform;
-    }
-
     public function getCourseStrucLangAttribute()
     {
         if(app()->getLocale() == 'ru' && strlen($this->course_struc_ru) > 0) return $this->course_struc_ru;
@@ -140,25 +112,11 @@ class Module extends Model
         return $this->spec_req;
     }
 
-    public function getConPossibLangAttribute()
-    {
-        if(app()->getLocale() == 'ru' && strlen($this->con_possib_ru) > 0) return $this->con_possib_ru;
-        return $this->con_possib;
-    }
-
     public function getLinkLangAttribute()
     {
         if(app()->getLocale() == 'ru' && strlen($this->link_ru) > 0) return $this->link_ru;
         return $this->link;
     }
-
-    public function getAssignCurricLangAttribute()
-    {
-        if(app()->getLocale() == 'ru' && strlen($this->assign_curric_ru) > 0)
-            return $this->assign_curric_ru;
-        return $this->assign_curric;
-    }
-
 
     public function getLabelLangAttribute()
     {

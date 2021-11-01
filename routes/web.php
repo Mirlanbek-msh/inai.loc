@@ -13,8 +13,8 @@
 
 Route::group(
     [
-        'prefix' => LaravelLocalization::setLocale() . '/auth', 
-        'middleware' => [ 
+        'prefix' => LaravelLocalization::setLocale() . '/auth',
+        'middleware' => [
             'localeSessionRedirect', 'localizationRedirect', 'localeViewPath',
         ],
     ], function(){
@@ -23,9 +23,9 @@ Route::group(
     Route::post('/logout', 'AuthController@logout')->name('logout');
 });
 
-Route::group(['prefix' => LaravelLocalization::setLocale(), 
+Route::group(['prefix' => LaravelLocalization::setLocale(),
             'middleware' => [ 'localeSessionRedirect', 'localizationRedirect' ]], function(){
-                
+
     Route::group(['as' => 'web.'], function(){
 
         Route::get('/', 'HomeController@index')->name('home');
@@ -68,7 +68,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         // Modules
         Route::group(['prefix' => 'module', 'as' => 'module.'], function(){
             Route::get('/', 'ModuleController@index')->name('index');
-            Route::get('/obligatory-catalog', 'ModuleController@obModules')->name('obligatoryCatalog');
+            Route::get('/obligatory-catalog/{programId}', 'ModuleController@obModules')->name('obligatoryCatalog');
             Route::get('/{slug}', 'ModuleController@show')->name('show');
         });
 
@@ -78,7 +78,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
             Route::get('/login/google/redirect', 'Auth\LoginController@loginGoogleRedirect')->name('google_redirect');
             Route::get('/login/google/callback', 'Auth\LoginController@loginGoogleCallback');
-            
+
             Route::get('/login/fb/redirect', 'Auth\LoginController@loginFbRedirect')->name('fb_redirect');
             Route::get('/login/fb/callback', 'Auth\LoginController@loginFbCallback');
 
