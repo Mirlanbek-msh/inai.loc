@@ -257,6 +257,8 @@ return [
     'curricula' => 'Curricula',
     'all_curricula' => 'All curricula',
     'create_curriculum' => 'Create curriculum',
+    'curriculum_b' => 'Bachelor\'s degree curriculum',
+    'curriculum_m' => 'Master\'s degree curriculum',
 
     'specialisations' => 'Specialisations',
     'all_specialisations' => 'All specialisations',

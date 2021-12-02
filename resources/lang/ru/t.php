@@ -260,6 +260,8 @@ return [
     'curricula' => 'Учебный план',
     'all_curricula' => 'Все учебные планы',
     'create_curriculum' => 'Создать учебный план',
+    'curriculum_b' => 'Рабочий учебный план бакалавриата',
+    'curriculum_m' => 'Рабочий учебный план магистратуры',
 
     'specialisations' => 'Специализации',
     'all_specialisations' => 'Все специализации',

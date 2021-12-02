@@ -150,7 +150,7 @@
                             <ul class="dropdown-menu mega-dropdown-menu">
                                 <div class="container">
                                     <div class="row">
-                                        <li class="col-lg-6 col-md-12 col-sm-12">
+                                        <li class="col-lg-5 col-md-12 col-sm-12">
                                             <ul>
                                                 <li class="dropdown-header">{{trans('t.educ_process')}}</li>
                                                 {{-- <li class="dropdown-header">{{trans('t.modules')}}</li> --}}
@@ -174,7 +174,7 @@
                                                 @foreach($portal->pages as $row)
                                                     <li><a style="padding: 0px 5px;" href="{{ route('web.application.show', $portal->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
                                                 @endforeach
-                                                
+
 {{--                                                <hr>--}}
 {{--                                                <li class=""><a href="/" target="_blank">Расписание<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
 {{--                                                <li class=""><a href="https://drive.google.com/file/d/1SlSg8gFjOTNtcWKTtxvyQu-jCvFM8Gwu/view?usp=sharing" target="_blank">Рабочий учебный план<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
@@ -182,16 +182,6 @@
 {{--                                                <li class=""><a href="https://inai.kg/uploads/filemanager/educational_schedule_2.pdf" target="_blank">График сессии<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
 
                                                 <li class="dropdown-header"><a class="dropdown-header" style="color:white" href="{{ route('web.application.show', $normative_documents->slug) }}">{{ $normative_documents->title_lang }}</a></li>
-
-                                                {{-- Студенческая жизнь --}}
-                                                <li class="dropdown-header"> {{trans('t.students_life')}} </li>
-                                                {{-- Студенческий сенат, Энактус --}}
-                                                @foreach($educational_process->pages as $row)
-                                                    <li><a style="padding: 0px 5px;" href="{{ route('web.application.show', $educational_process->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
-                                                @endforeach
-                                                {{-- END Студенческий сенат, Энактус --}}
-
-                                                {{-- END Студенческая жизнь --}}
 
                                                 <li class="dropdown-header">{{trans('t.q_assurance')}}</li>
                                                 @foreach($q_assurance->pages as $row)
@@ -201,18 +191,20 @@
                                             </ul>
 
                                         </li>
-                                        <li class="col-lg-6 col-md-12 col-sm-12">
+                                        <li class="col-lg-5 col-md-12 col-sm-12">
                                             <ul>
 
                                                 <li >
                                                     <ul ><li class="dropdown-header">{{trans('t.curricula')}}</li></ul>
                                                     <ul style="margin-left: 15px;">
                                                         <li class="dropdown-header" style="font-weight: 500">
-                                                            <a href="{{ route('web.module.index', $row->slug) }}">{{trans('t.modules')}}</a>
+{{--                                                        <a href="{{ route('web.module.index', $row->slug) }}">{{trans('t.modules')}}</a>--}}
+                                                            <li class=""><a href="https://drive.google.com/file/d/1LDpNhtPFrOAFf7PcNjnV2jo0t8HU29CY/view" target="_blank">{{trans('t.curriculum_b')}}<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>
+                                                            <li class=""><a href="https://drive.google.com/file/d/1P4gpbJIq3F62TBRG7LsrDMO2E88wORRu/view" target="_blank">{{trans('t.curriculum_m')}}<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>
                                                         </li>
                                                         @foreach ($study_programs as $program)
                                                             <li class="dropdown-header" style="font-weight: 500">{{$program->label}} {{$program->degree}}
-                                                                ({{$program->licensedYear()}})
+{{--                                                                ({{$program->licensedYear()}})--}}
                                                             </li>
                                                             @foreach ($program->specialisations as $spec)
                                                                 <li>
@@ -242,6 +234,22 @@
                                                 {{-- Портал практикантов и работодателей --}}
 
                                                 {{-- END Портал практикантов и работодателей --}}
+                                            </ul>
+
+                                        </li>
+                                        <li class="col-lg-2 col-md-12 col-sm-12">
+                                            <ul>
+
+                                                {{-- Студенческая жизнь --}}
+                                                <li class="dropdown-header"> {{trans('t.students_life')}} </li>
+                                                {{-- Студенческий сенат, Энактус --}}
+                                                @foreach($educational_process->pages as $row)
+                                                    <li><a style="padding: 0px 5px;" href="{{ route('web.application.show', $educational_process->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
+                                                @endforeach
+                                                {{-- END Студенческий сенат, Энактус --}}
+
+                                                {{-- END Студенческая жизнь --}}
+
                                             </ul>
 
                                         </li>
