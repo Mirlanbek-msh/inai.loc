@@ -18,7 +18,7 @@ class ApplicationController extends Controller
         if ($slug == 'graduates' OR $slug == 'graduates2') {
             $category = PageCategory::where('slug', $slug)->firstOrFail();
             return view('web.application.graduates', compact('category'));
-        } elseif ($slug == 'organigram' OR $slug == 'internationalization') {
+        } elseif ($slug == 'organigram' OR $slug == 'internationalization' OR $slug == 'normative_documents') {
             $category = PageCategory::where('slug', $slug)->firstOrFail();
             return view('web.application.about', compact('category'));
         } elseif ($slug == 'organigram2') {
