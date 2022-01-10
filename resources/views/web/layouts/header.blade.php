@@ -67,16 +67,17 @@
                                             @foreach($organigram->pages as $row)
                                                 <li><a href="{{ route('web.application.show', $organigram->slug) }}#p{{$loop->iteration}}">{{$row->title_lang}}</a></li>
                                             @endforeach
-                                            <li class="dropdown-header"><a class="dropdown-header" href="https://inai.kg/uploads/filemanager/INAI.KG_Charter.pdf" target="_blank">{{ trans('t.charter') }}</a></li>
-                                            <li class="dropdown-header"><a class="dropdown-header" href="https://inai.kg/uploads/filemanager/License-INAI.KG_.pdf" target="_blank">{{ trans('t.license') }}</a></li>
+{{--                                            <li class="dropdown-header"><a class="dropdown-header" href="https://inai.kg/uploads/filemanager/INAI.KG_Charter.pdf" target="_blank">{{ trans('t.charter') }}</a></li>--}}
+{{--                                            <li class="dropdown-header"><a class="dropdown-header" href="https://inai.kg/uploads/filemanager/License-INAI.KG_.pdf" target="_blank">{{ trans('t.license') }}</a></li>--}}
                                             {{--                                            <li><a href="{{ route('web.managements') }}">Рукодовтсва</a></li>--}}
                                         </ul>
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-sm-12">
                                         <ul>
-                                            <li class="dropdown-header">{{ trans('t.accreditation') }}</li>
-                                            <li><a href="https://inai.kg/uploads/filemanager/Accreditation_BS_INAI.kg.pdf" target="_blank">{{ trans('t.accreditation_cert') }}</a></li>
-                                            <li><a href="https://inai.kg/uploads/filemanager/Accreditation_MS_INAI.kg.pdf" target="_blank">{{ trans('t.rep_accreditation') }}</a></li>
+                                            <li class="dropdown-header"><a class="dropdown-header" style="color:white" href="{{ route('web.application.show', $normative_documents->slug) }}">{{ $normative_documents->title_lang }}</a></li>
+{{--                                            <li class="dropdown-header">{{ trans('t.accreditation') }}</li>--}}
+{{--                                            <li><a href="https://inai.kg/uploads/filemanager/Accreditation_BS_INAI.kg.pdf" target="_blank">{{ trans('t.accreditation_cert') }}</a></li>--}}
+{{--                                            <li><a href="https://inai.kg/uploads/filemanager/Accreditation_MS_INAI.kg.pdf" target="_blank">{{ trans('t.rep_accreditation') }}</a></li>--}}
 {{--                                            <li class="dropdown-header"><a class="dropdown-header" href="{{ route('web.projects') }}" >{{ trans('t.projects') }}</a></li>--}}
                                         </ul>
                                         <ul>
@@ -181,7 +182,7 @@
 {{--                                                <li class=""><a href="https://inai.kg/uploads/filemanager/educational_process_schedule.pdf" target="_blank">График учебного процесса<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
 {{--                                                <li class=""><a href="https://inai.kg/uploads/filemanager/educational_schedule_2.pdf" target="_blank">График сессии<i style="margin-left: 5px;" class="fa fa-external-link-alt"></i></a></li>--}}
 
-                                                <li class="dropdown-header"><a class="dropdown-header" style="color:white" href="{{ route('web.application.show', $normative_documents->slug) }}">{{ $normative_documents->title_lang }}</a></li>
+
 
                                                 <li class="dropdown-header">{{trans('t.q_assurance')}}</li>
                                                 @foreach($q_assurance->pages as $row)
